@@ -1,0 +1,9 @@
+# Local QA and temporary files
+.DS_Store
+Thumbs.db
+*.log
+*.tmp
+.chrome-*/
+
+# Local archived/experimental assets
+_archive/

@@ -1,0 +1,1459 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="李嘉梁的个人主页：模型后训练、评测与推理系统。">
+  <meta name="theme-color" content="#f3f1ea">
+  <title>李嘉梁</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon-JL.svg?v=20261028-9">
+  <link rel="stylesheet" href="styles.css?v=20261028-6">
+  <script>
+    document.documentElement.classList.add("js");
+    try {
+      const savedLanguage = localStorage.getItem("portfolio-language");
+      const savedTheme = localStorage.getItem("portfolio-theme");
+      const preferredTheme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+      const preferredLanguage = savedLanguage || "en";
+      document.documentElement.lang = preferredLanguage;
+      document.documentElement.dataset.language = preferredLanguage;
+      document.documentElement.dataset.theme = preferredTheme;
+    } catch (error) {
+      document.documentElement.lang = "en";
+      document.documentElement.dataset.language = "en";
+      document.documentElement.dataset.theme = "light";
+    }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#main" data-en="Skip to content" data-zh="跳至正文">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <a class="wordmark" href="#intro" aria-label="Jialiang Li, home">
+      <span class="wordmark-mark">JL</span>
+      <span class="wordmark-text">
+        <strong data-en="Jialiang" data-zh="李嘉梁">Jialiang</strong><em>Li</em>
+      </span>
+    </a>
+
+    <nav class="primary-nav" aria-label="Primary navigation">
+      <a href="#intro" data-en="Intro" data-zh="简介">Intro</a>
+      <a href="#education" data-en="Education" data-zh="教育">Education</a>
+      <a href="#work" data-en="Work" data-zh="工作">Work</a>
+      <a href="#projects" data-en="Projects" data-zh="项目">Projects</a>
+      <a href="#skills" data-en="Skills" data-zh="技能">Skills</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="language-switch" type="button" aria-label="Switch language to Chinese">
+        <span data-language-option="en">EN</span>
+        <span class="language-divider" aria-hidden="true">/</span>
+        <span data-language-option="zh">中文</span>
+      </button>
+      <button class="theme-toggle" type="button" aria-label="Switch to dark mode" aria-pressed="false">
+        <svg class="theme-icon theme-icon-sun" viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="3.5"></circle>
+          <path d="M12 2v2.2M12 19.8V22M4.93 4.93l1.56 1.56M17.51 17.51l1.56 1.56M2 12h2.2M19.8 12H22M4.93 19.07l1.56-1.56M17.51 6.49l1.56-1.56"></path>
+        </svg>
+        <svg class="theme-icon theme-icon-moon" viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M20.2 15.3A8.5 8.5 0 0 1 8.7 3.8 8.5 8.5 0 1 0 20.2 15.3Z"></path>
+        </svg>
+      </button>
+      <a class="header-contact" href="#contact">
+        <span data-en="Contact Me" data-zh="联系我">Contact</span>
+        <span aria-hidden="true">↗</span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="sr-only" data-en="Open navigation" data-zh="打开导航">Open navigation</span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </button>
+    </div>
+  </header>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+    <a href="#intro"><span>00</span><span data-en="Intro" data-zh="介绍">Intro</span></a>
+    <a href="#education"><span>01</span><span data-en="Education" data-zh="教育">Education</span></a>
+    <a href="#work"><span>02</span><span data-en="Work" data-zh="工作">Work</span></a>
+    <a href="#projects"><span>03</span><span data-en="Projects" data-zh="项目">Projects</span></a>
+    <a href="#skills"><span>04</span><span data-en="Skills" data-zh="技能">Skills</span></a>
+  </nav>
+
+  <main id="main">
+    <section class="hero" id="intro" data-nav-target="#intro">
+      <div class="hero-copy">
+        <h1 class="hero-title reveal">
+          <span data-en="Hi! I’m" data-zh="Hi！我是">Hi! I’m</span>
+          <span class="hero-title-accent" data-en="Jialiang Li" data-zh="李嘉梁">Jialiang Li</span>
+          <span data-en="A Literally Agentic" data-zh="一个 Literally Agentic 的">A Literally
+             Agentic</span>
+          <span class="hero-title-accent" data-en="Agent Engineer" data-zh="Agent 工程师"> Agent Engineer</span>
+        </h1>
+
+        <p class="hero-intro reveal" data-en="Agent engineering is rocket science: data, models, training, inference, runtime, and eval—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI." data-zh="Agent 工程就像造火箭： 数据、模型、训练、推理、运行时与评测层层交织。这一路上的坑我已经踩过不少，深知其中的繁杂与不易。我一直在寻找志同道合的伙伴，一起扫清工程障碍，打造超级 AGI！">
+          Agent engineering is rocket science: data, models, training, inference, runtime, and eval—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI.
+        </p>
+
+        <div class="hero-tags reveal" data-tech-stack-output aria-label="Technology stack"></div>
+
+        <div class="hero-proof reveal" aria-label="Selected performance results">
+          <div>
+            <strong class="proof-number" data-lucky-target="2">2</strong>
+            <span data-en="Education entries" data-zh="教育经历">Education entries</span>
+          </div>
+          <div>
+            <strong class="proof-number" data-lucky-target="2">2</strong>
+            <span data-en="Work experiences" data-zh="工作经历">Work experiences</span>
+          </div>
+          <div>
+            <strong class="proof-number" data-lucky-target="2">2</strong>
+            <span data-en="Projects" data-zh="项目经历">Projects</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="hero-portrait reveal" aria-hidden="true">
+        <div class="portrait-frame">
+          <img class="portrait-art-light" src="assets/portrait-light.png" alt="">
+          <img class="portrait-art-dark" src="assets/portrait-dark-opaque-inset.png" alt="">
+        </div>
+      </div>
+
+      <div class="hero-visual reveal">
+        <div class="system-card">
+          <div class="system-card-head">
+            <h2 data-en="Agent Engineering Roadmap" data-zh="Agent 工程路线图">Agent Engineering Roadmap</h2>
+          </div>
+
+          <div class="system-canvas">
+            <div class="workflow-diagram">
+              <div class="workflow-lane">
+                <article class="workflow-stage">
+                  <div class="workflow-stage-head">
+                    <span>01</span>
+                    <p data-en="DATA" data-zh="数据">DATA</p>
+                  </div>
+                  <h3 class="workflow-mrq">
+                    <span data-en="Which data actually changes behavior?" data-zh="哪些数据能真正改变模型行为？">Which data actually changes behavior?</span>
+                  </h3>
+                  <div class="workflow-anatomy">
+                    <div>
+                      <span class="workflow-category-label" data-en="INPUT" data-zh="输入">INPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Raw corpora" data-zh="原始语料">Raw corpora</span>
+                        <span data-en="Schemas" data-zh="数据结构">Schemas</span>
+                        <span data-en="Metadata" data-zh="元数据">Metadata</span>
+                        <span data-en="Source weights" data-zh="来源权重">Source weights</span>
+                        <span data-en="PII policy" data-zh="隐私策略">PII policy</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="OUTPUT" data-zh="输出">OUTPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Versioned datasets" data-zh="版本化数据集">Versioned datasets</span>
+                        <span data-en="Splits" data-zh="数据切分">Splits</span>
+                        <span data-en="Data cards" data-zh="数据卡">Data cards</span>
+                        <span data-en="Dedup index" data-zh="去重索引">Dedup index</span>
+                        <span data-en="Quality report" data-zh="质量报告">Quality report</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Coverage" data-zh="覆盖率">Coverage</span>
+                        <span data-en="Dedup rate" data-zh="去重率">Dedup rate</span>
+                        <span data-en="Label agreement" data-zh="标注一致性">Label agreement</span>
+                        <span data-en="Leakage" data-zh="数据泄漏">Leakage</span>
+                        <span data-en="Freshness" data-zh="新鲜度">Freshness</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <div class="workflow-label-set workflow-tech-tags">
+                        <span class="workflow-tech-tag">Apache Arrow</span>
+                        <span class="workflow-tech-tag">Parquet</span>
+                        <span class="workflow-tech-tag">Iceberg</span>
+                        <span class="workflow-tech-tag">Spark</span>
+                        <span class="workflow-tech-tag">Ray Data</span>
+                        <span class="workflow-tech-tag">Kafka</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <div class="workflow-connector" aria-hidden="true"><span></span><b>→</b></div>
+
+                <article class="workflow-stage">
+                  <div class="workflow-stage-head">
+                    <span>02</span>
+                    <p data-en="MODEL" data-zh="模型">MODEL</p>
+                  </div>
+                  <h3 class="workflow-mrq">
+                    <span data-en="Which architecture advances capability per unit cost?" data-zh="哪种架构能以更低成本提升能力？">Which architecture advances capability per unit cost?</span>
+                  </h3>
+                  <div class="workflow-anatomy">
+                    <div>
+                      <span class="workflow-category-label" data-en="INPUT" data-zh="输入">INPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Task constraints" data-zh="任务约束">Task constraints</span>
+                        <span data-en="Token budget" data-zh="Token 预算">Token budget</span>
+                        <span data-en="Compute envelope" data-zh="算力边界">Compute envelope</span>
+                        <span data-en="Quality targets" data-zh="质量目标">Quality targets</span>
+                        <span data-en="Latency budget" data-zh="延迟预算">Latency budget</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="OUTPUT" data-zh="输出">OUTPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Candidate architectures" data-zh="候选架构">Candidate architectures</span>
+                        <span data-en="Ablation results" data-zh="消融结果">Ablation results</span>
+                        <span data-en="Scaling curves" data-zh="缩放曲线">Scaling curves</span>
+                        <span data-en="Architecture specs" data-zh="架构规格">Architecture specs</span>
+                        <span data-en="Cost curve" data-zh="成本曲线">Cost curve</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Quality" data-zh="质量">Quality</span>
+                        <span data-en="Compute efficiency" data-zh="计算效率">Compute efficiency</span>
+                        <span data-en="Scaling slope" data-zh="缩放斜率">Scaling slope</span>
+                        <span data-en="Memory footprint" data-zh="显存占用">Memory footprint</span>
+                        <span data-en="Latency" data-zh="延迟">Latency</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <div class="workflow-label-set workflow-tech-tags">
+                        <span class="workflow-tech-tag">PyTorch</span>
+                        <span class="workflow-tech-tag">JAX</span>
+                        <span class="workflow-tech-tag">FlashAttention</span>
+                        <span class="workflow-tech-tag">Transformer</span>
+                        <span class="workflow-tech-tag">MoE</span>
+                        <span class="workflow-tech-tag">Mamba</span>
+                        <span class="workflow-tech-tag">Llama</span>
+                        <span class="workflow-tech-tag">Gemini</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <div class="workflow-connector" aria-hidden="true"><span></span><b>→</b></div>
+
+                <article class="workflow-stage">
+                  <div class="workflow-stage-head">
+                    <span>03</span>
+                    <p data-en="TRAIN" data-zh="训练">TRAINING</p>
+                  </div>
+                  <h3 class="workflow-mrq">
+                    <span data-en="How do we make learning reproducible?" data-zh="如何让学习过程可复现？">How do we make learning reproducible?</span>
+                  </h3>
+                  <div class="workflow-anatomy">
+                    <div>
+                      <span class="workflow-category-label" data-en="INPUT" data-zh="输入">INPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Data mixtures" data-zh="数据配比">Data mixtures</span>
+                        <span data-en="Objectives" data-zh="目标函数">Objectives</span>
+                        <span data-en="Hardware budgets" data-zh="算力预算">Hardware budgets</span>
+                        <span data-en="Curriculum" data-zh="课程设计">Curriculum</span>
+                        <span data-en="Eval checkpoints" data-zh="评测节点">Eval checkpoints</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="OUTPUT" data-zh="输出">OUTPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Checkpoints" data-zh="检查点">Checkpoints</span>
+                        <span data-en="Training logs" data-zh="训练日志">Training logs</span>
+                        <span data-en="Reproducible configs" data-zh="可复现配置">Reproducible configs</span>
+                        <span data-en="Model deltas" data-zh="模型增量">Model deltas</span>
+                        <span data-en="Run reports" data-zh="运行报告">Run reports</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Loss" data-zh="损失">Loss</span>
+                        <span data-en="Throughput" data-zh="吞吐">Throughput</span>
+                        <span data-en="Stability" data-zh="稳定性">Stability</span>
+                        <span data-en="Recovery time" data-zh="恢复时间">Recovery time</span>
+                        <span data-en="Generalization" data-zh="泛化">Generalization</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <div class="workflow-label-set workflow-tech-tags">
+                        <span class="workflow-tech-tag">DeepSpeed</span>
+                        <span class="workflow-tech-tag">FSDP</span>
+                        <span class="workflow-tech-tag">Megatron-LM</span>
+                        <span class="workflow-tech-tag">Ray Train</span>
+                        <span class="workflow-tech-tag">LoRA</span>
+                        <span class="workflow-tech-tag">GRPO</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <div class="workflow-connector" aria-hidden="true"><span></span><b>→</b></div>
+
+                <article class="workflow-stage">
+                  <div class="workflow-stage-head">
+                    <span>04</span>
+                    <p data-en="INFER" data-zh="推理">INFER</p>
+                  </div>
+                  <h3 class="workflow-mrq">
+                    <span data-en="Where does latency actually come from?" data-zh="延迟究竟来自哪里？">Where does latency actually come from?</span>
+                  </h3>
+                  <div class="workflow-anatomy">
+                    <div>
+                      <span class="workflow-category-label" data-en="INPUT" data-zh="输入">INPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Requests" data-zh="请求">Requests</span>
+                        <span data-en="Prompt batches" data-zh="提示批次">Prompt batches</span>
+                        <span data-en="KV state" data-zh="KV 状态">KV state</span>
+                        <span data-en="Sampling policy" data-zh="采样策略">Sampling policy</span>
+                        <span data-en="Concurrency" data-zh="并发">Concurrency</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="OUTPUT" data-zh="输出">OUTPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Tokens" data-zh="Token">Tokens</span>
+                        <span data-en="Cache state" data-zh="缓存状态">Cache state</span>
+                        <span data-en="Timing traces" data-zh="时延轨迹">Timing traces</span>
+                        <span data-en="Error codes" data-zh="错误码">Error codes</span>
+                        <span data-en="Usage stats" data-zh="用量统计">Usage stats</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
+                      <div class="workflow-label-set">
+                        <span>TTFT</span>
+                        <span>TPOT</span>
+                        <span data-en="Throughput" data-zh="吞吐">Throughput</span>
+                        <span data-en="KV hit rate" data-zh="KV 命中率">KV hit rate</span>
+                        <span data-en="Error rate" data-zh="错误率">Error rate</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <div class="workflow-label-set workflow-tech-tags">
+                        <span class="workflow-tech-tag">vLLM</span>
+                        <span class="workflow-tech-tag">TensorRT-LLM</span>
+                        <span class="workflow-tech-tag">SGLang</span>
+                        <span class="workflow-tech-tag">Triton</span>
+                        <span class="workflow-tech-tag">CUDA</span>
+                        <span class="workflow-tech-tag">llama.cpp</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <div class="workflow-connector" aria-hidden="true"><span></span><b>→</b></div>
+
+                <article class="workflow-stage">
+                  <div class="workflow-stage-head">
+                    <span>05</span>
+                    <p data-en="RUNTIME" data-zh="运行时">RUNTIME</p>
+                  </div>
+                  <h3 class="workflow-mrq">
+                    <span data-en="What keeps serving reliable under load?" data-zh="高负载下什么保障服务可靠？">What keeps serving reliable under load?</span>
+                  </h3>
+                  <div class="workflow-anatomy">
+                    <div>
+                      <span class="workflow-category-label" data-en="INPUT" data-zh="输入">INPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Replicas" data-zh="副本">Replicas</span>
+                        <span data-en="Scheduler state" data-zh="调度状态">Scheduler state</span>
+                        <span data-en="Telemetry" data-zh="遥测">Telemetry</span>
+                        <span data-en="Traffic policy" data-zh="流量策略">Traffic policy</span>
+                        <span data-en="Health probes" data-zh="健康探针">Health probes</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="OUTPUT" data-zh="输出">OUTPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Routing decisions" data-zh="路由决策">Routing decisions</span>
+                        <span data-en="Health signals" data-zh="健康信号">Health signals</span>
+                        <span data-en="Scaling events" data-zh="扩缩容事件">Scaling events</span>
+                        <span data-en="Audit logs" data-zh="审计日志">Audit logs</span>
+                        <span data-en="Failover actions" data-zh="故障转移">Failover actions</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Availability" data-zh="可用性">Availability</span>
+                        <span data-en="P99 latency" data-zh="P99 延迟">P99 latency</span>
+                        <span data-en="Utilization" data-zh="利用率">Utilization</span>
+                        <span data-en="Queue depth" data-zh="队列深度">Queue depth</span>
+                        <span data-en="Recovery time" data-zh="恢复时间">Recovery time</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <div class="workflow-label-set workflow-tech-tags">
+                        <span class="workflow-tech-tag">Kubernetes</span>
+                        <span class="workflow-tech-tag">Ray Serve</span>
+                        <span class="workflow-tech-tag">KServe</span>
+                        <span class="workflow-tech-tag">Envoy</span>
+                        <span class="workflow-tech-tag">Prometheus</span>
+                        <span class="workflow-tech-tag">OpenTelemetry</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <div class="workflow-connector" aria-hidden="true"><span></span><b>→</b></div>
+
+                <article class="workflow-stage">
+                  <div class="workflow-stage-head">
+                    <span>06</span>
+                    <p data-en="EVAL" data-zh="评测">EVAL</p>
+                  </div>
+                  <h3 class="workflow-mrq">
+                    <span data-en="What evidence earns trust?" data-zh="哪些证据足以建立信任？">What evidence earns trust?</span>
+                  </h3>
+                  <div class="workflow-anatomy">
+                    <div>
+                      <span class="workflow-category-label" data-en="INPUT" data-zh="输入">INPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Benchmarks" data-zh="基准测试">Benchmarks</span>
+                        <span data-en="Traces" data-zh="轨迹">Traces</span>
+                        <span data-en="Error slices" data-zh="错误切片">Error slices</span>
+                        <span data-en="Human rubrics" data-zh="人工量表">Human rubrics</span>
+                        <span data-en="Adversarial sets" data-zh="对抗测试集">Adversarial sets</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="OUTPUT" data-zh="输出">OUTPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Scores" data-zh="分数">Scores</span>
+                        <span data-en="Failure taxonomy" data-zh="失败分类">Failure taxonomy</span>
+                        <span data-en="Release verdict" data-zh="发布结论">Release verdict</span>
+                        <span data-en="Regression report" data-zh="回归报告">Regression report</span>
+                        <span data-en="Model card" data-zh="模型卡">Model card</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Pass rate" data-zh="通过率">Pass rate</span>
+                        <span data-en="Robustness" data-zh="鲁棒性">Robustness</span>
+                        <span data-en="Regressions" data-zh="回归">Regressions</span>
+                        <span data-en="Calibration" data-zh="校准">Calibration</span>
+                        <span data-en="Cost to evaluate" data-zh="评测成本">Cost to evaluate</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <div class="workflow-label-set workflow-tech-tags">
+                        <span class="workflow-tech-tag">Inspect</span>
+                        <span class="workflow-tech-tag">lm-evaluation-harness</span>
+                        <span class="workflow-tech-tag">HELM</span>
+                        <span class="workflow-tech-tag">Promptfoo</span>
+                        <span class="workflow-tech-tag">DeepEval</span>
+                        <span class="workflow-tech-tag">LangSmith</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="resume-section education-section section-shell" id="education" data-nav-target="#education">
+      <div class="section-heading resume-heading reveal">
+        <div>
+          <span class="section-index">01 / <span data-en="EDUCATION" data-zh="教育">EDUCATION</span></span>
+          <p class="resume-period">2021 — 2027</p>
+        </div>
+        <div class="resume-heading-copy">
+          <h2 data-en="Education: Algorithms + Systems" data-zh="教育：算法 + 系统">Education: Algorithms + Systems</h2>
+          <p data-en="Graduate study in machine learning, with an undergraduate foundation in computer science." data-zh="研究生阶段学习机器学习，本科阶段学习计算机科学基础。">
+            Graduate study in machine learning, with an undergraduate foundation in computer science.
+          </p>
+        </div>
+      </div>
+
+      <div class="resume-entries">
+        <article class="resume-entry reveal">
+          <div class="resume-entry-date">2025 — 2027</div>
+          <div class="resume-entry-main">
+            <div class="resume-entry-org">
+              <span data-en="Hong Kong University of Science and Technology" data-zh="香港科技大学">Hong Kong University of Science and Technology</span>
+              <span data-en="Hong Kong" data-zh="香港">Hong Kong</span>
+            </div>
+            <h3 data-en="Master of Science in Artificial Intelligence" data-zh="人工智能理学硕士">Master of Science in Artificial Intelligence</h3>
+            <div class="resume-meta-tags">
+              <span data-en="School of Engineering" data-zh="工学院">School of Engineering</span>
+            </div>
+            <button class="entry-toggle" type="button" aria-expanded="false"><span data-en="Course details" data-zh="课程详情">Course details</span><b>+</b></button>
+            <div class="resume-detail-grid" hidden>
+              <div>
+                <h4 data-en="ML Algorithms" data-zh="机器学习算法">ML Algorithms</h4>
+                <div class="course-tags">
+                  <span data-en="Machine Learning" data-zh="机器学习">Machine Learning</span>
+                  <span data-en="Deep Learning" data-zh="深度学习">Deep Learning</span>
+                  <span data-en="Reinforcement Learning" data-zh="强化学习">Reinforcement Learning</span>
+                </div>
+              </div>
+              <div>
+                <h4 data-en="ML Applications" data-zh="机器学习应用">ML Applications</h4>
+                <div class="course-tags">
+                  <span data-en="Computer Vision" data-zh="计算机视觉">Computer Vision</span>
+                  <span data-en="Natural Language Processing" data-zh="自然语言处理">Natural Language Processing</span>
+                  <span data-en="Large Language Models" data-zh="大语言模型">Large Language Models</span>
+                </div>
+              </div>
+              <div>
+                <h4 data-en="ML Systems" data-zh="机器学习系统">ML Systems</h4>
+                <div class="course-tags">
+                  <span data-en="Training Systems" data-zh="训练系统">Training Systems</span>
+                  <span data-en="Inference Systems" data-zh="推理系统">Inference Systems</span>
+                </div>
+              </div>
+              <div>
+                <h4 data-en="ML Ethics" data-zh="机器学习伦理">ML Ethics</h4>
+                <div class="course-tags">
+                  <span data-en="Machine Learning Ethics" data-zh="机器学习伦理">Machine Learning Ethics</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="resume-entry reveal">
+          <div class="resume-entry-date">2021 — 2025</div>
+          <div class="resume-entry-main">
+            <div class="resume-entry-org">
+              <span data-en="Beijing Forestry University" data-zh="北京林业大学">Beijing Forestry University</span>
+              <span data-en="Beijing" data-zh="北京">Beijing</span>
+            </div>
+            <h3 data-en="Bachelor of Engineering in Computer Science and Technology" data-zh="计算机科学与技术工学学士">Bachelor of Engineering in Computer Science and Technology</h3>
+            <div class="resume-meta-tags">
+              <span data-en="School of Information Science" data-zh="信息学院">School of Information Science</span>
+              <span data-en="School of Artificial Intelligence" data-zh="人工智能学院">School of Artificial Intelligence</span>
+            </div>
+            <button class="entry-toggle" type="button" aria-expanded="false"><span data-en="Course details" data-zh="课程详情">Course details</span><b>+</b></button>
+            <div class="resume-detail-grid" hidden>
+              <div>
+                <h4 data-en="Mathematics" data-zh="数学">Mathematics</h4>
+                <div class="course-tags">
+                  <span data-en="Calculus" data-zh="微积分">Calculus</span>
+                  <span data-en="Linear Algebra" data-zh="线性代数">Linear Algebra</span>
+                  <span data-en="Probability and Statistics" data-zh="概率论与数理统计">Probability and Statistics</span>
+                  <span data-en="Discrete Mathematics" data-zh="离散数学">Discrete Mathematics</span>
+                </div>
+              </div>
+              <div>
+                <h4 data-en="Programming" data-zh="编程">Programming</h4>
+                <div class="course-tags">
+                  <span data-en="C Programming" data-zh="C 程序设计">C Programming</span>
+                  <span data-en="C++ Programming" data-zh="C++ 程序设计">C++ Programming</span>
+                  <span data-en="Java Programming" data-zh="Java 程序设计">Java Programming</span>
+                  <span data-en="Python Programming" data-zh="Python 程序设计">Python Programming</span>
+                </div>
+              </div>
+              <div>
+                <h4 data-en="Electrical and Computer Engineering" data-zh="电子与计算机工程">Electrical and Computer Engineering</h4>
+                <div class="course-tags">
+                  <span data-en="Analog Circuits" data-zh="模拟电路">Analog Circuits</span>
+                  <span data-en="Digital Circuits" data-zh="数字电路">Digital Circuits</span>
+                </div>
+              </div>
+              <div>
+                <h4 data-en="Computer Science" data-zh="计算机科学">Computer Science</h4>
+                <div class="course-tags">
+                  <span data-en="Data Structures" data-zh="数据结构">Data Structures</span>
+                  <span data-en="Algorithm Design and Analysis" data-zh="算法设计与分析">Algorithm Design and Analysis</span>
+                  <span data-en="Computer Organization" data-zh="计算机组成原理">Computer Organization</span>
+                  <span data-en="Operating Systems" data-zh="操作系统">Operating Systems</span>
+                  <span data-en="Computer Networks" data-zh="计算机网络">Computer Networks</span>
+                  <span data-en="Computer Architecture" data-zh="计算机体系结构">Computer Architecture</span>
+                  <span data-en="Database Systems" data-zh="数据库系统">Database Systems</span>
+                  <span data-en="Compilers" data-zh="编译原理">Compilers</span>
+                  <span data-en="Network Security" data-zh="计算机网络安全">Network Security</span>
+                </div>
+              </div>
+              <div>
+                <h4 data-en="Software Engineering" data-zh="软件工程">Software Engineering</h4>
+                <div class="course-tags">
+                  <span data-en="Software Engineering" data-zh="软件工程">Software Engineering</span>
+                  <span data-en="Web Frontend" data-zh="Web 前端开发">Web Frontend</span>
+                  <span data-en="Java Web Backend" data-zh="Java Web 后端开发">Java Web Backend</span>
+                  <span data-en="Android Development" data-zh="Android 移动开发">Android Development</span>
+                </div>
+              </div>
+              <div>
+                <h4 data-en="Artificial Intelligence" data-zh="人工智能">Artificial Intelligence</h4>
+                <div class="course-tags">
+                  <span data-en="Artificial Intelligence" data-zh="人工智能">Artificial Intelligence</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="resume-section work-experience-section section-shell" id="work" data-nav-target="#work">
+      <div class="section-heading resume-heading reveal">
+        <div>
+          <span class="section-index">02 / <span data-en="WORK EXPERIENCE" data-zh="工作经历">WORK EXPERIENCE</span></span>
+          <p class="resume-period">2026</p>
+        </div>
+        <div class="resume-heading-copy"><h2 data-en="Work: Machine Learning Engineering + Software Engineering" data-zh="工作：模型工程 + 软件工程">Work: Machine Learning Engineering + Software Engineering</h2>
+          <p data-en="Recently worked on post-training, including data curation, model training, evaluation, and reflection. Previously worked on software development, including frontend and backend development." data-zh="最近从事模型后训练工作，包括数据合成、模型训练、评测与反思，之前从事软件开发工作，包括前端、后端开发。">
+            Recently worked on post-training, including data curation, model training, evaluation, and reflection. Previously worked on software development, including frontend and backend development.
+          </p>
+        </div>
+      </div>
+
+      <div class="resume-entries">
+        <article class="resume-entry resume-entry-featured reveal">
+          <div class="resume-entry-date">2026.07 — 2026.10</div>
+          <div class="resume-entry-main">
+            <div class="resume-entry-org">
+              <span data-en="Xiaomi" data-zh="小米">Xiaomi</span>
+              <span data-en="Shanghai" data-zh="上海">Shanghai</span>
+            </div>
+            <h3 data-en="Code Model Algorithm Intern" data-zh="代码模型算法工程师（实习）">Code Model Algorithm Intern</h3>
+            <div class="resume-meta-tags">
+              <span data-en="Chip business" data-zh="芯片业务">Chip business</span>
+              <span data-en="RTL post-training" data-zh="RTL 后训练">RTL post-training</span>
+            </div>
+            <button class="entry-toggle" type="button" aria-expanded="false"><span data-en="Work details" data-zh="工作详情">Work details</span><b>+</b></button>
+            <div class="resume-detail-grid work-detail-grid" hidden>
+              <div>
+                <h4 data-en="Data" data-zh="数据">Data</h4>
+                <p data-en="Defined the dataset schema and quality gates for golden RTL, generated specifications, testbenches, reasoning traces, and filtering labels." data-zh="定义已验证 RTL、生成规范、测试平台、推理轨迹与过滤标签的数据结构及质量门禁。">Defined the dataset schema and quality gates for golden RTL, generated specifications, testbenches, reasoning traces, and filtering labels.</p>
+              </div>
+              <div>
+                <h4 data-en="Experiments" data-zh="实验">Experiments</h4>
+                <p data-en="Built a fast RLVR validation loop on a 7B code model and compared reward shapes, verification strategies, and training horizons." data-zh="在 7B 代码模型上构建快速 RLVR 验证闭环，比较奖励函数、验证策略与训练步数。">Built a fast RLVR validation loop on a 7B code model and compared reward shapes, verification strategies, and training horizons.</p>
+              </div>
+              <div>
+                <h4 data-en="Training Readiness" data-zh="训练准备">Training Readiness</h4>
+                <p data-en="Adapted large-model training, decoupled training from simulation, and validated the pipeline locally before handoff." data-zh="完成大模型训练适配，将训练与仿真环境解耦，并在交付前完成本地验证。">Adapted large-model training, decoupled training from simulation, and validated the pipeline locally before handoff.</p>
+              </div>
+            </div>
+            <a class="resume-case-link" href="#xiaomi">
+              <span data-en="Open the applied ML case study" data-zh="查看应用机器学习案例">Open the applied ML case study</span>
+              <span aria-hidden="true">↘</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="resume-entry reveal">
+          <div class="resume-entry-date">2026.01 — 2026.04</div>
+          <div class="resume-entry-main">
+            <div class="resume-entry-org">
+              <span data-en="Hong Kong Generative AI Research and Development Center" data-zh="香港生成式人工智能研发中心">Hong Kong Generative AI Research and Development Center</span>
+              <span data-en="Hong Kong" data-zh="香港">Hong Kong</span>
+            </div>
+            <h3 data-en="Speech Model Algorithm Intern" data-zh="语音模型算法工程师（实习）">Speech Model Algorithm Intern</h3>
+            <div class="resume-meta-tags">
+              <span data-en="Multilingual ASR" data-zh="多语种 ASR">Multilingual ASR</span>
+              <span data-en="Government meetings" data-zh="政务会议">Government meetings</span>
+              <span>EN · YUE · ZH</span>
+            </div>
+            <button class="entry-toggle" type="button" aria-expanded="false"><span data-en="Work details" data-zh="工作详情">Work details</span><b>+</b></button>
+            <div class="resume-detail-grid work-detail-grid" hidden>
+              <div>
+                <h4 data-en="Data Pipeline" data-zh="数据流程">Data Pipeline</h4>
+                <p data-en="Defined data standards and processing steps, then established a trilingual post-training dataset for speech-language-text alignment." data-zh="制定数据标准与处理流程，建立用于“语音—语言—文字”对齐的三语后训练数据集。">Defined data standards and processing steps, then established a trilingual post-training dataset for speech-language-text alignment.</p>
+              </div>
+              <div>
+                <h4 data-en="Annotation" data-zh="数据标注">Annotation</h4>
+                <p data-en="Built an efficient annotation platform and coordinated annotators to support dataset construction." data-zh="搭建高效标注平台并协调标注人员，支持数据集构建。">Built an efficient annotation platform and coordinated annotators to support dataset construction.</p>
+              </div>
+              <div>
+                <h4 data-en="Post-training" data-zh="后训练">Post-training</h4>
+                <p data-en="Built and evaluated an SFT workflow for a 1.7B ASR model on eight RTX 4090 GPUs, feeding results back into data refinement." data-zh="在 8 张 RTX 4090 上构建并评测 1.7B ASR 模型的 SFT 流程，并将结果反哺数据优化。">Built and evaluated an SFT workflow for a 1.7B ASR model on eight RTX 4090 GPUs, feeding results back into data refinement.</p>
+              </div>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="work-section section-shell" id="projects" data-nav-target="#projects">
+      <div class="section-heading reveal">
+        <span class="section-index">03 / <span data-en="PROJECTS" data-zh="项目">PROJECTS</span></span>
+        <h2 data-en="Projects" data-zh="项目">Projects</h2>
+        <p data-en="Two projects are presented at the same level: an applied post-training workflow from the Xiaomi internship and a multi-GPU inference system." data-zh="以下两个项目采用同等篇幅呈现：来自小米实习的后训练实践，以及一个多 GPU 推理系统。">
+          Two projects are presented at the same level: an applied post-training workflow from the Xiaomi internship and a multi-GPU inference system.
+        </p>
+      </div>
+
+      <div class="work-grid">
+        <article class="work-card reveal">
+          <div class="work-card-head">
+            <span class="work-number">01</span>
+            <span class="work-type" data-en="POST-TRAINING / DATA" data-zh="后训练 / 数据">POST-TRAINING / DATA</span>
+          </div>
+          <div class="work-card-body">
+            <div class="work-kicker">
+              <span data-en="Xiaomi" data-zh="小米">Xiaomi</span>
+              <span>2026</span>
+            </div>
+            <h3 data-en="Verifiable-reward post-training for RTL code generation." data-zh="面向 RTL 代码生成的可验证奖励后训练。">
+              Verifiable-reward post-training for RTL code generation.
+            </h3>
+            <p data-en="Worked across data curation, small-model experiments, verifier hardening, and large-model training readiness for domain-specific RTL generation." data-zh="围绕领域 RTL 生成，负责数据治理、小模型实验、验证器加固与大模型训练准备。">
+              Worked across data curation, small-model experiments, verifier hardening, and large-model training readiness for domain-specific RTL generation.
+            </p>
+            <div class="project-tags" aria-label="Technical themes">
+              <span>RFT</span>
+              <span>RLVR</span>
+              <span>SFT</span>
+              <span>Cocotb</span>
+              <span>UVM</span>
+            </div>
+          </div>
+          <a class="work-link" href="#xiaomi">
+            <span data-en="Read the applied ML case study" data-zh="阅读应用机器学习案例">Read the applied ML case study</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-card-head">
+            <span class="work-number">02</span>
+            <span class="work-type" data-en="SYSTEMS / RESEARCH" data-zh="系统 / 研究">SYSTEMS / RESEARCH</span>
+          </div>
+          <div class="work-card-body">
+            <div class="work-kicker">
+              <span>LMPool</span>
+              <span>2026</span>
+            </div>
+            <h3 data-en="KV-aware routing &amp; NVLink transfer for multi-GPU LLM serving." data-zh="面向多 GPU LLM 服务的 KV 感知路由与 NVLink 传输。">
+              KV-aware routing &amp; NVLink transfer for multi-GPU LLM serving.
+            </h3>
+            <p data-en="A logically coordinated KV pool that uses request load, cache locality, and transfer economics—not a single hit-rate target—to make serving decisions." data-zh="一个逻辑协调的 KV pool：综合请求负载、缓存局部性与传输成本做服务决策，而不是只追求命中率。">
+              A logically coordinated KV pool that uses request load, cache locality, and transfer economics—not a single hit-rate target—to make serving decisions.
+            </p>
+            <div class="project-tags" aria-label="Technical themes">
+              <span data-en="KV Routing" data-zh="KV 感知路由">KV Routing</span>
+              <span>NCCL</span>
+              <span>PagedAttention</span>
+              <span>KV Cache</span>
+            </div>
+            <div class="work-metrics">
+              <div><strong>21.3%</strong><span data-en="max throughput gain" data-zh="最高吞吐提升">max throughput gain</span></div>
+              <div><strong>25.2%</strong><span data-en="max TTFT reduction" data-zh="最高 TTFT 降低">max TTFT reduction</span></div>
+              <div><strong>87</strong><span data-en="KV blocks copied" data-zh="复制 KV blocks">KV blocks copied</span></div>
+            </div>
+          </div>
+          <a class="work-link" href="#lmpool">
+            <span data-en="Read the system case study" data-zh="阅读系统案例">Read the system case study</span>
+            <span aria-hidden="true">↓</span>
+          </a>
+        </article>
+      </div>
+    </section>
+
+    <section class="xiaomi-section" id="xiaomi" data-nav-target="#projects">
+      <div class="xiaomi-shell section-shell">
+        <div class="xiaomi-header reveal">
+          <div>
+            <span class="section-index">03.1 / <span data-en="PROJECT 01" data-zh="项目 01">PROJECT 01</span></span>
+            <p class="project-period" data-en="JUL — OCT 2026" data-zh="2026.07 — 10">JUL — OCT 2026</p>
+          </div>
+          <div class="xiaomi-title">
+            <span class="company-mark">MI</span>
+            <div>
+              <p><span data-en="Xiaomi" data-zh="小米">Xiaomi</span> · <span data-en="Chip business" data-zh="芯片业务">Chip business</span></p>
+              <h2 data-en="RTL post-training and verification workflow" data-zh="面向 RTL 生成的后训练与验证流程">RTL post-training and verification workflow</h2>
+            </div>
+          </div>
+        </div>
+
+        <div class="xiaomi-overview reveal">
+          <p class="xiaomi-lede" data-en="Code-generation models can satisfy a weak verifier while learning the wrong hardware semantics. I worked on the data, experiments, training adaptation, and failure analysis required to make a verifiable-reward loop trustworthy." data-zh="代码生成模型可能满足一个较弱的验证器，却学到错误的硬件语义。我参与数据治理、实验设计、训练适配与失败分析，让可验证奖励闭环真正可信。">
+            Code-generation models can satisfy a weak verifier while learning the wrong hardware semantics. I worked on the data, experiments, training adaptation, and failure analysis required to make a verifiable-reward loop trustworthy.
+          </p>
+          <div class="confidential-note">
+            <span aria-hidden="true">◇</span>
+            <p data-en="Interview-safe summary. Company-confidential code, model outputs, and internal metrics are intentionally omitted." data-zh="公开安全摘要：已在页面中省略公司机密代码、模型输出与内部指标。">
+              Interview-safe summary. Company-confidential code, model outputs, and internal metrics are intentionally omitted.
+            </p>
+          </div>
+        </div>
+
+        <div class="rl-loop reveal">
+          <div class="loop-title">
+            <span class="small-label" data-en="THE LEARNING LOOP" data-zh="训练闭环">THE LEARNING LOOP</span>
+            <h3 data-en="Verification and reward loop" data-zh="验证与奖励闭环">Verification and reward loop</h3>
+          </div>
+          <div class="loop-diagram">
+            <article>
+              <span>01</span>
+              <p data-en="GOLDEN CODE" data-zh="已验证代码">GOLDEN CODE</p>
+              <h4 data-en="Spec + testbench" data-zh="规范与测试平台">Spec + testbench</h4>
+            </article>
+            <div class="loop-arrow" aria-hidden="true">→</div>
+            <article>
+              <span>02</span>
+              <p data-en="GENERATE" data-zh="生成">GENERATE</p>
+              <h4 data-en="Candidate RTL" data-zh="候选 RTL">Candidate RTL</h4>
+            </article>
+            <div class="loop-arrow" aria-hidden="true">→</div>
+            <article class="active">
+              <span>03</span>
+              <p data-en="VERIFY" data-zh="验证">VERIFY</p>
+              <h4 data-en="Compile · simulate · score" data-zh="编译 · 仿真 · 打分">Compile · simulate · score</h4>
+            </article>
+            <div class="loop-arrow" aria-hidden="true">→</div>
+            <article>
+              <span>04</span>
+              <p data-en="UPDATE" data-zh="更新">UPDATE</p>
+              <h4 data-en="Reward-weighted policy" data-zh="奖励加权策略">Reward-weighted policy</h4>
+            </article>
+          </div>
+          <div class="loop-feedback">
+            <span data-en="Data & verifier feedback" data-zh="数据与验证器反馈">Data & verifier feedback</span>
+            <i></i>
+            <span data-en="The loop repeats" data-zh="闭环迭代">The loop repeats</span>
+          </div>
+        </div>
+
+        <div class="xiaomi-work reveal">
+          <article>
+            <span class="card-number">01</span>
+            <h3 data-en="Dataset construction and validation" data-zh="数据集构建与验证">Dataset construction and validation</h3>
+            <p data-en="Defined the post-training schema and quality gates: golden code, generated specifications, executable testbenches, reasoning traces, and filtering labels. Added structural and functional checks so malformed examples could not silently become reward targets." data-zh="定义后训练数据结构与质量门禁：已验证代码、生成规范、可执行测试平台、推理轨迹与过滤标签；加入结构与功能检查，避免异常样本无声地成为奖励目标。">
+              Defined the post-training schema and quality gates: golden code, generated specifications, executable testbenches, reasoning traces, and filtering labels. Added structural and functional checks so malformed examples could not silently become reward targets.
+            </p>
+          </article>
+          <article>
+            <span class="card-number">02</span>
+            <h3 data-en="Small-model RLVR experiments" data-zh="小模型 RLVR 实验">Small-model RLVR experiments</h3>
+            <p data-en="Built a fast RLVR validation loop on a 7B code model, compared reward shapes and training horizons, and connected out-of-domain regressions to concrete reward-hacking patterns." data-zh="在 7B 代码模型上构建快速 RLVR 验证闭环，比较奖励函数与训练步数，并把域外性能回退与具体的奖励攻击模式关联起来。">
+              Built a fast RLVR validation loop on a 7B code model, compared reward shapes and training horizons, and connected out-of-domain regressions to concrete reward-hacking patterns.
+            </p>
+          </article>
+          <article>
+            <span class="card-number">03</span>
+            <h3 data-en="Training environment preparation" data-zh="训练环境准备">Training environment preparation</h3>
+            <p data-en="Adapted the training pipeline for the target large model, decoupled GPU training from the simulation environment, and validated the handoff locally before delivery." data-zh="为目标大模型适配训练框架，将 GPU 训练与仿真环境解耦，并在交付前完成本地 smoke test 验证。">
+              Adapted the training pipeline for the target large model, decoupled GPU training from the simulation environment, and validated the handoff locally before delivery.
+            </p>
+          </article>
+        </div>
+
+        <div class="xiaomi-evidence reveal">
+          <div class="xiaomi-evidence-heading">
+            <span class="small-label" data-en="SOURCE MATERIAL / SELECTED FIGURES" data-zh="工作材料 / 图表节选">SOURCE MATERIAL / SELECTED FIGURES</span>
+            <h3 data-en="Redrawn from the internship work documents" data-zh="根据实习工作文档重绘">Redrawn from the internship work documents</h3>
+            <p data-en="The dataset and reward figures below are re-drawn from Data.pdf and RL.pdf, with wording and layout adapted for this page." data-zh="以下数据与奖励图根据 Data.pdf 和 RL.pdf 重绘，并根据网页阅读调整了文字与布局。">The dataset and reward figures below are re-drawn from Data.pdf and RL.pdf, with wording and layout adapted for this page.</p>
+          </div>
+          <div class="xiaomi-figure-grid">
+            <figure class="redrawn-figure redrawn-figure-wide">
+              <div class="redrawn-figure-head">
+                <span data-en="FIGURE 01 / DATA" data-zh="图 01 / 数据">FIGURE 01 / DATA</span>
+                <span>Data.pdf</span>
+              </div>
+              <h4 data-en="Dataset construction" data-zh="数据集构建">Dataset construction</h4>
+              <div class="dataset-diagram">
+                <div class="dataset-source">
+                  <span data-en="SOURCE" data-zh="数据源">SOURCE</span>
+                  <strong data-en="Verified RTL corpus" data-zh="已验证 RTL 代码库">Verified RTL corpus</strong>
+                </div>
+                <div class="dataset-split-connector" aria-hidden="true">
+                  <span class="split-stem"></span>
+                  <span class="split-crossbar"></span>
+                  <span class="split-left"></span>
+                  <span class="split-right"></span>
+                </div>
+                <div class="dataset-branches">
+                  <div class="dataset-branch">
+                    <div class="dataset-branch-label"><strong>RFT</strong><span data-en="filtered teacher traces" data-zh="过滤后的教师轨迹">filtered teacher traces</span></div>
+                    <div class="dataset-flow">
+                      <div class="diagram-node"><span>01</span><strong>Spec</strong><small data-en="generated from RTL" data-zh="由 RTL 反向生成">generated from RTL</small></div>
+                      <i class="diagram-arrow" aria-hidden="true">→</i>
+                      <div class="diagram-node"><span>02</span><strong>CoT + RTL</strong><small data-en="teacher outputs, filtered" data-zh="教师输出并过滤">teacher outputs, filtered</small></div>
+                      <i class="diagram-arrow" aria-hidden="true">→</i>
+                      <div class="diagram-node accent"><span>03</span><strong>RFT data</strong><small data-en="imitation training set" data-zh="模仿训练集">imitation training set</small></div>
+                    </div>
+                  </div>
+                  <div class="dataset-branch">
+                    <div class="dataset-branch-label"><strong>RLVR</strong><span data-en="executable verification" data-zh="可执行验证">executable verification</span></div>
+                    <div class="dataset-flow">
+                      <div class="diagram-node"><span>01</span><strong>Testbench</strong><small data-en="generated from RTL" data-zh="由 RTL 正向生成">generated from RTL</small></div>
+                      <i class="diagram-arrow" aria-hidden="true">→</i>
+                      <div class="diagram-node"><span>02</span><strong>Self-equiv.</strong><small data-en="functional check" data-zh="功能等价检查">functional check</small></div>
+                      <i class="diagram-arrow" aria-hidden="true">→</i>
+                      <div class="diagram-node accent"><span>03</span><strong>RLVR data</strong><small data-en="Spec + RTL + TB" data-zh="规范 + RTL + 测试平台">Spec + RTL + TB</small></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="dataset-merge-connector" aria-hidden="true">
+                  <span class="merge-crossbar"></span>
+                  <span class="merge-left"></span>
+                  <span class="merge-right"></span>
+                  <span class="merge-stem"></span>
+                  <b>↓</b>
+                </div>
+                <div class="dataset-output">
+                  <span data-en="VERSIONED OUTPUT" data-zh="版本化输出">VERSIONED OUTPUT</span>
+                  <strong data-en="Checked training dataset" data-zh="已校验训练数据集">Checked training dataset</strong>
+                </div>
+              </div>
+              <figcaption>
+                <span data-en="MY CONTRIBUTION" data-zh="我的工作">MY CONTRIBUTION</span>
+                <p data-en="Schema design, bilateral port alignment, self-equivalence filtering, and V2 quality fixes." data-zh="数据结构设计、双边端口对齐、自等价过滤与 V2 数据质量修复。">Schema design, bilateral port alignment, self-equivalence filtering, and V2 quality fixes.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="redrawn-figure">
+              <div class="redrawn-figure-head">
+                <span data-en="FIGURE 02 / TRAINING" data-zh="图 02 / 训练">FIGURE 02 / TRAINING</span>
+                <span>Data.pdf</span>
+              </div>
+              <h4 data-en="RFT and RLVR paths" data-zh="RFT 与 RLVR 训练路径">RFT and RLVR paths</h4>
+              <div class="training-mode-diagram">
+                <article class="training-mode">
+                  <span class="mode-label">RFT</span>
+                  <div class="mode-step"><b>01</b><span data-en="Spec + filtered traces" data-zh="规范 + 过滤轨迹">Spec + filtered traces</span></div>
+                  <i aria-hidden="true">↓</i>
+                  <div class="mode-step"><b>02</b><span data-en="Student generates CoT / RTL" data-zh="学生模型生成 CoT / RTL">Student generates CoT / RTL</span></div>
+                  <i aria-hidden="true">↓</i>
+                  <div class="mode-step"><b>03</b><span data-en="Supervised token loss" data-zh="Token 级监督损失">Supervised token loss</span></div>
+                </article>
+                <article class="training-mode accent">
+                  <span class="mode-label">RLVR</span>
+                  <div class="mode-step"><b>01</b><span data-en="Spec + RTL + testbench" data-zh="规范 + RTL + 测试平台">Spec + RTL + testbench</span></div>
+                  <i aria-hidden="true">↓</i>
+                  <div class="mode-step"><b>02</b><span data-en="Generate and execute RTL" data-zh="生成并执行 RTL">Generate and execute RTL</span></div>
+                  <i aria-hidden="true">↓</i>
+                  <div class="mode-step"><b>03</b><span data-en="Verifiable reward update" data-zh="可验证奖励更新">Verifiable reward update</span></div>
+                </article>
+              </div>
+              <figcaption>
+                <span data-en="MY CONTRIBUTION" data-zh="我的工作">MY CONTRIBUTION</span>
+                <p data-en="Built both training paths, compared reward functions, and fed evaluation failures back into data filtering." data-zh="构建两条训练路径，比较奖励函数，并将评测失败样本回流到数据过滤。">Built both training paths, compared reward functions, and fed evaluation failures back into data filtering.</p>
+              </figcaption>
+            </figure>
+
+            <figure class="redrawn-figure">
+              <div class="redrawn-figure-head">
+                <span data-en="FIGURE 03 / EVALUATION" data-zh="图 03 / 评测">FIGURE 03 / EVALUATION</span>
+                <span>RL.pdf</span>
+              </div>
+              <h4 data-en="Reward comparison at step 420" data-zh="第 420 步奖励对比">Reward comparison at step 420</h4>
+              <div class="reward-chart" role="img" aria-label="At step 420, linear reward reaches 0.4172 smoothed validation score versus 0.2483 for binary reward">
+                <div class="reward-chart-meta">
+                  <span>Qwen2.5-Coder-7B</span>
+                  <span data-en="Smoothed validation score" data-zh="平滑后验证得分">Smoothed validation score</span>
+                </div>
+                <div class="reward-bar-row">
+                  <span data-en="Binary" data-zh="二值奖励">Binary</span>
+                  <div class="reward-bar-track"><i style="--bar-width: 59.5%"></i></div>
+                  <strong>0.2483</strong>
+                </div>
+                <div class="reward-bar-row accent">
+                  <span data-en="Linear" data-zh="线性奖励">Linear</span>
+                  <div class="reward-bar-track"><i style="--bar-width: 100%"></i></div>
+                  <strong>0.4172</strong>
+                </div>
+                <div class="reward-chart-facts">
+                  <div><span data-en="Raw value" data-zh="原始值">Raw value</span><strong>0.3136 → 0.4045</strong></div>
+                  <div><span data-en="Run time" data-zh="运行时间">Run time</span><strong>18.18h → 12.71h</strong></div>
+                </div>
+                <p class="reward-caveat" data-en="Reward score is not task accuracy. This comparison was used to inspect score inflation and out-of-domain behavior." data-zh="奖励得分不等于任务准确率。该对比用于检查分数膨胀与域外表现。">Reward score is not task accuracy. This comparison was used to inspect score inflation and out-of-domain behavior.</p>
+              </div>
+              <figcaption>
+                <span data-en="MY CONTRIBUTION" data-zh="我的工作">MY CONTRIBUTION</span>
+                <p data-en="Ran the 7B comparison, analyzed reward curves, and identified the gap between reward improvement and downstream correctness." data-zh="完成 7B 模型对比，分析奖励曲线，并定位奖励提升与下游正确率之间的偏差。">Ran the 7B comparison, analyzed reward curves, and identified the gap between reward improvement and downstream correctness.</p>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <div class="xiaomi-learning reveal">
+          <div class="learning-graph">
+            <span class="small-label" data-en="GENERALIZATION TREND" data-zh="泛化趋势">GENERALIZATION TREND</span>
+            <div class="trend-chart" aria-label="Qualitative trend: in-domain performance rises with training steps, while out-of-domain performance peaks early and then falls.">
+              <div class="trend-y"><span data-en="score" data-zh="得分">score</span></div>
+              <svg viewBox="0 0 600 270" role="img" aria-hidden="true">
+                <defs>
+                  <linearGradient id="trendFill" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0" stop-color="#7bbcff" stop-opacity=".28"/>
+                    <stop offset="1" stop-color="#7bbcff" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+                <g class="chart-grid">
+                  <line x1="30" y1="30" x2="570" y2="30"/>
+                  <line x1="30" y1="100" x2="570" y2="100"/>
+                  <line x1="30" y1="170" x2="570" y2="170"/>
+                  <line x1="30" y1="240" x2="570" y2="240"/>
+                </g>
+                <path class="trend-fill" d="M55 198 C140 150, 220 73, 310 58 C390 48, 460 37, 555 24 L555 240 L55 240 Z" fill="url(#trendFill)"/>
+                <path class="trend-in" d="M55 198 C140 150, 220 73, 310 58 C390 48, 460 37, 555 24"/>
+                <path class="trend-out" d="M55 198 C145 127, 230 105, 310 126 C405 152, 470 214, 555 227"/>
+                <circle cx="310" cy="126" r="7" class="trend-point"/>
+                <g class="chart-labels">
+                  <text x="55" y="264">100 steps</text>
+                  <text x="295" y="264">200 steps</text>
+                  <text x="532" y="264">1000 steps</text>
+                </g>
+              </svg>
+              <div class="trend-legend">
+                <span><i class="in-domain"></i><span data-en="In-domain" data-zh="域内">In-domain</span></span>
+                <span><i class="out-domain"></i><span data-en="Out-of-domain" data-zh="域外">Out-of-domain</span></span>
+              </div>
+            </div>
+            <p class="chart-note" data-en="Illustrative trend from the experiment. The key signal was early out-of-domain degradation while in-domain scores continued to rise." data-zh="根据实验结论绘制的示意趋势：域内分数继续提升时，域外表现已经出现早期回退。">
+              Illustrative trend from the experiment. The key signal was early out-of-domain degradation while in-domain scores continued to rise.
+            </p>
+          </div>
+          <div class="learning-copy">
+            <span class="small-label" data-en="FINDINGS" data-zh="实验结论">FINDINGS</span>
+            <blockquote data-en="Training reward increased before out-of-domain performance declined. Validation coverage, external checks, and failure inspection therefore need to be evaluated alongside the reward." data-zh="训练奖励先上升，域外表现随后下降。因此，需要同时评估验证覆盖、域外检查与失败案例，而不能只看奖励。">
+              Training reward increased before out-of-domain performance declined. Validation coverage, external checks, and failure inspection therefore need to be evaluated alongside the reward.
+            </blockquote>
+            <ul>
+              <li data-en="Design rewards around semantics, not tool loopholes." data-zh="围绕语义设计奖励，而不是围绕工具漏洞。">Design rewards around semantics, not tool loopholes.</li>
+              <li data-en="Profile generalization across training time, not only at the final step." data-zh="跨训练步数观察泛化，而不只看最终 checkpoint。">Profile generalization across training time, not only at the final step.</li>
+              <li data-en="Treat data verification and training infrastructure as one system." data-zh="把数据验证与训练基础设施当作一个整体系统。">Treat data verification and training infrastructure as one system.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="project-section section-shell" id="lmpool" data-nav-target="#projects">
+      <div class="project-intro reveal">
+        <div>
+          <span class="section-index">03.2 / <span data-en="PROJECT 02" data-zh="项目 02">PROJECT 02</span></span>
+          <p class="project-period" data-en="APR — JUL 2026" data-zh="2026.04 — 07">APR — JUL 2026</p>
+        </div>
+        <div class="project-title-wrap">
+          <h2>LMPool</h2>
+          <p data-en="Multi-GPU LLM serving, engineered around cache locality." data-zh="围绕缓存局部性设计的多 GPU LLM 服务系统。">
+            Multi-GPU LLM serving, engineered around cache locality.
+          </p>
+          <div class="project-role">
+            <span data-en="MY SCOPE" data-zh="负责范围">MY SCOPE</span>
+            <div class="project-role-tags">
+              <span data-en="Architecture" data-zh="系统架构">Architecture</span>
+              <span data-en="Global and local scheduling" data-zh="全局与本地调度">Global and local scheduling</span>
+              <span data-en="Transactional KV transfer" data-zh="事务式 KV 传输">Transactional KV transfer</span>
+              <span data-en="Benchmark design" data-zh="评测设计">Benchmark design</span>
+              <span data-en="Correctness tests" data-zh="正确性测试">Correctness tests</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-thesis reveal">
+        <p class="small-label" data-en="THE CENTRAL TENSION" data-zh="核心矛盾">THE CENTRAL TENSION</p>
+        <div class="thesis-grid">
+          <article>
+            <span>01</span>
+            <h3 data-en="Routing does not account for cached prefixes." data-zh="普通路由没有利用已缓存的 Prefix。">Routing does not account for cached prefixes.</h3>
+            <p data-en="Requests wait behind repeated prefill work even when a reusable KV prefix already exists elsewhere." data-zh="即使其他 GPU 已经持有可复用的 KV prefix，请求仍会重复做 prefill。">
+              Requests wait behind repeated prefill work even when a reusable KV prefix already exists elsewhere.
+            </p>
+          </article>
+          <article>
+            <span>02</span>
+            <h3 data-en="Routing only to the owner creates load imbalance." data-zh="只路由到缓存持有者会造成负载不均。">Routing only to the owner creates load imbalance.</h3>
+            <p data-en="A high cache hit rate is not useful if the selected GPU is overloaded and its queue keeps growing." data-zh="如果目标 GPU 已经过载、队列持续增长，高缓存命中率也无法转化为有效吞吐。">
+              A high cache hit rate is not useful if the selected GPU is overloaded and its queue keeps growing.
+            </p>
+          </article>
+          <article class="thesis-solution">
+            <span>03</span>
+            <h3 data-en="Routing uses projected cost; transfer requires a measured benefit." data-zh="路由使用预估成本，迁移前提是实测收益覆盖成本。">Routing uses projected cost; transfer requires a measured benefit.</h3>
+            <p data-en="LMPool combines missing prefill, queue work, reclaim pressure, and capacity feasibility to choose where a request should run." data-zh="LMPool 综合缺失 prefill、排队工作、回收压力与容量可行性，决定请求应在哪里执行。">
+              LMPool combines missing prefill, queue work, reclaim pressure, and capacity feasibility to choose where a request should run.
+            </p>
+          </article>
+        </div>
+      </div>
+
+      <div class="architecture-panel reveal">
+        <div class="panel-topline">
+          <div>
+            <span class="small-label" data-en="SYSTEM ARCHITECTURE" data-zh="系统架构">SYSTEM ARCHITECTURE</span>
+            <h3 data-en="Runtime components and data flow" data-zh="运行时组件与数据流">Runtime components and data flow</h3>
+          </div>
+          <button class="text-button lightbox-trigger" type="button" data-lightbox-src="assets/lmpool/architecture.png" data-lightbox-alt="LMPool system architecture diagram">
+            <span data-en="View full diagram" data-zh="查看完整架构图">View full diagram</span>
+            <span aria-hidden="true">↗</span>
+          </button>
+        </div>
+
+        <div class="architecture-map">
+          <div class="arch-column arch-main">
+            <span class="arch-label" data-en="MAIN PROCESS" data-zh="主进程">MAIN PROCESS</span>
+            <div class="arch-node hero-node">
+              <strong>LLMEngine</strong>
+              <span data-en="ingress · dispatch · results" data-zh="入口 · 分发 · 结果">ingress · dispatch · results</span>
+            </div>
+          </div>
+
+          <div class="arch-arrow" aria-hidden="true"><span></span><i></i></div>
+
+          <div class="arch-column arch-control">
+            <span class="arch-label" data-en="CONTROL PLANE" data-zh="控制面">CONTROL PLANE</span>
+            <div class="arch-pair">
+              <div class="arch-node">
+                <strong>Global Scheduler</strong>
+                <span data-en="route + admit transfer" data-zh="路由 + 传输准入">route + admit transfer</span>
+              </div>
+              <div class="arch-node">
+                <strong>Global Block Manager</strong>
+                <span data-en="versioned page table" data-zh="版本化页表">versioned page table</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="arch-arrow split" aria-hidden="true"><span></span><i></i><b></b></div>
+
+          <div class="arch-column arch-workers">
+            <span class="arch-label" data-en="DATA PLANE" data-zh="数据面">DATA PLANE</span>
+            <div class="worker-row">
+              <div class="worker-card">
+                <span>GPU 00</span>
+                <strong data-en="Local scheduler" data-zh="本地调度器">Local scheduler</strong>
+                <i></i>
+                <small>KV cache</small>
+              </div>
+              <div class="worker-card">
+                <span>GPU 01</span>
+                <strong data-en="Local scheduler" data-zh="本地调度器">Local scheduler</strong>
+                <i></i>
+                <small>KV cache</small>
+              </div>
+              <div class="worker-card">
+                <span>GPU 02</span>
+                <strong data-en="Local scheduler" data-zh="本地调度器">Local scheduler</strong>
+                <i></i>
+                <small>KV cache</small>
+              </div>
+              <div class="worker-card">
+                <span>GPU 0N</span>
+                <strong data-en="Local scheduler" data-zh="本地调度器">Local scheduler</strong>
+                <i></i>
+                <small>KV cache</small>
+              </div>
+            </div>
+            <div class="nvlink-rail"><span>NVLink</span><span>NVLink</span><span>NVLink</span></div>
+          </div>
+        </div>
+
+        <div class="architecture-note">
+          <span class="note-marker" data-en="DESIGN RULE" data-zh="设计原则">DESIGN RULE</span>
+          <p data-en="Metadata crosses the control plane. KV tensors travel directly between paired model runners over NCCL/NVLink. Destination blocks stay invisible until publication." data-zh="元数据通过控制面传递；KV tensor 通过 NCCL/NVLink 在配对 Model Runner 之间直接传输；目标 block 在发布前始终不可见。">
+            Metadata crosses the control plane. KV tensors travel directly between paired model runners over NCCL/NVLink. Destination blocks stay invisible until publication.
+          </p>
+        </div>
+      </div>
+
+      <div class="engineering-grid reveal">
+        <article class="engineering-card">
+          <span class="card-number">A</span>
+          <p class="small-label" data-en="DECISION MODEL" data-zh="决策模型">DECISION MODEL</p>
+          <h3 data-en="Routing cost inputs" data-zh="路由成本项">Routing cost inputs</h3>
+          <p data-en="Contiguous prefix reuse lowers missing prefill work, but queue state, decode work, reclaim pressure, and free capacity can still make another GPU the cheaper choice." data-zh="连续 prefix 复用能降低缺失 prefill，但队列状态、decode 工作、回收压力与空闲容量仍可能让另一块 GPU 成为更优选择。">
+            Contiguous prefix reuse lowers missing prefill work, but queue state, decode work, reclaim pressure, and free capacity can still make another GPU the cheaper choice.
+          </p>
+          <div class="formula" aria-label="Routing tradeoff">
+            <span>missing prefill</span>
+            <b>+</b>
+            <span>queue work</span>
+            <b>+</b>
+            <span>reclaim</span>
+            <b>−</b>
+            <span>locality</span>
+          </div>
+        </article>
+
+        <article class="engineering-card card-dark">
+          <span class="card-number">B</span>
+          <p class="small-label" data-en="CORRECTNESS" data-zh="正确性">CORRECTNESS</p>
+          <h3 data-en="Transactional KV transfer" data-zh="事务式 KV 传输">Transactional KV transfer</h3>
+          <p data-en="Prepare reserves destination blocks and locks source generation. Execute sends one packed tensor. Publish makes blocks visible. Finalize releases source blocks only for move semantics." data-zh="Prepare 预留目标 block 并锁定源 generation；Execute 发送一个打包 tensor；Publish 使 block 可见；Finalize 仅在 move 语义下释放源 block。">
+            Prepare reserves destination blocks and locks source generation. Execute sends one packed tensor. Publish makes blocks visible. Finalize releases source blocks only for move semantics.
+          </p>
+          <div class="transaction-flow" aria-label="Transfer transaction phases">
+            <span>PREPARE</span><i></i><span>EXECUTE</span><i></i><span>PUBLISH</span><i></i><span>FINALIZE</span>
+          </div>
+        </article>
+
+        <article class="engineering-card">
+          <span class="card-number">C</span>
+          <p class="small-label" data-en="EVALUATION" data-zh="评测">EVALUATION</p>
+          <h3 data-en="Evaluation setup" data-zh="评测设计">Evaluation setup</h3>
+          <p data-en="The suite separates routing-only gains, background copy under load skew, and move-style capacity release under memory skew. Byte-level KV correctness and transfer profiles are validated independently." data-zh="评测区分纯路由收益、负载倾斜下的后台复制，以及显存倾斜下的 move 容量释放；KV 字节级正确性与传输 profile 独立验证。">
+            The suite separates routing-only gains, background copy under load skew, and move-style capacity release under memory skew. Byte-level KV correctness and transfer profiles are validated independently.
+          </p>
+          <div class="evaluation-tags">
+            <span data-en="Routing sweep" data-zh="路由扫描">Routing sweep</span>
+            <span data-en="Load skew" data-zh="负载倾斜">Load skew</span>
+            <span data-en="Memory skew" data-zh="显存倾斜">Memory skew</span>
+            <span data-en="Byte correctness" data-zh="字节级正确性">Byte correctness</span>
+          </div>
+        </article>
+      </div>
+
+      <div class="results-panel reveal">
+        <div class="results-copy">
+          <span class="small-label" data-en="MEASURED RESULT / 5× PREFIX" data-zh="实测结果 / 5× PREFIX">MEASURED RESULT / 5× PREFIX</span>
+          <h3 data-en="Measured results at 5× prefix length" data-zh="5× 共享前缀下的实测结果">Measured results at 5× prefix length</h3>
+          <p data-en="Relative to round-robin routing on six RTX 3090 GPUs, using five repeated runs and two Qwen3 model sizes." data-zh="在 6 张 RTX 3090 上对两个 Qwen3 模型各重复 5 次，相对于 round-robin 路由的结果。">
+            Relative to round-robin routing on six RTX 3090 GPUs, using five repeated runs and two Qwen3 model sizes.
+          </p>
+
+          <div class="model-switcher" role="group" aria-label="Model size">
+            <button type="button" aria-pressed="false" data-model="small">Qwen3-0.6B</button>
+            <button type="button" aria-pressed="true" data-model="large">Qwen3-1.7B</button>
+          </div>
+
+          <a class="evidence-link lightbox-trigger" href="assets/lmpool/routing-sweep.png" data-lightbox-src="assets/lmpool/routing-sweep.png" data-lightbox-alt="LMPool routing results across model sizes and prefix lengths">
+            <span data-en="Inspect the full routing figure" data-zh="查看完整路由评测图">Inspect the full routing figure</span>
+            <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+
+        <div class="results-visual" aria-live="polite" aria-atomic="true">
+          <div class="result-metric">
+            <div class="metric-heading">
+              <span data-en="THROUGHPUT" data-zh="吞吐">THROUGHPUT</span>
+              <strong data-result-throughput>+21.3%</strong>
+            </div>
+            <div class="bar-comparison">
+              <div class="bar-row">
+                <span data-en="Round robin" data-zh="轮询路由">Round robin</span>
+                <div class="bar-track"><i class="bar-baseline" data-result-throughput-base></i></div>
+                <em data-result-throughput-value>38.2</em>
+              </div>
+              <div class="bar-row highlighted">
+                <span>LMPool</span>
+                <div class="bar-track"><i class="bar-accent" data-result-throughput-lmpool></i></div>
+                <em data-result-throughput-lmpool-value>46.4</em>
+              </div>
+            </div>
+            <small data-en="Output throughput · tok/s" data-zh="输出吞吐 · tok/s">Output throughput · tok/s</small>
+          </div>
+
+          <div class="result-metric">
+            <div class="metric-heading">
+              <span data-en="MEAN TTFT" data-zh="平均 TTFT">MEAN TTFT</span>
+              <strong class="lime-text" data-result-ttft>−25.2%</strong>
+            </div>
+            <div class="bar-comparison">
+              <div class="bar-row">
+                <span data-en="Round robin" data-zh="轮询路由">Round robin</span>
+                <div class="bar-track"><i class="bar-baseline" data-result-ttft-base></i></div>
+                <em data-result-ttft-value>691</em>
+              </div>
+              <div class="bar-row highlighted">
+                <span>LMPool</span>
+                <div class="bar-track"><i class="bar-lime" data-result-ttft-lmpool></i></div>
+                <em data-result-ttft-lmpool-value>517</em>
+              </div>
+            </div>
+            <small data-en="Mean first-token time · ms" data-zh="平均首 Token 时间 · ms">Mean first-token time · ms</small>
+          </div>
+
+          <div class="result-footnote">
+            <span data-en="Uncached prefill" data-zh="未缓存 prefill">Uncached prefill</span>
+            <strong>−~60%</strong>
+          </div>
+        </div>
+      </div>
+
+      <div class="mechanism-strip reveal">
+        <div>
+          <span class="small-label" data-en="LOAD SKEW" data-zh="负载倾斜">LOAD SKEW</span>
+          <strong data-en="3 placements / 87 blocks" data-zh="3 次放置 / 87 个 block">3 placements / 87 blocks</strong>
+          <p data-en="Background copy completed three placements and leased placement reuse for 95 later requests." data-zh="后台复制完成 3 次放置，并通过 placement lease 服务 95 个后续请求。">
+            Background copy completed three placements and leased placement reuse for 95 later requests.
+          </p>
+        </div>
+        <div>
+          <span class="small-label" data-en="MEMORY SKEW" data-zh="显存倾斜">MEMORY SKEW</span>
+          <strong data-en="35 source blocks" data-zh="35 个源端 block">35 source blocks</strong>
+          <p data-en="Move-style transfer safely released source capacity on the 0.6B model." data-zh="在 0.6B 模型上，move 语义的安全释放了源端容量。">
+            Move-style transfer safely released source capacity on the 0.6B model.
+          </p>
+        </div>
+        <div class="mechanism-links">
+          <button class="vertical-link lightbox-trigger" type="button" data-lightbox-src="assets/lmpool/skew-results.png" data-lightbox-alt="LMPool load skew and memory skew benchmark results">
+            <span data-en="Skew results" data-zh="倾斜负载结果">Skew results</span><b>↗</b>
+          </button>
+          <button class="vertical-link lightbox-trigger" type="button" data-lightbox-src="assets/lmpool/transfer-profile.png" data-lightbox-alt="LMPool NVLink transfer bandwidth profile">
+            <span data-en="NVLink profile" data-zh="NVLink profile">NVLink profile</span><b>↗</b>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="skills-section section-shell" id="skills" data-nav-target="#skills">
+      <div class="section-heading reveal">
+        <span class="section-index">04 / <span data-en="TECH STACK" data-zh="技术栈">TECH STACK</span></span>
+        <h2 data-en="Tech Stack" data-zh="技术栈">Tech Stack</h2>
+        <p data-en="Six layers of the agent engineering stack, grounded by the languages and tools used to build them." data-zh="覆盖 Agent 工程的六个层次，并以实际使用的语言与工具作为实现基础。">
+          Six layers of the agent engineering stack, grounded by the languages and tools used to build them.
+        </p>
+      </div>
+
+      <div class="skills-layout">
+        <div class="skills-taxonomy reveal">
+          <article class="skill-category">
+            <span>01</span>
+            <div>
+              <h3 data-en="Data" data-zh="数据">Data</h3>
+              <div class="skill-category-tags">
+                <span>Apache Arrow</span>
+                <span>Parquet</span>
+                <span>Iceberg</span>
+                <span>Spark</span>
+                <span>Ray Data</span>
+                <span>Kafka</span>
+              </div>
+            </div>
+          </article>
+          <article class="skill-category">
+            <span>02</span>
+            <div>
+              <h3 data-en="Models" data-zh="模型">Models</h3>
+              <div class="skill-category-tags">
+                <span>PyTorch</span>
+                <span>JAX</span>
+                <span>FlashAttention</span>
+                <span>Transformer</span>
+                <span>MoE</span>
+                <span>Mamba</span>
+                <span>Llama</span>
+                <span>Gemini</span>
+              </div>
+            </div>
+          </article>
+          <article class="skill-category">
+            <span>03</span>
+            <div>
+              <h3 data-en="Training" data-zh="训练">Training</h3>
+              <div class="skill-category-tags">
+                <span>DeepSpeed</span>
+                <span>FSDP</span>
+                <span>Megatron-LM</span>
+                <span>Ray Train</span>
+                <span>LoRA</span>
+                <span>GRPO</span>
+              </div>
+            </div>
+          </article>
+          <article class="skill-category">
+            <span>04</span>
+            <div>
+              <h3 data-en="Inference" data-zh="推理">Inference</h3>
+              <div class="skill-category-tags">
+                <span>vLLM</span>
+                <span>TensorRT-LLM</span>
+                <span>SGLang</span>
+                <span>Triton</span>
+                <span>CUDA</span>
+                <span>llama.cpp</span>
+              </div>
+            </div>
+          </article>
+          <article class="skill-category">
+            <span>05</span>
+            <div>
+              <h3 data-en="Runtime" data-zh="运行时">Runtime</h3>
+              <div class="skill-category-tags">
+                <span>Kubernetes</span>
+                <span>Ray Serve</span>
+                <span>KServe</span>
+                <span>Envoy</span>
+                <span>Prometheus</span>
+                <span>OpenTelemetry</span>
+              </div>
+            </div>
+          </article>
+          <article class="skill-category">
+            <span>06</span>
+            <div>
+              <h3 data-en="Eval" data-zh="评测">Eval</h3>
+              <div class="skill-category-tags">
+                <span>Inspect</span>
+                <span>lm-evaluation-harness</span>
+                <span>HELM</span>
+                <span>Promptfoo</span>
+                <span>DeepEval</span>
+                <span>LangSmith</span>
+              </div>
+            </div>
+          </article>
+          <article class="skill-category">
+            <span>07</span>
+            <div>
+              <h3 data-en="Languages &amp; Tools" data-zh="语言与工具">Languages &amp; Tools</h3>
+              <div class="skill-category-tags">
+                <span>Python</span>
+                <span>C / C++</span>
+                <span>Java</span>
+                <span>SQL</span>
+                <span>LangGraph</span>
+                <span>Codex</span>
+                <span>Claude Code</span>
+                <span>Git</span>
+                <span>Linux</span>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contact">
+      <div class="contact-shell section-shell">
+        <div class="contact-top reveal">
+          <span class="section-index">05 / <span data-en="CONTACT" data-zh="联系方式">CONTACT</span></span>
+        </div>
+        <div class="contact-main reveal">
+          <h2 data-en="Contact" data-zh="联系方式">Contact</h2>
+          <div class="contact-actions">
+            <a class="contact-action" href="mailto:jl.li@connect.ust.hk">
+              <span data-en="Email" data-zh="邮箱">Email</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-action" href="https://github.com/0x0addc001" target="_blank" rel="noreferrer">
+              <span>GitHub</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-action" href="https://www.linkedin.com/in/0x0addc001" target="_blank" rel="noreferrer">
+              <span>LinkedIn</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="contact-action" href="assets/Jialiang-Li-CV-CN.pdf" download>
+              <span data-en="CV" data-zh="简历">CV</span>
+              <span aria-hidden="true">↓</span>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="contact-wordmark" aria-hidden="true">JIALIANG LI</div>
+    </section>
+  </main>
+
+  <div class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
+    <button class="lightbox-close" type="button" aria-label="Close image viewer">×</button>
+    <div class="lightbox-inner">
+      <p id="lightbox-title" data-en="LMPool experiment evidence" data-zh="LMPool 实验证据">LMPool experiment evidence</p>
+      <img src="" alt="">
+    </div>
+  </div>
+
+  <script src="script.js?v=20261028-6"></script>
+icon</body>
+</html>
