@@ -53,11 +53,11 @@
   const pageMeta = {
     en: {
       title: "Jialiang Li",
-      description: "Jialiang Li — Machine Learning Engineer building reliable post-training and LLM inference systems."
+      description: "Jialiang Li — Machine Learning Engineer building reliable post-training, inference, and agent harness systems."
     },
     zh: {
       title: "李嘉梁",
-      description: "李嘉梁 — 算法工程师，专注可信的后训练与 LLM 推理系统。"
+      description: "李嘉梁 — 算法工程师，专注可信的后训练、推理与 Agent 执行系统。"
     }
   };
 

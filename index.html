@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f3f1ea">
   <title>李嘉梁</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon-JL.svg?v=20261028-9">
-  <link rel="stylesheet" href="styles.css?v=20261028-6">
+  <link rel="stylesheet" href="styles.css?v=20261028-14">
   <script>
     document.documentElement.classList.add("js");
     try {
@@ -85,13 +85,12 @@
         <h1 class="hero-title reveal">
           <span data-en="Hi! I’m" data-zh="Hi！我是">Hi! I’m</span>
           <span class="hero-title-accent" data-en="Jialiang Li" data-zh="李嘉梁">Jialiang Li</span>
-          <span data-en="A Literally Agentic" data-zh="一个 Literally Agentic 的">A Literally
-             Agentic</span>
+          <span data-en="A Recursively Self-Improving" data-zh="一个递归自我进化的">A Recursively Self-Improving</span>
           <span class="hero-title-accent" data-en="Agent Engineer" data-zh="Agent 工程师"> Agent Engineer</span>
         </h1>
 
-        <p class="hero-intro reveal" data-en="Agent engineering is rocket science: data, models, training, inference, runtime, and eval—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI." data-zh="Agent 工程就像造火箭： 数据、模型、训练、推理、运行时与评测层层交织。这一路上的坑我已经踩过不少，深知其中的繁杂与不易。我一直在寻找志同道合的伙伴，一起扫清工程障碍，打造超级 AGI！">
-          Agent engineering is rocket science: data, models, training, inference, runtime, and eval—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI.
+        <p class="hero-intro reveal" data-en="Agent engineering is rocket science: data, models, training, inference, harness, and eval—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI." data-zh="Agent 工程就像造火箭：数据、模型、训练、推理、执行与评测层层交织。这一路上的坑我已经踩过不少，深知其中的繁杂与不易。我一直在寻找志同道合的伙伴，一起扫清工程障碍，打造超级 AGI！">
+          Agent engineering is rocket science: data, models, training, inference, harness, and eval—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI.
         </p>
 
         <div class="hero-tags reveal" data-tech-stack-output aria-label="Technology stack"></div>
@@ -131,7 +130,7 @@
                 <article class="workflow-stage">
                   <div class="workflow-stage-head">
                     <span>01</span>
-                    <p data-en="DATA" data-zh="数据">DATA</p>
+                    <p>DATA</p>
                   </div>
                   <h3 class="workflow-mrq">
                     <span data-en="Which data actually changes behavior?" data-zh="哪些数据能真正改变模型行为？">Which data actually changes behavior?</span>
@@ -158,6 +157,16 @@
                       </div>
                     </div>
                     <div>
+                      <span class="workflow-category-label" data-en="COMPONENTS" data-zh="组件">COMPONENTS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Tokenizer-aware cleaning" data-zh="分词感知清洗">Tokenizer-aware cleaning</span>
+                        <span data-en="MinHash dedup" data-zh="MinHash 去重">MinHash dedup</span>
+                        <span data-en="Contamination filter" data-zh="污染过滤">Contamination filter</span>
+                        <span data-en="Synthetic data" data-zh="合成数据">Synthetic data</span>
+                        <span data-en="Data mixture" data-zh="数据配比">Data mixture</span>
+                      </div>
+                    </div>
+                    <div>
                       <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
                       <div class="workflow-label-set">
                         <span data-en="Coverage" data-zh="覆盖率">Coverage</span>
@@ -170,12 +179,12 @@
                     <div>
                       <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
                       <div class="workflow-label-set workflow-tech-tags">
+                        <span class="workflow-tech-tag">datatrove</span>
+                        <span class="workflow-tech-tag">Dolma Toolkit</span>
+                        <span class="workflow-tech-tag">NeMo Curator</span>
+                        <span class="workflow-tech-tag">Ray Data</span>
                         <span class="workflow-tech-tag">Apache Arrow</span>
                         <span class="workflow-tech-tag">Parquet</span>
-                        <span class="workflow-tech-tag">Iceberg</span>
-                        <span class="workflow-tech-tag">Spark</span>
-                        <span class="workflow-tech-tag">Ray Data</span>
-                        <span class="workflow-tech-tag">Kafka</span>
                       </div>
                     </div>
                   </div>
@@ -186,7 +195,7 @@
                 <article class="workflow-stage">
                   <div class="workflow-stage-head">
                     <span>02</span>
-                    <p data-en="MODEL" data-zh="模型">MODEL</p>
+                    <p>MODEL</p>
                   </div>
                   <h3 class="workflow-mrq">
                     <span data-en="Which architecture advances capability per unit cost?" data-zh="哪种架构能以更低成本提升能力？">Which architecture advances capability per unit cost?</span>
@@ -213,6 +222,22 @@
                       </div>
                     </div>
                     <div>
+                      <span class="workflow-category-label" data-en="COMPONENTS" data-zh="组件">COMPONENTS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Tokenizer design" data-zh="分词器设计">Tokenizer design</span>
+                        <span>MHA</span>
+                        <span>MQA</span>
+                        <span>GQA</span>
+                        <span>MLA</span>
+                        <span data-en="Sliding-window attention" data-zh="滑动窗口注意力">Sliding-window attention</span>
+                        <span data-en="Sparse attention" data-zh="稀疏注意力">Sparse attention</span>
+                        <span data-en="MoE routing" data-zh="专家路由">MoE routing</span>
+                        <span data-en="RoPE scaling" data-zh="RoPE 缩放">RoPE scaling</span>
+                        <span data-en="Scaling laws" data-zh="缩放定律">Scaling laws</span>
+                        <span data-en="Architecture search" data-zh="架构搜索">Architecture search</span>
+                      </div>
+                    </div>
+                    <div>
                       <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
                       <div class="workflow-label-set">
                         <span data-en="Quality" data-zh="质量">Quality</span>
@@ -228,11 +253,9 @@
                         <span class="workflow-tech-tag">PyTorch</span>
                         <span class="workflow-tech-tag">JAX</span>
                         <span class="workflow-tech-tag">FlashAttention</span>
+                        <span class="workflow-tech-tag">FlashInfer</span>
                         <span class="workflow-tech-tag">Transformer</span>
-                        <span class="workflow-tech-tag">MoE</span>
-                        <span class="workflow-tech-tag">Mamba</span>
-                        <span class="workflow-tech-tag">Llama</span>
-                        <span class="workflow-tech-tag">Gemini</span>
+                        <span class="workflow-tech-tag">torchtitan</span>
                       </div>
                     </div>
                   </div>
@@ -243,10 +266,10 @@
                 <article class="workflow-stage">
                   <div class="workflow-stage-head">
                     <span>03</span>
-                    <p data-en="TRAIN" data-zh="训练">TRAINING</p>
+                    <p>TRAIN</p>
                   </div>
                   <h3 class="workflow-mrq">
-                    <span data-en="How do we make learning reproducible?" data-zh="如何让学习过程可复现？">How do we make learning reproducible?</span>
+                    <span data-en="How can we improve training effectiveness?" data-zh="如何提升训练效果？">How can we improve training effectiveness?</span>
                   </h3>
                   <div class="workflow-anatomy">
                     <div>
@@ -270,6 +293,20 @@
                       </div>
                     </div>
                     <div>
+                      <span class="workflow-category-label" data-en="COMPONENTS" data-zh="组件">COMPONENTS</span>
+                      <div class="workflow-label-set">
+                        <span>SFT</span>
+                        <span>DPO</span>
+                        <span>RFT</span>
+                        <span>RL</span>
+                        <span>PPO</span>
+                        <span>GRPO</span>
+                        <span>DAPO</span>
+                        <span>OPD</span>
+                        <span>MOPD</span>
+                      </div>
+                    </div>
+                    <div>
                       <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
                       <div class="workflow-label-set">
                         <span data-en="Loss" data-zh="损失">Loss</span>
@@ -285,9 +322,9 @@
                         <span class="workflow-tech-tag">DeepSpeed</span>
                         <span class="workflow-tech-tag">FSDP</span>
                         <span class="workflow-tech-tag">Megatron-LM</span>
-                        <span class="workflow-tech-tag">Ray Train</span>
-                        <span class="workflow-tech-tag">LoRA</span>
-                        <span class="workflow-tech-tag">GRPO</span>
+                        <span class="workflow-tech-tag">verl</span>
+                        <span class="workflow-tech-tag">TRL</span>
+                        <span class="workflow-tech-tag">Unsloth</span>
                       </div>
                     </div>
                   </div>
@@ -298,7 +335,7 @@
                 <article class="workflow-stage">
                   <div class="workflow-stage-head">
                     <span>04</span>
-                    <p data-en="INFER" data-zh="推理">INFER</p>
+                    <p>INFERENCE</p>
                   </div>
                   <h3 class="workflow-mrq">
                     <span data-en="Where does latency actually come from?" data-zh="延迟究竟来自哪里？">Where does latency actually come from?</span>
@@ -325,6 +362,17 @@
                       </div>
                     </div>
                     <div>
+                      <span class="workflow-category-label" data-en="COMPONENTS" data-zh="组件">COMPONENTS</span>
+                      <div class="workflow-label-set">
+                        <span>PagedAttention</span>
+                        <span data-en="Continuous batching" data-zh="连续批处理">Continuous batching</span>
+                        <span data-en="Prefix caching" data-zh="前缀缓存">Prefix caching</span>
+                        <span data-en="Chunked prefill" data-zh="分块预填充">Chunked prefill</span>
+                        <span data-en="Speculative decoding" data-zh="投机解码">Speculative decoding</span>
+                        <span data-en="Disaggregated P/D" data-zh="分离式预填充/解码">Disaggregated P/D</span>
+                      </div>
+                    </div>
+                    <div>
                       <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
                       <div class="workflow-label-set">
                         <span>TTFT</span>
@@ -338,11 +386,11 @@
                       <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
                       <div class="workflow-label-set workflow-tech-tags">
                         <span class="workflow-tech-tag">vLLM</span>
-                        <span class="workflow-tech-tag">TensorRT-LLM</span>
                         <span class="workflow-tech-tag">SGLang</span>
-                        <span class="workflow-tech-tag">Triton</span>
-                        <span class="workflow-tech-tag">CUDA</span>
+                        <span class="workflow-tech-tag">TensorRT-LLM</span>
                         <span class="workflow-tech-tag">llama.cpp</span>
+                        <span class="workflow-tech-tag">LMDeploy</span>
+                        <span class="workflow-tech-tag">FlashInfer</span>
                       </div>
                     </div>
                   </div>
@@ -353,51 +401,68 @@
                 <article class="workflow-stage">
                   <div class="workflow-stage-head">
                     <span>05</span>
-                    <p data-en="RUNTIME" data-zh="运行时">RUNTIME</p>
+                    <p>HARNESS</p>
                   </div>
                   <h3 class="workflow-mrq">
-                    <span data-en="What keeps serving reliable under load?" data-zh="高负载下什么保障服务可靠？">What keeps serving reliable under load?</span>
+                    <span data-en="How does an agent act reliably in the real world?" data-zh="Agent 如何可靠地在真实环境中行动？">How does an agent act reliably in the real world?</span>
                   </h3>
                   <div class="workflow-anatomy">
                     <div>
                       <span class="workflow-category-label" data-en="INPUT" data-zh="输入">INPUT</span>
                       <div class="workflow-label-set">
-                        <span data-en="Replicas" data-zh="副本">Replicas</span>
-                        <span data-en="Scheduler state" data-zh="调度状态">Scheduler state</span>
-                        <span data-en="Telemetry" data-zh="遥测">Telemetry</span>
-                        <span data-en="Traffic policy" data-zh="流量策略">Traffic policy</span>
-                        <span data-en="Health probes" data-zh="健康探针">Health probes</span>
+                        <span data-en="Task specs" data-zh="任务规范">Task specs</span>
+                        <span data-en="Tool schemas" data-zh="工具协议">Tool schemas</span>
+                        <span data-en="Context state" data-zh="上下文状态">Context state</span>
+                        <span data-en="Execution environment" data-zh="执行环境">Execution environment</span>
+                        <span data-en="Retry policy" data-zh="重试策略">Retry policy</span>
                       </div>
                     </div>
                     <div>
                       <span class="workflow-category-label" data-en="OUTPUT" data-zh="输出">OUTPUT</span>
                       <div class="workflow-label-set">
-                        <span data-en="Routing decisions" data-zh="路由决策">Routing decisions</span>
-                        <span data-en="Health signals" data-zh="健康信号">Health signals</span>
-                        <span data-en="Scaling events" data-zh="扩缩容事件">Scaling events</span>
-                        <span data-en="Audit logs" data-zh="审计日志">Audit logs</span>
-                        <span data-en="Failover actions" data-zh="故障转移">Failover actions</span>
+                        <span data-en="Tool calls" data-zh="工具调用">Tool calls</span>
+                        <span data-en="Observations" data-zh="观察结果">Observations</span>
+                        <span data-en="Artifacts" data-zh="产出文件">Artifacts</span>
+                        <span data-en="Execution traces" data-zh="执行轨迹">Execution traces</span>
+                        <span data-en="Recovery actions" data-zh="恢复动作">Recovery actions</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="COMPONENTS" data-zh="组件">COMPONENTS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="ReAct loop" data-zh="ReAct 循环">ReAct loop</span>
+                        <span data-en="Tool router" data-zh="工具路由器">Tool router</span>
+                        <span data-en="Context compaction" data-zh="上下文压缩">Context compaction</span>
+                        <span data-en="Sandbox executor" data-zh="沙箱执行器">Sandbox executor</span>
+                        <span data-en="Subagent orchestration" data-zh="子 Agent 编排">Subagent orchestration</span>
+                        <span data-en="Recovery controller" data-zh="恢复控制器">Recovery controller</span>
                       </div>
                     </div>
                     <div>
                       <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
                       <div class="workflow-label-set">
-                        <span data-en="Availability" data-zh="可用性">Availability</span>
-                        <span data-en="P99 latency" data-zh="P99 延迟">P99 latency</span>
-                        <span data-en="Utilization" data-zh="利用率">Utilization</span>
-                        <span data-en="Queue depth" data-zh="队列深度">Queue depth</span>
-                        <span data-en="Recovery time" data-zh="恢复时间">Recovery time</span>
+                        <span data-en="Task success" data-zh="任务成功率">Task success</span>
+                        <span data-en="Tool accuracy" data-zh="工具准确率">Tool accuracy</span>
+                        <span data-en="Recovery rate" data-zh="恢复率">Recovery rate</span>
+                        <span data-en="Step latency" data-zh="单步延迟">Step latency</span>
+                        <span data-en="Cost per task" data-zh="单任务成本">Cost per task</span>
                       </div>
                     </div>
                     <div>
                       <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
                       <div class="workflow-label-set workflow-tech-tags">
-                        <span class="workflow-tech-tag">Kubernetes</span>
-                        <span class="workflow-tech-tag">Ray Serve</span>
-                        <span class="workflow-tech-tag">KServe</span>
-                        <span class="workflow-tech-tag">Envoy</span>
-                        <span class="workflow-tech-tag">Prometheus</span>
-                        <span class="workflow-tech-tag">OpenTelemetry</span>
+                        <span class="workflow-tech-tag">Codex</span>
+                        <span class="workflow-tech-tag">Claude Code</span>
+                        <span class="workflow-tech-tag">Claude Agent SDK</span>
+                        <span class="workflow-tech-tag">DeepSeek Harness</span>
+                        <span class="workflow-tech-tag">Pi</span>
+                        <span class="workflow-tech-tag">LangGraph</span>
+                        <span class="workflow-tech-tag">OpenHands</span>
+                        <span class="workflow-tech-tag">OpenCode</span>
+                        <span class="workflow-tech-tag">E2B</span>
+                        <span class="workflow-tech-tag">SWE-agent</span>
+                        <span class="workflow-tech-tag">OpenAI Agents SDK</span>
+                        <span class="workflow-tech-tag">MCP</span>
                       </div>
                     </div>
                   </div>
@@ -408,7 +473,7 @@
                 <article class="workflow-stage">
                   <div class="workflow-stage-head">
                     <span>06</span>
-                    <p data-en="EVAL" data-zh="评测">EVAL</p>
+                    <p>EVAL</p>
                   </div>
                   <h3 class="workflow-mrq">
                     <span data-en="What evidence earns trust?" data-zh="哪些证据足以建立信任？">What evidence earns trust?</span>
@@ -435,6 +500,17 @@
                       </div>
                     </div>
                     <div>
+                      <span class="workflow-category-label" data-en="COMPONENTS" data-zh="组件">COMPONENTS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="LLM-as-judge" data-zh="LLM 评审">LLM-as-judge</span>
+                        <span data-en="Rubric grading" data-zh="量表评分">Rubric grading</span>
+                        <span data-en="Trajectory evaluation" data-zh="轨迹评测">Trajectory evaluation</span>
+                        <span data-en="Regression slicing" data-zh="回归切片">Regression slicing</span>
+                        <span data-en="Contamination checks" data-zh="污染检查">Contamination checks</span>
+                        <span data-en="Cost / latency eval" data-zh="成本 / 延迟评测">Cost / latency eval</span>
+                      </div>
+                    </div>
+                    <div>
                       <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
                       <div class="workflow-label-set">
                         <span data-en="Pass rate" data-zh="通过率">Pass rate</span>
@@ -452,7 +528,7 @@
                         <span class="workflow-tech-tag">HELM</span>
                         <span class="workflow-tech-tag">Promptfoo</span>
                         <span class="workflow-tech-tag">DeepEval</span>
-                        <span class="workflow-tech-tag">LangSmith</span>
+                        <span class="workflow-tech-tag">EvalScope</span>
                       </div>
                     </div>
                   </div>
@@ -963,7 +1039,7 @@
                 </div>
                 <div class="reward-chart-facts">
                   <div><span data-en="Raw value" data-zh="原始值">Raw value</span><strong>0.3136 → 0.4045</strong></div>
-                  <div><span data-en="Run time" data-zh="运行时间">Run time</span><strong>18.18h → 12.71h</strong></div>
+                  <div><span data-en="Training duration" data-zh="训练耗时">Training duration</span><strong>18.18h → 12.71h</strong></div>
                 </div>
                 <p class="reward-caveat" data-en="Reward score is not task accuracy. This comparison was used to inspect score inflation and out-of-domain behavior." data-zh="奖励得分不等于任务准确率。该对比用于检查分数膨胀与域外表现。">Reward score is not task accuracy. This comparison was used to inspect score inflation and out-of-domain behavior.</p>
               </div>
@@ -1082,7 +1158,7 @@
         <div class="panel-topline">
           <div>
             <span class="small-label" data-en="SYSTEM ARCHITECTURE" data-zh="系统架构">SYSTEM ARCHITECTURE</span>
-            <h3 data-en="Runtime components and data flow" data-zh="运行时组件与数据流">Runtime components and data flow</h3>
+            <h3 data-en="Harness components and data flow" data-zh="执行组件与数据流">Harness components and data flow</h3>
           </div>
           <button class="text-button lightbox-trigger" type="button" data-lightbox-src="assets/lmpool/architecture.png" data-lightbox-alt="LMPool system architecture diagram">
             <span data-en="View full diagram" data-zh="查看完整架构图">View full diagram</span>
@@ -1313,12 +1389,12 @@
             <div>
               <h3 data-en="Data" data-zh="数据">Data</h3>
               <div class="skill-category-tags">
+                <span>datatrove</span>
+                <span>Dolma Toolkit</span>
+                <span>NeMo Curator</span>
+                <span>Ray Data</span>
                 <span>Apache Arrow</span>
                 <span>Parquet</span>
-                <span>Iceberg</span>
-                <span>Spark</span>
-                <span>Ray Data</span>
-                <span>Kafka</span>
               </div>
             </div>
           </article>
@@ -1330,11 +1406,9 @@
                 <span>PyTorch</span>
                 <span>JAX</span>
                 <span>FlashAttention</span>
-                <span>Transformer</span>
-                <span>MoE</span>
-                <span>Mamba</span>
-                <span>Llama</span>
-                <span>Gemini</span>
+                <span>FlashInfer</span>
+                <span>Transformer Engine</span>
+                <span>torchtitan</span>
               </div>
             </div>
           </article>
@@ -1346,9 +1420,9 @@
                 <span>DeepSpeed</span>
                 <span>FSDP</span>
                 <span>Megatron-LM</span>
-                <span>Ray Train</span>
-                <span>LoRA</span>
-                <span>GRPO</span>
+                <span>verl</span>
+                <span>TRL</span>
+                <span>Unsloth</span>
               </div>
             </div>
           </article>
@@ -1358,25 +1432,31 @@
               <h3 data-en="Inference" data-zh="推理">Inference</h3>
               <div class="skill-category-tags">
                 <span>vLLM</span>
-                <span>TensorRT-LLM</span>
                 <span>SGLang</span>
-                <span>Triton</span>
-                <span>CUDA</span>
+                <span>TensorRT-LLM</span>
                 <span>llama.cpp</span>
+                <span>LMDeploy</span>
+                <span>FlashInfer</span>
               </div>
             </div>
           </article>
           <article class="skill-category">
             <span>05</span>
             <div>
-              <h3 data-en="Runtime" data-zh="运行时">Runtime</h3>
+              <h3 data-en="Harness" data-zh="执行">Harness</h3>
               <div class="skill-category-tags">
-                <span>Kubernetes</span>
-                <span>Ray Serve</span>
-                <span>KServe</span>
-                <span>Envoy</span>
-                <span>Prometheus</span>
-                <span>OpenTelemetry</span>
+                <span>Codex</span>
+                <span>Claude Code</span>
+                <span>Claude Agent SDK</span>
+                <span>DeepSeek Harness</span>
+                <span>Pi</span>
+                <span>LangGraph</span>
+                <span>OpenHands</span>
+                <span>OpenCode</span>
+                <span>E2B</span>
+                <span>SWE-agent</span>
+                <span>OpenAI Agents SDK</span>
+                <span>MCP</span>
               </div>
             </div>
           </article>
@@ -1390,7 +1470,7 @@
                 <span>HELM</span>
                 <span>Promptfoo</span>
                 <span>DeepEval</span>
-                <span>LangSmith</span>
+                <span>EvalScope</span>
               </div>
             </div>
           </article>
@@ -1403,9 +1483,6 @@
                 <span>C / C++</span>
                 <span>Java</span>
                 <span>SQL</span>
-                <span>LangGraph</span>
-                <span>Codex</span>
-                <span>Claude Code</span>
                 <span>Git</span>
                 <span>Linux</span>
               </div>
@@ -1454,6 +1531,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=20261028-6"></script>
+  <script src="script.js?v=20261028-14"></script>
 icon</body>
 </html>
