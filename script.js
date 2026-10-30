@@ -6,7 +6,7 @@
   const languageButton = document.querySelector(".language-switch");
   const themeButton = document.querySelector(".theme-toggle");
   const languageOptions = document.querySelectorAll("[data-language-option]");
-  const translatableElements = document.querySelectorAll("[data-en][data-zh]");
+  const translatableElements = () => document.querySelectorAll("[data-en][data-zh]");
   const header = document.querySelector("[data-header]");
   const menuButton = document.querySelector(".menu-toggle");
   const mobileNav = document.querySelector(".mobile-nav");
@@ -15,13 +15,76 @@
   const lightboxClose = lightbox?.querySelector(".lightbox-close");
   const modelButtons = document.querySelectorAll("[data-model]");
   const roadmap = document.querySelector(".system-card");
-  const heroTechStack = document.querySelector("[data-tech-stack-output]");
-  const luckyNumbers = document.querySelectorAll("[data-lucky-target]");
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   let activeLightboxTrigger = null;
-  let luckyDrawStarted = false;
   let currentLanguage = root.dataset.language === "zh" ? "zh" : "en";
   let currentTheme = root.dataset.theme === "dark" ? "dark" : "light";
+
+  function setupHeroTagMarquee() {
+    const container = document.querySelector(".hero-tags");
+    if (!container || reduceMotion.matches || container.dataset.marqueeReady) return;
+
+    const hero = container.closest(".hero");
+    const tags = [...container.querySelectorAll(":scope > span")];
+    if (!tags.length) return;
+
+    hero?.classList.add("has-marquee-tags");
+    const laneCount = 4;
+    const tagsPerLane = Math.ceil(tags.length / laneCount);
+    const durations = ["72s", "86s", "78s", "94s"];
+    const delays = ["0s", "-18s", "-36s", "-10s"];
+    const fragment = document.createDocumentFragment();
+
+    for (let laneIndex = 0; laneIndex < laneCount; laneIndex += 1) {
+      const lane = document.createElement("div");
+      lane.className = "hero-tag-lane";
+
+      const track = document.createElement("div");
+      track.className = "hero-tag-track";
+      track.style.setProperty("--marquee-duration", durations[laneIndex]);
+      track.style.setProperty("--marquee-delay", delays[laneIndex]);
+
+      const group = document.createElement("div");
+      group.className = "hero-tag-group";
+      tags
+        .slice(laneIndex * tagsPerLane, (laneIndex + 1) * tagsPerLane)
+        .forEach((tag) => group.append(tag));
+
+      if (!group.childElementCount) continue;
+
+      const clone = group.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      track.append(group, clone);
+      lane.append(track);
+      fragment.append(lane);
+    }
+
+    container.replaceChildren(fragment);
+    container.dataset.marqueeReady = "true";
+
+    const intro = hero?.querySelector(".hero-intro");
+    const portrait = hero?.querySelector(".hero-portrait");
+    const syncBandHeight = () => {
+      if (!hero || !intro || !portrait || window.innerWidth <= 1180) {
+        hero?.style.removeProperty("--hero-tag-band-height");
+        return;
+      }
+
+      const introBottom = intro.getBoundingClientRect().bottom;
+      const portraitBottom = portrait.getBoundingClientRect().bottom;
+      hero.style.setProperty(
+        "--hero-tag-band-height",
+        `${Math.max(150, Math.round(portraitBottom - introBottom - 12))}px`
+      );
+    };
+
+    requestAnimationFrame(syncBandHeight);
+    const bandObserver = new ResizeObserver(syncBandHeight);
+    if (intro) bandObserver.observe(intro);
+    if (portrait) bandObserver.observe(portrait);
+    document.fonts?.ready.then(syncBandHeight);
+    window.addEventListener("resize", syncBandHeight);
+  }
 
   const results = {
     small: {
@@ -61,41 +124,17 @@
     }
   };
 
-  function renderHeroTechStack() {
-    if (!heroTechStack) return;
-
-    const labels = [...document.querySelectorAll(".workflow-tech-tag")]
-      .map((tag) => tag.textContent.trim())
-      .filter(Boolean);
-    const uniqueLabels = [...new Set(labels)];
-    const fragment = document.createDocumentFragment();
-
-    uniqueLabels.forEach((label) => {
-      const tag = document.createElement("span");
-      tag.textContent = label;
-      fragment.appendChild(tag);
-    });
-
-    heroTechStack.replaceChildren(fragment);
-    heroTechStack.setAttribute(
-      "aria-label",
-      currentLanguage === "zh" ? "技术栈" : "Technology stack"
-    );
-  }
-
   function applyLanguage(language, persist = true) {
     currentLanguage = language === "zh" ? "zh" : "en";
     root.lang = currentLanguage;
     root.dataset.language = currentLanguage;
 
-    translatableElements.forEach((element) => {
+    translatableElements().forEach((element) => {
       const content = element.dataset[currentLanguage];
       if (content) {
         element.textContent = content;
       }
     });
-    renderHeroTechStack();
-
     languageOptions.forEach((option) => {
       option.classList.toggle("is-current", option.dataset.languageOption === currentLanguage);
     });
@@ -118,6 +157,10 @@
         // Language still works when storage is unavailable.
       }
     }
+
+    window.dispatchEvent(new CustomEvent("portfolio:language-change", {
+      detail: { language: currentLanguage }
+    }));
   }
 
   function toggleLanguage() {
@@ -236,41 +279,6 @@
   menuButton?.addEventListener("click", toggleMenu);
   mobileNav?.querySelectorAll("a").forEach((link) => link.addEventListener("click", closeMenu));
 
-  function formatLuckyNumber(value) {
-    return String(value);
-  }
-
-  function startLuckyDraw() {
-    if (luckyDrawStarted || !luckyNumbers.length) return;
-    luckyDrawStarted = true;
-
-    const timers = [];
-
-    luckyNumbers.forEach((number, index) => {
-      const target = formatLuckyNumber(Number(number.dataset.luckyTarget || number.textContent));
-
-      if (reduceMotion.matches) {
-        number.textContent = target;
-        return;
-      }
-
-      number.classList.add("is-rolling");
-      number.textContent = formatLuckyNumber(Math.floor(10 + Math.random() * 90));
-      timers.push(setTimeout(function tick() {
-        number.textContent = formatLuckyNumber(Math.floor(10 + Math.random() * 90));
-        timers.push(setTimeout(tick, 48 + index * 7));
-      }, 42 + index * 8));
-    });
-
-    setTimeout(() => {
-      timers.forEach((timer) => clearTimeout(timer));
-      luckyNumbers.forEach((number) => {
-        number.textContent = formatLuckyNumber(Number(number.dataset.luckyTarget || number.textContent));
-        number.classList.remove("is-rolling");
-      });
-    }, 3200);
-  }
-
   const revealElements = document.querySelectorAll(".reveal");
   if ("IntersectionObserver" in window && !reduceMotion.matches) {
     const revealObserver = new IntersectionObserver(
@@ -291,21 +299,6 @@
   } else {
     revealElements.forEach((element) => element.classList.add("is-visible"));
     requestAnimationFrame(animateResultBars);
-  }
-
-  const heroProof = document.querySelector(".hero-proof");
-  if ("IntersectionObserver" in window && !reduceMotion.matches && heroProof) {
-    const proofObserver = new IntersectionObserver(
-      (entries, observer) => {
-        if (!entries.some((entry) => entry.isIntersecting)) return;
-        startLuckyDraw();
-        observer.disconnect();
-      },
-      { threshold: 0.7, rootMargin: "0px 0px -12% 0px" }
-    );
-    proofObserver.observe(heroProof);
-  } else {
-    startLuckyDraw();
   }
 
   const navLinks = document.querySelectorAll(".primary-nav a");
@@ -440,6 +433,7 @@
     if (window.innerWidth > 900) closeMenu();
   });
 
+  setupHeroTagMarquee();
   applyLanguage(currentLanguage, false);
   applyTheme(currentTheme, false);
   requestAnimationFrame(animateResultBars);

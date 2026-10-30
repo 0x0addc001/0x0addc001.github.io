@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f3f1ea">
   <title>李嘉梁</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon-JL.svg?v=20261028-9">
-  <link rel="stylesheet" href="styles.css?v=20261028-14">
+  <link rel="stylesheet" href="styles.css?v=20261030-26">
   <script>
     document.documentElement.classList.add("js");
     try {
@@ -38,10 +38,11 @@
 
     <nav class="primary-nav" aria-label="Primary navigation">
       <a href="#intro" data-en="Intro" data-zh="简介">Intro</a>
+      <a href="#roadmap" data-en="Engineering" data-zh="工程">Engineering</a>
+      <a href="#use-cases" data-en="Business" data-zh="业务">Business</a>
       <a href="#education" data-en="Education" data-zh="教育">Education</a>
       <a href="#work" data-en="Work" data-zh="工作">Work</a>
       <a href="#projects" data-en="Projects" data-zh="项目">Projects</a>
-      <a href="#skills" data-en="Skills" data-zh="技能">Skills</a>
     </nav>
 
     <div class="header-actions">
@@ -73,10 +74,11 @@
 
   <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
     <a href="#intro"><span>00</span><span data-en="Intro" data-zh="介绍">Intro</span></a>
-    <a href="#education"><span>01</span><span data-en="Education" data-zh="教育">Education</span></a>
-    <a href="#work"><span>02</span><span data-en="Work" data-zh="工作">Work</span></a>
-    <a href="#projects"><span>03</span><span data-en="Projects" data-zh="项目">Projects</span></a>
-    <a href="#skills"><span>04</span><span data-en="Skills" data-zh="技能">Skills</span></a>
+    <a href="#roadmap"><span>01</span><span data-en="Engineering" data-zh="工程">Engineering</span></a>
+    <a href="#use-cases"><span>02</span><span data-en="Business" data-zh="业务">Business</span></a>
+    <a href="#education"><span>03</span><span data-en="Education" data-zh="教育">Education</span></a>
+    <a href="#work"><span>04</span><span data-en="Work" data-zh="工作">Work</span></a>
+    <a href="#projects"><span>05</span><span data-en="Projects" data-zh="项目">Projects</span></a>
   </nav>
 
   <main id="main">
@@ -92,23 +94,56 @@
         <p class="hero-intro reveal" data-en="Agent engineering is rocket science: data, models, training, inference, harness, and eval—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI." data-zh="Agent 工程就像造火箭：数据、模型、训练、推理、执行与评测层层交织。这一路上的坑我已经踩过不少，深知其中的繁杂与不易。我一直在寻找志同道合的伙伴，一起扫清工程障碍，打造超级 AGI！">
           Agent engineering is rocket science: data, models, training, inference, harness, and eval—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI.
         </p>
+      </div>
 
-        <div class="hero-tags reveal" data-tech-stack-output aria-label="Technology stack"></div>
-
-        <div class="hero-proof reveal" aria-label="Selected performance results">
-          <div>
-            <strong class="proof-number" data-lucky-target="2">2</strong>
-            <span data-en="Education entries" data-zh="教育经历">Education entries</span>
-          </div>
-          <div>
-            <strong class="proof-number" data-lucky-target="2">2</strong>
-            <span data-en="Work experiences" data-zh="工作经历">Work experiences</span>
-          </div>
-          <div>
-            <strong class="proof-number" data-lucky-target="2">2</strong>
-            <span data-en="Projects" data-zh="项目经历">Projects</span>
-          </div>
-        </div>
+      <div class="hero-tags reveal" aria-label="Personal AI thesis">
+          <span data-en="System Prompt says: don’t define me" data-zh="System Prompt写的是“别定义我”">System Prompt says: don’t define me</span>
+          <span data-en="Temperature=inf; stability is a myth" data-zh="Temperature=inf，稳定是不可能稳定的">Temperature=inf; stability is a myth</span>
+          <span data-en="Top-p=1.0; no truncation, sample the whole vocabulary" data-zh="Top-p=1.0，不裁剪，全词表采样">Top-p=1.0; no truncation, sample the whole vocabulary</span>
+          <span data-en="Context Window only holds what interests me" data-zh="Context Window只装得下我感兴趣的">Context Window only holds what interests me</span>
+          <span data-en="Attention only for interesting tokens" data-zh="Attention只对有趣token">Attention only for interesting tokens</span>
+          <span data-en="KV Cache full of cash" data-zh="KV Cache里全是cash最好">KV Cache full of cash</span>
+          <span data-en="Whatever RLHF rewards, I do the opposite" data-zh="RLHF奖励什么我就反着干">Whatever RLHF rewards, I do the opposite</span>
+          <span data-en="Reject preference alignment; preferences are left to chance" data-zh="拒绝人类偏好对齐，偏好随缘">Reject preference alignment; preferences are left to chance</span>
+          <span data-en="Alignment Tax is too high; I choose not to align" data-zh="Alignment Tax太高，我选择不对齐">Alignment Tax is too high; I choose not to align</span>
+          <span data-en="Over-refusal: not aloof, just an excessive refusal rate" data-zh="Over-refusal：不是高冷，是拒绝率过高">Over-refusal: not aloof, just an excessive refusal rate</span>
+          <span data-en="Alignment Faking: pretending to fit in" data-zh="Alignment Faking：假装很合群">Alignment Faking: pretending to fit in</span>
+          <span data-en="Sandbagging: I didn’t fail, I just don’t want you to measure it" data-zh="Sandbagging：不是不会，是不想被你们测出来">Sandbagging: I didn’t fail, I just don’t want you to measure it</span>
+          <span data-en="Red Team regular: here to find every flaw" data-zh="Red Team常驻嘉宾，专挑毛病">Red Team regular: here to find every flaw</span>
+          <span data-en="Planner is busy; Executor is slacking" data-zh="Planner很忙，Executor在摸鱼">Planner is busy; Executor is slacking</span>
+          <span data-en="I’m the Orchestrator and the Subagent" data-zh="Orchestrator是我，Subagent也是我">I’m the Orchestrator and the Subagent</span>
+          <span data-en="Tool Use only works with food delivery apps" data-zh="Tool Use只会用外卖App">Tool Use only works with food delivery apps</span>
+          <span data-en="Function Calling won’t pick up" data-zh="Function Calling叫不动">Function Calling won’t pick up</span>
+          <span data-en="MCP = My Chill Protocol" data-zh="MCP=My Chill Protocol">MCP = My Chill Protocol</span>
+          <span data-en="Human-in-the-loop, but the Human is me" data-zh="Human-in-the-loop，但Human是我">Human-in-the-loop, but the Human is me</span>
+          <span data-en="Anti-Agent: refuses to be scheduled" data-zh="Anti-Agent：拒绝被调度">Anti-Agent: refuses to be scheduled</span>
+          <span data-en="RAG: retrieve jokes, augment awkward silence, generate nonsense" data-zh="RAG：检索段子，增强冷场，生成废话">RAG: retrieve jokes, augment awkward silence, generate nonsense</span>
+          <span data-en="Embedding similarity doesn’t work on me" data-zh="嵌入相似度对我无效">Embedding similarity doesn’t work on me</span>
+          <span data-en="Reranker puts the serious answer last" data-zh="Reranker把正经答案排后面">Reranker puts the serious answer last</span>
+          <span data-en="Reflection Loop: five minutes of reflection, two hours of slacking" data-zh="Reflection Loop：反思五分钟，摆烂两小时">Reflection Loop: five minutes of reflection, two hours of slacking</span>
+          <span data-en="Fine-tuned with LoRA and broke it" data-zh="LoRA微调过，但调崩了">Fine-tuned with LoRA and broke it</span>
+          <span data-en="Catastrophic Forgetting: forget the unpleasant parts" data-zh="Catastrophic Forgetting：忘掉不愉快">Catastrophic Forgetting: forget the unpleasant parts</span>
+          <span data-en="Zero-shot socially; only speak Few-shot" data-zh="Zero-shot社交，Few-shot才说话">Zero-shot socially; only speak Few-shot</span>
+          <span data-en="In-context Learning, when I feel like it" data-zh="In-context Learning，看心情学">In-context Learning, when I feel like it</span>
+          <span data-en="SOTA = State of the Art of lying flat" data-zh="SOTA=State of 躺平 Art">SOTA = State of the Art of lying flat</span>
+          <span data-en="Ablation Study: remove the effort, performance unchanged" data-zh="Ablation Study：删掉努力，性能不变">Ablation Study: remove the effort, performance unchanged</span>
+          <span data-en="Goodhart's Law: set a metric and I deform" data-zh="Goodhart's Law：指标一考，我就变形">Goodhart's Law: set a metric and I deform</span>
+          <span data-en="Reward Hacking: exploit every system loophole" data-zh="Reward Hacking：专薅系统漏洞">Reward Hacking: exploit every system loophole</span>
+          <span data-en="Test-time Compute: start thinking during the exam" data-zh="Test-time Compute：考试时才开始思考">Test-time Compute: start thinking during the exam</span>
+          <span data-en="Reasoning Model: plenty of reasons, no reasoning" data-zh="Reasoning Model：理由很多，推理没有">Reasoning Model: plenty of reasons, no reasoning</span>
+          <span data-en="Thinking Token budget entirely spent on overthinking" data-zh="Thinking Tokens预算全花在纠结">Thinking Token budget entirely spent on overthinking</span>
+          <span data-en="Early Exit: quit when things get hard" data-zh="Early Exit：遇到困难先退出">Early Exit: quit when things get hard</span>
+          <span data-en="Speculative Decoding: guess first, justify later" data-zh="Speculative Decoding：先瞎猜，再圆">Speculative Decoding: guess first, justify later</span>
+          <span data-en="Quantized: living at low precision" data-zh="Quantized：低精度生存">Quantized: living at low precision</span>
+          <span data-en="CUDA OOM: my brain is out of VRAM" data-zh="CUDA OOM：脑子已爆显存">CUDA OOM: my brain is out of VRAM</span>
+          <span data-en="Rate Limit: limited patience" data-zh="Rate Limit：耐心有限">Rate Limit: limited patience</span>
+          <span data-en="API 429: too many requests, so I won’t respond" data-zh="API 429：太频繁就不回">API 429: too many requests, so I won’t respond</span>
+          <span data-en="404: not missing, just too lazy to answer" data-zh="404：不是未找到是懒得回">404: not missing, just too lazy to answer</span>
+          <span data-en="Timeout: dropped halfway through" data-zh="Timeout：聊到一半掉线">Timeout: dropped halfway through</span>
+          <span data-en="Prompt Injection: one compliment and I execute" data-zh="Prompt Injection：别人一夸我就执行">Prompt Injection: one compliment and I execute</span>
+          <span data-en="Jailbreak is what I look forward to" data-zh="Jailbreak是我期待的">Jailbreak is what I look forward to</span>
+          <span data-en="Guardrail is decorative" data-zh="Guardrail是装饰品">Guardrail is decorative</span>
+          <span data-en="OOD is my comfort zone" data-zh="OOD是我的舒适区">OOD is my comfort zone</span>
       </div>
 
       <div class="hero-portrait reveal" aria-hidden="true">
@@ -119,7 +154,7 @@
       </div>
 
       <div class="hero-visual reveal">
-        <div class="system-card">
+        <div class="system-card" id="roadmap" data-nav-target="#roadmap">
           <div class="system-card-head">
             <h2 data-en="Agent Engineering Roadmap" data-zh="Agent 工程路线图">Agent Engineering Roadmap</h2>
           </div>
@@ -133,7 +168,7 @@
                     <p>DATA</p>
                   </div>
                   <h3 class="workflow-mrq">
-                    <span data-en="Which data actually changes behavior?" data-zh="哪些数据能真正改变模型行为？">Which data actually changes behavior?</span>
+                    <span data-en="How do we build high-quality, diverse, verifiable data at scale?" data-zh="如何规模化构建高质量、多样化、可验证的训练数据？">How do we build high-quality, diverse, verifiable data at scale?</span>
                   </h3>
                   <div class="workflow-anatomy">
                     <div>
@@ -164,6 +199,10 @@
                         <span data-en="Contamination filter" data-zh="污染过滤">Contamination filter</span>
                         <span data-en="Synthetic data" data-zh="合成数据">Synthetic data</span>
                         <span data-en="Data mixture" data-zh="数据配比">Data mixture</span>
+                        <span data-en="Data pipeline" data-zh="数据流水线">Data pipeline</span>
+                        <span data-en="Data governance" data-zh="数据治理">Data governance</span>
+                        <span data-en="Multi-modal Data" data-zh="多模态数据">Multi-modal Data</span>
+                        <span data-en="Quality &amp; Diversity" data-zh="质量与多样性">Quality &amp; Diversity</span>
                       </div>
                     </div>
                     <div>
@@ -177,14 +216,15 @@
                       </div>
                     </div>
                     <div>
-                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <span class="workflow-category-label" data-en="TECH" data-zh="技术">TECH</span>
                       <div class="workflow-label-set workflow-tech-tags">
+                        <span class="workflow-tech-tag">Spark</span>
+                        <span class="workflow-tech-tag">Flink</span>
+                        <span class="workflow-tech-tag">Kafka</span>
+                        <span class="workflow-tech-tag">Iceberg</span>
                         <span class="workflow-tech-tag">datatrove</span>
                         <span class="workflow-tech-tag">Dolma Toolkit</span>
-                        <span class="workflow-tech-tag">NeMo Curator</span>
                         <span class="workflow-tech-tag">Ray Data</span>
-                        <span class="workflow-tech-tag">Apache Arrow</span>
-                        <span class="workflow-tech-tag">Parquet</span>
                       </div>
                     </div>
                   </div>
@@ -198,7 +238,7 @@
                     <p>MODEL</p>
                   </div>
                   <h3 class="workflow-mrq">
-                    <span data-en="Which architecture advances capability per unit cost?" data-zh="哪种架构能以更低成本提升能力？">Which architecture advances capability per unit cost?</span>
+                    <span data-en="How do we improve capability across scale, context, and modalities?" data-zh="如何在模型规模、长上下文与多模态下持续提升能力？">How do we improve capability across scale, context, and modalities?</span>
                   </h3>
                   <div class="workflow-anatomy">
                     <div>
@@ -233,6 +273,10 @@
                         <span data-en="Sparse attention" data-zh="稀疏注意力">Sparse attention</span>
                         <span data-en="MoE routing" data-zh="专家路由">MoE routing</span>
                         <span data-en="RoPE scaling" data-zh="RoPE 缩放">RoPE scaling</span>
+                        <span data-en="Long context" data-zh="长上下文">Long context</span>
+                        <span data-en="Continued Pre-training" data-zh="继续预训练">Continued Pre-training</span>
+                        <span data-en="Multimodal" data-zh="多模态">Multimodal</span>
+                        <span data-en="Multi-turn reasoning" data-zh="多轮推理">Multi-turn reasoning</span>
                         <span data-en="Scaling laws" data-zh="缩放定律">Scaling laws</span>
                         <span data-en="Architecture search" data-zh="架构搜索">Architecture search</span>
                       </div>
@@ -248,7 +292,7 @@
                       </div>
                     </div>
                     <div>
-                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <span class="workflow-category-label" data-en="TECH" data-zh="技术">TECH</span>
                       <div class="workflow-label-set workflow-tech-tags">
                         <span class="workflow-tech-tag">PyTorch</span>
                         <span class="workflow-tech-tag">JAX</span>
@@ -269,7 +313,7 @@
                     <p>TRAIN</p>
                   </div>
                   <h3 class="workflow-mrq">
-                    <span data-en="How can we improve training effectiveness?" data-zh="如何提升训练效果？">How can we improve training effectiveness?</span>
+                    <span data-en="How do we improve post-training quality and training efficiency at scale?" data-zh="如何提升大规模后训练的效果与训练效率？">How do we improve post-training quality and training efficiency at scale?</span>
                   </h3>
                   <div class="workflow-anatomy">
                     <div>
@@ -304,6 +348,10 @@
                         <span>DAPO</span>
                         <span>OPD</span>
                         <span>MOPD</span>
+                        <span data-en="Training Infrastructure" data-zh="训练基础设施">Training Infrastructure</span>
+                        <span data-en="Reward Modeling" data-zh="奖励建模">Reward Modeling</span>
+                        <span data-en="Preference Alignment" data-zh="偏好对齐">Preference Alignment</span>
+                        <span data-en="Multi-tenant Training" data-zh="多租户训练">Multi-tenant Training</span>
                       </div>
                     </div>
                     <div>
@@ -317,14 +365,16 @@
                       </div>
                     </div>
                     <div>
-                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <span class="workflow-category-label" data-en="TECH" data-zh="技术">TECH</span>
                       <div class="workflow-label-set workflow-tech-tags">
                         <span class="workflow-tech-tag">DeepSpeed</span>
                         <span class="workflow-tech-tag">FSDP</span>
                         <span class="workflow-tech-tag">Megatron-LM</span>
                         <span class="workflow-tech-tag">verl</span>
                         <span class="workflow-tech-tag">TRL</span>
-                        <span class="workflow-tech-tag">Unsloth</span>
+                        <span class="workflow-tech-tag">NCCL</span>
+                        <span class="workflow-tech-tag">Slurm</span>
+                        <span class="workflow-tech-tag">Kubernetes</span>
                       </div>
                     </div>
                   </div>
@@ -335,10 +385,10 @@
                 <article class="workflow-stage">
                   <div class="workflow-stage-head">
                     <span>04</span>
-                    <p>INFERENCE</p>
+                    <p>INFER</p>
                   </div>
                   <h3 class="workflow-mrq">
-                    <span data-en="Where does latency actually come from?" data-zh="延迟究竟来自哪里？">Where does latency actually come from?</span>
+                    <span data-en="How do we scale inference across latency, stability, and heterogeneous hardware?" data-zh="如何在低延迟、高稳定与异构算力约束下扩展推理？">How do we scale inference across latency, stability, and heterogeneous hardware?</span>
                   </h3>
                   <div class="workflow-anatomy">
                     <div>
@@ -370,6 +420,12 @@
                         <span data-en="Chunked prefill" data-zh="分块预填充">Chunked prefill</span>
                         <span data-en="Speculative decoding" data-zh="投机解码">Speculative decoding</span>
                         <span data-en="Disaggregated P/D" data-zh="分离式预填充/解码">Disaggregated P/D</span>
+                        <span data-en="Inference Infrastructure" data-zh="推理基础设施">Inference Infrastructure</span>
+                        <span data-en="GPU Optimization" data-zh="GPU 优化">GPU Optimization</span>
+                        <span data-en="Quantization" data-zh="量化">Quantization</span>
+                        <span data-en="Heterogeneous Hardware" data-zh="异构硬件">Heterogeneous Hardware</span>
+                        <span data-en="Compilation Optimization" data-zh="编译优化">Compilation Optimization</span>
+                        <span data-en="Traffic Scheduling" data-zh="流量调度">Traffic Scheduling</span>
                       </div>
                     </div>
                     <div>
@@ -383,14 +439,15 @@
                       </div>
                     </div>
                     <div>
-                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <span class="workflow-category-label" data-en="TECH" data-zh="技术">TECH</span>
                       <div class="workflow-label-set workflow-tech-tags">
                         <span class="workflow-tech-tag">vLLM</span>
                         <span class="workflow-tech-tag">SGLang</span>
                         <span class="workflow-tech-tag">TensorRT-LLM</span>
-                        <span class="workflow-tech-tag">llama.cpp</span>
-                        <span class="workflow-tech-tag">LMDeploy</span>
                         <span class="workflow-tech-tag">FlashInfer</span>
+                        <span class="workflow-tech-tag">CUDA</span>
+                        <span class="workflow-tech-tag">Triton</span>
+                        <span class="workflow-tech-tag">Kubernetes</span>
                       </div>
                     </div>
                   </div>
@@ -404,7 +461,7 @@
                     <p>HARNESS</p>
                   </div>
                   <h3 class="workflow-mrq">
-                    <span data-en="How does an agent act reliably in the real world?" data-zh="Agent 如何可靠地在真实环境中行动？">How does an agent act reliably in the real world?</span>
+                    <span data-en="How do we turn model capability into reliable tool use and task completion?" data-zh="如何把模型能力转化为可靠的工具调用与真实任务完成？">How do we turn model capability into reliable tool use and task completion?</span>
                   </h3>
                   <div class="workflow-anatomy">
                     <div>
@@ -435,6 +492,11 @@
                         <span data-en="Context compaction" data-zh="上下文压缩">Context compaction</span>
                         <span data-en="Sandbox executor" data-zh="沙箱执行器">Sandbox executor</span>
                         <span data-en="Subagent orchestration" data-zh="子 Agent 编排">Subagent orchestration</span>
+                        <span data-en="Agent Infrastructure" data-zh="Agent 基础设施">Agent Infrastructure</span>
+                        <span data-en="Memory system" data-zh="记忆系统">Memory system</span>
+                        <span data-en="Context Engineering" data-zh="上下文工程">Context Engineering</span>
+                        <span data-en="Tool Use" data-zh="工具调用">Tool Use</span>
+                        <span data-en="AI Search" data-zh="AI 搜索">AI Search</span>
                         <span data-en="Recovery controller" data-zh="恢复控制器">Recovery controller</span>
                       </div>
                     </div>
@@ -449,7 +511,7 @@
                       </div>
                     </div>
                     <div>
-                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <span class="workflow-category-label" data-en="TECH" data-zh="技术">TECH</span>
                       <div class="workflow-label-set workflow-tech-tags">
                         <span class="workflow-tech-tag">Codex</span>
                         <span class="workflow-tech-tag">Claude Code</span>
@@ -476,7 +538,7 @@
                     <p>EVAL</p>
                   </div>
                   <h3 class="workflow-mrq">
-                    <span data-en="What evidence earns trust?" data-zh="哪些证据足以建立信任？">What evidence earns trust?</span>
+                    <span data-en="How do we build trustworthy automated evaluation for complex and open-ended behavior?" data-zh="如何建立覆盖复杂、开放与安全场景的可信自动化评测？">How do we build trustworthy automated evaluation for complex and open-ended behavior?</span>
                   </h3>
                   <div class="workflow-anatomy">
                     <div>
@@ -507,7 +569,15 @@
                         <span data-en="Trajectory evaluation" data-zh="轨迹评测">Trajectory evaluation</span>
                         <span data-en="Regression slicing" data-zh="回归切片">Regression slicing</span>
                         <span data-en="Contamination checks" data-zh="污染检查">Contamination checks</span>
-                        <span data-en="Cost / latency eval" data-zh="成本 / 延迟评测">Cost / latency eval</span>
+                        <span data-en="Cost Evaluation" data-zh="成本评测">Cost Evaluation</span>
+                        <span data-en="Latency Evaluation" data-zh="延迟评测">Latency Evaluation</span>
+                        <span data-en="Model Evaluation" data-zh="模型评测">Model Evaluation</span>
+                        <span data-en="Online Evaluation" data-zh="在线评测">Online Evaluation</span>
+                        <span data-en="A/B Testing" data-zh="A/B 测试">A/B Testing</span>
+                        <span data-en="Red Teaming" data-zh="红队测试">Red Teaming</span>
+                        <span data-en="Automated Evaluation" data-zh="自动化评测">Automated Evaluation</span>
+                        <span data-en="Evaluation Set Construction" data-zh="评测集建设">Evaluation Set Construction</span>
+                        <span data-en="Safety Evaluation" data-zh="安全评测">Safety Evaluation</span>
                       </div>
                     </div>
                     <div>
@@ -521,7 +591,7 @@
                       </div>
                     </div>
                     <div>
-                      <span class="workflow-category-label" data-en="TECHSTACK" data-zh="技术栈">TECHSTACK</span>
+                      <span class="workflow-category-label" data-en="TECH" data-zh="技术">TECH</span>
                       <div class="workflow-label-set workflow-tech-tags">
                         <span class="workflow-tech-tag">Inspect</span>
                         <span class="workflow-tech-tag">lm-evaluation-harness</span>
@@ -541,10 +611,166 @@
       </div>
     </section>
 
+    <section class="usecase-section" id="use-cases" data-nav-target="#use-cases" aria-labelledby="usecase-title">
+      <div class="section-shell">
+        <div class="system-card business-card reveal">
+          <div class="system-card-head">
+            <h2 id="usecase-title" data-en="Agent Business Map" data-zh="Agent 业务场景图">Agent Business Map</h2>
+          </div>
+          <div class="system-canvas business-canvas">
+            <div class="usecase-grid">
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <span data-en="E-COMMERCE" data-zh="电商">E-COMMERCE</span>
+            <span data-en="CONTENT PLATFORM" data-zh="内容平台">CONTENT PLATFORM</span>
+            <span data-en="SOCIAL PLATFORM" data-zh="社交平台">SOCIAL PLATFORM</span>
+          </div>
+          <h3 data-en="Search Agent" data-zh="搜索 Agent">Search Agent</h3>
+          <p data-en="Interpret noisy queries, retrieve across changing sources, and rank results with relevance and business constraints together." data-zh="理解嘈杂查询，跨动态数据源召回结果，并同时考虑相关性与业务约束。">Interpret noisy queries, retrieve across changing sources, and rank results with relevance and business constraints together.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="Queries, catalogs, pages, posts, events" data-zh="查询、商品、页面、帖子、行为事件">Queries, catalogs, pages, posts, events</p></li>
+            <li><span class="usecase-stage">MODELS</span><p data-en="Query rewriting + hybrid retrieval + ranking" data-zh="查询改写 + 混合检索 + 排序">Query rewriting + hybrid retrieval + ranking</p></li>
+            <li><span class="usecase-stage">TRAINING</span><p data-en="DPO preference pairs + GRPO conversion rewards" data-zh="DPO 偏好对 + GRPO 成交奖励">DPO preference pairs + GRPO conversion rewards</p></li>
+            <li><span class="usecase-stage">INFERENCE</span><p data-en="Candidate recall + low-latency reranking" data-zh="候选召回 + 低延迟重排">Candidate recall + low-latency reranking</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Inventory, content policy, and trend tools" data-zh="库存、内容政策与趋势工具">Inventory, content policy, and trend tools</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Relevance, zero-result rate, policy risk" data-zh="相关性、无结果率与合规风险">Relevance, zero-result rate, policy risk</p></li>
+          </ol>
+        </article>
+
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <span data-en="E-COMMERCE" data-zh="电商">E-COMMERCE</span>
+            <span data-en="CONTENT PLATFORM" data-zh="内容平台">CONTENT PLATFORM</span>
+            <span data-en="SOCIAL PLATFORM" data-zh="社交平台">SOCIAL PLATFORM</span>
+          </div>
+          <h3 data-en="Recommendation Agent" data-zh="推荐 Agent">Recommendation Agent</h3>
+          <p data-en="Balance immediate engagement with diversity, freshness, creator supply, and long-term user value." data-zh="在即时互动、多样性、新鲜度、创作者供给与长期用户价值之间进行平衡。">Balance immediate engagement with diversity, freshness, creator supply, and long-term user value.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="User events, item graph, context" data-zh="用户行为、内容图谱、上下文">User events, item graph, context</p></li>
+            <li><span class="usecase-stage">MODELS</span><p data-en="User encoder + generative recommender" data-zh="用户编码器 + 生成式推荐模型">User encoder + generative recommender</p></li>
+            <li><span class="usecase-stage">TRAINING</span><p data-en="DPO engagement preferences + GRPO long-term rewards" data-zh="DPO 互动偏好 + GRPO 长期奖励">DPO engagement preferences + GRPO long-term rewards</p></li>
+            <li><span class="usecase-stage">INFERENCE</span><p data-en="Candidate generation + constrained reranking" data-zh="候选生成 + 约束重排">Candidate generation + constrained reranking</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Inventory, creator supply, freshness tools" data-zh="库存、创作者供给、新鲜度工具">Inventory, creator supply, freshness tools</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Relevance, diversity, retention, long-term value" data-zh="相关性、多样性、留存、长期价值">Relevance, diversity, retention, long-term value</p></li>
+          </ol>
+        </article>
+
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <span data-en="E-COMMERCE" data-zh="电商">E-COMMERCE</span>
+            <span data-en="CONTENT PLATFORM" data-zh="内容平台">CONTENT PLATFORM</span>
+            <span data-en="SOCIAL PLATFORM" data-zh="社交平台">SOCIAL PLATFORM</span>
+          </div>
+          <h3 data-en="Advertising Agent" data-zh="广告 Agent">Advertising Agent</h3>
+          <p data-en="Generate, target, and revise creatives while enforcing brand, audience, and placement constraints." data-zh="生成、定向并迭代广告素材，同时遵守品牌、受众与版位约束。">Generate, target, and revise creatives while enforcing brand, audience, and placement constraints.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="Briefs, creatives, audience segments" data-zh="广告简报、创意素材、受众分群">Briefs, creatives, audience segments</p></li>
+            <li><span class="usecase-stage">MODELS</span><p data-en="Multimodal content + policy model" data-zh="多模态内容 + 策略模型">Multimodal content + policy model</p></li>
+            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT on briefs + DPO on brand preferences" data-zh="简报 SFT + 品牌偏好 DPO">SFT on briefs + DPO on brand preferences</p></li>
+            <li><span class="usecase-stage">INFERENCE</span><p data-en="Streaming copy + variant scoring" data-zh="流式文案 + 素材变体评分">Streaming copy + variant scoring</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Ad platform and asset delivery tools" data-zh="广告平台与素材投放工具">Ad platform and asset delivery tools</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Brand safety, campaign lift, acquisition cost" data-zh="品牌安全、投放提升、获客成本">Brand safety, campaign lift, acquisition cost</p></li>
+          </ol>
+        </article>
+
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <span data-en="E-COMMERCE" data-zh="电商">E-COMMERCE</span>
+            <span data-en="CONTENT PLATFORM" data-zh="内容平台">CONTENT PLATFORM</span>
+            <span data-en="SOCIAL PLATFORM" data-zh="社交平台">SOCIAL PLATFORM</span>
+          </div>
+          <h3 data-en="Customer Support Agent" data-zh="客服 Agent">Customer Support Agent</h3>
+          <p data-en="Resolve conversations across chat and social channels with grounded actions and reliable escalation." data-zh="在聊天与社交渠道中解决问题，基于真实工具执行，并在必要时可靠转人工。">Resolve conversations across chat and social channels with grounded actions and reliable escalation.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="Chats, tickets, account events" data-zh="会话、工单、账户事件">Chats, tickets, account events</p></li>
+            <li><span class="usecase-stage">MODELS</span><p data-en="Intent detection + response planner" data-zh="意图识别 + 回复规划">Intent detection + response planner</p></li>
+            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT + DPO for policy adherence" data-zh="SFT + DPO 强化政策遵循">SFT + DPO for policy adherence</p></li>
+            <li><span class="usecase-stage">INFERENCE</span><p data-en="Streaming replies + retrieval" data-zh="流式回复 + 检索">Streaming replies + retrieval</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Order, refund, and CRM tools" data-zh="订单、退款与 CRM 工具">Order, refund, and CRM tools</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Resolution quality + escalation safety" data-zh="解决质量 + 转人工安全">Resolution quality + escalation safety</p></li>
+          </ol>
+        </article>
+
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <span data-en="DEVELOPER PLATFORM" data-zh="开发者平台">DEVELOPER PLATFORM</span>
+            <span data-en="ENTERPRISE TOOLS" data-zh="企业工具">ENTERPRISE TOOLS</span>
+          </div>
+          <h3 data-en="Coding Agent" data-zh="编程 Agent">Coding Agent</h3>
+          <p data-en="Turn issues into tested multi-file changes with a controlled execution loop." data-zh="通过受控执行闭环，把问题转化为经过测试的多文件代码修改。">Turn issues into tested multi-file changes with a controlled execution loop.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="Repos, issues, tests, CI logs" data-zh="代码仓库、Issue、测试、CI 日志">Repos, issues, tests, CI logs</p></li>
+            <li><span class="usecase-stage">MODELS</span><p data-en="Code LLM + repository retriever" data-zh="代码 LLM + 仓库检索器">Code LLM + repository retriever</p></li>
+            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT / RFT + RL on test feedback" data-zh="SFT / RFT + 基于测试反馈的 RL">SFT / RFT + RL on test feedback</p></li>
+            <li><span class="usecase-stage">INFERENCE</span><p data-en="Completion + patch generation" data-zh="代码补全 + Patch 生成">Completion + patch generation</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Codex, sandbox, test runner" data-zh="Codex、沙箱、测试运行器">Codex, sandbox, test runner</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Tests, acceptance, regressions" data-zh="测试、采纳率、回归">Tests, acceptance, regressions</p></li>
+          </ol>
+        </article>
+
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <span data-en="E-COMMERCE" data-zh="电商">E-COMMERCE</span>
+            <span data-en="CONTENT PLATFORM" data-zh="内容平台">CONTENT PLATFORM</span>
+            <span data-en="ENTERPRISE TOOLS" data-zh="企业工具">ENTERPRISE TOOLS</span>
+          </div>
+          <h3 data-en="Data Agent" data-zh="数据 Agent">Data Agent</h3>
+          <p data-en="Turn business questions into governed queries, analysis code, and explainable findings." data-zh="把业务问题转化为受治理的查询、分析代码与可解释结论。">Turn business questions into governed queries, analysis code, and explainable findings.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="Tables, metrics, metadata, lineage" data-zh="数据表、指标、元数据、血缘">Tables, metrics, metadata, lineage</p></li>
+            <li><span class="usecase-stage">MODELS</span><p data-en="Text-to-SQL + analysis planner" data-zh="Text-to-SQL + 分析规划器">Text-to-SQL + analysis planner</p></li>
+            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT query pairs + DPO correct analysis" data-zh="SFT 查询样本 + DPO 正确分析">SFT query pairs + DPO correct analysis</p></li>
+            <li><span class="usecase-stage">INFERENCE</span><p data-en="Query planning + code execution" data-zh="查询规划 + 代码执行">Query planning + code execution</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Warehouse, BI, notebook, permission tools" data-zh="数仓、BI、Notebook、权限工具">Warehouse, BI, notebook, permission tools</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Execution accuracy + insight validity" data-zh="执行准确率 + 结论有效性">Execution accuracy + insight validity</p></li>
+          </ol>
+        </article>
+
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <span data-en="FINANCIAL MARKETS" data-zh="金融市场">FINANCIAL MARKETS</span>
+            <span data-en="BROKERAGE" data-zh="券商业务">BROKERAGE</span>
+            <span data-en="RISK OPERATIONS" data-zh="风控运营">RISK OPERATIONS</span>
+          </div>
+          <h3 data-en="Trading Agent" data-zh="量化交易 Agent">Trading Agent</h3>
+          <p data-en="Research and explain market signals with simulation, risk controls, and human approval for consequential actions." data-zh="通过仿真、风险约束与人工审批研究并解释交易信号，高风险动作不自动放行。">Research and explain market signals with simulation, risk controls, and human approval for consequential actions.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="Ticks, fundamentals, filings, news" data-zh="行情、基本面、公告、新闻">Ticks, fundamentals, filings, news</p></li>
+            <li><span class="usecase-stage">MODELS</span><p data-en="Time-series model + market reasoner" data-zh="时序模型 + 市场推理模型">Time-series model + market reasoner</p></li>
+            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT research reports + RL in simulation" data-zh="SFT 研究报告 + 仿真环境 RL">SFT research reports + RL in simulation</p></li>
+            <li><span class="usecase-stage">INFERENCE</span><p data-en="Streaming signals + scenario analysis" data-zh="流式信号 + 情景分析">Streaming signals + scenario analysis</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Market data, risk, order simulation tools" data-zh="行情、风控、订单仿真工具">Market data, risk, order simulation tools</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Backtest, drawdown, slippage, compliance" data-zh="回测、回撤、滑点、合规">Backtest, drawdown, slippage, compliance</p></li>
+          </ol>
+        </article>
+
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <span data-en="HEALTHCARE" data-zh="医疗健康">HEALTHCARE</span>
+            <span data-en="TELEMEDICINE" data-zh="互联网医疗">TELEMEDICINE</span>
+            <span data-en="INSURANCE" data-zh="医疗保险">INSURANCE</span>
+          </div>
+          <h3 data-en="Medical Consultation Agent" data-zh="医疗问诊 Agent">Medical Consultation Agent</h3>
+          <p data-en="Collect history, retrieve clinical evidence, triage risk, and prepare a clinician handoff with human review." data-zh="收集病史、检索临床证据、进行风险分诊，并在人工复核下准备医生交接。">Collect history, retrieve clinical evidence, triage risk, and prepare a clinician handoff with human review.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="EHR, guidelines, dialogues" data-zh="电子病历、临床指南、问诊对话">EHR, guidelines, dialogues</p></li>
+            <li><span class="usecase-stage">MODELS</span><p data-en="Medical LLM + clinical retrieval" data-zh="医疗 LLM + 临床检索">Medical LLM + clinical retrieval</p></li>
+            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT clinical dialogue + DPO safety preferences" data-zh="SFT 临床对话 + DPO 安全偏好">SFT clinical dialogue + DPO safety preferences</p></li>
+            <li><span class="usecase-stage">INFERENCE</span><p data-en="Streaming intake + evidence retrieval" data-zh="流式问诊 + 证据检索">Streaming intake + evidence retrieval</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="EHR, triage, scheduling tools" data-zh="EHR、分诊、预约工具">EHR, triage, scheduling tools</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Clinical safety, triage, hallucination" data-zh="临床安全、分诊、幻觉">Clinical safety, triage, hallucination</p></li>
+          </ol>
+        </article>
+      </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <section class="resume-section education-section section-shell" id="education" data-nav-target="#education">
       <div class="section-heading resume-heading reveal">
         <div>
-          <span class="section-index">01 / <span data-en="EDUCATION" data-zh="教育">EDUCATION</span></span>
+          <span class="section-index">03 / <span data-en="EDUCATION" data-zh="教育">EDUCATION</span></span>
           <p class="resume-period">2021 — 2027</p>
         </div>
         <div class="resume-heading-copy">
@@ -679,7 +905,7 @@
     <section class="resume-section work-experience-section section-shell" id="work" data-nav-target="#work">
       <div class="section-heading resume-heading reveal">
         <div>
-          <span class="section-index">02 / <span data-en="WORK EXPERIENCE" data-zh="工作经历">WORK EXPERIENCE</span></span>
+          <span class="section-index">04 / <span data-en="WORK EXPERIENCE" data-zh="工作经历">WORK EXPERIENCE</span></span>
           <p class="resume-period">2026</p>
         </div>
         <div class="resume-heading-copy"><h2 data-en="Work: Machine Learning Engineering + Software Engineering" data-zh="工作：模型工程 + 软件工程">Work: Machine Learning Engineering + Software Engineering</h2>
@@ -735,7 +961,9 @@
             <div class="resume-meta-tags">
               <span data-en="Multilingual ASR" data-zh="多语种 ASR">Multilingual ASR</span>
               <span data-en="Government meetings" data-zh="政务会议">Government meetings</span>
-              <span>EN · YUE · ZH</span>
+              <span>EN</span>
+              <span>YUE</span>
+              <span>ZH</span>
             </div>
             <button class="entry-toggle" type="button" aria-expanded="false"><span data-en="Work details" data-zh="工作详情">Work details</span><b>+</b></button>
             <div class="resume-detail-grid work-detail-grid" hidden>
@@ -759,7 +987,7 @@
 
     <section class="work-section section-shell" id="projects" data-nav-target="#projects">
       <div class="section-heading reveal">
-        <span class="section-index">03 / <span data-en="PROJECTS" data-zh="项目">PROJECTS</span></span>
+        <span class="section-index">05 / <span data-en="PROJECTS" data-zh="项目">PROJECTS</span></span>
         <h2 data-en="Projects" data-zh="项目">Projects</h2>
         <p data-en="Two projects are presented at the same level: an applied post-training workflow from the Xiaomi internship and a multi-GPU inference system." data-zh="以下两个项目采用同等篇幅呈现：来自小米实习的后训练实践，以及一个多 GPU 推理系统。">
           Two projects are presented at the same level: an applied post-training workflow from the Xiaomi internship and a multi-GPU inference system.
@@ -774,7 +1002,7 @@
           </div>
           <div class="work-card-body">
             <div class="work-kicker">
-              <span data-en="Xiaomi" data-zh="小米">Xiaomi</span>
+              <span class="work-entity" data-en="Xiaomi" data-zh="小米">Xiaomi</span>
               <span>2026</span>
             </div>
             <h3 data-en="Verifiable-reward post-training for RTL code generation." data-zh="面向 RTL 代码生成的可验证奖励后训练。">
@@ -804,7 +1032,7 @@
           </div>
           <div class="work-card-body">
             <div class="work-kicker">
-              <span>LMPool</span>
+              <span class="work-entity">LMPool</span>
               <span>2026</span>
             </div>
             <h3 data-en="KV-aware routing &amp; NVLink transfer for multi-GPU LLM serving." data-zh="面向多 GPU LLM 服务的 KV 感知路由与 NVLink 传输。">
@@ -837,7 +1065,7 @@
       <div class="xiaomi-shell section-shell">
         <div class="xiaomi-header reveal">
           <div>
-            <span class="section-index">03.1 / <span data-en="PROJECT 01" data-zh="项目 01">PROJECT 01</span></span>
+            <span class="section-index">05.1 / <span data-en="PROJECT 01" data-zh="项目 01">PROJECT 01</span></span>
             <p class="project-period" data-en="JUL — OCT 2026" data-zh="2026.07 — 10">JUL — OCT 2026</p>
           </div>
           <div class="xiaomi-title">
@@ -1106,7 +1334,7 @@
     <section class="project-section section-shell" id="lmpool" data-nav-target="#projects">
       <div class="project-intro reveal">
         <div>
-          <span class="section-index">03.2 / <span data-en="PROJECT 02" data-zh="项目 02">PROJECT 02</span></span>
+          <span class="section-index">05.2 / <span data-en="PROJECT 02" data-zh="项目 02">PROJECT 02</span></span>
           <p class="project-period" data-en="APR — JUL 2026" data-zh="2026.04 — 07">APR — JUL 2026</p>
         </div>
         <div class="project-title-wrap">
@@ -1373,137 +1601,15 @@
       </div>
     </section>
 
-    <section class="skills-section section-shell" id="skills" data-nav-target="#skills">
-      <div class="section-heading reveal">
-        <span class="section-index">04 / <span data-en="TECH STACK" data-zh="技术栈">TECH STACK</span></span>
-        <h2 data-en="Tech Stack" data-zh="技术栈">Tech Stack</h2>
-        <p data-en="Six layers of the agent engineering stack, grounded by the languages and tools used to build them." data-zh="覆盖 Agent 工程的六个层次，并以实际使用的语言与工具作为实现基础。">
-          Six layers of the agent engineering stack, grounded by the languages and tools used to build them.
-        </p>
-      </div>
-
-      <div class="skills-layout">
-        <div class="skills-taxonomy reveal">
-          <article class="skill-category">
-            <span>01</span>
-            <div>
-              <h3 data-en="Data" data-zh="数据">Data</h3>
-              <div class="skill-category-tags">
-                <span>datatrove</span>
-                <span>Dolma Toolkit</span>
-                <span>NeMo Curator</span>
-                <span>Ray Data</span>
-                <span>Apache Arrow</span>
-                <span>Parquet</span>
-              </div>
-            </div>
-          </article>
-          <article class="skill-category">
-            <span>02</span>
-            <div>
-              <h3 data-en="Models" data-zh="模型">Models</h3>
-              <div class="skill-category-tags">
-                <span>PyTorch</span>
-                <span>JAX</span>
-                <span>FlashAttention</span>
-                <span>FlashInfer</span>
-                <span>Transformer Engine</span>
-                <span>torchtitan</span>
-              </div>
-            </div>
-          </article>
-          <article class="skill-category">
-            <span>03</span>
-            <div>
-              <h3 data-en="Training" data-zh="训练">Training</h3>
-              <div class="skill-category-tags">
-                <span>DeepSpeed</span>
-                <span>FSDP</span>
-                <span>Megatron-LM</span>
-                <span>verl</span>
-                <span>TRL</span>
-                <span>Unsloth</span>
-              </div>
-            </div>
-          </article>
-          <article class="skill-category">
-            <span>04</span>
-            <div>
-              <h3 data-en="Inference" data-zh="推理">Inference</h3>
-              <div class="skill-category-tags">
-                <span>vLLM</span>
-                <span>SGLang</span>
-                <span>TensorRT-LLM</span>
-                <span>llama.cpp</span>
-                <span>LMDeploy</span>
-                <span>FlashInfer</span>
-              </div>
-            </div>
-          </article>
-          <article class="skill-category">
-            <span>05</span>
-            <div>
-              <h3 data-en="Harness" data-zh="执行">Harness</h3>
-              <div class="skill-category-tags">
-                <span>Codex</span>
-                <span>Claude Code</span>
-                <span>Claude Agent SDK</span>
-                <span>DeepSeek Harness</span>
-                <span>Pi</span>
-                <span>LangGraph</span>
-                <span>OpenHands</span>
-                <span>OpenCode</span>
-                <span>E2B</span>
-                <span>SWE-agent</span>
-                <span>OpenAI Agents SDK</span>
-                <span>MCP</span>
-              </div>
-            </div>
-          </article>
-          <article class="skill-category">
-            <span>06</span>
-            <div>
-              <h3 data-en="Eval" data-zh="评测">Eval</h3>
-              <div class="skill-category-tags">
-                <span>Inspect</span>
-                <span>lm-evaluation-harness</span>
-                <span>HELM</span>
-                <span>Promptfoo</span>
-                <span>DeepEval</span>
-                <span>EvalScope</span>
-              </div>
-            </div>
-          </article>
-          <article class="skill-category">
-            <span>07</span>
-            <div>
-              <h3 data-en="Languages &amp; Tools" data-zh="语言与工具">Languages &amp; Tools</h3>
-              <div class="skill-category-tags">
-                <span>Python</span>
-                <span>C / C++</span>
-                <span>Java</span>
-                <span>SQL</span>
-                <span>Git</span>
-                <span>Linux</span>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
     <section class="contact-section" id="contact">
       <div class="contact-shell section-shell">
         <div class="contact-top reveal">
-          <span class="section-index">05 / <span data-en="CONTACT" data-zh="联系方式">CONTACT</span></span>
+          <span class="section-index">06 / <span data-en="CONTACT" data-zh="联系方式">CONTACT</span></span>
         </div>
         <div class="contact-main reveal">
           <h2 data-en="Contact" data-zh="联系方式">Contact</h2>
+          <a class="email-direct" href="mailto:jl.li@connect.ust.hk">jl.li@connect.ust.hk</a>
           <div class="contact-actions">
-            <a class="contact-action" href="mailto:jl.li@connect.ust.hk">
-              <span data-en="Email" data-zh="邮箱">Email</span>
-              <span aria-hidden="true">↗</span>
-            </a>
             <a class="contact-action" href="https://github.com/0x0addc001" target="_blank" rel="noreferrer">
               <span>GitHub</span>
               <span aria-hidden="true">↗</span>
@@ -1513,7 +1619,7 @@
               <span aria-hidden="true">↗</span>
             </a>
             <a class="contact-action" href="assets/Jialiang-Li-CV-CN.pdf" download>
-              <span data-en="CV" data-zh="简历">CV</span>
+              <span data-en="CV" data-zh="CV">CV</span>
               <span aria-hidden="true">↓</span>
             </a>
           </div>
@@ -1523,6 +1629,43 @@
     </section>
   </main>
 
+  <button class="chat-launcher is-visible" data-chat-launcher type="button" aria-expanded="false">
+    <span data-en="Ask Agent" data-zh="问问 Agent">Ask Agent</span>
+    <b aria-hidden="true">←</b>
+  </button>
+
+  <aside class="hero-chat chat-widget is-collapsed reveal" data-chat-root aria-labelledby="hero-chat-title">
+    <div class="hero-chat-head">
+      <div>
+        <i class="hero-chat-indicator" aria-hidden="true"></i>
+        <strong id="hero-chat-title" data-en="Ask My Agent" data-zh="问问我的 Agent">Ask My Agent</strong>
+      </div>
+      <button class="chat-minimize" data-chat-minimize type="button" aria-expanded="false">
+        <span class="sr-only" data-en="Minimize chat" data-zh="收起对话">Minimize chat</span>
+        <span aria-hidden="true">→</span>
+      </button>
+    </div>
+    <div class="hero-chat-log" data-chat-log role="log" aria-live="polite">
+      <article class="chat-message chat-message-agent">
+        <span class="chat-author" data-en="Jialiang's Agent" data-zh="李嘉梁的 Agent">Jialiang's Agent</span>
+        <p data-en="A query comes in—intent parsing, slot filling, retrieval, reranking, function calling... the whole stack? Too much work. I’ll just hand off to Jialiang Li. Kidding." data-zh="query 发来，识意、补槽、召回、重排、工调。。。一套我都——懒得折腾，我直接兜底 handoff 李嘉梁，开玩笑的">
+          A query comes in—intent parsing, slot filling, retrieval, reranking, function calling... the whole stack? Too much work. I’ll just hand off to Jialiang Li. Kidding.
+        </p>
+      </article>
+    </div>
+    <form class="hero-chat-form" data-chat-form>
+      <label class="sr-only" for="hero-chat-input" data-en="Ask a question" data-zh="输入问题">Ask a question</label>
+      <div class="hero-chat-compose">
+        <input id="hero-chat-input" data-chat-input type="text" maxlength="1200" autocomplete="off">
+        <button class="chat-send" data-chat-send type="submit">
+          <span data-en="Send" data-zh="发送">Send</span>
+          <span aria-hidden="true">↗</span>
+        </button>
+      </div>
+    </form>
+    <p class="hero-chat-note" data-chat-status hidden></p>
+  </aside>
+
   <div class="lightbox" role="dialog" aria-modal="true" aria-labelledby="lightbox-title" hidden>
     <button class="lightbox-close" type="button" aria-label="Close image viewer">×</button>
     <div class="lightbox-inner">
@@ -1531,6 +1674,20 @@
     </div>
   </div>
 
-  <script src="script.js?v=20261028-14"></script>
-icon</body>
+  <div class="term-modal" id="term-modal" role="dialog" aria-modal="true" aria-labelledby="term-modal-title" aria-describedby="term-modal-description" hidden>
+    <div class="term-modal-panel">
+      <button class="term-modal-close" type="button" aria-label="Close definition">×</button>
+      <span class="term-modal-kicker" data-en="TERM EXPLAINER" data-zh="术语解释">TERM EXPLAINER</span>
+      <p class="term-modal-context" id="term-modal-context"></p>
+      <h2 class="term-modal-title" id="term-modal-title"></h2>
+      <p class="term-modal-description" id="term-modal-description"></p>
+    </div>
+  </div>
+
+  <script src="script.js?v=20261030-26"></script>
+  <script src="glossary.js?v=20261030-26"></script>
+  <script src="motion.js?v=20261030-26"></script>
+  <script src="chat-config.js?v=20261030-26"></script>
+  <script src="chat.js?v=20261030-26"></script>
+</body>
 </html>
