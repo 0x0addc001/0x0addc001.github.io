@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f3f1ea">
   <title>李嘉梁</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon-JL.svg?v=20261028-9">
-  <link rel="stylesheet" href="styles.css?v=20261030-26">
+  <link rel="stylesheet" href="styles.css?v=20261101-1">
   <script>
     document.documentElement.classList.add("js");
     try {
@@ -615,7 +615,7 @@
       <div class="section-shell">
         <div class="system-card business-card reveal">
           <div class="system-card-head">
-            <h2 id="usecase-title" data-en="Agent Business Map" data-zh="Agent 业务场景图">Agent Business Map</h2>
+            <h2 id="usecase-title" data-en="Agent Business Map (Agent-as-a-Service)" data-zh="Agent 业务场景图（Agent-as-a-Service）">Agent Business Map (Agent-as-a-Service)</h2>
           </div>
           <div class="system-canvas business-canvas">
             <div class="usecase-grid">
@@ -759,6 +759,42 @@
             <li><span class="usecase-stage">INFERENCE</span><p data-en="Streaming intake + evidence retrieval" data-zh="流式问诊 + 证据检索">Streaming intake + evidence retrieval</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="EHR, triage, scheduling tools" data-zh="EHR、分诊、预约工具">EHR, triage, scheduling tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Clinical safety, triage, hallucination" data-zh="临床安全、分诊、幻觉">Clinical safety, triage, hallucination</p></li>
+          </ol>
+        </article>
+
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <span data-en="CONTENT PLATFORM" data-zh="内容平台">CONTENT PLATFORM</span>
+            <span data-en="CREATIVE PRODUCTION" data-zh="创意生产">CREATIVE PRODUCTION</span>
+            <span data-en="ADVERTISING MEDIA" data-zh="广告媒体">ADVERTISING MEDIA</span>
+          </div>
+          <h3 data-en="Video Generation Agent" data-zh="视频生成 Agent">Video Generation Agent</h3>
+          <p data-en="Turn scripts and creative briefs into controllable, temporally consistent video while enforcing rights, brand, and safety constraints." data-zh="把脚本与创意简报转化为可控、时序一致的视频，同时约束版权、品牌与安全风险。">Turn scripts and creative briefs into controllable, temporally consistent video while enforcing rights, brand, and safety constraints.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="Scripts, storyboards, reference frames, audio" data-zh="脚本、分镜、参考帧、音频">Scripts, storyboards, reference frames, audio</p></li>
+            <li><span class="usecase-stage">MODELS</span><p data-en="Video diffusion / Transformer + multimodal planner" data-zh="视频扩散 / Transformer + 多模态规划">Video diffusion / Transformer + multimodal planner</p></li>
+            <li><span class="usecase-stage">TRAINING</span><p data-en="Shot-workflow SFT + human-preference and video-quality rewards" data-zh="镜头工作流 SFT + 人类偏好与视频质量奖励">Shot-workflow SFT + human-preference and video-quality rewards</p></li>
+            <li><span class="usecase-stage">INFERENCE</span><p data-en="Storyboard generation + controllable video sampling" data-zh="分镜生成 + 可控视频采样">Storyboard generation + controllable video sampling</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Render farm, asset rights, watermark, publishing tools" data-zh="渲染集群、素材版权、水印与发布工具">Render farm, asset rights, watermark, publishing tools</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Prompt fidelity, temporal consistency, motion, safety" data-zh="提示遵循、时序一致性、运动质量、安全">Prompt fidelity, temporal consistency, motion, safety</p></li>
+          </ol>
+        </article>
+
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <span data-en="ROBOTICS" data-zh="机器人">ROBOTICS</span>
+            <span data-en="AUTONOMOUS SYSTEMS" data-zh="自主系统">AUTONOMOUS SYSTEMS</span>
+            <span data-en="SMART MANUFACTURING" data-zh="智能制造">SMART MANUFACTURING</span>
+          </div>
+          <h3 data-en="Embodied Intelligence Agent" data-zh="具身智能 Agent">Embodied Intelligence Agent</h3>
+          <p data-en="Close the perception-planning-action loop across simulation and physical environments with hard safety envelopes and fleet-level coordination." data-zh="在仿真与真实环境中闭合感知、规划、行动回路，并以硬性安全边界和集群协同控制物理执行。">Close the perception-planning-action loop across simulation and physical environments with hard safety envelopes and fleet-level coordination.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="RGB-D, proprioception, trajectories, simulation logs" data-zh="RGB-D、本体感知、轨迹、仿真日志">RGB-D, proprioception, trajectories, simulation logs</p></li>
+            <li><span class="usecase-stage">MODELS</span><p data-en="Vision-language-action + world model + spatial policy" data-zh="视觉语言动作模型 + 世界模型 + 空间策略">Vision-language-action + world model + spatial policy</p></li>
+            <li><span class="usecase-stage">TRAINING</span><p data-en="Imitation learning + simulation RL + Sim2Real adaptation" data-zh="模仿学习 + 仿真 RL + Sim2Real 适配">Imitation learning + simulation RL + Sim2Real adaptation</p></li>
+            <li><span class="usecase-stage">INFERENCE</span><p data-en="Low-latency perception + action chunks" data-zh="低延迟感知 + 动作块生成">Low-latency perception + action chunks</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Robot SDK, safety envelope, simulator, fleet control" data-zh="机器人 SDK、安全边界、仿真器、集群控制">Robot SDK, safety envelope, simulator, fleet control</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Task success, safety, robustness, sim-to-real gap" data-zh="任务成功率、安全、鲁棒性、虚实迁移差距">Task success, safety, robustness, sim-to-real gap</p></li>
           </ol>
         </article>
       </div>
@@ -1684,10 +1720,10 @@
     </div>
   </div>
 
-  <script src="script.js?v=20261030-26"></script>
-  <script src="glossary.js?v=20261030-26"></script>
-  <script src="motion.js?v=20261030-26"></script>
-  <script src="chat-config.js?v=20261030-26"></script>
-  <script src="chat.js?v=20261030-26"></script>
+  <script src="script.js?v=20261101-1"></script>
+  <script src="glossary.js?v=20261101-1"></script>
+  <script src="motion.js?v=20261101-1"></script>
+  <script src="chat-config.js?v=20261101-1"></script>
+  <script src="chat.js?v=20261101-1"></script>
 </body>
 </html>

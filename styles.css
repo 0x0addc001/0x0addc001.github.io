@@ -4899,6 +4899,14 @@ html[lang="en"] .hero-title > span:first-child {
   background: var(--module-3);
 }
 
+.usecase-card:nth-child(9) {
+  background: var(--module-4);
+}
+
+.usecase-card:nth-child(10) {
+  background: var(--module-5);
+}
+
 .usecase-card:hover {
   border-color: var(--line-strong);
   box-shadow: 0 22px 48px rgba(28, 55, 98, 0.14);
