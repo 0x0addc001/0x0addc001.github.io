@@ -4980,6 +4980,36 @@ html[lang="zh"] .usecase-meta::before {
   line-height: 1.65;
 }
 
+.usecase-project-link {
+  display: inline-flex;
+  align-self: flex-start;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  min-width: 232px;
+  margin-top: 18px;
+  padding: 10px 13px;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  background: color-mix(in srgb, var(--orange) 9%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  font-weight: 650;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    background 180ms ease,
+    transform 180ms var(--ease);
+}
+
+.usecase-project-link:hover,
+.usecase-project-link:focus-visible {
+  color: var(--white);
+  background: var(--orange);
+  transform: translateY(-2px);
+}
+
 .usecase-flow {
   margin-top: 26px;
   border-top: 1px solid var(--line);

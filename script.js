@@ -86,6 +86,30 @@
     window.addEventListener("resize", syncBandHeight);
   }
 
+  function setupUsecaseProjectLinks() {
+    document.querySelectorAll(".usecase-card h3 a[href]").forEach((titleLink) => {
+      const card = titleLink.closest(".usecase-card");
+      const description = card?.querySelector(":scope > p");
+      if (!card || !description || card.querySelector(".usecase-project-link")) return;
+
+      const action = document.createElement("a");
+      const label = document.createElement("span");
+      const arrow = document.createElement("span");
+
+      action.className = "usecase-project-link";
+      action.href = titleLink.href;
+      action.target = "_blank";
+      action.rel = "noreferrer";
+      label.dataset.en = "View Project Homepage";
+      label.dataset.zh = "查看项目主页";
+      label.textContent = label.dataset[currentLanguage];
+      arrow.textContent = "↗";
+      arrow.setAttribute("aria-hidden", "true");
+      action.append(label, arrow);
+      description.insertAdjacentElement("afterend", action);
+    });
+  }
+
   const results = {
     small: {
       throughput: {
@@ -434,6 +458,7 @@
   });
 
   setupHeroTagMarquee();
+  setupUsecaseProjectLinks();
   applyLanguage(currentLanguage, false);
   applyTheme(currentTheme, false);
   requestAnimationFrame(animateResultBars);
