@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f3f1ea">
   <title>李嘉梁</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon-JL.svg?v=20261028-9">
-  <link rel="stylesheet" href="styles.css?v=20261101-8">
+  <link rel="stylesheet" href="styles.css?v=20261101-9">
   <script>
     document.documentElement.classList.add("js");
     try {
@@ -629,9 +629,9 @@
           <p data-en="Interpret noisy queries, retrieve across changing sources, and rank results with relevance and business constraints together." data-zh="理解嘈杂查询，跨动态数据源召回结果，并同时考虑相关性与业务约束。">Interpret noisy queries, retrieve across changing sources, and rank results with relevance and business constraints together.</p>
           <ol class="usecase-flow">
             <li><span class="usecase-stage">DATA</span><p data-en="Queries, catalogs, pages, posts, events" data-zh="查询、商品、页面、帖子、行为事件">Queries, catalogs, pages, posts, events</p></li>
-            <li><span class="usecase-stage">MODELS</span><p data-en="Query rewriting + hybrid retrieval + ranking" data-zh="查询改写 + 混合检索 + 排序">Query rewriting + hybrid retrieval + ranking</p></li>
-            <li><span class="usecase-stage">TRAINING</span><p data-en="DPO preference pairs + GRPO conversion rewards" data-zh="DPO 偏好对 + GRPO 成交奖励">DPO preference pairs + GRPO conversion rewards</p></li>
-            <li><span class="usecase-stage">INFERENCE</span><p data-en="Candidate recall + low-latency reranking" data-zh="候选召回 + 低延迟重排">Candidate recall + low-latency reranking</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Query rewriting + hybrid retrieval + ranking" data-zh="查询改写 + 混合检索 + 排序">Query rewriting + hybrid retrieval + ranking</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="DPO preference pairs + GRPO conversion rewards" data-zh="DPO 偏好对 + GRPO 成交奖励">DPO preference pairs + GRPO conversion rewards</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Candidate recall + low-latency reranking" data-zh="候选召回 + 低延迟重排">Candidate recall + low-latency reranking</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Inventory, content policy, and trend tools" data-zh="库存、内容政策与趋势工具">Inventory, content policy, and trend tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Relevance, zero-result rate, policy risk" data-zh="相关性、无结果率与合规风险">Relevance, zero-result rate, policy risk</p></li>
           </ol>
@@ -647,9 +647,9 @@
           <p data-en="Balance immediate engagement with diversity, freshness, creator supply, and long-term user value." data-zh="在即时互动、多样性、新鲜度、创作者供给与长期用户价值之间进行平衡。">Balance immediate engagement with diversity, freshness, creator supply, and long-term user value.</p>
           <ol class="usecase-flow">
             <li><span class="usecase-stage">DATA</span><p data-en="User events, item graph, context" data-zh="用户行为、内容图谱、上下文">User events, item graph, context</p></li>
-            <li><span class="usecase-stage">MODELS</span><p data-en="User encoder + generative recommender" data-zh="用户编码器 + 生成式推荐模型">User encoder + generative recommender</p></li>
-            <li><span class="usecase-stage">TRAINING</span><p data-en="DPO engagement preferences + GRPO long-term rewards" data-zh="DPO 互动偏好 + GRPO 长期奖励">DPO engagement preferences + GRPO long-term rewards</p></li>
-            <li><span class="usecase-stage">INFERENCE</span><p data-en="Candidate generation + constrained reranking" data-zh="候选生成 + 约束重排">Candidate generation + constrained reranking</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="User encoder + generative recommender" data-zh="用户编码器 + 生成式推荐模型">User encoder + generative recommender</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="DPO engagement preferences + GRPO long-term rewards" data-zh="DPO 互动偏好 + GRPO 长期奖励">DPO engagement preferences + GRPO long-term rewards</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Candidate generation + constrained reranking" data-zh="候选生成 + 约束重排">Candidate generation + constrained reranking</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Inventory, creator supply, freshness tools" data-zh="库存、创作者供给、新鲜度工具">Inventory, creator supply, freshness tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Relevance, diversity, retention, long-term value" data-zh="相关性、多样性、留存、长期价值">Relevance, diversity, retention, long-term value</p></li>
           </ol>
@@ -665,9 +665,9 @@
           <p data-en="Generate, target, and revise creatives while enforcing brand, audience, and placement constraints." data-zh="生成、定向并迭代广告素材，同时遵守品牌、受众与版位约束。">Generate, target, and revise creatives while enforcing brand, audience, and placement constraints.</p>
           <ol class="usecase-flow">
             <li><span class="usecase-stage">DATA</span><p data-en="Briefs, creatives, audience segments" data-zh="广告简报、创意素材、受众分群">Briefs, creatives, audience segments</p></li>
-            <li><span class="usecase-stage">MODELS</span><p data-en="Multimodal content + policy model" data-zh="多模态内容 + 策略模型">Multimodal content + policy model</p></li>
-            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT on briefs + DPO on brand preferences" data-zh="简报 SFT + 品牌偏好 DPO">SFT on briefs + DPO on brand preferences</p></li>
-            <li><span class="usecase-stage">INFERENCE</span><p data-en="Streaming copy + variant scoring" data-zh="流式文案 + 素材变体评分">Streaming copy + variant scoring</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Multimodal content + policy model" data-zh="多模态内容 + 策略模型">Multimodal content + policy model</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="SFT on briefs + DPO on brand preferences" data-zh="简报 SFT + 品牌偏好 DPO">SFT on briefs + DPO on brand preferences</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Streaming copy + variant scoring" data-zh="流式文案 + 素材变体评分">Streaming copy + variant scoring</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Ad platform and asset delivery tools" data-zh="广告平台与素材投放工具">Ad platform and asset delivery tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Brand safety, campaign lift, acquisition cost" data-zh="品牌安全、投放提升、获客成本">Brand safety, campaign lift, acquisition cost</p></li>
           </ol>
@@ -683,9 +683,9 @@
           <p data-en="Resolve conversations across chat and social channels with grounded actions and reliable escalation." data-zh="在聊天与社交渠道中解决问题，基于真实工具执行，并在必要时可靠转人工。">Resolve conversations across chat and social channels with grounded actions and reliable escalation.</p>
           <ol class="usecase-flow">
             <li><span class="usecase-stage">DATA</span><p data-en="Chats, tickets, account events" data-zh="会话、工单、账户事件">Chats, tickets, account events</p></li>
-            <li><span class="usecase-stage">MODELS</span><p data-en="Intent detection + response planner" data-zh="意图识别 + 回复规划">Intent detection + response planner</p></li>
-            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT + DPO for policy adherence" data-zh="SFT + DPO 强化政策遵循">SFT + DPO for policy adherence</p></li>
-            <li><span class="usecase-stage">INFERENCE</span><p data-en="Streaming replies + retrieval" data-zh="流式回复 + 检索">Streaming replies + retrieval</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Intent detection + response planner" data-zh="意图识别 + 回复规划">Intent detection + response planner</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="SFT + DPO for policy adherence" data-zh="SFT + DPO 强化政策遵循">SFT + DPO for policy adherence</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Streaming replies + retrieval" data-zh="流式回复 + 检索">Streaming replies + retrieval</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Order, refund, and CRM tools" data-zh="订单、退款与 CRM 工具">Order, refund, and CRM tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Resolution quality + escalation safety" data-zh="解决质量 + 转人工安全">Resolution quality + escalation safety</p></li>
           </ol>
@@ -700,9 +700,9 @@
           <p data-en="Turn issues into tested multi-file changes with a controlled execution loop." data-zh="通过受控执行闭环，把问题转化为经过测试的多文件代码修改。">Turn issues into tested multi-file changes with a controlled execution loop.</p>
           <ol class="usecase-flow">
             <li><span class="usecase-stage">DATA</span><p data-en="Repos, issues, tests, CI logs" data-zh="代码仓库、Issue、测试、CI 日志">Repos, issues, tests, CI logs</p></li>
-            <li><span class="usecase-stage">MODELS</span><p data-en="Code LLM + repository retriever" data-zh="代码 LLM + 仓库检索器">Code LLM + repository retriever</p></li>
-            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT / RFT + RL on test feedback" data-zh="SFT / RFT + 基于测试反馈的 RL">SFT / RFT + RL on test feedback</p></li>
-            <li><span class="usecase-stage">INFERENCE</span><p data-en="Completion + patch generation" data-zh="代码补全 + Patch 生成">Completion + patch generation</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Code LLM + repository retriever" data-zh="代码 LLM + 仓库检索器">Code LLM + repository retriever</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="SFT / RFT + RL on test feedback" data-zh="SFT / RFT + 基于测试反馈的 RL">SFT / RFT + RL on test feedback</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Completion + patch generation" data-zh="代码补全 + Patch 生成">Completion + patch generation</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Codex, sandbox, test runner" data-zh="Codex、沙箱、测试运行器">Codex, sandbox, test runner</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Tests, acceptance, regressions" data-zh="测试、采纳率、回归">Tests, acceptance, regressions</p></li>
           </ol>
@@ -718,9 +718,9 @@
           <p data-en="Turn business questions into governed queries, analysis code, and explainable findings." data-zh="把业务问题转化为受治理的查询、分析代码与可解释结论。">Turn business questions into governed queries, analysis code, and explainable findings.</p>
           <ol class="usecase-flow">
             <li><span class="usecase-stage">DATA</span><p data-en="Tables, metrics, metadata, lineage" data-zh="数据表、指标、元数据、血缘">Tables, metrics, metadata, lineage</p></li>
-            <li><span class="usecase-stage">MODELS</span><p data-en="Text-to-SQL + analysis planner" data-zh="Text-to-SQL + 分析规划器">Text-to-SQL + analysis planner</p></li>
-            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT query pairs + DPO correct analysis" data-zh="SFT 查询样本 + DPO 正确分析">SFT query pairs + DPO correct analysis</p></li>
-            <li><span class="usecase-stage">INFERENCE</span><p data-en="Query planning + code execution" data-zh="查询规划 + 代码执行">Query planning + code execution</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Text-to-SQL + analysis planner" data-zh="Text-to-SQL + 分析规划器">Text-to-SQL + analysis planner</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="SFT query pairs + DPO correct analysis" data-zh="SFT 查询样本 + DPO 正确分析">SFT query pairs + DPO correct analysis</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Query planning + code execution" data-zh="查询规划 + 代码执行">Query planning + code execution</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Warehouse, BI, notebook, permission tools" data-zh="数仓、BI、Notebook、权限工具">Warehouse, BI, notebook, permission tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Execution accuracy + insight validity" data-zh="执行准确率 + 结论有效性">Execution accuracy + insight validity</p></li>
           </ol>
@@ -736,9 +736,9 @@
           <p data-en="Research and explain market signals with simulation, risk controls, and human approval for consequential actions." data-zh="通过仿真、风险约束与人工审批研究并解释交易信号，高风险动作不自动放行。">Research and explain market signals with simulation, risk controls, and human approval for consequential actions.</p>
           <ol class="usecase-flow">
             <li><span class="usecase-stage">DATA</span><p data-en="Ticks, fundamentals, filings, news" data-zh="行情、基本面、公告、新闻">Ticks, fundamentals, filings, news</p></li>
-            <li><span class="usecase-stage">MODELS</span><p data-en="Time-series model + market reasoner" data-zh="时序模型 + 市场推理模型">Time-series model + market reasoner</p></li>
-            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT research reports + RL in simulation" data-zh="SFT 研究报告 + 仿真环境 RL">SFT research reports + RL in simulation</p></li>
-            <li><span class="usecase-stage">INFERENCE</span><p data-en="Streaming signals + scenario analysis" data-zh="流式信号 + 情景分析">Streaming signals + scenario analysis</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Time-series model + market reasoner" data-zh="时序模型 + 市场推理模型">Time-series model + market reasoner</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="SFT research reports + RL in simulation" data-zh="SFT 研究报告 + 仿真环境 RL">SFT research reports + RL in simulation</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Streaming signals + scenario analysis" data-zh="流式信号 + 情景分析">Streaming signals + scenario analysis</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Market data, risk, order simulation tools" data-zh="行情、风控、订单仿真工具">Market data, risk, order simulation tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Backtest, drawdown, slippage, compliance" data-zh="回测、回撤、滑点、合规">Backtest, drawdown, slippage, compliance</p></li>
           </ol>
@@ -754,9 +754,9 @@
           <p data-en="Collect history, retrieve clinical evidence, triage risk, and prepare a clinician handoff with human review." data-zh="收集病史、检索临床证据、进行风险分诊，并在人工复核下准备医生交接。">Collect history, retrieve clinical evidence, triage risk, and prepare a clinician handoff with human review.</p>
           <ol class="usecase-flow">
             <li><span class="usecase-stage">DATA</span><p data-en="EHR, guidelines, dialogues" data-zh="电子病历、临床指南、问诊对话">EHR, guidelines, dialogues</p></li>
-            <li><span class="usecase-stage">MODELS</span><p data-en="Medical LLM + clinical retrieval" data-zh="医疗 LLM + 临床检索">Medical LLM + clinical retrieval</p></li>
-            <li><span class="usecase-stage">TRAINING</span><p data-en="SFT clinical dialogue + DPO safety preferences" data-zh="SFT 临床对话 + DPO 安全偏好">SFT clinical dialogue + DPO safety preferences</p></li>
-            <li><span class="usecase-stage">INFERENCE</span><p data-en="Streaming intake + evidence retrieval" data-zh="流式问诊 + 证据检索">Streaming intake + evidence retrieval</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Medical LLM + clinical retrieval" data-zh="医疗 LLM + 临床检索">Medical LLM + clinical retrieval</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="SFT clinical dialogue + DPO safety preferences" data-zh="SFT 临床对话 + DPO 安全偏好">SFT clinical dialogue + DPO safety preferences</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Streaming intake + evidence retrieval" data-zh="流式问诊 + 证据检索">Streaming intake + evidence retrieval</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="EHR, triage, scheduling tools" data-zh="EHR、分诊、预约工具">EHR, triage, scheduling tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Clinical safety, triage, hallucination" data-zh="临床安全、分诊、幻觉">Clinical safety, triage, hallucination</p></li>
           </ol>
@@ -772,9 +772,9 @@
           <p data-en="Turn scripts and creative briefs into controllable, temporally consistent video while enforcing rights, brand, and safety constraints." data-zh="把脚本与创意简报转化为可控、时序一致的视频，同时约束版权、品牌与安全风险。">Turn scripts and creative briefs into controllable, temporally consistent video while enforcing rights, brand, and safety constraints.</p>
           <ol class="usecase-flow">
             <li><span class="usecase-stage">DATA</span><p data-en="Scripts, storyboards, reference frames, audio" data-zh="脚本、分镜、参考帧、音频">Scripts, storyboards, reference frames, audio</p></li>
-            <li><span class="usecase-stage">MODELS</span><p data-en="Video diffusion / Transformer + multimodal planner" data-zh="视频扩散 / Transformer + 多模态规划">Video diffusion / Transformer + multimodal planner</p></li>
-            <li><span class="usecase-stage">TRAINING</span><p data-en="Shot-workflow SFT + human-preference and video-quality rewards" data-zh="镜头工作流 SFT + 人类偏好与视频质量奖励">Shot-workflow SFT + human-preference and video-quality rewards</p></li>
-            <li><span class="usecase-stage">INFERENCE</span><p data-en="Storyboard generation + controllable video sampling" data-zh="分镜生成 + 可控视频采样">Storyboard generation + controllable video sampling</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Video diffusion / Transformer + multimodal planner" data-zh="视频扩散 / Transformer + 多模态规划">Video diffusion / Transformer + multimodal planner</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="Shot-workflow SFT + human-preference and video-quality rewards" data-zh="镜头工作流 SFT + 人类偏好与视频质量奖励">Shot-workflow SFT + human-preference and video-quality rewards</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Storyboard generation + controllable video sampling" data-zh="分镜生成 + 可控视频采样">Storyboard generation + controllable video sampling</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Render farm, asset rights, watermark, publishing tools" data-zh="渲染集群、素材版权、水印与发布工具">Render farm, asset rights, watermark, publishing tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Prompt fidelity, temporal consistency, motion, safety" data-zh="提示遵循、时序一致性、运动质量、安全">Prompt fidelity, temporal consistency, motion, safety</p></li>
           </ol>
@@ -790,9 +790,9 @@
           <p data-en="Close the perception-planning-action loop across simulation and physical environments with hard safety envelopes and fleet-level coordination." data-zh="在仿真与真实环境中闭合感知、规划、行动回路，并以硬性安全边界和集群协同控制物理执行。">Close the perception-planning-action loop across simulation and physical environments with hard safety envelopes and fleet-level coordination.</p>
           <ol class="usecase-flow">
             <li><span class="usecase-stage">DATA</span><p data-en="RGB-D, proprioception, trajectories, simulation logs" data-zh="RGB-D、本体感知、轨迹、仿真日志">RGB-D, proprioception, trajectories, simulation logs</p></li>
-            <li><span class="usecase-stage">MODELS</span><p data-en="Vision-language-action + world model + spatial policy" data-zh="视觉语言动作模型 + 世界模型 + 空间策略">Vision-language-action + world model + spatial policy</p></li>
-            <li><span class="usecase-stage">TRAINING</span><p data-en="Imitation learning + simulation RL + Sim2Real adaptation" data-zh="模仿学习 + 仿真 RL + Sim2Real 适配">Imitation learning + simulation RL + Sim2Real adaptation</p></li>
-            <li><span class="usecase-stage">INFERENCE</span><p data-en="Low-latency perception + action chunks" data-zh="低延迟感知 + 动作块生成">Low-latency perception + action chunks</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Vision-language-action + world model + spatial policy" data-zh="视觉语言动作模型 + 世界模型 + 空间策略">Vision-language-action + world model + spatial policy</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="Imitation learning + simulation RL + Sim2Real adaptation" data-zh="模仿学习 + 仿真 RL + Sim2Real 适配">Imitation learning + simulation RL + Sim2Real adaptation</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Low-latency perception + action chunks" data-zh="低延迟感知 + 动作块生成">Low-latency perception + action chunks</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Robot SDK, safety envelope, simulator, fleet control" data-zh="机器人 SDK、安全边界、仿真器、集群控制">Robot SDK, safety envelope, simulator, fleet control</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Task success, safety, robustness, sim-to-real gap" data-zh="任务成功率、安全、鲁棒性、虚实迁移差距">Task success, safety, robustness, sim-to-real gap</p></li>
           </ol>
@@ -1720,10 +1720,10 @@
     </div>
   </div>
 
-  <script src="script.js?v=20261101-8"></script>
-  <script src="glossary.js?v=20261101-8"></script>
-  <script src="motion.js?v=20261101-8"></script>
-  <script src="chat-config.js?v=20261101-8"></script>
-  <script src="chat.js?v=20261101-8"></script>
+  <script src="script.js?v=20261101-9"></script>
+  <script src="glossary.js?v=20261101-9"></script>
+  <script src="motion.js?v=20261101-9"></script>
+  <script src="chat-config.js?v=20261101-9"></script>
+  <script src="chat.js?v=20261101-9"></script>
 </body>
 </html>
