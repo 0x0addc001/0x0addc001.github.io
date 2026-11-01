@@ -87,26 +87,33 @@
   }
 
   function setupUsecaseProjectLinks() {
-    document.querySelectorAll(".usecase-card h3 a[href]").forEach((titleLink) => {
-      const card = titleLink.closest(".usecase-card");
-      const description = card?.querySelector(":scope > p");
-      if (!card || !description || card.querySelector(".usecase-project-link")) return;
+    document.querySelectorAll(".usecase-card h3[data-project-url]").forEach((title) => {
+      const card = title.closest(".usecase-card");
+      if (!card || card.querySelector(".usecase-project-link")) return;
 
       const action = document.createElement("a");
       const label = document.createElement("span");
-      const arrow = document.createElement("span");
+      const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
+      const iconPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      const titleRow = document.createElement("div");
 
       action.className = "usecase-project-link";
-      action.href = titleLink.href;
+      action.href = title.dataset.projectUrl;
       action.target = "_blank";
       action.rel = "noreferrer";
-      label.dataset.en = "View Project Homepage";
-      label.dataset.zh = "查看项目主页";
-      label.textContent = label.dataset[currentLanguage];
-      arrow.textContent = "↗";
-      arrow.setAttribute("aria-hidden", "true");
-      action.append(label, arrow);
-      description.insertAdjacentElement("afterend", action);
+      label.textContent = "GitHub";
+      icon.classList.add("github-icon");
+      icon.setAttribute("viewBox", "0 0 24 24");
+      icon.setAttribute("aria-hidden", "true");
+      iconPath.setAttribute(
+        "d",
+        "M12 .7C5.7.7.7 5.7.7 12c0 5 3.3 9.2 7.8 10.7.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.5 7.8-5.7 7.8-10.7C23.3 5.7 18.3.7 12 .7z"
+      );
+      icon.append(iconPath);
+      action.append(icon, label);
+      titleRow.className = "usecase-title-row";
+      title.before(titleRow);
+      titleRow.append(title, action);
     });
   }
 
