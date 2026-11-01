@@ -96,12 +96,15 @@
       const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
       const iconPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
       const titleRow = document.createElement("div");
+      const projectUrl = new URL(title.dataset.projectUrl);
+      const repositoryName = projectUrl.pathname.replace(/\/+$/, "").split("/").pop();
 
       action.className = "usecase-project-link";
       action.href = title.dataset.projectUrl;
       action.target = "_blank";
       action.rel = "noreferrer";
-      label.textContent = "GitHub";
+      action.setAttribute("aria-label", `Open ${repositoryName} project page`);
+      label.textContent = repositoryName;
       icon.classList.add("github-icon");
       icon.setAttribute("viewBox", "0 0 24 24");
       icon.setAttribute("aria-hidden", "true");
