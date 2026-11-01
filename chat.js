@@ -20,7 +20,7 @@
   const copy = {
     en: {
       you: "You",
-      agent: "Jialiang's Agent",
+      agent: "Jialiang's HomeAgent",
       thinking: "Thinking through the page context…",
       waiting: "Waiting for the agent…",
       notConfigured: "The live agent is not connected yet.",
@@ -28,7 +28,7 @@
     },
     zh: {
       you: "你",
-      agent: "李嘉梁的 Agent",
+      agent: "李嘉梁的 HomeAgent",
       thinking: "正在理解网页上下文…",
       waiting: "正在等待 Agent 回复…",
       notConfigured: "在线 Agent 尚未接入。",

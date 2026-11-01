@@ -993,7 +993,6 @@ html[lang="en"] .hero-title > span:first-child {
   font-size: 0.72rem;
   font-weight: 600;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
 }
 
 .chat-message p {
@@ -1465,6 +1464,7 @@ html[lang="en"] .hero-title > span:first-child {
 
 .workflow-stage-head {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 8px;
 }
@@ -1490,6 +1490,48 @@ html[lang="en"] .hero-title > span:first-child {
   letter-spacing: 0.06em;
   line-height: 1.35;
   text-transform: uppercase;
+}
+
+.workflow-project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  min-height: 26px;
+  margin-left: auto;
+  padding: 3px 7px;
+  border: 1px solid color-mix(in srgb, var(--orange) 48%, transparent);
+  color: var(--orange);
+  background: color-mix(in srgb, var(--orange) 8%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  transition:
+    color 180ms ease,
+    border-color 180ms ease,
+    background 180ms ease,
+    transform 180ms ease;
+}
+
+.workflow-project-link .github-icon {
+  width: 13px;
+  height: 13px;
+  flex: none;
+  fill: currentColor;
+}
+
+.workflow-project-link b {
+  font-size: 0.78rem;
+  font-weight: 400;
+}
+
+.workflow-project-link:hover,
+.workflow-project-link:focus-visible {
+  border-color: var(--orange);
+  color: var(--white);
+  background: var(--orange);
+  transform: translateY(-1px);
 }
 
 .workflow-stage > h3 {
