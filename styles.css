@@ -4953,6 +4953,25 @@ html[lang="zh"] .usecase-meta::before {
   line-height: 1.05;
 }
 
+.usecase-card h3 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.usecase-card h3 a::after {
+  margin-left: 0.16em;
+  color: var(--orange);
+  content: "↗";
+  font-family: var(--font-mono);
+  font-size: 0.42em;
+  vertical-align: super;
+}
+
+.usecase-card h3 a:hover,
+.usecase-card h3 a:focus-visible {
+  color: var(--orange);
+}
+
 .usecase-card > p {
   max-width: 660px;
   margin-top: 15px;

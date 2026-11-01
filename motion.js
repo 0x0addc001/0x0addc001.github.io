@@ -34,7 +34,7 @@
     ".mechanism-strip strong",
     ".mechanism-strip p",
     ".learning-copy blockquote",
-    ".usecase-card h3",
+    ".usecase-card h3 a",
     ".usecase-card > p",
     ".contact-main h2",
     ".email-direct"
