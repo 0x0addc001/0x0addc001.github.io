@@ -4959,12 +4959,13 @@ html[lang="zh"] .usecase-meta::before {
 }
 
 .usecase-card h3 a::after {
-  margin-left: 0.16em;
+  margin-left: 0.18em;
   color: var(--orange);
   content: "↗";
-  font-family: var(--font-mono);
-  font-size: 0.42em;
-  vertical-align: super;
+  font-family: var(--font-display);
+  font-size: 1em;
+  font-weight: 400;
+  vertical-align: baseline;
 }
 
 .usecase-card h3 a:hover,
