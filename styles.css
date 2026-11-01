@@ -1948,6 +1948,25 @@ html[lang="en"] .hero-title > span:first-child {
   text-transform: uppercase;
 }
 
+.resume-entry-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  align-items: center;
+}
+
+.resume-entry-tags .resume-entry-org,
+.resume-entry-tags .resume-meta-tags {
+  display: contents;
+  margin-top: 0;
+}
+
+.resume-entry-tags span {
+  padding-inline: 6px;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+}
+
 .resume-entry-org span {
   padding: 3px 7px;
   border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
@@ -1955,7 +1974,7 @@ html[lang="en"] .hero-title > span:first-child {
 }
 
 .resume-entry-main > h3 {
-  margin-top: 8px;
+  margin-top: 16px;
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.2vw, 3.35rem);
   font-weight: 400;
@@ -1972,7 +1991,7 @@ html[lang="en"] .hero-title > span:first-child {
 }
 
 .resume-meta-tags {
-  margin-top: 12px;
+  margin-top: 8px;
 }
 
 .resume-meta-tags span,
