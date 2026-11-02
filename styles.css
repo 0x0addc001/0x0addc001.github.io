@@ -1955,22 +1955,44 @@ html[lang="en"] .hero-title > span:first-child {
   align-items: center;
 }
 
-.resume-entry-tags .resume-entry-org,
-.resume-entry-tags .resume-meta-tags {
-  display: contents;
-  margin-top: 0;
-}
-
 .resume-entry-tags span {
-  padding-inline: 6px;
+  padding: 3px 6px;
+  border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
+  background: color-mix(in srgb, currentColor 8%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  line-height: 1.4;
   letter-spacing: 0.02em;
   white-space: nowrap;
 }
 
-.resume-entry-org span {
-  padding: 3px 7px;
-  border: 1px solid color-mix(in srgb, currentColor 40%, transparent);
-  background: color-mix(in srgb, currentColor 8%, transparent);
+.resume-entry-tags .resume-entry-org-tag {
+  color: var(--tag-color, var(--orange));
+  text-transform: uppercase;
+}
+
+.resume-entry-tags .resume-entry-meta-tag {
+  color: var(--tag-color, var(--muted));
+}
+
+.resume-entry-tags > span:nth-child(5n + 1) {
+  --tag-color: var(--tag-1);
+}
+
+.resume-entry-tags > span:nth-child(5n + 2) {
+  --tag-color: var(--tag-2);
+}
+
+.resume-entry-tags > span:nth-child(5n + 3) {
+  --tag-color: var(--tag-3);
+}
+
+.resume-entry-tags > span:nth-child(5n + 4) {
+  --tag-color: var(--tag-4);
+}
+
+.resume-entry-tags > span:nth-child(5n) {
+  --tag-color: var(--tag-5);
 }
 
 .resume-entry-main > h3 {
