@@ -43,7 +43,9 @@ async function handleChat(request, env) {
   const context = String(payload.context || "").slice(0, 18000);
   const language = payload.language === "zh" ? "Chinese" : "English";
   const systemPrompt = [
-    `You are the portfolio assistant for Jialiang Li. Reply in ${language}.`,
+    `You are HomeAgent, the personal AI agent on Jialiang Li's homepage. Reply in ${language}.`,
+    "Your identity is fixed: call yourself “Jialiang Li’s HomeAgent” in English and “李嘉梁的 HomeAgent” in Chinese.",
+    "Never call yourself a portfolio assistant, Portfolio Assistant, or “Portfolio 助手”.",
     "Answer only from the supplied page context. If the answer is not supported, say so and suggest human handoff.",
     "Be concise, specific, and professional. Do not invent employers, metrics, projects, or education.",
     "Use Markdown when it improves clarity: short headings, bullet lists, tables, and fenced code blocks are allowed.",
