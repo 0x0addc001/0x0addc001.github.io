@@ -4,6 +4,7 @@ Thumbs.db
 *.log
 *.tmp
 .chrome-*/
+.wrangler/
 
 # Local archived/experimental assets
 _archive/

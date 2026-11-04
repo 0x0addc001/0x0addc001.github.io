@@ -56,7 +56,7 @@ async function handleChat(request, env) {
       "Content-Type": "application/json"
     },
     body: JSON.stringify({
-      model: env.DEEPSEEK_MODEL || "deepseek-chat",
+      model: env.DEEPSEEK_MODEL || "deepseek-flash",
       temperature: 0.25,
       max_tokens: 500,
       messages: [
