@@ -41,6 +41,8 @@
   ].join(",");
 
   const timers = new WeakMap();
+  const heroHoldMs = 4200;
+  const heroRestartGapMs = 260;
   const tagGroupSelector = [
     ".workflow-label-set",
     ".project-tags",
@@ -119,11 +121,11 @@
     element.classList.add("will-type");
   }
 
-  function revealText(element, index, onDone) {
-    const text = element.textContent.trim();
+  function revealText(element, index, onDone, textOverride, heightOverride) {
+    const text = textOverride ?? element.textContent.trim();
     if (!text) return;
 
-    const height = element.getBoundingClientRect().height;
+    const height = heightOverride || element.getBoundingClientRect().height;
     element.style.minHeight = `${height}px`;
     element.classList.remove("will-type");
     typeText(element, text, {
@@ -135,16 +137,49 @@
     });
   }
 
-  function revealHeroTitle(lines, token, index = 0) {
+  function heroIsVisible(title) {
+    if (document.hidden) return false;
+    const bounds = title.getBoundingClientRect();
+    return bounds.bottom > 0 && bounds.top < window.innerHeight;
+  }
+
+  function scheduleHeroReplay(title, lines, texts, token) {
+    if (token !== heroSequenceToken) return;
+    clearTimeout(heroSequenceTimer);
+    heroSequenceTimer = setTimeout(() => {
+      if (token !== heroSequenceToken) return;
+      if (!heroIsVisible(title)) {
+        scheduleHeroReplay(title, lines, texts, token);
+        return;
+      }
+
+      const heights = lines.map((line) => line.getBoundingClientRect().height);
+      lines.forEach((line) => {
+        resetText(line);
+        line.textContent = "";
+      });
+
+      heroSequenceTimer = setTimeout(() => {
+        if (token !== heroSequenceToken) return;
+        revealHeroTitle(lines, texts, heights, token);
+      }, heroRestartGapMs);
+    }, heroHoldMs);
+  }
+
+  function revealHeroTitle(lines, texts, heights, token, index = 0) {
     if (token !== heroSequenceToken || index >= lines.length) return;
 
     revealText(lines[index], 0, () => {
       if (token !== heroSequenceToken) return;
+      if (index + 1 >= lines.length) {
+        scheduleHeroReplay(lines[0]?.closest(".hero-title"), lines, texts, token);
+        return;
+      }
       heroSequenceTimer = setTimeout(
-        () => revealHeroTitle(lines, token, index + 1),
+        () => revealHeroTitle(lines, texts, heights, token, index + 1),
         150
       );
-    });
+    }, texts[index], heights[index]);
   }
 
   function initTextMotion() {
@@ -157,6 +192,8 @@
     const token = heroSequenceToken;
     const heroTitle = document.querySelector(".hero-title");
     const heroLines = heroTitle ? [...heroTitle.querySelectorAll(":scope > span")] : [];
+    const heroTexts = heroLines.map((element) => element.textContent.trim());
+    const heroHeights = heroLines.map((element) => element.getBoundingClientRect().height);
     const elements = [...document.querySelectorAll(textSelector)]
       .filter((element) => !element.closest(".hero-title"))
       .filter(eligible);
@@ -180,7 +217,7 @@
         (entries) => {
           if (!entries.some((entry) => entry.isIntersecting)) return;
           heroTitleObserver.disconnect();
-          revealHeroTitle(heroLines, token);
+          revealHeroTitle(heroLines, heroTexts, heroHeights, token);
         },
         { threshold: 0.14, rootMargin: "0px 0px -4% 0px" }
       );
