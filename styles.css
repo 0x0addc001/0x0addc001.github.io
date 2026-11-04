@@ -995,15 +995,131 @@ html[lang="en"] .hero-title > span:first-child {
   letter-spacing: 0.06em;
 }
 
-.chat-message p {
+.chat-message p,
+.chat-message-body {
   margin-top: 5px;
   color: var(--ink-soft);
   font-size: 0.9rem;
   line-height: 1.58;
+  overflow-wrap: anywhere;
+}
+
+.chat-message p {
   white-space: pre-wrap;
 }
 
-.chat-message.is-loading p::after {
+.chat-markdown > :first-child {
+  margin-top: 0;
+}
+
+.chat-markdown > :last-child {
+  margin-bottom: 0;
+}
+
+.chat-markdown p,
+.chat-markdown ul,
+.chat-markdown ol,
+.chat-markdown blockquote,
+.chat-markdown pre,
+.chat-markdown .chat-table-wrap {
+  margin: 0.65em 0 0;
+}
+
+.chat-markdown h3,
+.chat-markdown h4,
+.chat-markdown h5,
+.chat-markdown h6 {
+  margin: 0.9em 0 0;
+  color: var(--ink);
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  line-height: 1.2;
+}
+
+.chat-markdown h3 {
+  font-size: 1.05rem;
+}
+
+.chat-markdown h4,
+.chat-markdown h5,
+.chat-markdown h6 {
+  font-size: 0.96rem;
+}
+
+.chat-markdown ul,
+.chat-markdown ol {
+  padding-left: 1.35em;
+}
+
+.chat-markdown li + li {
+  margin-top: 0.3em;
+}
+
+.chat-markdown code {
+  padding: 0.12em 0.32em;
+  background: color-mix(in srgb, var(--orange) 9%, transparent);
+  font-family: var(--font-mono);
+  font-size: 0.84em;
+}
+
+.chat-markdown pre {
+  overflow-x: auto;
+  padding: 10px;
+  border: 1px solid var(--line);
+  background: var(--paper-light);
+}
+
+.chat-markdown pre code {
+  padding: 0;
+  background: transparent;
+  font-size: 0.78rem;
+  line-height: 1.55;
+  white-space: pre;
+}
+
+.chat-markdown blockquote {
+  padding-left: 10px;
+  border-left: 2px solid var(--orange);
+}
+
+.chat-markdown a {
+  color: var(--orange);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.chat-markdown hr {
+  margin: 0.85em 0;
+  border: 0;
+  border-top: 1px solid var(--line);
+}
+
+.chat-table-wrap {
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.chat-markdown table {
+  min-width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.chat-markdown th,
+.chat-markdown td {
+  padding: 5px 7px;
+  border: 1px solid var(--line);
+  text-align: left;
+}
+
+.chat-markdown th {
+  color: var(--ink);
+  background: color-mix(in srgb, var(--orange) 8%, transparent);
+  font-weight: 600;
+}
+
+.chat-message.is-loading .chat-message-body::after {
   display: inline-block;
   width: 0.55em;
   content: "…";
