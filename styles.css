@@ -2411,37 +2411,6 @@ html[lang="en"] .hero-title > span:first-child {
   display: none !important;
 }
 
-.entry-toggle {
-  display: inline-flex;
-  gap: 14px;
-  align-items: center;
-  margin-top: 20px;
-  padding: 7px 10px;
-  border: 1px solid var(--line-strong);
-  color: var(--ink-soft);
-  background: transparent;
-  cursor: pointer;
-  font-family: var(--font-mono);
-  font-size: 0.82rem;
-  font-weight: 600;
-}
-
-.entry-toggle:hover,
-.entry-toggle[aria-expanded="true"] {
-  border-color: var(--orange);
-  color: var(--orange);
-}
-
-.entry-toggle b {
-  font-size: 1rem;
-  font-weight: 400;
-  transition: transform 220ms var(--ease);
-}
-
-.entry-toggle[aria-expanded="true"] b {
-  transform: rotate(45deg);
-}
-
 :root[data-theme="dark"] .work-card:hover,
 :root[data-theme="dark"] .engineering-card:not(.card-dark):hover {
   background: var(--paper-light);
@@ -7045,66 +7014,12 @@ html[lang="zh"] .usecase-meta::before {
 
 .project-dossier-details {
   margin-top: 26px;
+  padding-top: 30px;
   border-top: 1px solid var(--line-strong);
 }
 
-.project-dossier-details > summary {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 20px;
-  padding: 22px 2px;
-  list-style: none;
-  cursor: pointer;
-}
-
-.project-dossier-details > summary::-webkit-details-marker {
-  display: none;
-}
-
-.project-dossier-details > summary span {
-  display: grid;
-  gap: 4px;
-}
-
-.project-dossier-details > summary b {
-  font-family: var(--font-display);
-  font-size: clamp(1.22rem, 1.8vw, 1.58rem);
-  font-weight: 400;
-}
-
-.project-dossier-details > summary small {
-  color: var(--muted);
-  font-size: 0.82rem;
-  line-height: 1.45;
-}
-
-.project-dossier-details > summary i {
-  display: grid;
-  width: 38px;
-  height: 38px;
-  flex: 0 0 38px;
-  place-items: center;
-  border: 1px solid var(--line-strong);
-  color: var(--dossier-accent);
-  font-family: var(--font-mono);
-  font-size: 1.15rem;
-  font-style: normal;
-  transition:
-    color 180ms ease,
-    background 180ms ease,
-    transform 220ms var(--ease);
-}
-
-.project-dossier-details[open] > summary i {
-  color: var(--white);
-  background: var(--dossier-accent);
-  transform: rotate(45deg);
-}
-
 .project-dossier-detail-body {
-  padding-top: 30px;
-  border-top: 1px solid var(--line);
+  min-width: 0;
 }
 
 .dossier-detail-grid {
@@ -7491,14 +7406,6 @@ html[lang="zh"] .usecase-meta::before {
   .project-dossier-metrics > div + div {
     border-top: 1px solid var(--line);
     border-left: 0;
-  }
-
-  .project-dossier-details > summary {
-    align-items: flex-start;
-  }
-
-  .project-dossier-details > summary small {
-    max-width: 280px;
   }
 
   .dossier-detail-grid,

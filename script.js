@@ -180,7 +180,6 @@
     }
 
     updateThemeLabel();
-    updateEntryToggleLabels();
     document.title = pageMeta[currentLanguage].title;
     document.querySelector('meta[name="description"]')?.setAttribute("content", pageMeta[currentLanguage].description);
 
@@ -202,45 +201,6 @@
   }
 
   languageButton?.addEventListener("click", toggleLanguage);
-
-  const entryToggles = document.querySelectorAll(".entry-toggle");
-
-  function updateEntryToggleLabels() {
-    entryToggles.forEach((button) => {
-      const label = button.querySelector("span");
-      const isOpen = button.getAttribute("aria-expanded") === "true";
-      if (!label) return;
-      label.textContent = currentLanguage === "zh"
-        ? (isOpen ? "收起详情" : "展开详情")
-        : (isOpen ? "Hide details" : "Show details");
-    });
-  }
-
-  entryToggles.forEach((button) => {
-    const details = button.closest(".resume-entry-main")?.querySelector(".resume-detail-grid");
-    if (!details) return;
-
-    button.addEventListener("click", () => {
-      const willOpen = button.getAttribute("aria-expanded") !== "true";
-      button.setAttribute("aria-expanded", String(willOpen));
-      updateEntryToggleLabels();
-
-      if (willOpen) {
-        details.hidden = false;
-        if (!reduceMotion.matches) {
-          details.animate(
-            [
-              { opacity: 0, transform: "translateY(-8px)" },
-              { opacity: 1, transform: "translateY(0)" }
-            ],
-            { duration: 260, easing: "cubic-bezier(0.22, 1, 0.36, 1)" }
-          );
-        }
-      } else {
-        details.hidden = true;
-      }
-    });
-  });
 
   function updateThemeLabel() {
     if (!themeButton) return;
