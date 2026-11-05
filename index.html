@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f3f1ea">
   <title>李嘉梁</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon-JL.svg?v=20261028-9">
-  <link rel="stylesheet" href="styles.css?v=20261105-3">
+  <link rel="stylesheet" href="styles.css?v=20261105-4">
   <script>
     document.documentElement.classList.add("js");
     try {
@@ -29,11 +29,13 @@
   <a class="skip-link" href="#main" data-en="Skip to content" data-zh="跳至正文">Skip to content</a>
 
   <header class="site-header" data-header>
-    <a class="wordmark" href="#intro" aria-label="Jialiang Li, home">
+    <a class="wordmark" href="#intro">
       <span class="wordmark-mark">JL</span>
-      <span class="wordmark-text">
-        <strong data-en="Jialiang" data-zh="李嘉梁">Jialiang</strong><em>Li</em>
+      <span class="wordmark-text" aria-hidden="true">
+        <span class="wordmark-name-en">Jialiang <b>Li</b></span>
+        <span class="wordmark-name-zh"><b>李</b>嘉梁</span>
       </span>
+      <span class="sr-only" data-en="Jialiang Li, home" data-zh="李嘉梁，返回首页">Jialiang Li, home</span>
     </a>
 
     <nav class="primary-nav" aria-label="Primary navigation">
@@ -1038,15 +1040,63 @@
       <div class="section-heading reveal">
         <span class="section-index">05 / <span data-en="PROJECTS" data-zh="项目">PROJECTS</span></span>
         <h2 data-en="Projects" data-zh="项目">Projects</h2>
-        <p data-en="My work spans algorithm projects across post-training data and training, alongside system projects across inference orchestration and scheduling." data-zh="做过后训练数据与训练的算法项目，也做过推理编排与调度的系统项目。">
-          My work spans algorithm projects across post-training data and training, alongside system projects across inference orchestration and scheduling.
+        <p data-en="I have built algorithm projects across post-training data and training, system projects across inference orchestration and scheduling, and an agent-native video product from workflow to delivery." data-zh="做过后训练数据与训练的算法项目，也做过推理编排与调度的系统项目，并把 Agent 工作流做成了端到端视频创作产品。">
+          I have built algorithm projects across post-training data and training, system projects across inference orchestration and scheduling, and an agent-native video product from workflow to delivery.
         </p>
       </div>
 
       <div class="work-grid">
-        <article class="work-card reveal">
+        <article class="work-card work-card-featured reveal">
           <div class="work-card-head">
             <span class="work-number">01</span>
+            <span class="work-type" data-en="AGENT-NATIVE PRODUCT / VIDEO" data-zh="Agent-Native 产品 / 视频">AGENT-NATIVE PRODUCT / VIDEO</span>
+          </div>
+          <div class="videoagent-feature">
+            <a class="videoagent-preview" href="https://0x0addc001.github.io/VideoAgent/" target="_blank" rel="noreferrer" aria-label="Open VideoAgent project page">
+              <img src="assets/videoagent/videoagent-preview.jpg" alt="" loading="lazy">
+              <span class="videoagent-preview-kicker">VIDEOAGENT / 2026</span>
+              <span class="videoagent-preview-caption" data-en="You are the director" data-zh="你就是导演">You are the director</span>
+            </a>
+            <div class="videoagent-copy">
+              <div class="work-kicker">
+                <span class="work-entity">VideoAgent</span>
+                <span data-en="PRE-RELEASE" data-zh="即将完成">PRE-RELEASE</span>
+              </div>
+              <h3 data-en="From a brief to a final cut: an agent-led video production studio." data-zh="从创意简报到成片交付：Agent 驱动的视频创作工作台。">
+                From a brief to a final cut: an agent-led video production studio.
+              </h3>
+              <p data-en="VideoAgent turns a creative brief into an editable, approval-gated storyboard, estimates generation credits, orchestrates Pippit and Kling jobs, and assembles captioned deliveries across 16:9, 9:16, and 1:1." data-zh="VideoAgent 将创意简报转化为可编辑、分阶段审批的分镜，预估生成额度，编排 Pippit 与 Kling 任务，并合成带字幕与配乐的多画幅成片。">
+                VideoAgent turns a creative brief into an editable, approval-gated storyboard, estimates generation credits, orchestrates Pippit and Kling jobs, and assembles captioned deliveries across 16:9, 9:16, and 1:1.
+              </p>
+              <div class="project-tags" aria-label="VideoAgent technology stack">
+                <span>Next.js</span>
+                <span>FastAPI</span>
+                <span>LangGraph</span>
+                <span>DeepSeek</span>
+                <span>Pippit</span>
+                <span>Kling</span>
+                <span>Celery</span>
+                <span>FFmpeg</span>
+                <span>Playwright</span>
+              </div>
+              <div class="videoagent-actions">
+                <a class="project-action project-action-primary" href="https://0x0addc001.github.io/VideoAgent/" target="_blank" rel="noreferrer">
+                  <span data-en="Project homepage" data-zh="项目主页">Project homepage</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+                <a class="project-action" href="https://github.com/0x0addc001/VideoAgent" target="_blank" rel="noreferrer">
+                  <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7C5.7.7.7 5.7.7 12c0 5 3.3 9.2 7.8 10.7.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.5 7.8-5.7 7.8-10.7C23.3 5.7 18.3.7 12 .7z"/></svg>
+                  <span>GitHub</span>
+                  <span aria-hidden="true">↗</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </article>
+
+        <article class="work-card reveal">
+          <div class="work-card-head">
+            <span class="work-number">02</span>
             <span class="work-type" data-en="POST-TRAINING / DATA" data-zh="后训练 / 数据">POST-TRAINING / DATA</span>
           </div>
           <div class="work-card-body">
@@ -1076,7 +1126,7 @@
 
         <article class="work-card reveal">
           <div class="work-card-head">
-            <span class="work-number">02</span>
+            <span class="work-number">03</span>
             <span class="work-type" data-en="SYSTEMS / RESEARCH" data-zh="系统 / 研究">SYSTEMS / RESEARCH</span>
           </div>
           <div class="work-card-body">
@@ -1114,7 +1164,7 @@
       <div class="xiaomi-shell section-shell">
         <div class="xiaomi-header reveal">
           <div>
-            <span class="section-index">05.1 / <span data-en="PROJECT 01" data-zh="项目 01">PROJECT 01</span></span>
+            <span class="section-index">05.2 / <span data-en="PROJECT 02" data-zh="项目 02">PROJECT 02</span></span>
             <p class="project-period" data-en="JUL — OCT 2026" data-zh="2026.07 — 10">JUL — OCT 2026</p>
           </div>
           <div class="xiaomi-title">
@@ -1383,7 +1433,7 @@
     <section class="project-section section-shell" id="lmpool" data-nav-target="#projects">
       <div class="project-intro reveal">
         <div>
-          <span class="section-index">05.2 / <span data-en="PROJECT 02" data-zh="项目 02">PROJECT 02</span></span>
+          <span class="section-index">05.3 / <span data-en="PROJECT 03" data-zh="项目 03">PROJECT 03</span></span>
           <p class="project-period" data-en="APR — JUL 2026" data-zh="2026.04 — 07">APR — JUL 2026</p>
         </div>
         <div class="project-title-wrap">
