@@ -2328,23 +2328,6 @@ html[lang="en"] .hero-title > span:first-child {
   transform: scale(1.025);
 }
 
-.videoagent-preview-kicker {
-  position: absolute;
-  z-index: 1;
-  left: 18px;
-  color: var(--white);
-  font-family: var(--font-mono);
-}
-
-.videoagent-preview-kicker {
-  top: 18px;
-  padding: 5px 8px;
-  border: 1px solid rgba(255, 255, 255, 0.35);
-  background: rgba(4, 15, 29, 0.28);
-  font-size: 0.7rem;
-  letter-spacing: 0.07em;
-}
-
 .videoagent-copy {
   display: flex;
   min-width: 0;
@@ -2388,6 +2371,16 @@ html[lang="en"] .hero-title > span:first-child {
   width: 17px;
   height: 17px;
   fill: currentColor;
+}
+
+.project-action .project-page-icon {
+  width: 17px;
+  height: 17px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 1.7;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
 }
 
 .project-action-primary {
@@ -4442,12 +4435,14 @@ html[lang="en"] .hero-title > span:first-child {
 .email-direct {
   display: inline-block;
   margin-top: clamp(34px, 4vw, 52px);
+  margin-left: 6px;
   padding: 0;
   border: 0;
   color: inherit;
   font-family: var(--font-mono);
   font-size: clamp(1.35rem, 2.2vw, 2rem);
   line-height: 1.25;
+  transform: translateY(-8px);
   transition: color 180ms ease;
 }
 
