@@ -983,23 +983,23 @@
               <span class="resume-entry-meta-tag">Post-training</span>
               <span class="resume-entry-meta-tag">SFT</span>
               <span class="resume-entry-meta-tag">RLVR</span>
-              <span class="resume-entry-meta-tag">Qwen</span>
-              <span class="resume-entry-meta-tag">GLM</span>
+              <span class="resume-entry-meta-tag">Qwen2.5-Coder</span>
+              <span class="resume-entry-meta-tag">GLM 5.3</span>
             </div>
             <h3 data-en="Code Model Algorithm Intern" data-zh="代码模型算法工程师（实习）">Code Model Algorithm Intern</h3>
             <button class="entry-toggle" type="button" aria-expanded="false"><span data-en="Work details" data-zh="工作详情">Work details</span><b>+</b></button>
             <div class="resume-detail-grid work-detail-grid" hidden>
               <div>
                 <h4 data-en="Data" data-zh="数据">Data</h4>
-                <p data-en="Synthesized requirement specifications and testbenches for golden code." data-zh="合成黄金代码的需求规格与测试平台。">Synthesized requirement specifications and testbenches for golden code.</p>
+                <p data-en="Used GLM 5.3 to synthesize requirement specifications, reasoning traces, and testbenches for golden code; applied duration filtering to build SFT and RL business datasets for domain-specific code-generation training." data-zh="通过 GLM 5.3 合成黄金代码的需求规格、推理轨迹与测试平台，通过时长过滤构建 SFT、RL 业务数据集，用于训练模型领域代码生成能力。">Used GLM 5.3 to synthesize requirement specifications, reasoning traces, and testbenches for golden code; applied duration filtering to build SFT and RL business datasets for domain-specific code-generation training.</p>
               </div>
               <div>
                 <h4 data-en="Training" data-zh="训练">Training</h4>
-                <p data-en="Adapted the SFT and RLVR training workflow, decoupled training from simulation, and validated the pipeline locally before handoff." data-zh="完成 SFT 与 RLVR 训练流程适配，将训练与仿真环境解耦，并在交付前完成本地验证。">Adapted the SFT and RLVR training workflow, decoupled training from simulation, and validated the pipeline locally before handoff.</p>
+                <p data-en="Trained Qwen2.5-Coder with SFT (Rejection-Sampled SFT, Full Param, LoRA) and RL (RLVR, DAPO, with code verification as the verifier) to realize training gains. Then decoupled training from the simulation environment and delivered the data and training pipeline for GLM 5.3 training." data-zh="在 Qwen2.5-Coder 上完成 SFT（Rejection Sampled SFT、Full Param、LoRA）与 RL（RLVR、DAPO，代码验证作为 Verifier），实现训练收益；随后将训练与仿真环境解耦，并与数据一同提供用于 GLM 5.3 训练。">Trained Qwen2.5-Coder with SFT (Rejection-Sampled SFT, Full Param, LoRA) and RL (RLVR, DAPO, with code verification as the verifier) to realize training gains. Then decoupled training from the simulation environment and delivered the data and training pipeline for GLM 5.3 training.</p>
               </div>
               <div>
                 <h4 data-en="Evaluation" data-zh="评估">Evaluation</h4>
-                <p data-en="Built a fast RLVR validation loop on a 7B code model and compared reward shapes, verification strategies, and training horizons." data-zh="在 7B 代码模型上构建快速 RLVR 验证闭环，比较奖励函数、验证策略与训练步数。">Built a fast RLVR validation loop on a 7B code model and compared reward shapes, verification strategies, and training horizons.</p>
+                <p data-en="Built business benchmarks and used business-community benchmarks to evaluate open-source, post-trained, and commercial models on non-agentic and agentic code-generation capabilities." data-zh="构建业务 benchmark，使用业务社区 benchmark 进行 Non-Agentic/Agentic 代码生成能力评估开源模型、训练后模型和商业模型。">Built business benchmarks and used business-community benchmarks to evaluate open-source, post-trained, and commercial models on non-agentic and agentic code-generation capabilities.</p>
               </div>
             </div>
           </div>
@@ -1013,22 +1013,23 @@
               <span class="resume-entry-org-tag" data-en="Hong Kong" data-zh="香港">Hong Kong</span>
               <span class="resume-entry-meta-tag">ASR</span>
               <span class="resume-entry-meta-tag">SFT</span>
-              <span class="resume-entry-meta-tag">Qwen-ASR</span>
+              <span class="resume-entry-meta-tag">GRPO</span>
+              <span class="resume-entry-meta-tag">Qwen3-ASR</span>
             </div>
             <h3 data-en="Speech Model Algorithm Intern" data-zh="语音模型算法工程师（实习）">Speech Model Algorithm Intern</h3>
             <button class="entry-toggle" type="button" aria-expanded="false"><span data-en="Work details" data-zh="工作详情">Work details</span><b>+</b></button>
             <div class="resume-detail-grid work-detail-grid" hidden>
               <div>
                 <h4 data-en="Data" data-zh="数据">Data</h4>
-                <p data-en="Defined data standards, built the annotation workflow, and established a trilingual post-training dataset for speech-language-text alignment." data-zh="制定数据标准、搭建标注流程，并构建用于“语音—语言—文字”对齐的三语后训练数据集。">Defined data standards, built the annotation workflow, and established a trilingual post-training dataset for speech-language-text alignment.</p>
+                <p data-en="Used Qwen3-ASR to synthesize trilingual annotations for initial government-meeting transcripts (Mandarin–Simplified Chinese, Cantonese–Traditional Chinese, English–English), built an annotation-review platform for annotators, and applied duration filtering to construct SFT and RL business datasets." data-zh="通过 Qwen3-ASR 合成初始政务会议音频转录的三语标注（普通话-简体、粤语-繁体、英语-英语），搭建标注审核平台供标注人员审核，通过时长过滤并构建 SFT、RL 业务数据集。">Used Qwen3-ASR to synthesize trilingual annotations for initial government-meeting transcripts (Mandarin–Simplified Chinese, Cantonese–Traditional Chinese, English–English), built an annotation-review platform for annotators, and applied duration filtering to construct SFT and RL business datasets.</p>
               </div>
               <div>
                 <h4 data-en="Training" data-zh="训练">Training</h4>
-                <p data-en="Built an SFT workflow for a 1.7B Qwen-ASR model on eight RTX 4090 GPUs." data-zh="在 8 张 RTX 4090 上完成 1.7B Qwen-ASR 模型的 SFT 训练流程。">Built an SFT workflow for a 1.7B Qwen-ASR model on eight RTX 4090 GPUs.</p>
+                <p data-en="Ran SFT (Full Param) and RL (GRPO) on Qwen3-ASR with hyperparameter tuning." data-zh="在 Qwen3-ASR 上完成 SFT（Full Param）和 RL（GRPO）训练与调参。">Ran SFT (Full Param) and RL (GRPO) on Qwen3-ASR with hyperparameter tuning.</p>
               </div>
               <div>
                 <h4 data-en="Evaluation" data-zh="评估">Evaluation</h4>
-                <p data-en="Evaluated ASR outputs and fed failure cases back into data refinement." data-zh="评测 ASR 输出，并将失败样本回流到数据优化。">Evaluated ASR outputs and fed failure cases back into data refinement.</p>
+                <p data-en="Built business benchmarks and evaluated open-source, post-trained, and commercial models on ASR capability using CER." data-zh="构建业务 benchmark，使用业务 benchmark 评估开源模型、训练后模型和商业模型 ASR 能力（CER）。">Built business benchmarks and evaluated open-source, post-trained, and commercial models on ASR capability using CER.</p>
               </div>
             </div>
           </div>
