@@ -326,6 +326,10 @@ html[lang="zh"] .wordmark-name-zh {
   letter-spacing: -0.02em;
 }
 
+html[lang="zh"] .wordmark-name-zh b {
+  color: var(--ink);
+}
+
 .primary-nav {
   display: flex;
   align-items: center;
