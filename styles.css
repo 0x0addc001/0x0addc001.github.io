@@ -2298,9 +2298,9 @@ html[lang="en"] .hero-title > span:first-child {
   position: relative;
   display: block;
   width: 100%;
-  align-self: start;
+  align-self: center;
   min-height: 0;
-  aspect-ratio: 36 / 25;
+  aspect-ratio: 320 / 153;
   overflow: hidden;
   border: 1px solid var(--line);
   background: #07111f;
@@ -5816,7 +5816,7 @@ html[lang="zh"] .usecase-meta::before {
 
   .videoagent-preview {
     min-height: 0;
-    aspect-ratio: 36 / 25;
+    aspect-ratio: 320 / 153;
   }
 
   .section-heading,
@@ -6175,7 +6175,7 @@ html[lang="zh"] .usecase-meta::before {
   }
 
   .videoagent-preview {
-    aspect-ratio: 36 / 25;
+    aspect-ratio: 320 / 153;
   }
 
   .videoagent-copy {
