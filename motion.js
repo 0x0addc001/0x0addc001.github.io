@@ -94,6 +94,7 @@
       const character = characters[index];
       element.textContent += character;
       index += 1;
+      options.onProgress?.();
 
       const punctuationPause = /[，。！？；：,.!?;:]/.test(character) ? 4 : 1;
       timers.set(element, setTimeout(writeNextCharacter, baseDelay * punctuationPause));

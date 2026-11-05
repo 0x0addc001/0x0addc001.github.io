@@ -61,7 +61,7 @@ async function handleChat(request, env) {
     body: JSON.stringify({
       model: env.DEEPSEEK_MODEL || "deepseek-flash",
       temperature: 0.25,
-      max_tokens: 500,
+      max_tokens: 1800,
       messages: [
         { role: "system", content: `${systemPrompt}\n\nPAGE CONTEXT:\n${context}` },
         ...messages.map((message) => ({

@@ -1006,18 +1006,9 @@ html[lang="en"] .hero-title > span:first-child {
   align-self: flex-start;
 }
 
-.chat-author {
-  display: block;
-  color: var(--orange);
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 600;
-  letter-spacing: 0.06em;
-}
-
 .chat-message p,
 .chat-message-body {
-  margin-top: 5px;
+  margin-top: 0;
   color: var(--ink-soft);
   font-size: 0.9rem;
   line-height: 1.58;

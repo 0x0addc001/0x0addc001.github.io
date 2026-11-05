@@ -19,16 +19,12 @@
 
   const copy = {
     en: {
-      you: "You",
-      agent: "Jialiang's HomeAgent",
       thinking: "Thinking through the page context…",
       waiting: "Waiting for the agent…",
       notConfigured: "The live agent is not connected yet.",
       failed: "The live agent is temporarily unavailable. Please try again later."
     },
     zh: {
-      you: "你",
-      agent: "李嘉梁的 HomeAgent",
       thinking: "正在理解网页上下文…",
       waiting: "正在等待 Agent 回复…",
       notConfigured: "在线 Agent 尚未接入。",
@@ -245,25 +241,28 @@
 
   function addMessage(role, content, { animate = false, loading = false } = {}) {
     const message = document.createElement("article");
-    const author = document.createElement("span");
     const body = document.createElement("div");
 
     message.className = `chat-message chat-message-${role}`;
     if (loading) message.classList.add("is-loading");
-    author.className = "chat-author";
-    author.textContent = role === "user" ? strings().you : strings().agent;
     body.className = "chat-message-body chat-markdown";
     if (content) {
       if (role === "agent") renderMarkdown(body, content);
       else body.textContent = content;
     }
-    message.append(author, body);
+    message.append(body);
     log.appendChild(message);
     log.scrollTop = log.scrollHeight;
 
     if (animate && content) {
       window.PortfolioTextMotion?.typeText(body, content, {
-        onDone: () => renderMarkdown(body, content)
+        onProgress: () => {
+          log.scrollTop = log.scrollHeight;
+        },
+        onDone: () => {
+          renderMarkdown(body, content);
+          log.scrollTop = log.scrollHeight;
+        }
       });
     }
 
@@ -341,7 +340,13 @@
       history.push({ role: "assistant", content: reply });
       if (window.PortfolioTextMotion?.typeText) {
         window.PortfolioTextMotion.typeText(pending.body, reply, {
-          onDone: () => renderMarkdown(pending.body, reply)
+          onProgress: () => {
+            log.scrollTop = log.scrollHeight;
+          },
+          onDone: () => {
+            renderMarkdown(pending.body, reply);
+            log.scrollTop = log.scrollHeight;
+          }
         });
       } else {
         renderMarkdown(pending.body, reply);
@@ -353,7 +358,13 @@
       history.push({ role: "assistant", content: reply });
       if (window.PortfolioTextMotion?.typeText) {
         window.PortfolioTextMotion.typeText(pending.body, reply, {
-          onDone: () => renderMarkdown(pending.body, reply)
+          onProgress: () => {
+            log.scrollTop = log.scrollHeight;
+          },
+          onDone: () => {
+            renderMarkdown(pending.body, reply);
+            log.scrollTop = log.scrollHeight;
+          }
         });
       } else {
         renderMarkdown(pending.body, reply);
