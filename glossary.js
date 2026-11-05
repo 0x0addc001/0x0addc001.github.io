@@ -341,8 +341,6 @@
   define("EN", "EN denotes English-language capability coverage.", "EN 表示英语能力覆盖。");
   define("YUE", "YUE denotes Cantonese-language capability coverage.", "YUE 表示粤语能力覆盖。");
   define("ZH", "ZH denotes Mandarin Chinese-language capability coverage.", "ZH 表示普通话能力覆盖。");
-  define("Data.pdf", "Data.pdf is one of the source work documents from which the dataset figures were redrawn.", "Data.pdf 是用于重绘数据集图示的原始工作文档之一。");
-  define("RL.pdf", "RL.pdf is one of the source work documents from which the training and reward figures were redrawn.", "RL.pdf 是用于重绘训练与奖励图示的原始工作文档之一。");
   define("Algorithm design and analysis", "Algorithm design and analysis studies how to construct algorithms and prove their correctness and complexity.", "算法设计与分析研究如何构造算法，并分析其正确性与复杂度。");
   define("Artificial intelligence", "Artificial intelligence studies methods that enable machines to perceive, reason, learn, and act.", "人工智能研究使机器能够感知、推理、学习与行动的方法。");
   define("Machine learning", "Machine learning learns patterns and predictive functions from data rather than relying only on explicit rules.", "机器学习从数据中学习模式与预测函数，而不是只依赖显式规则。");
@@ -417,7 +415,6 @@
   define("Finalize", "Finalize releases transactional resources after publication or aborts cleanup safely.", "完成阶段在发布后释放事务资源，或安全清理中止状态。");
   define("The central tension", "The core tension names the main tradeoff the project must resolve.", "核心矛盾概括项目必须解决的主要权衡。");
   define("Post-training / data", "This classification marks work spanning post-training algorithms and data construction.", "该分类表示工作同时覆盖后训练算法与数据构建。");
-  define("Source material / selected figures", "This label identifies figures recreated from source work documents.", "该标签表示从原始工作文档重绘的图表区域。");
   define("Measured result / 5× prefix", "This label identifies measured system metrics under a long shared-prefix workload.", "该标签表示长共享前缀负载下的实测系统指标。");
   define("Figure 01 / Data", "This label identifies the dataset-construction figure.", "该标签标识数据集构建图。");
   define("Figure 02 / Training", "This label identifies the training-path figure.", "该标签标识训练路径图。");

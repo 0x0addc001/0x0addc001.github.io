@@ -369,11 +369,15 @@
     const data = results[model];
     if (!data) return;
 
+    const throughputResult = document.querySelector("[data-result-throughput]");
+    const ttftResult = document.querySelector("[data-result-ttft]");
+    if (!throughputResult || !ttftResult) return;
+
     const throughputMax = Math.max(data.throughput.baseline, data.throughput.proposal);
     const ttftMax = Math.max(data.ttft.baseline, data.ttft.proposal);
 
-    document.querySelector("[data-result-throughput]").textContent = data.throughput.change;
-    document.querySelector("[data-result-ttft]").textContent = data.ttft.change;
+    throughputResult.textContent = data.throughput.change;
+    ttftResult.textContent = data.ttft.change;
     document.querySelector("[data-result-throughput-value]").textContent = formatValue(data.throughput.baseline);
     document.querySelector("[data-result-throughput-lmpool-value]").textContent = formatValue(data.throughput.proposal);
     document.querySelector("[data-result-ttft-value]").textContent = formatValue(data.ttft.baseline);

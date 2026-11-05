@@ -1045,6 +1045,473 @@
       </div>
     </section>
 
+    <section class="work-section project-dossier-section section-shell" id="projects" data-nav-target="#projects">
+      <div class="section-heading project-dossier-heading reveal">
+        <span class="section-index">05 / <span data-en="PROJECTS" data-zh="项目">PROJECTS</span></span>
+        <h2 data-en="Selected projects" data-zh="代表项目">Selected projects</h2>
+        <p data-en="Three production-minded systems, presented at the same depth: an agent-native product, a post-training pipeline, and a multi-GPU serving system. Each includes the problem, my ownership, the key technical decisions, and verifiable evidence." data-zh="三个同等篇幅的工程系统：Agent 原生产品、后训练流水线与多 GPU 服务系统。每个项目都直接呈现问题、我的职责、关键技术决策与可核验证据。">
+          Three production-minded systems, presented at the same depth: an agent-native product, a post-training pipeline, and a multi-GPU serving system. Each includes the problem, my ownership, the key technical decisions, and verifiable evidence.
+        </p>
+      </div>
+
+      <div class="project-dossier-list">
+        <article class="project-dossier reveal" id="videoagent" data-index="01">
+          <header class="project-dossier-head">
+            <span class="work-number">01</span>
+            <span class="work-type">Harness</span>
+            <span class="project-dossier-period">2026</span>
+          </header>
+
+          <div class="project-dossier-title">
+            <div>
+              <span class="project-dossier-label">VIDEOAGENT</span>
+              <h3 data-en="An agent-led workspace that turns a creative idea into an approved, deliverable film." data-zh="把创意转化为可审批、可交付成片的 Agent 创作工作台。">
+                An agent-led workspace that turns a creative idea into an approved, deliverable film.
+              </h3>
+            </div>
+            <p data-en="Not a prompt wrapper: a complete production path spanning direction, versioned storyboards, paid provider calls, asynchronous generation, and final delivery." data-zh="不是一个 Prompt 包装器，而是覆盖导演、版本化分镜、付费模型调用、异步生成与最终交付的完整生产链路。">
+              Not a prompt wrapper: a complete production path spanning direction, versioned storyboards, paid provider calls, asynchronous generation, and final delivery.
+            </p>
+          </div>
+
+          <div class="project-dossier-overview">
+            <figure class="project-dossier-proof project-dossier-proof-video">
+              <a class="lightbox-trigger" href="assets/videoagent/videoagent-workspace.png" data-lightbox-src="assets/videoagent/videoagent-workspace.png" data-lightbox-alt="VideoAgent project workspace">
+                <img src="assets/videoagent/videoagent-workspace.png" alt="" loading="lazy">
+              </a>
+              <figcaption>
+                <span data-en="PRODUCT SURFACE" data-zh="产品界面">PRODUCT SURFACE</span>
+                <strong data-en="Storyboard editing, run trace, credit approval, and generation state share one project workspace." data-zh="分镜编辑、运行轨迹、额度审批与生成状态共享同一个项目工作区。">Storyboard editing, run trace, credit approval, and generation state share one project workspace.</strong>
+              </figcaption>
+            </figure>
+
+            <div class="project-dossier-summary">
+              <div class="project-dossier-point">
+                <span data-en="CONTEXT" data-zh="问题">CONTEXT</span>
+                <p data-en="Video creation fragments the brief, direction, visual generation, approval, and final assembly across separate tools. A useful agent must preserve creative state while controlling cost and side effects." data-zh="视频创作通常把创意、导演、视觉生成、审批与最终合成拆散在不同工具里。真正有用的 Agent 必须保留创作状态，同时控制成本与副作用。">
+                  Video creation fragments the brief, direction, visual generation, approval, and final assembly across separate tools. A useful agent must preserve creative state while controlling cost and side effects.
+                </p>
+              </div>
+              <div class="project-dossier-point">
+                <span data-en="MY WORK" data-zh="我的工作">MY WORK</span>
+                <p data-en="Built the product and system boundary end to end: user-scoped projects, versioned storyboards, four approval gates, credit reservation, provider adapters, durable background jobs, and final-cut delivery." data-zh="端到端构建产品与系统边界：用户隔离项目、版本化分镜、四级审批、额度预留、模型服务适配、持久化后台任务与最终成片交付。">
+                  Built the product and system boundary end to end: user-scoped projects, versioned storyboards, four approval gates, credit reservation, provider adapters, durable background jobs, and final-cut delivery.
+                </p>
+              </div>
+              <div class="project-dossier-point">
+                <span data-en="EVIDENCE" data-zh="结果">EVIDENCE</span>
+                <p data-en="A tested bilingual workflow with a deterministic Mock provider, Pippit and Kling adapters, captions and soundtracks, three aspect ratios, private downloads, expiring share links, and Playwright coverage of core user journeys." data-zh="一套经过验证的双语工作流：确定性 Mock 服务、Pippit 与 Kling 适配、字幕与配乐、三种画幅、私有下载、限时分享链接，以及覆盖核心用户路径的 Playwright 测试。">
+                  A tested bilingual workflow with a deterministic Mock provider, Pippit and Kling adapters, captions and soundtracks, three aspect ratios, private downloads, expiring share links, and Playwright coverage of core user journeys.
+                </p>
+              </div>
+
+              <div class="project-tags" aria-label="VideoAgent technology stack">
+                <span>Next.js</span>
+                <span>React</span>
+                <span>TypeScript</span>
+                <span>FastAPI</span>
+                <span>LangGraph</span>
+                <span>DeepSeek</span>
+                <span>Celery</span>
+                <span>Redis</span>
+                <span>FFmpeg</span>
+                <span>Playwright</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-dossier-metrics" aria-label="VideoAgent project scope">
+            <div><strong>04</strong><span data-en="approval gates" data-zh="审批阶段">approval gates</span></div>
+            <div><strong>03</strong><span data-en="generation providers" data-zh="生成服务">generation providers</span></div>
+            <div><strong>03</strong><span data-en="delivery formats" data-zh="交付画幅">delivery formats</span></div>
+          </div>
+
+          <div class="project-dossier-actions">
+            <a class="project-action project-action-primary" href="https://0x0addc001.github.io/VideoAgent/" target="_blank" rel="noreferrer">
+              <svg class="project-page-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/><path d="M7 7h.01M10 7h.01"/><path d="M8 13h6"/></svg>
+              <span>VideoAgent</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="project-action" href="https://github.com/0x0addc001/VideoAgent" target="_blank" rel="noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7C5.7.7.7 5.7.7 12c0 5 3.3 9.2 7.8 10.7.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.5 7.8-5.7 7.8-10.7C23.3 5.7 18.3.7 12 .7z"/></svg>
+              <span>VideoAgent</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+
+          <details class="project-dossier-details">
+            <summary>
+              <span>
+                <b data-en="Full project details" data-zh="项目全部详情">Full project details</b>
+                <small data-en="Agent contract, provider boundary, runtime, delivery, and verification" data-zh="Agent 约束、服务边界、运行时、交付与验证">Agent contract, provider boundary, runtime, delivery, and verification</small>
+              </span>
+              <i aria-hidden="true">+</i>
+            </summary>
+            <div class="project-dossier-detail-body">
+              <div class="dossier-detail-grid">
+                <section>
+                  <span>01 / AGENT CONTRACT</span>
+                  <h4 data-en="Planning is bounded; billable actions need approval." data-zh="规划有边界，付费动作必须获得审批。">Planning is bounded; billable actions need approval.</h4>
+                  <p data-en="The LangGraph planner receives a bounded context of project state, recent messages, workflow stage, characters, shots, locale, and an optional Skill. Pydantic validates every plan before it changes persistent production state." data-zh="LangGraph 规划器只接收受控上下文：项目状态、近期消息、工作流阶段、角色、镜头、语言与可选 Skill。每个计划先经过 Pydantic 校验，之后才允许修改持久化生产状态。">
+                    The LangGraph planner receives a bounded context of project state, recent messages, workflow stage, characters, shots, locale, and an optional Skill. Pydantic validates every plan before it changes persistent production state.
+                  </p>
+                </section>
+                <section>
+                  <span>02 / PROVIDER BOUNDARY</span>
+                  <h4 data-en="One interface, replaceable generation backends." data-zh="一套接口，可替换的生成后端。">One interface, replaceable generation backends.</h4>
+                  <p data-en="Pippit, Kling China-region, Kling MCP, and Mock sit behind one provider contract. Planning never holds a pay-per-use tool, so creative reasoning cannot trigger an unreviewed charge." data-zh="Pippit、Kling 国内版、Kling MCP 与 Mock 共用一套服务契约。规划层不持有付费工具，创作推理无法触发未审批扣费。">
+                    Pippit, Kling China-region, Kling MCP, and Mock sit behind one provider contract. Planning never holds a pay-per-use tool, so creative reasoning cannot trigger an unreviewed charge.
+                  </p>
+                </section>
+                <section>
+                  <span>03 / EXECUTION</span>
+                  <h4 data-en="Long-running work is durable and observable." data-zh="长任务持久、可恢复、可观察。">Long-running work is durable and observable.</h4>
+                  <p data-en="Celery and Redis poll provider jobs with idempotency keys. The UI reads a run trace that reflects work actually executed, while credit holds, refunds, and provider-account reconciliation remain auditable." data-zh="Celery 与 Redis 使用幂等键轮询模型任务。前端读取真实执行轨迹；额度冻结、退款与服务账户对账全程可审计。">
+                    Celery and Redis poll provider jobs with idempotency keys. The UI reads a run trace that reflects work actually executed, while credit holds, refunds, and provider-account reconciliation remain auditable.
+                  </p>
+                </section>
+                <section>
+                  <span>04 / DELIVERY</span>
+                  <h4 data-en="The workflow ends with a usable media artifact." data-zh="工作流最终产出可使用的媒体资产。">The workflow ends with a usable media artifact.</h4>
+                  <p data-en="Every shot must be generated before Final Cut. FFmpeg assembles 16:9, 9:16, or 1:1 output with captions, soundtrack, and cover; users can review, download privately, or create an expiring share link." data-zh="所有镜头生成后才可进入 Final Cut。FFmpeg 合成 16:9、9:16 或 1:1 成片，并加入字幕、配乐与封面；用户可审阅、私有下载或创建限时分享链接。">
+                    Every shot must be generated before Final Cut. FFmpeg assembles 16:9, 9:16, or 1:1 output with captions, soundtrack, and cover; users can review, download privately, or create an expiring share link.
+                  </p>
+                </section>
+              </div>
+
+              <div class="dossier-flow" aria-label="VideoAgent production workflow">
+                <div><span>01</span><strong>Concept</strong><small data-en="brief + Skill" data-zh="创意 + Skill">brief + Skill</small></div>
+                <i aria-hidden="true">→</i>
+                <div><span>02</span><strong>Outline</strong><small data-en="direction review" data-zh="方向审核">direction review</small></div>
+                <i aria-hidden="true">→</i>
+                <div><span>03</span><strong>Script</strong><small data-en="shots + characters" data-zh="镜头 + 角色">shots + characters</small></div>
+                <i aria-hidden="true">→</i>
+                <div><span>04</span><strong>Ready</strong><small data-en="approved generation" data-zh="审批后生成">approved generation</small></div>
+                <i aria-hidden="true">→</i>
+                <div class="is-accent"><span>05</span><strong>Final cut</strong><small data-en="compose + deliver" data-zh="合成 + 交付">compose + deliver</small></div>
+              </div>
+
+              <div class="dossier-verification">
+                <div>
+                  <span data-en="VERIFICATION" data-zh="验证">VERIFICATION</span>
+                  <h4 data-en="Tested without spending provider credits." data-zh="不消耗付费额度也能完成端到端验证。">Tested without spending provider credits.</h4>
+                </div>
+                <ul>
+                  <li data-en="Playwright covers project creation, approval, Mock generation, polling, download, sharing, Skills, Assets, Hots, Docs, and admin flows." data-zh="Playwright 覆盖项目创建、审批、Mock 生成、轮询、下载、分享、Skills、Assets、Hots、Docs 与管理端流程。">
+                    Playwright covers project creation, approval, Mock generation, polling, download, sharing, Skills, Assets, Hots, Docs, and admin flows.
+                  </li>
+                  <li data-en="Pytest and Vitest protect API contracts, state transitions, provider behavior, UI logic, and authorization boundaries." data-zh="Pytest 与 Vitest 保护 API 契约、状态转换、服务行为、UI 逻辑与权限边界。">
+                    Pytest and Vitest protect API contracts, state transitions, provider behavior, UI logic, and authorization boundaries.
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <article class="project-dossier reveal" id="xiaomi" data-index="02">
+          <header class="project-dossier-head">
+            <span class="work-number">02</span>
+            <span class="work-type" data-en="Post-training" data-zh="后训练">Post-training</span>
+            <span class="project-dossier-period">2026</span>
+          </header>
+
+          <div class="project-dossier-title">
+            <div>
+              <span class="project-dossier-label" data-en="XIAOMI" data-zh="小米">XIAOMI</span>
+              <h3 data-en="Verifiable-reward post-training for domain-specific RTL code generation." data-zh="面向领域 RTL 代码生成的可验证奖励后训练。">
+                Verifiable-reward post-training for domain-specific RTL code generation.
+              </h3>
+            </div>
+            <p data-en="The hard problem was not generating plausible code; it was preventing a model from satisfying a weak verifier while learning the wrong hardware semantics." data-zh="真正困难的不只是生成看似合理的代码，而是防止模型满足一个较弱的验证器，却学到错误的硬件语义。">
+              The hard problem was not generating plausible code; it was preventing a model from satisfying a weak verifier while learning the wrong hardware semantics.
+            </p>
+          </div>
+
+          <div class="project-dossier-overview">
+            <figure class="project-dossier-proof">
+              <a class="lightbox-trigger" href="assets/xiaomi/dataset.png" data-lightbox-src="assets/xiaomi/dataset.png" data-lightbox-alt="RTL dataset construction pipeline">
+                <img src="assets/xiaomi/dataset.png" alt="" loading="lazy">
+              </a>
+              <figcaption>
+                <span data-en="DATA SYSTEM" data-zh="数据系统">DATA SYSTEM</span>
+                <strong data-en="Specifications, reasoning traces, testbenches, and executable verification become training data." data-zh="规范、推理轨迹、测试平台与可执行验证共同构成训练数据。">Specifications, reasoning traces, testbenches, and executable verification become training data.</strong>
+              </figcaption>
+            </figure>
+
+            <div class="project-dossier-summary">
+              <div class="project-dossier-point">
+                <span data-en="CONTEXT" data-zh="问题">CONTEXT</span>
+                <p data-en="A code model can pass syntax and shallow tests without preserving ports, timing behavior, or design intent. Reliable RTL post-training needs executable evidence at both data and reward boundaries." data-zh="代码模型可能通过语法与浅层测试，却没有保持端口、时序行为或设计意图。可靠的 RTL 后训练必须在数据与奖励两层都引入可执行证据。">
+                  A code model can pass syntax and shallow tests without preserving ports, timing behavior, or design intent. Reliable RTL post-training needs executable evidence at both data and reward boundaries.
+                </p>
+              </div>
+              <div class="project-dossier-point">
+                <span data-en="MY WORK" data-zh="我的工作">MY WORK</span>
+                <p data-en="Owned the applied data-to-training loop for smaller-model experiments: synthesis, extraction, normalization, deduplication, verification, port alignment, SFT and RLVR runs, reward comparison, and failure analysis." data-zh="负责小模型实验的完整数据到训练闭环：合成、抽取、规范化、去重、验证、端口对齐、SFT 与 RLVR 训练、奖励对比与失败分析。">
+                  Owned the applied data-to-training loop for smaller-model experiments: synthesis, extraction, normalization, deduplication, verification, port alignment, SFT and RLVR runs, reward comparison, and failure analysis.
+                </p>
+              </div>
+              <div class="project-dossier-point">
+                <span data-en="EVIDENCE" data-zh="结果">EVIDENCE</span>
+                <p data-en="Built SFT and RL business datasets, compared binary and linear rewards, and identified out-of-domain degradation before in-domain gains plateaued. The verified data and training path then informed the larger-model handoff." data-zh="构建 SFT 与 RL 业务数据集，对比二值奖励与线性奖励，并在域内收益收敛前识别出域外性能回退。经过验证的数据与训练路径随后支撑大模型训练交接。">
+                  Built SFT and RL business datasets, compared binary and linear rewards, and identified out-of-domain degradation before in-domain gains plateaued. The verified data and training path then informed the larger-model handoff.
+                </p>
+              </div>
+
+              <div class="project-tags" aria-label="Xiaomi project technology stack">
+                <span>SFT</span>
+                <span>RLVR</span>
+                <span>DAPO</span>
+                <span>Qwen2.5-Coder</span>
+                <span>GLM5.3</span>
+                <span>UVM</span>
+                <span>Cocotb</span>
+                <span>Benchmark</span>
+                <span>Dataset</span>
+                <span>LoRA</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-dossier-metrics" aria-label="Xiaomi project evidence">
+            <div><strong>2</strong><span data-en="training paradigms" data-zh="训练范式">training paradigms</span></div>
+            <div><strong>0.4172</strong><span data-en="linear reward at step 420" data-zh="第 420 步线性奖励">linear reward at step 420</span></div>
+            <div><strong>12.71h</strong><span data-en="compared training duration" data-zh="对比实验训练耗时">compared training duration</span></div>
+          </div>
+
+          <details class="project-dossier-details">
+            <summary>
+              <span>
+                <b data-en="Full project details" data-zh="项目全部详情">Full project details</b>
+                <small data-en="Data quality gates, SFT and RLVR, evaluation, and reward evidence" data-zh="数据质量门禁、SFT 与 RLVR、评测与奖励证据">Data quality gates, SFT and RLVR, evaluation, and reward evidence</small>
+              </span>
+              <i aria-hidden="true">+</i>
+            </summary>
+            <div class="project-dossier-detail-body">
+              <div class="dossier-detail-grid dossier-detail-grid-three">
+                <section>
+                  <span>01 / DATA</span>
+                  <h4 data-en="Build training data around executable semantics." data-zh="围绕可执行语义构建训练数据。">Build training data around executable semantics.</h4>
+                  <p data-en="GLM5.3 synthesized golden-code specifications, reasoning traces, and Random, UVM, and Cocotb testbenches. The pipeline applied extraction, normalization, deduplication, verification, bilateral port alignment, and self-equivalence filtering before publishing SFT and RL datasets." data-zh="GLM5.3 合成黄金代码规范、推理轨迹与 Random、UVM、Cocotb 测试平台。流水线在发布 SFT 与 RL 数据集前完成抽取、规范化、去重、验证、双边端口对齐与自等价过滤。">
+                    GLM5.3 synthesized golden-code specifications, reasoning traces, and Random, UVM, and Cocotb testbenches. The pipeline applied extraction, normalization, deduplication, verification, bilateral port alignment, and self-equivalence filtering before publishing SFT and RL datasets.
+                  </p>
+                </section>
+                <section>
+                  <span>02 / TRAINING</span>
+                  <h4 data-en="Two paths: imitate accepted traces, then optimize verified outcomes." data-zh="两条路径：先学习被接受的轨迹，再优化可验证结果。">Two paths: imitate accepted traces, then optimize verified outcomes.</h4>
+                  <p data-en="On Qwen2.5-Coder, rejection-sampled SFT used full-parameter and LoRA variants. RLVR with DAPO used compilation and executable tests as the verifier. The final pipeline decoupled GPU training from simulation and handed the data and training path to GLM5.3." data-zh="在 Qwen2.5-Coder 上完成全参数与 LoRA 的拒绝采样 SFT；使用编译与可执行测试作为 Verifier，通过 DAPO 做 RLVR。最终将 GPU 训练与仿真环境解耦，并把数据与训练路径交付 GLM5.3。">
+                    On Qwen2.5-Coder, rejection-sampled SFT used full-parameter and LoRA variants. RLVR with DAPO used compilation and executable tests as the verifier. The final pipeline decoupled GPU training from simulation and handed the data and training path to GLM5.3.
+                  </p>
+                </section>
+                <section>
+                  <span>03 / EVALUATION</span>
+                  <h4 data-en="Measure pass@k, reward, generalization, and cost together." data-zh="同时衡量 pass@k、奖励、泛化与成本。">Measure pass@k, reward, generalization, and cost together.</h4>
+                  <p data-en="Built business Benchmarks and used community Benchmarks to compare open-source, post-trained, and commercial models in non-agentic and agentic RTL generation. Reward curves were checked against downstream correctness and out-of-domain behavior rather than treated as accuracy." data-zh="构建业务 Benchmark，并使用社区 Benchmark 对比开源、后训练与商业模型在 Non-Agentic/Agentic RTL 生成上的表现。奖励曲线与下游正确率和域外行为联合检查，而不是把奖励当作准确率。">
+                    Built business Benchmarks and used community Benchmarks to compare open-source, post-trained, and commercial models in non-agentic and agentic RTL generation. Reward curves were checked against downstream correctness and out-of-domain behavior rather than treated as accuracy.
+                  </p>
+                </section>
+              </div>
+
+              <div class="dossier-evidence-grid">
+                <figure class="dossier-evidence-card">
+                  <button class="lightbox-trigger" type="button" data-lightbox-src="assets/xiaomi/rl.png" data-lightbox-alt="RTL reinforcement-learning reward loop">
+                    <img src="assets/xiaomi/rl.png" alt="" loading="lazy">
+                  </button>
+                  <figcaption>
+                    <span>01 / RL LOOP</span>
+                    <strong data-en="Generate, execute, verify, and update from reward." data-zh="生成、执行、验证，并用奖励更新策略。">Generate, execute, verify, and update from reward.</strong>
+                  </figcaption>
+                </figure>
+                <figure class="dossier-evidence-card dossier-chart-card">
+                  <div class="dossier-chart-head">
+                    <span>02 / REWARD</span>
+                    <strong>Qwen2.5-Coder-7B · Step 420</strong>
+                  </div>
+                  <div class="dossier-reward-bars" role="img" aria-label="Linear reward 0.4172 versus binary reward 0.2483">
+                    <div>
+                      <span>Binary</span>
+                      <i><b style="--bar-width: 59.5%"></b></i>
+                      <strong>0.2483</strong>
+                    </div>
+                    <div>
+                      <span>Linear</span>
+                      <i><b style="--bar-width: 100%"></b></i>
+                      <strong>0.4172</strong>
+                    </div>
+                  </div>
+                  <figcaption>
+                    <span>03 / GENERALIZATION</span>
+                    <strong data-en="Out-of-domain degradation appeared before in-domain gains plateaued." data-zh="域内收益尚未收敛时，域外性能已开始回退。">Out-of-domain degradation appeared before in-domain gains plateaued.</strong>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="dossier-verification">
+                <div>
+                  <span data-en="WHAT I LEARNED" data-zh="复盘">WHAT I LEARNED</span>
+                  <h4 data-en="Reward quality is a data and systems problem." data-zh="奖励质量本质上是数据与系统问题。">Reward quality is a data and systems problem.</h4>
+                </div>
+                <ul>
+                  <li data-en="Align rewards with hardware semantics, not tool loopholes." data-zh="奖励应对齐硬件语义，而不是激励工具漏洞。">Align rewards with hardware semantics, not tool loopholes.</li>
+                  <li data-en="Inspect generalization throughout training, not only at the final checkpoint." data-zh="在整个训练过程中观察泛化，而不是只看最终 checkpoint。">Inspect generalization throughout training, not only at the final checkpoint.</li>
+                  <li data-en="Treat verification, data filtering, and training infrastructure as one closed loop." data-zh="把验证、数据过滤与训练基础设施视为同一个闭环。">Treat verification, data filtering, and training infrastructure as one closed loop.</li>
+                </ul>
+              </div>
+            </div>
+          </details>
+        </article>
+
+        <article class="project-dossier reveal" id="lmpool" data-index="03">
+          <header class="project-dossier-head">
+            <span class="work-number">03</span>
+            <span class="work-type" data-en="Systems" data-zh="系统">Systems</span>
+            <span class="project-dossier-period">2026</span>
+          </header>
+
+          <div class="project-dossier-title">
+            <div>
+              <span class="project-dossier-label">LMPOOL</span>
+              <h3 data-en="KV-aware routing and transactional transfer for multi-GPU LLM serving." data-zh="面向多 GPU LLM 服务的 KV 感知路由与事务式传输。">
+                KV-aware routing and transactional transfer for multi-GPU LLM serving.
+              </h3>
+            </div>
+            <p data-en="A logically coordinated KV pool that optimizes end-to-end serving cost, rather than chasing cache hit rate as a proxy." data-zh="一个逻辑协调的 KV Pool：优化端到端服务成本，而不是把缓存命中率当作目标本身。">
+              A logically coordinated KV pool that optimizes end-to-end serving cost, rather than chasing cache hit rate as a proxy.
+            </p>
+          </div>
+
+          <div class="project-dossier-overview">
+            <figure class="project-dossier-proof">
+              <a class="lightbox-trigger" href="assets/lmpool/architecture.png" data-lightbox-src="assets/lmpool/architecture.png" data-lightbox-alt="LMPool multi-GPU serving architecture">
+                <img src="assets/lmpool/architecture.png" alt="" loading="lazy">
+              </a>
+              <figcaption>
+                <span data-en="SYSTEM TOPOLOGY" data-zh="系统拓扑">SYSTEM TOPOLOGY</span>
+                <strong data-en="Global control plane, local schedulers, and paired model runners over NCCL/NVLink." data-zh="全局控制面、本地调度器，以及通过 NCCL/NVLink 配对的 Model Runner。">Global control plane, local schedulers, and paired model runners over NCCL/NVLink.</strong>
+              </figcaption>
+            </figure>
+
+            <div class="project-dossier-summary">
+              <div class="project-dossier-point">
+                <span data-en="CONTEXT" data-zh="问题">CONTEXT</span>
+                <p data-en="Round-robin routing ignores reusable prefixes. Routing only to cache owners overloads them. Moving every cache to the cheapest queue can cost more than recomputing it." data-zh="轮询路由忽略了可复用 Prefix；只路由给缓存持有者又会造成过载；把缓存搬到最空闲队列，成本还可能高于重算。">
+                  Round-robin routing ignores reusable prefixes. Routing only to cache owners overloads them. Moving every cache to the cheapest queue can cost more than recomputing it.
+                </p>
+              </div>
+              <div class="project-dossier-point">
+                <span data-en="MY WORK" data-zh="我的工作">MY WORK</span>
+                <p data-en="Designed global and local scheduling, transactional KV transfer, versioned block tables, correctness tests, and a benchmark suite that isolates routing, load skew, and memory skew." data-zh="设计全局与本地调度、事务式 KV 传输、版本化 Block Table、正确性测试，以及分别隔离路由、负载倾斜与显存倾斜的评测套件。">
+                  Designed global and local scheduling, transactional KV transfer, versioned block tables, correctness tests, and a benchmark suite that isolates routing, load skew, and memory skew.
+                </p>
+              </div>
+              <div class="project-dossier-point">
+                <span data-en="EVIDENCE" data-zh="结果">EVIDENCE</span>
+                <p data-en="Against round-robin routing on six RTX 3090 GPUs, LMPool reached +21.3% maximum throughput and −25.2% maximum mean TTFT. Transfer correctness, skew behavior, and NVLink profiles were validated separately." data-zh="在 6 张 RTX 3090 上对比轮询路由，LMPool 最高提升吞吐 21.3%，最高降低平均 TTFT 25.2%。传输正确性、倾斜行为与 NVLink Profile 分别验证。">
+                  Against round-robin routing on six RTX 3090 GPUs, LMPool reached +21.3% maximum throughput and −25.2% maximum mean TTFT. Transfer correctness, skew behavior, and NVLink profiles were validated separately.
+                </p>
+              </div>
+
+              <div class="project-tags" aria-label="LMPool technology stack">
+                <span>KV Cache</span>
+                <span>KV Routing</span>
+                <span>PagedAttention</span>
+                <span>NCCL</span>
+                <span>NVLink</span>
+                <span>Qwen3</span>
+                <span>vLLM</span>
+                <span>Benchmark</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-dossier-metrics" aria-label="LMPool measured results">
+            <div><strong>+21.3%</strong><span data-en="max throughput" data-zh="最高吞吐提升">max throughput</span></div>
+            <div><strong>−25.2%</strong><span data-en="max mean TTFT" data-zh="平均 TTFT 最大降低">max mean TTFT</span></div>
+            <div><strong>87</strong><span data-en="KV blocks copied" data-zh="复制 KV Blocks">KV blocks copied</span></div>
+          </div>
+
+          <details class="project-dossier-details">
+            <summary>
+              <span>
+                <b data-en="Full project details" data-zh="项目全部详情">Full project details</b>
+                <small data-en="Scheduling model, transfer transaction, failure boundaries, and measured results" data-zh="调度模型、传输事务、故障边界与实测结果">Scheduling model, transfer transaction, failure boundaries, and measured results</small>
+              </span>
+              <i aria-hidden="true">+</i>
+            </summary>
+            <div class="project-dossier-detail-body">
+              <div class="dossier-detail-grid dossier-detail-grid-three">
+                <section>
+                  <span>01 / ROUTING</span>
+                  <h4 data-en="Choose execution by projected cost, not cache ownership." data-zh="按预估成本选择执行位置，而不是按缓存持有关系。">Choose execution by projected cost, not cache ownership.</h4>
+                  <p data-en="The global scheduler estimates missing prefill, queued work, decode load, reclaim pressure, transfer cost, and free capacity. Cache locality is one term in the decision, not the objective." data-zh="全局调度器估算缺失 Prefill、排队工作、Decode 负载、回收压力、传输成本与空闲容量。缓存局部性只是决策中的一项，而不是目标本身。">
+                    The global scheduler estimates missing prefill, queued work, decode load, reclaim pressure, transfer cost, and free capacity. Cache locality is one term in the decision, not the objective.
+                  </p>
+                </section>
+                <section>
+                  <span>02 / TRANSFER</span>
+                  <h4 data-en="KV movement is transactional." data-zh="KV 迁移是事务式的。">KV movement is transactional.</h4>
+                  <p data-en="Prepare reserves destination blocks and locks source generations. Execute sends one packed tensor. Publish makes destination state visible. Finalize releases source capacity only under move semantics." data-zh="Prepare 预留目标 Blocks 并锁定源 Generation；Execute 发送打包 Tensor；Publish 使目标状态可见；Finalize 仅在 Move 语义下释放源容量。">
+                    Prepare reserves destination blocks and locks source generations. Execute sends one packed tensor. Publish makes destination state visible. Finalize releases source capacity only under move semantics.
+                  </p>
+                </section>
+                <section>
+                  <span>03 / EVALUATION</span>
+                  <h4 data-en="Separate the mechanism from the aggregate result." data-zh="把机制收益与总体结果分开验证。">Separate the mechanism from the aggregate result.</h4>
+                  <p data-en="The suite isolates routing-only gains, background copy under load skew, and move-style capacity release under memory skew. Byte-level KV equality and transfer bandwidth are checked independently." data-zh="评测分别隔离纯路由收益、负载倾斜下的后台复制，以及显存倾斜下的 Move 容量释放；KV 字节级一致性与传输带宽独立检查。">
+                    The suite isolates routing-only gains, background copy under load skew, and move-style capacity release under memory skew. Byte-level KV equality and transfer bandwidth are checked independently.
+                  </p>
+                </section>
+              </div>
+
+              <div class="dossier-evidence-grid dossier-evidence-grid-three">
+                <figure class="dossier-evidence-card">
+                  <button class="lightbox-trigger" type="button" data-lightbox-src="assets/lmpool/routing-sweep.png" data-lightbox-alt="LMPool routing sweep across model sizes and prefix lengths">
+                    <img src="assets/lmpool/routing-sweep.png" alt="" loading="lazy">
+                  </button>
+                  <figcaption>
+                    <span>01 / ROUTING SWEEP</span>
+                    <strong data-en="Gains increase with shared-prefix pressure." data-zh="共享 Prefix 压力越高，收益越明显。">Gains increase with shared-prefix pressure.</strong>
+                  </figcaption>
+                </figure>
+                <figure class="dossier-evidence-card">
+                  <button class="lightbox-trigger" type="button" data-lightbox-src="assets/lmpool/skew-results.png" data-lightbox-alt="LMPool load and memory skew results">
+                    <img src="assets/lmpool/skew-results.png" alt="" loading="lazy">
+                  </button>
+                  <figcaption>
+                    <span>02 / SKEW</span>
+                    <strong data-en="Background copy and move semantics were tested under asymmetric load." data-zh="后台复制与 Move 语义在非对称负载下验证。">Background copy and move semantics were tested under asymmetric load.</strong>
+                  </figcaption>
+                </figure>
+                <figure class="dossier-evidence-card">
+                  <button class="lightbox-trigger" type="button" data-lightbox-src="assets/lmpool/transfer-profile.png" data-lightbox-alt="LMPool NVLink transfer bandwidth profile">
+                    <img src="assets/lmpool/transfer-profile.png" alt="" loading="lazy">
+                  </button>
+                  <figcaption>
+                    <span>03 / TRANSFER</span>
+                    <strong data-en="NVLink profiles make transfer cost an explicit routing input." data-zh="NVLink Profile 让传输成本成为显式路由输入。">NVLink profiles make transfer cost an explicit routing input.</strong>
+                  </figcaption>
+                </figure>
+              </div>
+
+              <div class="dossier-flow" aria-label="LMPool serving lifecycle">
+                <div><span>01</span><strong>Route</strong><small data-en="projected cost" data-zh="预估成本">projected cost</small></div>
+                <i aria-hidden="true">→</i>
+                <div><span>02</span><strong>Prepare</strong><small data-en="reserve + lock" data-zh="预留 + 锁定">reserve + lock</small></div>
+                <i aria-hidden="true">→</i>
+                <div><span>03</span><strong>Transfer</strong><small data-en="NCCL / NVLink" data-zh="NCCL / NVLink">NCCL / NVLink</small></div>
+                <i aria-hidden="true">→</i>
+                <div><span>04</span><strong>Publish</strong><small data-en="version becomes visible" data-zh="版本可见">version becomes visible</small></div>
+                <i aria-hidden="true">→</i>
+                <div class="is-accent"><span>05</span><strong>Serve</strong><small data-en="decode with reused KV" data-zh="复用 KV 解码">decode with reused KV</small></div>
+              </div>
+            </div>
+          </details>
+        </article>
+      </div>
+    </section>
+
+    <!-- Legacy project presentation retained outside the rendered page during migration.
     <section class="work-section section-shell" id="projects" data-nav-target="#projects">
       <div class="section-heading reveal">
         <span class="section-index">05 / <span data-en="PROJECTS" data-zh="项目">PROJECTS</span></span>
@@ -1259,14 +1726,14 @@
 
         <div class="xiaomi-evidence reveal">
           <div class="xiaomi-evidence-heading">
-            <span class="small-label" data-en="SOURCE MATERIAL / SELECTED FIGURES" data-zh="工作材料 / 图表节选">SOURCE MATERIAL / SELECTED FIGURES</span>
-            <h3 data-en="Redrawn from the internship work documents" data-zh="根据实习工作文档重绘">Redrawn from the internship work documents</h3>
-            <p data-en="The dataset and reward figures below are re-drawn from Data.pdf and RL.pdf, with wording and layout adapted for this page." data-zh="以下数据与奖励图根据 Data.pdf 和 RL.pdf 重绘，并根据网页阅读调整了文字与布局。">The dataset and reward figures below are re-drawn from Data.pdf and RL.pdf, with wording and layout adapted for this page.</p>
+            <span class="small-label" data-en="SELECTED EVIDENCE" data-zh="证据节选">SELECTED EVIDENCE</span>
+            <h3 data-en="Data and reward evidence" data-zh="数据与奖励证据">Data and reward evidence</h3>
+            <p data-en="Selected figures for dataset construction and reward analysis." data-zh="数据集构建与奖励分析的图表节选。">Selected figures for dataset construction and reward analysis.</p>
           </div>
           <details class="source-figure-disclosure">
             <summary>
               <span>
-                <span class="source-figure-label" data-en="ORIGINAL WORK FIGURES" data-zh="原始工作图表">ORIGINAL WORK FIGURES</span>
+                <span class="source-figure-label" data-en="DETAILED FIGURES" data-zh="详细图表">DETAILED FIGURES</span>
                 <strong data-en="Dataset construction and RL loop" data-zh="数据集构建与 RL 闭环">Dataset construction and RL loop</strong>
               </span>
               <span class="source-figure-count">02</span>
@@ -1299,7 +1766,7 @@
             <figure class="redrawn-figure redrawn-figure-wide">
               <div class="redrawn-figure-head">
                 <span data-en="FIGURE 01 / DATA" data-zh="图 01 / 数据">FIGURE 01 / DATA</span>
-                <span>Data.pdf</span>
+                <span>DATASET</span>
               </div>
               <h4 data-en="Dataset construction" data-zh="数据集构建">Dataset construction</h4>
               <div class="dataset-diagram">
@@ -1356,7 +1823,7 @@
             <figure class="redrawn-figure">
               <div class="redrawn-figure-head">
                 <span data-en="FIGURE 02 / TRAINING" data-zh="图 02 / 训练">FIGURE 02 / TRAINING</span>
-                <span>Data.pdf</span>
+                <span>TRAINING</span>
               </div>
               <h4 data-en="RFT and RLVR paths" data-zh="RFT 与 RLVR 训练路径">RFT and RLVR paths</h4>
               <div class="training-mode-diagram">
@@ -1386,7 +1853,7 @@
             <figure class="redrawn-figure">
               <div class="redrawn-figure-head">
                 <span data-en="FIGURE 03 / EVALUATION" data-zh="图 03 / 评测">FIGURE 03 / EVALUATION</span>
-                <span>RL.pdf</span>
+                <span>REWARD</span>
               </div>
               <h4 data-en="Reward comparison at step 420" data-zh="第 420 步奖励对比">Reward comparison at step 420</h4>
               <div class="reward-chart" role="img" aria-label="At step 420, linear reward reaches 0.4172 smoothed validation score versus 0.2483 for binary reward">
@@ -1739,6 +2206,7 @@
         </div>
       </div>
     </section>
+    -->
 
     <section class="contact-section" id="contact">
       <div class="contact-shell section-shell">
