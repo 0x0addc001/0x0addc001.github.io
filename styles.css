@@ -881,8 +881,11 @@ html[lang="en"] .hero-title > span:first-child {
   z-index: 160;
   right: 24px;
   bottom: 24px;
+  display: flex;
+  height: calc(50svh - 24px);
   width: min(390px, calc(100vw - 32px));
   max-height: min(720px, calc(100svh - 48px));
+  flex-direction: column;
   margin-top: 0;
   transition:
     opacity 260ms ease,
@@ -982,7 +985,9 @@ html[lang="en"] .hero-title > span:first-child {
 
 .hero-chat-log {
   display: flex;
-  max-height: 230px;
+  min-height: 0;
+  max-height: none;
+  flex: 1;
   flex-direction: column;
   gap: 10px;
   overflow-y: auto;
