@@ -1252,6 +1252,11 @@ html[lang="en"] .hero-title > span:first-child {
   backdrop-filter: blur(8px);
 }
 
+.hero.has-marquee-tags .hero-copy {
+  z-index: 5;
+  padding-bottom: 190px;
+}
+
 .hero.has-marquee-tags .hero-portrait {
   align-self: end;
 }
@@ -5359,6 +5364,10 @@ html[lang="zh"] .usecase-meta::before {
 
   .hero.has-marquee-tags .hero-portrait {
     align-self: auto;
+  }
+
+  .hero.has-marquee-tags .hero-copy {
+    padding-bottom: 0;
   }
 
   .hero.has-marquee-tags .hero-tags {

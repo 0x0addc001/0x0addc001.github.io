@@ -74,7 +74,7 @@
       const portraitBottom = portrait.getBoundingClientRect().bottom;
       hero.style.setProperty(
         "--hero-tag-band-height",
-        `${Math.max(150, Math.round(portraitBottom - introBottom - 12))}px`
+        `${Math.max(182, Math.round(portraitBottom - introBottom - 32))}px`
       );
     };
 
