@@ -2328,8 +2328,7 @@ html[lang="en"] .hero-title > span:first-child {
   transform: scale(1.025);
 }
 
-.videoagent-preview-kicker,
-.videoagent-preview-caption {
+.videoagent-preview-kicker {
   position: absolute;
   z-index: 1;
   left: 18px;
@@ -2344,15 +2343,6 @@ html[lang="en"] .hero-title > span:first-child {
   background: rgba(4, 15, 29, 0.28);
   font-size: 0.7rem;
   letter-spacing: 0.07em;
-}
-
-.videoagent-preview-caption {
-  right: 18px;
-  bottom: 18px;
-  font-family: var(--font-display);
-  font-size: clamp(1.35rem, 2vw, 2rem);
-  font-style: italic;
-  letter-spacing: -0.02em;
 }
 
 .videoagent-copy {
@@ -2490,6 +2480,7 @@ html[lang="en"] .hero-title > span:first-child {
   background: transparent;
   color: var(--muted);
   font-size: 0.82rem;
+  text-transform: none;
 }
 
 .work-card-body {
