@@ -16,9 +16,9 @@
   <rect class="bg" width="1800" height="1000"/>
   <rect x="38" y="30" width="48" height="48" fill="#153d68" stroke="#72b7ff" stroke-width="1.5"/>
   <path d="M56 43L75 54L56 65Z" fill="#7bbcff"/>
-  <text class="kicker blue" x="108" y="43">VIDEOAGENT / 技术架构</text>
-  <text class="title ink" x="108" y="78">从创意到成片：一条受控路径</text>
-  <text class="sub soft" x="40" y="111">导演掌握创意，Agent 在边界内规划，运行时隔离状态、工具调用、成本与交付。</text>
+  <text class="kicker blue" x="108" y="29">VIDEOAGENT / 技术架构</text>
+  <text class="title ink" x="108" y="85">从创意到成片：一条受控路径</text>
+  <text class="sub soft" x="40" y="121">导演掌握创意，Agent 在边界内规划，运行时隔离状态、工具调用、成本与交付。</text>
 
   <rect class="panel" x="30" y="145" width="315" height="735"/>
   <text class="col blue" x="52" y="176">01 / 体验层</text><text class="head ink" x="52" y="207">导演工作台</text><text class="copy soft" x="52" y="230">浏览器与产品界面</text>

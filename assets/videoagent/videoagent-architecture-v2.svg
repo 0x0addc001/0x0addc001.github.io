@@ -16,9 +16,9 @@
   <rect class="bg" width="1800" height="1000"/>
   <rect x="38" y="30" width="48" height="48" fill="#153d68" stroke="#72b7ff" stroke-width="1.5"/>
   <path d="M56 43L75 54L56 65Z" fill="#7bbcff"/>
-  <text class="kicker blue" x="108" y="43">VIDEOAGENT / TECHNICAL ARCHITECTURE</text>
-  <text class="title ink" x="108" y="78">From creative intent to final cut: one controlled path</text>
-  <text class="sub soft" x="40" y="111">The director owns intent, the Agent plans within bounds, and runtime control isolates state, tool calls, cost, and delivery.</text>
+  <text class="kicker blue" x="108" y="29">VIDEOAGENT / TECHNICAL ARCHITECTURE</text>
+  <text class="title ink" x="108" y="85">From creative intent to final cut: one controlled path</text>
+  <text class="sub soft" x="40" y="121">The director owns intent, the Agent plans within bounds, and runtime control isolates state, tool calls, cost, and delivery.</text>
 
   <!-- 01 Experience -->
   <rect class="panel" x="30" y="145" width="315" height="735"/>
