@@ -4,7 +4,6 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const textSelector = [
     ".hero-title > span",
-    ".hero-intro",
     ".section-heading h2",
     ".section-heading > p",
     ".resume-heading-copy h2",
@@ -144,6 +143,10 @@
     return bounds.bottom > 0 && bounds.top < window.innerHeight;
   }
 
+  function setHeroTypingState(title, active) {
+    title?.closest(".hero")?.classList.toggle("is-hero-typing", active);
+  }
+
   function scheduleHeroReplay(title, lines, texts, token) {
     if (token !== heroSequenceToken) return;
     clearTimeout(heroSequenceTimer);
@@ -159,6 +162,7 @@
         resetText(line);
         line.textContent = "";
       });
+      setHeroTypingState(title, true);
 
       heroSequenceTimer = setTimeout(() => {
         if (token !== heroSequenceToken) return;
@@ -173,6 +177,7 @@
     revealText(lines[index], 0, () => {
       if (token !== heroSequenceToken) return;
       if (index + 1 >= lines.length) {
+        setHeroTypingState(lines[0]?.closest(".hero-title"), false);
         scheduleHeroReplay(lines[0]?.closest(".hero-title"), lines, texts, token);
         return;
       }
@@ -208,12 +213,14 @@
     });
 
     if (reduceMotion.matches) {
+      setHeroTypingState(heroTitle, false);
       heroLines.forEach(resetText);
       elements.forEach(resetText);
       return;
     }
 
     if (heroTitle && heroLines.length) {
+      setHeroTypingState(heroTitle, true);
       const heroTitleObserver = new IntersectionObserver(
         (entries) => {
           if (!entries.some((entry) => entry.isIntersecting)) return;
@@ -223,6 +230,8 @@
         { threshold: 0.14, rootMargin: "0px 0px -4% 0px" }
       );
       heroTitleObserver.observe(heroTitle);
+    } else {
+      setHeroTypingState(heroTitle, false);
     }
 
     observer = new IntersectionObserver(

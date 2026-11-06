@@ -1318,6 +1318,10 @@ html[lang="en"] .hero-title > span:first-child {
   animation-play-state: paused;
 }
 
+.hero.is-hero-typing .hero-tag-track {
+  animation-play-state: paused;
+}
+
 @keyframes hero-tag-marquee {
   from {
     transform: translate3d(0, 0, 0);
