@@ -6848,8 +6848,8 @@ html[lang="zh"] .usecase-meta::before {
 
 .project-dossier-proof-video > a {
   min-height: 0;
-  aspect-ratio: 16 / 9;
-  background: #07111f;
+  aspect-ratio: 1800 / 1000;
+  background: #f5f9ff;
 }
 
 .project-dossier-proof-video img {

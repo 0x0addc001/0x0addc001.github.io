@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">VideoAgent technical architecture</title>
+  <desc id="desc">A four-plane architecture from creative workspace through Agent Loop, application state and production providers, to final-cut review and delivery.</desc>
+  <defs>
+    <style>
+      .bg{fill:#f5f9ff}.ink{fill:#0b1a2d}.muted{fill:#5b6b80}.blue{fill:#2164d8}.cyan{fill:#158ba3}
+      .panel{fill:#ffffff;stroke:#b5c4d8;stroke-width:1.5}.panel-soft{fill:#edf4fd;stroke:#c1d1e4;stroke-width:1.2}
+      .accent{fill:#e8f1ff;stroke:#2268d8;stroke-width:2}.accent-cyan{fill:#e8f8fa;stroke:#158ba3;stroke-width:2}
+      .accent-deep{fill:#0b2038;stroke:#7bbcff;stroke-width:2}
+      .label{font:700 16px 'Segoe UI',Arial,sans-serif;letter-spacing:2px}.title{font:700 44px 'Segoe UI',Arial,sans-serif;letter-spacing:-1.5px}
+      .subtitle{font:400 21px 'Segoe UI',Arial,sans-serif}.box-title{font:700 20px 'Segoe UI',Arial,sans-serif}
+      .box-title-light{font:700 20px 'Segoe UI',Arial,sans-serif;fill:#f4f8ff}.box-copy{font:400 15px 'Segoe UI',Arial,sans-serif}
+      .box-copy-light{font:400 15px 'Segoe UI',Arial,sans-serif;fill:#c9dbef}.mono{font:600 13px 'Cascadia Code',Consolas,monospace;letter-spacing:.4px}
+      .arrow{fill:none;stroke:#2164d8;stroke-width:2.4}.arrow-soft{fill:none;stroke:#7f96b5;stroke-width:1.8;stroke-dasharray:7 7}
+      .dot{fill:#2164d8}.dot-cyan{fill:#158ba3}
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#2164d8"/>
+    </marker>
+    <marker id="arrowhead-soft" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <path d="M0,0 L10,4 L0,8 z" fill="#7f96b5"/>
+    </marker>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1800" height="1000"/>
+  <path d="M60 96H1740" stroke="#b5c4d8" stroke-width="1.5"/>
+  <text class="title ink" x="60" y="62">VideoAgent</text>
+  <text class="subtitle muted" x="360" y="60">Agent-native video production architecture</text>
+  <text class="mono blue" x="1442" y="58">LIVE SYSTEM BOUNDARY · 2026</text>
+
+  <!-- Creative workspace -->
+  <rect class="panel" x="50" y="130" width="370" height="760"/>
+  <text class="label blue" x="78" y="170">01 / CREATIVE WORKSPACE</text>
+  <text class="box-title ink" x="78" y="208">User intent becomes editable state</text>
+  <rect class="panel-soft" x="78" y="236" width="314" height="82"/>
+  <text class="mono blue" x="96" y="261">PROMPT COMPOSER</text>
+  <text class="box-title ink" x="96" y="289">Brief · Skill · Hook · Model</text>
+  <text class="box-copy muted" x="96" y="310">style / frame / duration / quality / audio</text>
+  <path class="arrow" d="M235 318V347" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="78" y="350" width="314" height="118"/>
+  <text class="mono blue" x="96" y="377">DIRECTIONS</text>
+  <text class="box-title ink" x="96" y="405">Editable Direction</text>
+  <text class="box-copy muted" x="96" y="431">Settings · Outline · Script</text>
+  <text class="box-copy muted" x="96" y="452">refine locally, then re-plan</text>
+  <path class="arrow" d="M235 468V495" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="78" y="498" width="314" height="118"/>
+  <text class="mono blue" x="96" y="525">VISIONS</text>
+  <text class="box-title ink" x="96" y="553">Editable Visual State</text>
+  <text class="box-copy muted" x="96" y="579">Characters · Scenes · Shots</text>
+  <text class="box-copy muted" x="96" y="600">references · prompts · results</text>
+  <path class="arrow" d="M235 616V643" marker-end="url(#arrowhead)"/>
+  <rect class="accent" x="78" y="646" width="314" height="88"/>
+  <text class="mono blue" x="96" y="673">COLLABORATION</text>
+  <text class="box-title ink" x="96" y="701">Owner · View · Edit</text>
+  <text class="box-copy muted" x="96" y="722">hashed invites · email scope · revoke</text>
+  <path class="arrow" d="M235 734V761" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="78" y="764" width="314" height="86"/>
+  <text class="mono blue" x="96" y="791">PERSISTED STATE</text>
+  <text class="box-title ink" x="96" y="819">Projects · Versions · Assets</text>
+  <text class="box-copy muted" x="96" y="840">one traceable production record</text>
+
+  <!-- Agent loop -->
+  <rect class="panel" x="450" y="130" width="420" height="760"/>
+  <text class="label blue" x="478" y="170">02 / AGENT LOOP</text>
+  <text class="box-title ink" x="478" y="208">Bounded reasoning, explicit control</text>
+  <rect class="panel-soft" x="478" y="236" width="364" height="67"/>
+  <text class="mono blue" x="496" y="261">CONTEXT BUILDER</text>
+  <text class="box-title ink" x="496" y="288">Project + recent turns + Skill</text>
+  <path class="arrow" d="M660 303V324" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="478" y="327" width="364" height="67"/>
+  <text class="mono blue" x="496" y="352">MEMORY</text>
+  <text class="box-title ink" x="496" y="379">8 recent turns · bounded context</text>
+  <path class="arrow" d="M660 394V415" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="478" y="418" width="364" height="67"/>
+  <text class="mono blue" x="496" y="443">SKILL RESOLUTION</text>
+  <text class="box-title ink" x="496" y="470">Owner-scoped instructions</text>
+  <path class="arrow" d="M660 485V506" marker-end="url(#arrowhead)"/>
+  <rect class="accent" x="478" y="509" width="364" height="82"/>
+  <text class="mono blue" x="496" y="535">LANGGRAPH</text>
+  <text class="box-title ink" x="496" y="564">plan_storyboard</text>
+  <text class="box-copy muted" x="496" y="584">planning has no billable tools</text>
+  <path class="arrow" d="M660 591V612" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="478" y="615" width="364" height="67"/>
+  <text class="mono blue" x="496" y="640">VALIDATION</text>
+  <text class="box-title ink" x="496" y="667">Pydantic StoryboardPlan</text>
+  <path class="arrow" d="M660 682V703" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="478" y="706" width="364" height="67"/>
+  <text class="mono blue" x="496" y="731">STATE UPDATE</text>
+  <text class="box-title ink" x="496" y="758">Persist characters, scenes, shots</text>
+  <path class="arrow" d="M660 773V794" marker-end="url(#arrowhead)"/>
+  <rect class="accent-deep" x="478" y="797" width="364" height="67"/>
+  <text class="mono" fill="#8dbdff" x="496" y="822">OBSERVABLE RUN</text>
+  <text class="box-title-light" x="496" y="849">Hook trace · status · reply</text>
+
+  <!-- Application and production providers -->
+  <rect class="panel" x="900" y="130" width="420" height="760"/>
+  <text class="label blue" x="928" y="170">03 / APPLICATION + RUNTIME</text>
+  <text class="box-title ink" x="928" y="208">State, approvals, credits, execution</text>
+  <rect class="panel-soft" x="928" y="236" width="364" height="67"/>
+  <text class="mono blue" x="946" y="261">FASTAPI</text>
+  <text class="box-title ink" x="946" y="288">Auth · projects · storyboards · assets</text>
+  <path class="arrow" d="M1110 303V324" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="928" y="327" width="364" height="86"/>
+  <text class="mono blue" x="946" y="352">WORKFLOW GATES</text>
+  <text class="box-title ink" x="946" y="379">Concept → Outline → Script → Generate</text>
+  <text class="box-copy muted" x="946" y="400">approve · refine · custom</text>
+  <path class="arrow" d="M1110 413V434" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="928" y="437" width="364" height="86"/>
+  <text class="mono blue" x="946" y="462">TRANSACTION BOUNDARY</text>
+  <text class="box-title ink" x="946" y="489">Credit reserve + idempotent job</text>
+  <text class="box-copy muted" x="946" y="510">approved=true · unique request key</text>
+  <path class="arrow" d="M1110 523V548" marker-end="url(#arrowhead)"/>
+  <rect class="accent" x="928" y="551" width="364" height="85"/>
+  <text class="mono blue" x="946" y="577">CAPABILITY ROUTER</text>
+  <text class="box-title ink" x="946" y="604">16 models + Auto</text>
+  <text class="box-copy muted" x="946" y="624">references · ratio · audio · credits</text>
+  <rect class="panel-soft" x="928" y="655" width="112" height="93"/>
+  <text class="mono blue" x="944" y="680">PIPPIT</text>
+  <text class="box-copy muted" x="944" y="706">production</text>
+  <text class="box-copy muted" x="944" y="727">provider</text>
+  <rect class="panel-soft" x="1054" y="655" width="112" height="93"/>
+  <text class="mono blue" x="1070" y="680">KLING</text>
+  <text class="box-copy muted" x="1070" y="706">production</text>
+  <text class="box-copy muted" x="1070" y="727">provider</text>
+  <rect class="panel-soft" x="1180" y="655" width="112" height="93"/>
+  <text class="mono blue" x="1196" y="680">MOCK</text>
+  <text class="box-copy muted" x="1196" y="706">test /</text>
+  <text class="box-copy muted" x="1196" y="727">development</text>
+  <rect class="accent-cyan" x="928" y="772" width="364" height="82"/>
+  <text class="mono blue" x="946" y="798">ASYNC RUNTIME</text>
+  <text class="box-title ink" x="946" y="826">Celery · Redis · backoff polling</text>
+  <text class="box-copy muted" x="946" y="846">persisted jobs · refunds · reconciliation</text>
+
+  <!-- Review and delivery -->
+  <rect class="panel" x="1350" y="130" width="400" height="760"/>
+  <text class="label blue" x="1378" y="170">04 / REVIEW + DELIVERY</text>
+  <text class="box-title ink" x="1378" y="208">Preview, inspect, publish</text>
+  <rect class="panel-soft" x="1378" y="236" width="344" height="82"/>
+  <text class="mono blue" x="1396" y="261">GENERATED MEDIA</text>
+  <text class="box-title ink" x="1396" y="289">Shot / Character assets</text>
+  <text class="box-copy muted" x="1396" y="310">persisted result URLs and selections</text>
+  <path class="arrow" d="M1548 318V347" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="1378" y="350" width="344" height="87"/>
+  <text class="mono blue" x="1396" y="375">FINAL CUT</text>
+  <text class="box-title ink" x="1396" y="403">FFmpeg composition</text>
+  <text class="box-copy muted" x="1396" y="424">captions · soundtrack · cover · ratios</text>
+  <path class="arrow" d="M1550 437V466" marker-end="url(#arrowhead)"/>
+  <rect class="accent" x="1378" y="469" width="344" height="101"/>
+  <text class="mono blue" x="1396" y="495">MULTIMODAL REVIEW</text>
+  <text class="box-title ink" x="1396" y="524">Evidence, not invented scores</text>
+  <text class="box-copy muted" x="1396" y="546">character · style · prompt · temporal</text>
+  <path class="arrow" d="M1550 570V599" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="1378" y="602" width="344" height="91"/>
+  <text class="mono blue" x="1396" y="628">DELIVERY</text>
+  <text class="box-title ink" x="1396" y="656">Download · Share · Publish</text>
+  <text class="box-copy muted" x="1396" y="677">private media, expiring links, community</text>
+  <rect class="accent-deep" x="1378" y="726" width="344" height="129"/>
+  <text class="mono" fill="#8dbdff" x="1396" y="754">END-TO-END GUARANTEES</text>
+  <text class="box-title-light" x="1396" y="784">Durable state</text>
+  <text class="box-title-light" x="1396" y="810">Explicit paid actions</text>
+  <text class="box-title-light" x="1396" y="836">Traceable delivery</text>
+
+  <!-- Cross-plane flow -->
+  <path class="arrow" d="M420 528H450" marker-end="url(#arrowhead)"/>
+  <text class="mono muted" x="421" y="518">state</text>
+  <path class="arrow" d="M870 528H900" marker-end="url(#arrowhead)"/>
+  <text class="mono muted" x="872" y="518">plan</text>
+  <path class="arrow" d="M1320 528H1350" marker-end="url(#arrowhead)"/>
+  <text class="mono muted" x="1322" y="518">assets</text>
+  <path class="arrow-soft" d="M1550 902H250V865" marker-end="url(#arrowhead-soft)"/>
+  <text class="mono muted" x="782" y="925">review + failed generation feedback</text>
+
+  <!-- Footer legend -->
+  <circle class="dot" cx="66" cy="951" r="5"/>
+  <text class="mono muted" x="80" y="956">control / synchronize</text>
+  <circle class="dot-cyan" cx="258" cy="951" r="5"/>
+  <text class="mono muted" x="272" y="956">durable execution</text>
+  <text class="mono muted" x="1325" y="956">WEB · API · AGENT · PROVIDERS · MEDIA</text>
+</svg>

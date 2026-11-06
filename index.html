@@ -1072,12 +1072,12 @@
 
           <div class="project-dossier-overview">
             <figure class="project-dossier-proof project-dossier-proof-video">
-              <a class="lightbox-trigger" href="assets/videoagent/videoagent-workspace.png" data-lightbox-src="assets/videoagent/videoagent-workspace.png" data-lightbox-alt="VideoAgent project workspace">
-                <img src="assets/videoagent/videoagent-workspace.png" alt="" loading="lazy">
+              <a class="lightbox-trigger" href="assets/videoagent/videoagent-architecture.png" data-lightbox-src="assets/videoagent/videoagent-architecture.png" data-lightbox-alt="VideoAgent technical architecture">
+                <img src="assets/videoagent/videoagent-architecture.png" alt="" loading="lazy">
               </a>
               <figcaption>
-                <span data-en="PRODUCT SURFACE" data-zh="产品界面">PRODUCT SURFACE</span>
-                <strong data-en="Editable direction and vision resources, the Agent run trace, collaboration, and generation state share one production workspace." data-zh="可编辑的创作与视觉资源、Agent 运行轨迹、协作与生成状态共享同一个生产工作区。">Editable direction and vision resources, the Agent run trace, collaboration, and generation state share one production workspace.</strong>
+                <span data-en="TECHNICAL ARCHITECTURE" data-zh="技术架构">TECHNICAL ARCHITECTURE</span>
+                <strong data-en="A bounded Agent Loop sits between editable creative state, production providers, durable execution, and final-cut delivery." data-zh="受约束的 Agent Loop 位于可编辑创作状态、生产服务、持久化执行与最终成片交付之间。">A bounded Agent Loop sits between editable creative state, production providers, durable execution, and final-cut delivery.</strong>
               </figcaption>
             </figure>
 
@@ -1347,8 +1347,8 @@
                 KV-aware routing and transactional transfer for multi-GPU LLM serving.
               </h3>
             </div>
-            <p data-en="When does moving KV state actually beat recomputation and queue wait?" data-zh="迁移 KV 状态究竟在什么条件下，才会比重算和排队等待更划算？">
-              When does moving KV state actually beat recomputation and queue wait?
+            <p data-en="How should routing and transfer be coordinated so KV reuse lowers latency without creating queue or capacity imbalance?" data-zh="路由与传输应如何协同，才能让 KV 复用真正降低延迟，同时避免队列与容量失衡？">
+              How should routing and transfer be coordinated so KV reuse lowers latency without creating queue or capacity imbalance?
             </p>
           </div>
 
@@ -1400,6 +1400,19 @@
             <div><strong>+21.3%</strong><span data-en="max throughput" data-zh="最高吞吐提升">max throughput</span></div>
             <div><strong>−25.2%</strong><span data-en="max mean TTFT" data-zh="平均 TTFT 最大降低">max mean TTFT</span></div>
             <div><strong>87</strong><span data-en="KV blocks copied" data-zh="复制 KV Blocks">KV blocks copied</span></div>
+          </div>
+
+          <div class="project-dossier-actions">
+            <a class="project-action project-action-primary" href="https://0x0addc001.github.io/LMPool/" target="_blank" rel="noreferrer">
+              <svg class="project-page-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v14H4z"/><path d="M4 9h16"/><path d="M7 7h.01M10 7h.01"/><path d="M8 13h6"/></svg>
+              <span>LMPool</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+            <a class="project-action" href="https://github.com/0x0addc001/LMPool" target="_blank" rel="noreferrer">
+              <svg class="github-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .7C5.7.7.7 5.7.7 12c0 5 3.3 9.2 7.8 10.7.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.5 7.8-5.7 7.8-10.7C23.3 5.7 18.3.7 12 .7z"/></svg>
+              <span>LMPool</span>
+              <span aria-hidden="true">↗</span>
+            </a>
           </div>
 
           <section class="project-dossier-details" aria-label="LMPool full project details">
