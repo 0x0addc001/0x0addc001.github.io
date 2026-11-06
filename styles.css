@@ -6860,6 +6860,18 @@ html[lang="zh"] .usecase-meta::before {
   object-position: center;
 }
 
+.project-dossier-proof-lmpool > a {
+  min-height: 0;
+  aspect-ratio: 3276 / 1773;
+  background: #ffffff;
+}
+
+.project-dossier-proof-lmpool img {
+  height: 100%;
+  max-height: none;
+  object-fit: contain;
+}
+
 .project-dossier-proof:hover img {
   transform: scale(1.018);
 }
@@ -7155,11 +7167,12 @@ html[lang="zh"] .usecase-meta::before {
 
 .dossier-curve-card > button {
   min-height: 0;
-  aspect-ratio: 1800 / 1210;
-  background: #f7f9fc;
+  aspect-ratio: 1420 / 1224;
+  background: #ffffff;
 }
 
 .dossier-curve-card > button img {
+  height: auto;
   max-height: none;
   object-fit: contain;
 }
