@@ -1077,27 +1077,27 @@
               </a>
               <figcaption>
                 <span data-en="PRODUCT SURFACE" data-zh="产品界面">PRODUCT SURFACE</span>
-                <strong data-en="Storyboard editing, run trace, credit approval, and generation state share one project workspace." data-zh="分镜编辑、运行轨迹、额度审批与生成状态共享同一个项目工作区。">Storyboard editing, run trace, credit approval, and generation state share one project workspace.</strong>
+                <strong data-en="Editable direction and vision resources, the Agent run trace, collaboration, and generation state share one production workspace." data-zh="可编辑的创作与视觉资源、Agent 运行轨迹、协作与生成状态共享同一个生产工作区。">Editable direction and vision resources, the Agent run trace, collaboration, and generation state share one production workspace.</strong>
               </figcaption>
             </figure>
 
             <div class="project-dossier-summary">
               <div class="project-dossier-point">
                 <span data-en="CONTEXT" data-zh="问题">CONTEXT</span>
-                <p data-en="Video creation fragments the brief, direction, visual generation, approval, and final assembly across separate tools. A useful agent must preserve creative state while controlling cost and side effects." data-zh="视频创作通常把创意、导演、视觉生成、审批与最终合成拆散在不同工具里。真正有用的 Agent 必须保留创作状态，同时控制成本与副作用。">
-                  Video creation fragments the brief, direction, visual generation, approval, and final assembly across separate tools. A useful agent must preserve creative state while controlling cost and side effects.
+                <p data-en="Video creation chains editable direction, visual references, model choice, paid generation, review, and delivery across tools and collaborators. Every local change must propagate without corrupting project state, cost, or authorship." data-zh="视频创作跨越可编辑导演内容、视觉参考、模型选择、付费生成、评审与交付，还涉及多人协作。每一次局部修改都必须同步，同时不能破坏项目状态、成本与署名边界。">
+                  Video creation chains editable direction, visual references, model choice, paid generation, review, and delivery across tools and collaborators. Every local change must propagate without corrupting project state, cost, or authorship.
                 </p>
               </div>
               <div class="project-dossier-point">
                 <span data-en="MY WORK" data-zh="我的工作">MY WORK</span>
-                <p data-en="Built the product and system boundary end to end: user-scoped projects, versioned storyboards, four approval gates, credit reservation, provider adapters, durable background jobs, and final-cut delivery." data-zh="端到端构建产品与系统边界：用户隔离项目、版本化分镜、四级审批、额度预留、模型服务适配、持久化后台任务与最终成片交付。">
-                  Built the product and system boundary end to end: user-scoped projects, versioned storyboards, four approval gates, credit reservation, provider adapters, durable background jobs, and final-cut delivery.
+                <p data-en="Built the production workspace and system boundary end to end: editable directional and visual resources, bounded Agent planning, view/edit collaboration, per-task provider routing, approval and credit controls, durable jobs, Final Cut review, and delivery." data-zh="端到端构建生产工作区与系统边界：可编辑的导演与视觉资源、受约束 Agent 规划、view/edit 协作、按任务模型路由、审批与额度控制、持久化任务、Final Cut 评审与最终交付。">
+                  Built the production workspace and system boundary end to end: editable directional and visual resources, bounded Agent planning, view/edit collaboration, per-task provider routing, approval and credit controls, durable jobs, Final Cut review, and delivery.
                 </p>
               </div>
               <div class="project-dossier-point">
                 <span data-en="EVIDENCE" data-zh="结果">EVIDENCE</span>
-                <p data-en="A tested bilingual workflow with a deterministic Mock provider, Pippit and Kling adapters, captions and soundtracks, three aspect ratios, private downloads, expiring share links, and Playwright coverage of core user journeys." data-zh="一套经过验证的双语工作流：确定性 Mock 服务、Pippit 与 Kling 适配、字幕与配乐、三种画幅、私有下载、限时分享链接，以及覆盖核心用户路径的 Playwright 测试。">
-                  A tested bilingual workflow with a deterministic Mock provider, Pippit and Kling adapters, captions and soundtracks, three aspect ratios, private downloads, expiring share links, and Playwright coverage of core user journeys.
+                <p data-en="A tested production system: 16 selectable Pippit/Kling video models plus Auto, deterministic Mock execution, view/edit collaboration, four shot ratios, multimodal Final Cut review, private delivery, expiring share links, and publishing." data-zh="一套经过验证的生产系统：16 个可选 Pippit/Kling 视频模型加 Auto、确定性 Mock 执行、view/edit 协作、四种镜头画幅、多模态 Final Cut 评审、私有交付、限时分享与发布。">
+                  A tested production system: 16 selectable Pippit/Kling video models plus Auto, deterministic Mock execution, view/edit collaboration, four shot ratios, multimodal Final Cut review, private delivery, expiring share links, and publishing.
                 </p>
               </div>
 
@@ -1108,6 +1108,8 @@
                 <span>FastAPI</span>
                 <span>LangGraph</span>
                 <span>DeepSeek</span>
+                <span>Pippit</span>
+                <span>Kling</span>
                 <span>Celery</span>
                 <span>Redis</span>
                 <span>FFmpeg</span>
@@ -1140,30 +1142,30 @@
               <div class="dossier-detail-grid">
                 <section>
                   <span>01 / AGENT CONTRACT</span>
-                  <h4 data-en="Planning is bounded; billable actions need approval." data-zh="规划有边界，付费动作必须获得审批。">Planning is bounded; billable actions need approval.</h4>
-                  <p data-en="The LangGraph planner receives a bounded context of project state, recent messages, workflow stage, characters, shots, locale, and an optional Skill. Pydantic validates every plan before it changes persistent production state." data-zh="LangGraph 规划器只接收受控上下文：项目状态、近期消息、工作流阶段、角色、镜头、语言与可选 Skill。每个计划先经过 Pydantic 校验，之后才允许修改持久化生产状态。">
-                    The LangGraph planner receives a bounded context of project state, recent messages, workflow stage, characters, shots, locale, and an optional Skill. Pydantic validates every plan before it changes persistent production state.
+                  <h4 data-en="Agent reasoning is bounded, traceable, and separated from billable actions." data-zh="Agent 推理受控、可追踪，并与付费动作隔离。">Agent reasoning is bounded, traceable, and separated from billable actions.</h4>
+                  <p data-en="A LangGraph planner receives project state, recent messages, editable resources, workflow stage, locale, and an optional Skill. Pydantic validates the plan before persistence, while stage-level Agent Hooks record context, memory, skill, planning, validation, state, and reply events under a durable run trace." data-zh="LangGraph 规划器接收项目状态、近期消息、可编辑资源、工作流阶段、语言与可选 Skill。计划经 Pydantic 校验后才持久化；阶段级 Agent Hooks 在持久化运行轨迹中记录上下文、记忆、Skill、规划、校验、状态与回复事件。">
+                    A LangGraph planner receives project state, recent messages, editable resources, workflow stage, locale, and an optional Skill. Pydantic validates the plan before persistence, while stage-level Agent Hooks record context, memory, skill, planning, validation, state, and reply events under a durable run trace.
                   </p>
                 </section>
                 <section>
                   <span>02 / PROVIDER BOUNDARY</span>
-                  <h4 data-en="One interface, replaceable generation backends." data-zh="一套接口，可替换的生成后端。">One interface, replaceable generation backends.</h4>
-                  <p data-en="Pippit, Kling China-region, Kling MCP, and Mock sit behind one provider contract. Planning never holds a pay-per-use tool, so creative reasoning cannot trigger an unreviewed charge." data-zh="Pippit、Kling 国内版、Kling MCP 与 Mock 共用一套服务契约。规划层不持有付费工具，创作推理无法触发未审批扣费。">
-                    Pippit, Kling China-region, Kling MCP, and Mock sit behind one provider contract. Planning never holds a pay-per-use tool, so creative reasoning cannot trigger an unreviewed charge.
+                  <h4 data-en="Capability-based model routing without silent provider switches." data-zh="基于能力的模型路由，不静默切换服务商。">Capability-based model routing without silent provider switches.</h4>
+                  <p data-en="Pippit, Kling China-region, Kling MCP, and Mock sit behind one provider contract. The live catalogue exposes 16 video models across Pippit and Kling plus Auto, filtered by modality, references, duration, ratio, audio, quality, availability, and estimated credits. A per-task override invalidates the prior estimate." data-zh="Pippit、Kling 国内版、Kling MCP 与 Mock 共用一套服务契约。实时目录提供 Pippit/Kling 共 16 个视频模型及 Auto，并按模态、参考素材、时长、画幅、音频、质量、可用性与预估额度筛选。任务级覆盖会作废旧估值。">
+                    Pippit, Kling China-region, Kling MCP, and Mock sit behind one provider contract. The live catalogue exposes 16 video models across Pippit and Kling plus Auto, filtered by modality, references, duration, ratio, audio, quality, availability, and estimated credits. A per-task override invalidates the prior estimate.
                   </p>
                 </section>
                 <section>
-                  <span>03 / EXECUTION</span>
-                  <h4 data-en="Long-running work is durable and observable." data-zh="长任务持久、可恢复、可观察。">Long-running work is durable and observable.</h4>
-                  <p data-en="Celery and Redis poll provider jobs with idempotency keys. The UI reads a run trace that reflects work actually executed, while credit holds, refunds, and provider-account reconciliation remain auditable." data-zh="Celery 与 Redis 使用幂等键轮询模型任务。前端读取真实执行轨迹；额度冻结、退款与服务账户对账全程可审计。">
-                    Celery and Redis poll provider jobs with idempotency keys. The UI reads a run trace that reflects work actually executed, while credit holds, refunds, and provider-account reconciliation remain auditable.
+                  <span>03 / WORKSPACE</span>
+                  <h4 data-en="Creative state stays editable while collaboration stays permissioned." data-zh="创作状态始终可编辑，协作始终受权限约束。">Creative state stays editable while collaboration stays permissioned.</h4>
+                  <p data-en="Directions contains editable Settings, Outlines, and Scripts; Visions contains Characters, Scenes, and Shots; Versions holds exported cuts. Project collaboration links carry view or edit access, validated email restrictions, hashed tokens, revocation, and shared-project visibility." data-zh="Directions 包含可编辑的 Settings、Outlines 与 Scripts；Visions 包含 Characters、Scenes 与 Shots；Versions 保存导出成片。项目协作链接区分 view/edit 权限，并校验邮箱限制、哈希令牌、撤销与共享项目可见性。">
+                    Directions contains editable Settings, Outlines, and Scripts; Visions contains Characters, Scenes, and Shots; Versions holds exported cuts. Project collaboration links carry view or edit access, validated email restrictions, hashed tokens, revocation, and shared-project visibility.
                   </p>
                 </section>
                 <section>
-                  <span>04 / DELIVERY</span>
-                  <h4 data-en="The workflow ends with a usable media artifact." data-zh="工作流最终产出可使用的媒体资产。">The workflow ends with a usable media artifact.</h4>
-                  <p data-en="Every shot must be generated before Final Cut. FFmpeg assembles 16:9, 9:16, or 1:1 output with captions, soundtrack, and cover; users can review, download privately, or create an expiring share link." data-zh="所有镜头生成后才可进入 Final Cut。FFmpeg 合成 16:9、9:16 或 1:1 成片，并加入字幕、配乐与封面；用户可审阅、私有下载或创建限时分享链接。">
-                    Every shot must be generated before Final Cut. FFmpeg assembles 16:9, 9:16, or 1:1 output with captions, soundtrack, and cover; users can review, download privately, or create an expiring share link.
+                  <span>04 / RUNTIME + DELIVERY</span>
+                  <h4 data-en="Durable jobs carry the project through review and publication." data-zh="持久化任务贯穿生成、评审与发布。">Durable jobs carry the project through review and publication.</h4>
+                  <p data-en="Celery and Redis poll provider jobs with idempotency keys while credit holds and refunds remain auditable. After every shot is ready, Final Cut uses FFmpeg frame extraction and a configurable multimodal evaluator for character, style, prompt, and temporal consistency, then supports download, sharing, and publishing." data-zh="Celery 与 Redis 使用幂等键轮询模型任务，额度冻结与退款全程可审计。所有镜头完成后，Final Cut 通过 FFmpeg 抽帧与可配置多模态评测器检查角色、风格、Prompt 与时间一致性，随后支持下载、分享与发布。">
+                    Celery and Redis poll provider jobs with idempotency keys while credit holds and refunds remain auditable. After every shot is ready, Final Cut uses FFmpeg frame extraction and a configurable multimodal evaluator for character, style, prompt, and temporal consistency, then supports download, sharing, and publishing.
                   </p>
                 </section>
               </div>
@@ -1186,8 +1188,8 @@
                   <h4 data-en="A deterministic Mock proves the full workflow before production calls." data-zh="确定性 Mock 先验证完整工作流，再切换到正式模型服务。">A deterministic Mock proves the full workflow before production calls.</h4>
                 </div>
                 <ul>
-                  <li data-en="Playwright covers project creation, approval, Mock generation, polling, download, sharing, Skills, Assets, Hots, Docs, and admin flows." data-zh="Playwright 覆盖项目创建、审批、Mock 生成、轮询、下载、分享、Skills、Assets、Hots、Docs 与管理端流程。">
-                    Playwright covers project creation, approval, Mock generation, polling, download, sharing, Skills, Assets, Hots, Docs, and admin flows.
+                  <li data-en="Playwright covers editable resources, project creation, approval, Mock generation, collaboration, polling, Final Cut, download, sharing, publishing, Skills, Assets, Docs, and admin flows." data-zh="Playwright 覆盖可编辑资源、项目创建、审批、Mock 生成、协作、轮询、Final Cut、下载、分享、发布、Skills、Assets、Docs 与管理端流程。">
+                    Playwright covers editable resources, project creation, approval, Mock generation, collaboration, polling, Final Cut, download, sharing, publishing, Skills, Assets, Docs, and admin flows.
                   </li>
                   <li data-en="Pytest and Vitest protect API contracts, state transitions, provider behavior, UI logic, and authorization boundaries." data-zh="Pytest 与 Vitest 保护 API 契约、状态转换、服务行为、UI 逻辑与权限边界。">
                     Pytest and Vitest protect API contracts, state transitions, provider behavior, UI logic, and authorization boundaries.

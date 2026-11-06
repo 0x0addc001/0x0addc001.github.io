@@ -6848,13 +6848,16 @@ html[lang="zh"] .usecase-meta::before {
 
 .project-dossier-proof-video > a {
   min-height: 0;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 9;
   background: #07111f;
 }
 
 .project-dossier-proof-video img {
-  object-fit: cover;
-  object-position: center top;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  object-position: center;
 }
 
 .project-dossier-proof:hover img {
@@ -7158,7 +7161,7 @@ html[lang="zh"] .usecase-meta::before {
 
 .dossier-curve-card > button img {
   max-height: none;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .dossier-evidence-card > button:hover img {
