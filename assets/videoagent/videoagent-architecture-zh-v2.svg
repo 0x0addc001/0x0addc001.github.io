@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">VideoAgent 技术架构</title>
+  <desc id="desc">从导演工作台、FastAPI 控制面、Agent 智能层、异步生成层到持久化交付层的五层技术架构。</desc>
+  <defs>
+    <style>
+      .bg{fill:#07111f}.panel{fill:#0b192b;stroke:#29405e;stroke-width:1.4}.card{fill:#10243a;stroke:#36516f;stroke-width:1.1}
+      .hot{fill:#12365a;stroke:#68a6ff;stroke-width:1.7}.ink{fill:#f2f7ff}.soft{fill:#9db1c9}.blue{fill:#7bbcff}
+      .kicker{font:700 14px 'Cascadia Code','Microsoft YaHei',monospace;letter-spacing:1.1px}.title{font:700 42px 'Microsoft YaHei','PingFang SC',sans-serif}
+      .sub{font:400 18px 'Microsoft YaHei','PingFang SC',sans-serif}.col{font:700 14px 'Cascadia Code','Microsoft YaHei',monospace;letter-spacing:.8px}
+      .head{font:700 22px 'Microsoft YaHei','PingFang SC',sans-serif}.card-title{font:700 17px 'Microsoft YaHei','PingFang SC',sans-serif}.copy{font:400 13px 'Microsoft YaHei','PingFang SC',sans-serif}
+      .legend{font:600 12px 'Cascadia Code','Microsoft YaHei',monospace}.flow{stroke:#4c8ee8;stroke-width:2;fill:none}.flow-text{font:600 11px 'Cascadia Code','Microsoft YaHei',monospace}
+      .dash{stroke:#5a7595;stroke-width:1;stroke-dasharray:6 6}
+    </style>
+    <marker id="arrow" markerWidth="9" markerHeight="8" refX="8" refY="4" orient="auto"><path d="M0,0 L9,4 L0,8 z" fill="#4c8ee8"/></marker>
+  </defs>
+  <rect class="bg" width="1800" height="1000"/>
+  <rect x="38" y="30" width="48" height="48" fill="#153d68" stroke="#72b7ff" stroke-width="1.5"/>
+  <path d="M56 43L75 54L56 65Z" fill="#7bbcff"/>
+  <text class="kicker blue" x="108" y="43">VIDEOAGENT / 技术架构</text>
+  <text class="title ink" x="108" y="78">从创意到成片：一条受控路径</text>
+  <text class="sub soft" x="40" y="111">导演掌握创意，Agent 在边界内规划，运行时隔离状态、工具调用、成本与交付。</text>
+
+  <rect class="panel" x="30" y="145" width="315" height="735"/>
+  <text class="col blue" x="52" y="176">01 / 体验层</text><text class="head ink" x="52" y="207">导演工作台</text><text class="copy soft" x="52" y="230">浏览器与产品界面</text>
+  <rect class="card" x="52" y="250" width="271" height="78"/><text class="card-title ink" x="68" y="278">产品界面</text><text class="copy soft" x="68" y="301">Next.js · React · TypeScript</text>
+  <rect class="card" x="52" y="340" width="271" height="78"/><text class="card-title ink" x="68" y="368">对话与审批</text><text class="copy soft" x="68" y="391">导演消息 · 阶段门禁</text>
+  <rect class="card" x="52" y="430" width="271" height="78"/><text class="card-title ink" x="68" y="458">可编辑导演内容</text><text class="copy soft" x="68" y="481">Settings · Outline · Script</text>
+  <rect class="card" x="52" y="520" width="271" height="78"/><text class="card-title ink" x="68" y="548">可编辑视觉内容</text><text class="copy soft" x="68" y="571">角色 · 场景 · 镜头</text>
+  <rect class="card" x="52" y="610" width="271" height="78"/><text class="card-title ink" x="68" y="638">资产与版本</text><text class="copy soft" x="68" y="661">结果 · 参考素材 · 成片</text>
+  <rect class="hot" x="52" y="700" width="271" height="78"/><text class="card-title ink" x="68" y="728">协作与发布</text><text class="copy soft" x="68" y="751">查看 / 编辑 · 发布</text>
+
+  <rect class="panel" x="385" y="145" width="315" height="735"/>
+  <text class="col blue" x="407" y="176">02 / 控制面</text><text class="head ink" x="407" y="207">FastAPI</text><text class="copy soft" x="407" y="230">Python 后端 · 异步 REST</text>
+  <rect class="card" x="407" y="250" width="271" height="78"/><text class="card-title ink" x="423" y="278">鉴权与隔离</text><text class="copy soft" x="423" y="301">HttpOnly · CSRF · 限流</text>
+  <rect class="card" x="407" y="340" width="271" height="78"/><text class="card-title ink" x="423" y="368">REST 接口</text><text class="copy soft" x="423" y="391">项目 · 消息 · 任务 · 资产</text>
+  <rect class="hot" x="407" y="430" width="271" height="78"/><text class="card-title ink" x="423" y="458">工作流审批</text><text class="copy soft" x="423" y="481">概念 → 大纲 → 脚本 → 生成</text>
+  <rect class="card" x="407" y="520" width="271" height="78"/><text class="card-title ink" x="423" y="548">额度控制</text><text class="copy soft" x="423" y="571">估算 · 预留 · 退款</text>
+  <rect class="card" x="407" y="610" width="271" height="78"/><text class="card-title ink" x="423" y="638">Pydantic 契约</text><text class="copy soft" x="423" y="661">请求与响应结构校验</text>
+  <rect class="card" x="407" y="700" width="271" height="78"/><text class="card-title ink" x="423" y="728">项目状态</text><text class="copy soft" x="423" y="751">所有权 · 成员 · 版本</text>
+
+  <rect class="panel" x="740" y="145" width="315" height="735"/>
+  <text class="col blue" x="762" y="176">03 / 智能层</text><text class="head ink" x="762" y="207">Agent + Skills</text><text class="copy soft" x="762" y="230">受约束规划与生产策略</text>
+  <rect class="card" x="762" y="250" width="271" height="78"/><text class="card-title ink" x="778" y="278">上下文与记忆</text><text class="copy soft" x="778" y="301">创意 · 历史 · 资源 · 状态</text>
+  <rect class="card" x="762" y="340" width="271" height="78"/><text class="card-title ink" x="778" y="368">Skill 解析</text><text class="copy soft" x="778" y="391">所属用户的指令</text>
+  <rect class="hot" x="762" y="430" width="271" height="78"/><text class="card-title ink" x="778" y="458">LangGraph 规划器</text><text class="copy soft" x="778" y="481">plan_storyboard · 无付费工具</text>
+  <rect class="card" x="762" y="520" width="271" height="78"/><text class="card-title ink" x="778" y="548">StoryboardPlan</text><text class="copy soft" x="778" y="571">角色 · 场景 · 镜头</text>
+  <rect class="card" x="762" y="610" width="271" height="78"/><text class="card-title ink" x="778" y="638">状态更新</text><text class="copy soft" x="778" y="661">持久化 · 版本 · 重新规划</text>
+  <rect class="card" x="762" y="700" width="271" height="78"/><text class="card-title ink" x="778" y="728">Agent Hooks</text><text class="copy soft" x="778" y="751">持久化执行轨迹</text>
+
+  <rect class="panel" x="1095" y="145" width="315" height="735"/>
+  <text class="col blue" x="1117" y="176">04 / 生成层</text><text class="head ink" x="1117" y="207">运行时 + 模型服务</text><text class="copy soft" x="1117" y="230">异步执行，可替换服务商</text>
+  <rect class="card" x="1117" y="250" width="271" height="78"/><text class="card-title ink" x="1133" y="278">Provider Resolver</text><text class="copy soft" x="1133" y="301">能力 · 模型 · 参考素材</text>
+  <rect class="hot" x="1117" y="340" width="271" height="78"/><text class="card-title ink" x="1133" y="368">模型目录</text><text class="copy soft" x="1133" y="391">16 个 Pippit/Kling 模型 + Auto</text>
+  <rect class="card" x="1117" y="430" width="271" height="78"/><text class="card-title ink" x="1133" y="458">Pippit CLI</text><text class="copy soft" x="1133" y="481">生产视频服务</text>
+  <rect class="card" x="1117" y="520" width="271" height="78"/><text class="card-title ink" x="1133" y="548">Kling CLI / MCP</text><text class="copy soft" x="1133" y="571">生产视频服务</text>
+  <rect class="card" x="1117" y="610" width="271" height="78"/><text class="card-title ink" x="1133" y="638">Celery + Redis</text><text class="copy soft" x="1133" y="661">任务 · 重试 · 退避轮询</text>
+  <rect class="card" x="1117" y="700" width="271" height="78"/><text class="card-title ink" x="1133" y="728">Mock Provider</text><text class="copy soft" x="1133" y="751">确定性测试</text>
+
+  <rect class="panel" x="1450" y="145" width="320" height="735"/>
+  <text class="col blue" x="1472" y="176">05 / 交付与状态</text><text class="head ink" x="1472" y="207">资产、评审与交付</text><text class="copy soft" x="1472" y="230">持久化事实源与分发</text>
+  <rect class="card" x="1472" y="250" width="276" height="78"/><text class="card-title ink" x="1488" y="278">PostgreSQL / SQLite</text><text class="copy soft" x="1488" y="301">关系型唯一事实源</text>
+  <rect class="card" x="1472" y="340" width="276" height="78"/><text class="card-title ink" x="1488" y="368">媒体存储 / MinIO</text><text class="copy soft" x="1488" y="391">图像 · 视频 · 音频 · 校验值</text>
+  <rect class="card" x="1472" y="430" width="276" height="78"/><text class="card-title ink" x="1488" y="458">FFmpeg</text><text class="copy soft" x="1488" y="481">字幕 · 配乐 · 画幅</text>
+  <rect class="hot" x="1472" y="520" width="276" height="78"/><text class="card-title ink" x="1488" y="548">Final Cut 评审</text><text class="copy soft" x="1488" y="571">角色 · 风格 · Prompt · 时序</text>
+  <rect class="card" x="1472" y="610" width="276" height="78"/><text class="card-title ink" x="1488" y="638">私有交付</text><text class="copy soft" x="1488" y="661">下载 · 限时分享</text>
+  <rect class="card" x="1472" y="700" width="276" height="78"/><text class="card-title ink" x="1488" y="728">发布</text><text class="copy soft" x="1488" y="751">协作 · 公共内容流</text>
+
+  <path class="flow" d="M345 560H385" marker-end="url(#arrow)"/><text class="flow-text soft" x="350" y="550">HTTPS</text>
+  <path class="flow" d="M700 560H740" marker-end="url(#arrow)"/><text class="flow-text soft" x="710" y="550">规划</text>
+  <path class="flow" d="M1055 560H1095" marker-end="url(#arrow)"/><text class="flow-text soft" x="1064" y="550">任务</text>
+  <path class="flow" d="M1410 560H1450" marker-end="url(#arrow)"/><text class="flow-text soft" x="1415" y="550">资产</text>
+  <path class="dash" d="M80 896H1720"/>
+  <text class="legend blue" x="48" y="925">同步</text><text class="legend soft" x="105" y="925">浏览器 ↔ FastAPI</text>
+  <text class="legend blue" x="305" y="925">异步</text><text class="legend soft" x="365" y="925">FastAPI → Celery/Redis → 模型服务</text>
+  <text class="legend blue" x="735" y="925">持久化</text><text class="legend soft" x="812" y="925">数据库 + 媒体存储</text>
+  <text class="legend blue" x="1080" y="925">边界</text><text class="legend soft" x="1135" y="925">用户隔离 · 显式审批 · 成本 · 可追踪</text>
+</svg>
