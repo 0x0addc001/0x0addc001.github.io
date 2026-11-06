@@ -4,6 +4,7 @@
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
   const textSelector = [
     ".hero-title > span",
+    ".hero-intro",
     ".section-heading h2",
     ".section-heading > p",
     ".resume-heading-copy h2",
@@ -197,12 +198,17 @@
 
     const token = heroSequenceToken;
     const heroTitle = document.querySelector(".hero-title");
+    heroTitle?.style.removeProperty("min-height");
     const heroLines = heroTitle ? [...heroTitle.querySelectorAll(":scope > span")] : [];
     const heroTexts = heroLines.map((element) => element.textContent.trim());
     const heroHeights = heroLines.map((element) => element.getBoundingClientRect().height);
+    const heroTitleHeight = heroTitle?.getBoundingClientRect().height || 0;
     const elements = [...document.querySelectorAll(textSelector)]
       .filter((element) => !element.closest(".hero-title"))
       .filter(eligible);
+    if (heroTitle && heroTitleHeight) {
+      heroTitle.style.minHeight = `${heroTitleHeight}px`;
+    }
     heroLines.forEach((element) => {
       element.dataset.typewriterReady = "true";
       prepareText(element);
