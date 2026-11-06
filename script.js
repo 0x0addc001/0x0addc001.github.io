@@ -169,6 +169,18 @@
         element.textContent = content;
       }
     });
+    document.querySelectorAll("[data-en-src][data-zh-src]").forEach((image) => {
+      const source = image.dataset[`${currentLanguage}Src`];
+      if (!source) return;
+      image.src = source;
+      image.alt = image.dataset[`${currentLanguage}Alt`] || image.alt;
+      const trigger = image.closest(".lightbox-trigger");
+      if (trigger) {
+        trigger.setAttribute("href", source);
+        trigger.dataset.lightboxSrc = source;
+        trigger.dataset.lightboxAlt = image.alt;
+      }
+    });
     languageOptions.forEach((option) => {
       option.classList.toggle("is-current", option.dataset.languageOption === currentLanguage);
     });

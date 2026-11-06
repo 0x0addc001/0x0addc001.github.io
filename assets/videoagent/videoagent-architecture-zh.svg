@@ -1,0 +1,166 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="1000" viewBox="0 0 1800 1000" role="img" aria-labelledby="title desc">
+  <title id="title">VideoAgent 技术架构</title>
+  <desc id="desc">从可编辑创作工作区到 Agent Loop、应用状态与生产服务，再到最终评审与交付的四层技术架构。</desc>
+  <defs>
+    <style>
+      .bg{fill:#f5f9ff}.ink{fill:#0b1a2d}.muted{fill:#5b6b80}.blue{fill:#2164d8}
+      .panel{fill:#fff;stroke:#b5c4d8;stroke-width:1.5}.panel-soft{fill:#edf4fd;stroke:#c1d1e4;stroke-width:1.2}
+      .accent{fill:#e8f1ff;stroke:#2268d8;stroke-width:2}.accent-cyan{fill:#e8f8fa;stroke:#158ba3;stroke-width:2}
+      .accent-deep{fill:#0b2038;stroke:#7bbcff;stroke-width:2}
+      .label{font:700 16px 'Microsoft YaHei','PingFang SC',sans-serif;letter-spacing:2px}
+      .title{font:700 44px 'Microsoft YaHei','PingFang SC',sans-serif}.subtitle{font:400 21px 'Microsoft YaHei','PingFang SC',sans-serif}
+      .box-title{font:700 19px 'Microsoft YaHei','PingFang SC',sans-serif}.box-title-light{font:700 19px 'Microsoft YaHei','PingFang SC',sans-serif;fill:#f4f8ff}
+      .box-copy{font:400 14px 'Microsoft YaHei','PingFang SC',sans-serif}.box-copy-light{font:400 14px 'Microsoft YaHei','PingFang SC',sans-serif;fill:#c9dbef}
+      .mono{font:600 13px 'Cascadia Code',Consolas,'Microsoft YaHei',monospace;letter-spacing:.4px}
+      .arrow{fill:none;stroke:#2164d8;stroke-width:2.4}.arrow-soft{fill:none;stroke:#7f96b5;stroke-width:1.8;stroke-dasharray:7 7}
+      .dot{fill:#2164d8}.dot-cyan{fill:#158ba3}
+    </style>
+    <marker id="arrowhead" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#2164d8"/></marker>
+    <marker id="arrowhead-soft" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><path d="M0,0 L10,4 L0,8 z" fill="#7f96b5"/></marker>
+  </defs>
+  <rect class="bg" width="1800" height="1000"/>
+  <path d="M60 96H1740" stroke="#b5c4d8" stroke-width="1.5"/>
+  <text class="title ink" x="60" y="62">VideoAgent</text>
+  <text class="subtitle muted" x="360" y="60">Agent 原生视频生产架构</text>
+  <text class="mono blue" x="1460" y="58">实时系统边界 · 2026</text>
+
+  <rect class="panel" x="50" y="130" width="370" height="760"/>
+  <text class="label blue" x="78" y="170">01 / 创作工作区</text>
+  <text class="box-title ink" x="78" y="208">用户意图沉淀为可编辑状态</text>
+  <rect class="panel-soft" x="78" y="236" width="314" height="82"/>
+  <text class="mono blue" x="96" y="261">提示词编排</text>
+  <text class="box-title ink" x="96" y="289">创意 · Skill · Hook · 模型</text>
+  <text class="box-copy muted" x="96" y="310">风格 / 画幅 / 时长 / 质量 / 音频</text>
+  <path class="arrow" d="M235 318V347" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="78" y="350" width="314" height="118"/>
+  <text class="mono blue" x="96" y="377">导演内容</text>
+  <text class="box-title ink" x="96" y="405">可编辑导演层</text>
+  <text class="box-copy muted" x="96" y="431">Settings · Outline · Script</text>
+  <text class="box-copy muted" x="96" y="452">就地细化，再重新规划</text>
+  <path class="arrow" d="M235 468V495" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="78" y="498" width="314" height="118"/>
+  <text class="mono blue" x="96" y="525">视觉内容</text>
+  <text class="box-title ink" x="96" y="553">可编辑视觉状态</text>
+  <text class="box-copy muted" x="96" y="579">角色 · 场景 · 镜头</text>
+  <text class="box-copy muted" x="96" y="600">参考素材 · Prompt · 结果</text>
+  <path class="arrow" d="M235 616V643" marker-end="url(#arrowhead)"/>
+  <rect class="accent" x="78" y="646" width="314" height="88"/>
+  <text class="mono blue" x="96" y="673">协作权限</text>
+  <text class="box-title ink" x="96" y="701">Owner · View · Edit</text>
+  <text class="box-copy muted" x="96" y="722">加密邀请 · 邮箱限制 · 撤销</text>
+  <path class="arrow" d="M235 734V761" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="78" y="764" width="314" height="86"/>
+  <text class="mono blue" x="96" y="791">持久化状态</text>
+  <text class="box-title ink" x="96" y="819">项目 · 版本 · 资产</text>
+  <text class="box-copy muted" x="96" y="840">一条可追踪的制作记录</text>
+
+  <rect class="panel" x="450" y="130" width="420" height="760"/>
+  <text class="label blue" x="478" y="170">02 / Agent Loop</text>
+  <text class="box-title ink" x="478" y="208">受约束推理，显式控制</text>
+  <rect class="panel-soft" x="478" y="236" width="364" height="67"/>
+  <text class="mono blue" x="496" y="261">上下文构建</text>
+  <text class="box-title ink" x="496" y="288">项目 + 近期对话 + Skill</text>
+  <path class="arrow" d="M660 303V324" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="478" y="327" width="364" height="67"/>
+  <text class="mono blue" x="496" y="352">记忆</text>
+  <text class="box-title ink" x="496" y="379">最近 8 轮 · 有界上下文</text>
+  <path class="arrow" d="M660 394V415" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="478" y="418" width="364" height="67"/>
+  <text class="mono blue" x="496" y="443">Skill 解析</text>
+  <text class="box-title ink" x="496" y="470">所属用户的指令</text>
+  <path class="arrow" d="M660 485V506" marker-end="url(#arrowhead)"/>
+  <rect class="accent" x="478" y="509" width="364" height="82"/>
+  <text class="mono blue" x="496" y="535">LangGraph</text>
+  <text class="box-title ink" x="496" y="564">plan_storyboard</text>
+  <text class="box-copy muted" x="496" y="584">规划层不持有付费工具</text>
+  <path class="arrow" d="M660 591V612" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="478" y="615" width="364" height="67"/>
+  <text class="mono blue" x="496" y="640">结构校验</text>
+  <text class="box-title ink" x="496" y="667">Pydantic StoryboardPlan</text>
+  <path class="arrow" d="M660 682V703" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="478" y="706" width="364" height="67"/>
+  <text class="mono blue" x="496" y="731">状态更新</text>
+  <text class="box-title ink" x="496" y="758">持久化角色、场景与镜头</text>
+  <path class="arrow" d="M660 773V794" marker-end="url(#arrowhead)"/>
+  <rect class="accent-deep" x="478" y="797" width="364" height="67"/>
+  <text class="mono" fill="#8dbdff" x="496" y="822">可观测运行</text>
+  <text class="box-title-light" x="496" y="849">Hook 轨迹 · 状态 · 回复</text>
+
+  <rect class="panel" x="900" y="130" width="420" height="760"/>
+  <text class="label blue" x="928" y="170">03 / 应用与运行时</text>
+  <text class="box-title ink" x="928" y="208">状态、审批、额度、执行</text>
+  <rect class="panel-soft" x="928" y="236" width="364" height="67"/>
+  <text class="mono blue" x="946" y="261">FASTAPI</text>
+  <text class="box-title ink" x="946" y="288">鉴权 · 项目 · 分镜 · 资产</text>
+  <path class="arrow" d="M1110 303V324" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="928" y="327" width="364" height="86"/>
+  <text class="mono blue" x="946" y="352">工作流审批</text>
+  <text class="box-title ink" x="946" y="379">概念 → 大纲 → 脚本 → 生成</text>
+  <text class="box-copy muted" x="946" y="400">通过 · 细化 · 自定义</text>
+  <path class="arrow" d="M1110 413V434" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="928" y="437" width="364" height="86"/>
+  <text class="mono blue" x="946" y="462">事务边界</text>
+  <text class="box-title ink" x="946" y="489">额度预留 + 幂等任务</text>
+  <text class="box-copy muted" x="946" y="510">approved=true · 唯一请求键</text>
+  <path class="arrow" d="M1110 523V548" marker-end="url(#arrowhead)"/>
+  <rect class="accent" x="928" y="551" width="364" height="85"/>
+  <text class="mono blue" x="946" y="577">能力路由</text>
+  <text class="box-title ink" x="946" y="604">16 个模型 + Auto</text>
+  <text class="box-copy muted" x="946" y="624">参考素材 · 画幅 · 音频 · 额度</text>
+  <rect class="panel-soft" x="928" y="655" width="112" height="93"/>
+  <text class="mono blue" x="944" y="680">PIPPIT</text>
+  <text class="box-copy muted" x="944" y="706">生产</text>
+  <text class="box-copy muted" x="944" y="727">服务</text>
+  <rect class="panel-soft" x="1054" y="655" width="112" height="93"/>
+  <text class="mono blue" x="1070" y="680">KLING</text>
+  <text class="box-copy muted" x="1070" y="706">生产</text>
+  <text class="box-copy muted" x="1070" y="727">服务</text>
+  <rect class="panel-soft" x="1180" y="655" width="112" height="93"/>
+  <text class="mono blue" x="1196" y="680">MOCK</text>
+  <text class="box-copy muted" x="1196" y="706">测试 /</text>
+  <text class="box-copy muted" x="1196" y="727">开发</text>
+  <rect class="accent-cyan" x="928" y="772" width="364" height="82"/>
+  <text class="mono blue" x="946" y="798">异步运行时</text>
+  <text class="box-title ink" x="946" y="826">Celery · Redis · 退避轮询</text>
+  <text class="box-copy muted" x="946" y="846">持久任务 · 退款 · 对账</text>
+
+  <rect class="panel" x="1350" y="130" width="400" height="760"/>
+  <text class="label blue" x="1378" y="170">04 / 评审与交付</text>
+  <text class="box-title ink" x="1378" y="208">预览、检查、发布</text>
+  <rect class="panel-soft" x="1378" y="236" width="344" height="82"/>
+  <text class="mono blue" x="1396" y="261">生成媒体</text>
+  <text class="box-title ink" x="1396" y="289">镜头 / 角色资产</text>
+  <text class="box-copy muted" x="1396" y="310">持久化结果与最终选择</text>
+  <path class="arrow" d="M1548 318V347" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="1378" y="350" width="344" height="87"/>
+  <text class="mono blue" x="1396" y="375">最终成片</text>
+  <text class="box-title ink" x="1396" y="403">FFmpeg 合成</text>
+  <text class="box-copy muted" x="1396" y="424">字幕 · 配乐 · 封面 · 画幅</text>
+  <path class="arrow" d="M1550 437V466" marker-end="url(#arrowhead)"/>
+  <rect class="accent" x="1378" y="469" width="344" height="101"/>
+  <text class="mono blue" x="1396" y="495">多模态评审</text>
+  <text class="box-title ink" x="1396" y="524">呈现质量证据，不伪造分数</text>
+  <text class="box-copy muted" x="1396" y="546">角色 · 风格 · Prompt · 时序</text>
+  <path class="arrow" d="M1550 570V599" marker-end="url(#arrowhead)"/>
+  <rect class="panel-soft" x="1378" y="602" width="344" height="91"/>
+  <text class="mono blue" x="1396" y="628">交付</text>
+  <text class="box-title ink" x="1396" y="656">下载 · 分享 · 发布</text>
+  <text class="box-copy muted" x="1396" y="677">私有媒体 · 限时链接 · 社区</text>
+  <rect class="accent-deep" x="1378" y="726" width="344" height="129"/>
+  <text class="mono" fill="#8dbdff" x="1396" y="754">端到端保证</text>
+  <text class="box-title-light" x="1396" y="784">状态可恢复</text>
+  <text class="box-title-light" x="1396" y="810">付费动作显式审批</text>
+  <text class="box-title-light" x="1396" y="836">交付结果可追踪</text>
+
+  <path class="arrow" d="M420 528H450" marker-end="url(#arrowhead)"/>
+  <text class="mono muted" x="421" y="518">状态</text>
+  <path class="arrow" d="M870 528H900" marker-end="url(#arrowhead)"/>
+  <text class="mono muted" x="872" y="518">规划</text>
+  <path class="arrow" d="M1320 528H1350" marker-end="url(#arrowhead)"/>
+  <text class="mono muted" x="1322" y="518">资产</text>
+  <path class="arrow-soft" d="M1550 902H250V865" marker-end="url(#arrowhead-soft)"/>
+  <text class="mono muted" x="760" y="925">评审与失败生成反馈</text>
+  <circle class="dot" cx="66" cy="951" r="5"/><text class="mono muted" x="80" y="956">控制与同步</text>
+  <circle class="dot-cyan" cx="258" cy="951" r="5"/><text class="mono muted" x="272" y="956">持久化执行</text>
+  <text class="mono muted" x="1370" y="956">WEB · API · AGENT · PROVIDER · MEDIA</text>
+</svg>
