@@ -1065,8 +1065,8 @@
                 An agent-led workspace that turns a creative idea into an approved, deliverable film.
               </h3>
             </div>
-            <p data-en="When every irreversible model call costs money, how do you keep a multi-stage creative agent controllable?" data-zh="当每一次不可逆的模型调用都会产生费用，如何让多阶段创作 Agent 始终可控？">
-              When every irreversible model call costs money, how do you keep a multi-stage creative agent controllable?
+            <p data-en="When one shot changes, how should an agent keep approvals, cost, and the final cut in sync?" data-zh="一个镜头改动后，Agent 如何让审批状态、生成成本和最终成片始终同步？">
+              When one shot changes, how should an agent keep approvals, cost, and the final cut in sync?
             </p>
           </div>
 
@@ -1117,9 +1117,9 @@
           </div>
 
           <div class="project-dossier-metrics" aria-label="VideoAgent project scope">
-            <div><strong>04</strong><span data-en="approval gates" data-zh="审批阶段">approval gates</span></div>
-            <div><strong>03</strong><span data-en="generation providers" data-zh="生成服务">generation providers</span></div>
-            <div><strong>03</strong><span data-en="delivery formats" data-zh="交付画幅">delivery formats</span></div>
+            <div><strong>4</strong><span data-en="approval gates" data-zh="审批阶段">approval gates</span></div>
+            <div><strong>3</strong><span data-en="generation providers" data-zh="生成服务">generation providers</span></div>
+            <div><strong>3</strong><span data-en="delivery formats" data-zh="交付画幅">delivery formats</span></div>
           </div>
 
           <div class="project-dossier-actions">
@@ -1175,7 +1175,7 @@
                 <i aria-hidden="true">→</i>
                 <div><span>03</span><strong>Script</strong><small data-en="shots + characters" data-zh="镜头 + 角色">shots + characters</small></div>
                 <i aria-hidden="true">→</i>
-                <div><span>04</span><strong>Ready</strong><small data-en="approved generation" data-zh="审批后生成">approved generation</small></div>
+                <div><span>04</span><strong data-en="Generate" data-zh="生成">Generate</strong><small data-en="approved generation" data-zh="审批后生成">approved generation</small></div>
                 <i aria-hidden="true">→</i>
                 <div class="is-accent"><span>05</span><strong>Final cut</strong><small data-en="compose + deliver" data-zh="合成 + 交付">compose + deliver</small></div>
               </div>
@@ -1183,7 +1183,7 @@
               <div class="dossier-verification">
                 <div>
                   <span data-en="VERIFICATION" data-zh="验证">VERIFICATION</span>
-                  <h4 data-en="Tested without spending provider credits." data-zh="不消耗付费额度也能完成端到端验证。">Tested without spending provider credits.</h4>
+                  <h4 data-en="A deterministic Mock proves the full workflow before production calls." data-zh="确定性 Mock 先验证完整工作流，再切换到正式模型服务。">A deterministic Mock proves the full workflow before production calls.</h4>
                 </div>
                 <ul>
                   <li data-en="Playwright covers project creation, approval, Mock generation, polling, download, sharing, Skills, Assets, Hots, Docs, and admin flows." data-zh="Playwright 覆盖项目创建、审批、Mock 生成、轮询、下载、分享、Skills、Assets、Hots、Docs 与管理端流程。">
@@ -1265,8 +1265,8 @@
 
           <div class="project-dossier-metrics" aria-label="Xiaomi project evidence">
             <div><strong>2</strong><span data-en="training paradigms" data-zh="训练范式">training paradigms</span></div>
-            <div><strong>0.4172</strong><span data-en="linear reward at step 420" data-zh="第 420 步线性奖励">linear reward at step 420</span></div>
-            <div><strong>12.71h</strong><span data-en="compared training duration" data-zh="对比实验训练耗时">compared training duration</span></div>
+            <div><strong>3</strong><span data-en="validation methods" data-zh="验证方法">validation methods</span></div>
+            <div><strong>+31.6%</strong><span data-en="training gain" data-zh="训练收益">training gain</span></div>
           </div>
 
           <section class="project-dossier-details" aria-label="Xiaomi full project details">
@@ -1305,26 +1305,13 @@
                     <strong data-en="Generate, execute, verify, and update from reward." data-zh="生成、执行、验证，并用奖励更新策略。">Generate, execute, verify, and update from reward.</strong>
                   </figcaption>
                 </figure>
-                <figure class="dossier-evidence-card dossier-chart-card">
-                  <div class="dossier-chart-head">
-                    <span>02 / REWARD</span>
-                    <strong>Qwen2.5-Coder-7B · Step 420</strong>
-                  </div>
-                  <div class="dossier-reward-bars" role="img" aria-label="Linear reward 0.4172 versus binary reward 0.2483">
-                    <div>
-                      <span>Binary</span>
-                      <i><b style="--bar-width: 59.5%"></b></i>
-                      <strong>0.2483</strong>
-                    </div>
-                    <div>
-                      <span>Linear</span>
-                      <i><b style="--bar-width: 100%"></b></i>
-                      <strong>0.4172</strong>
-                    </div>
-                  </div>
+                <figure class="dossier-evidence-card dossier-curve-card">
+                  <button class="lightbox-trigger" type="button" data-lightbox-src="assets/xiaomi/reward-val-curves.png" data-lightbox-alt="Binary and linear reward functions compared under the same Cocotb verifier using validation and reward curves">
+                    <img src="assets/xiaomi/reward-val-curves.png" alt="" loading="lazy">
+                  </button>
                   <figcaption>
-                    <span>03 / GENERALIZATION</span>
-                    <strong data-en="Out-of-domain degradation appeared before in-domain gains plateaued." data-zh="域内收益尚未收敛时，域外性能已开始回退。">Out-of-domain degradation appeared before in-domain gains plateaued.</strong>
+                    <span data-en="02 / VALIDATION + REWARD" data-zh="02 / 验证与奖励">02 / VALIDATION + REWARD</span>
+                    <strong data-en="Cocotb verifier held constant: Linear rises earlier and more smoothly, while Binary remains sparse and frequently falls back to zero." data-zh="固定 Cocotb 验证方法：Linear 提升更早、更平滑，Binary 信号稀疏且频繁回落到 0。">Cocotb verifier held constant: Linear rises earlier and more smoothly, while Binary remains sparse and frequently falls back to zero.</strong>
                   </figcaption>
                 </figure>
               </div>

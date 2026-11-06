@@ -7150,6 +7150,17 @@ html[lang="zh"] .usecase-meta::before {
   transition: transform 500ms var(--ease);
 }
 
+.dossier-curve-card > button {
+  min-height: 0;
+  aspect-ratio: 1800 / 1210;
+  background: #f7f9fc;
+}
+
+.dossier-curve-card > button img {
+  max-height: none;
+  object-fit: cover;
+}
+
 .dossier-evidence-card > button:hover img {
   transform: scale(1.018);
 }
