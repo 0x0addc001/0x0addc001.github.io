@@ -22,6 +22,7 @@
   --module-4: #edf2f8;
   --module-5: #d8e5f3;
   --module-6: #d2e3f3;
+  --module-7: #e1edf8;
   --tag-1: #1f5dcc;
   --tag-2: #08788f;
   --tag-3: #5752b8;
@@ -66,6 +67,7 @@
   --module-4: #0d1c30;
   --module-5: #183048;
   --module-6: #1b2d46;
+  --module-7: #203a57;
   --tag-1: #8dbdff;
   --tag-2: #72dff5;
   --tag-3: #bdb6ff;
@@ -1583,6 +1585,14 @@ html[lang="en"] .hero-title > span:first-child {
     box-shadow 300ms ease;
 }
 
+.workflow-stage-ops {
+  grid-column: 1 / -1;
+}
+
+.workflow-stage-ops .workflow-anatomy {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
 .workflow-stage:nth-of-type(1)::after,
 .workflow-stage:nth-of-type(2)::after,
 .workflow-stage:nth-of-type(4)::after,
@@ -1722,6 +1732,10 @@ html[lang="en"] .hero-title > span:first-child {
 
 .workflow-anatomy > div:nth-child(5) {
   order: 5;
+}
+
+.workflow-stage-ops .workflow-anatomy > div {
+  order: initial;
 }
 
 .workflow-category-label {
@@ -5190,6 +5204,10 @@ html[lang="en"] .hero-title > span:first-child {
   background: var(--module-6);
 }
 
+:root[data-theme] .workflow-stage:nth-of-type(7) {
+  background: var(--module-7);
+}
+
 :root[data-theme] .resume-detail-grid > div:nth-child(1),
 :root[data-theme] .xiaomi-work article:nth-child(1),
 :root[data-theme] .loop-diagram article:nth-child(1) {
@@ -5772,6 +5790,10 @@ html[lang="zh"] .usecase-meta::before {
   .workflow-lane {
     grid-template-columns: minmax(0, 1fr);
     gap: 0;
+  }
+
+  .workflow-stage-ops .workflow-anatomy {
+    grid-template-columns: minmax(0, 1fr);
   }
 
   .workflow-stage:nth-of-type(1)::after,

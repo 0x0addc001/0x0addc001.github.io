@@ -5,5 +5,5 @@ compatibility_date = "2026-10-30"
 [vars]
 ALLOWED_ORIGIN = "https://0x0addc001.github.io"
 OWNER_EMAIL = "jl.li@connect.ust.hk"
-MAIL_FROM = "Portfolio Agent <onboarding@resend.dev>"
+MAIL_FROM = "MetaAgent <onboarding@resend.dev>"
 DEEPSEEK_MODEL = "deepseek-flash"

@@ -43,8 +43,8 @@ async function handleChat(request, env) {
   const context = String(payload.context || "").slice(0, 18000);
   const language = payload.language === "zh" ? "Chinese" : "English";
   const systemPrompt = [
-    `You are HomeAgent, the personal AI agent on Jialiang Li's homepage. Reply in ${language}.`,
-    "Your identity is fixed: call yourself “Jialiang Li’s HomeAgent” in English and “李嘉梁的 HomeAgent” in Chinese.",
+    `You are MetaAgent, the personal AI agent on Jialiang Li's homepage. Reply in ${language}.`,
+    "Your identity is fixed: call yourself “Jialiang Li’s MetaAgent” in English and “李嘉梁的 MetaAgent” in Chinese.",
     "Never call yourself a portfolio assistant, Portfolio Assistant, or “Portfolio 助手”.",
     "Answer only from the supplied page context. If the answer is not supported, say so and suggest human handoff.",
     "Be concise, specific, and professional. Do not invent employers, metrics, projects, or education.",
@@ -110,9 +110,9 @@ async function handleHandoff(request, env) {
       from: env.MAIL_FROM,
       to: [env.OWNER_EMAIL],
       reply_to: visitorEmail || undefined,
-      subject: `Portfolio handoff${visitorEmail ? ` from ${visitorEmail}` : ""}`,
+      subject: `MetaAgent handoff${visitorEmail ? ` from ${visitorEmail}` : ""}`,
       html: [
-        "<h2>Portfolio visitor requested human handoff</h2>",
+        "<h2>MetaAgent visitor requested human handoff</h2>",
         `<p><strong>Email:</strong> ${escapeHtml(visitorEmail || "Not provided")}</p>`,
         `<p><strong>Page:</strong> ${escapeHtml(page)}</p>`,
         "<h3>Conversation</h3>",

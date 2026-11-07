@@ -1,4 +1,4 @@
-# Portfolio Agent Worker
+# MetaAgent Worker
 
 This Cloudflare Worker keeps the DeepSeek and email credentials off the
 public GitHub Pages site.

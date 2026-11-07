@@ -93,8 +93,8 @@
           <span class="hero-title-accent" data-en="Agent Engineer" data-zh="Agent 工程师"> Agent Engineer</span>
         </h1>
 
-        <p class="hero-intro" data-en="Agent engineering is rocket science: data, models, training, inference, orchestration, and eval—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI." data-zh="Agent 工程就像造火箭：数据、模型、训练、推理、编排与评测层层交织。这一路上的坑我已经踩过不少，深知其中的繁杂与不易。我一直在寻找志同道合的伙伴，一起扫清工程障碍，打造超级 AGI！">
-          Agent engineering is rocket science: data, models, training, inference, orchestration, and eval—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI.
+        <p class="hero-intro" data-en="Agent engineering is rocket science: data, models, training, inference, orchestration, eval, and ops—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI." data-zh="Agent 工程就像造火箭：数据、模型、训练、推理、编排、评测与运维层层交织。这一路上的坑我已经踩过不少，深知其中的繁杂与不易。我一直在寻找志同道合的伙伴，一起扫清工程障碍，打造超级 AGI！">
+          Agent engineering is rocket science: data, models, training, inference, orchestration, eval, and ops—it all stacks up into a massive puzzle. Having spent time in the trenches and mapped out the common pitfalls, I’m always looking for like-minded collaborators to tackle these challenges together and build toward super AGI.
         </p>
       </div>
 
@@ -231,6 +231,7 @@
                         <span class="workflow-tech-tag">datatrove</span>
                         <span class="workflow-tech-tag">Dolma Toolkit</span>
                         <span class="workflow-tech-tag">Ray Data</span>
+                        <span class="workflow-tech-tag">SQL</span>
                       </div>
                     </div>
                   </div>
@@ -357,6 +358,8 @@
                         <span>DPO</span>
                         <span>RFT</span>
                         <span>RL</span>
+                        <span>RLHF</span>
+                        <span>RLVR</span>
                         <span>PPO</span>
                         <span>GRPO</span>
                         <span>DAPO</span>
@@ -385,6 +388,10 @@
                         <span class="workflow-tech-tag">DeepSpeed</span>
                         <span class="workflow-tech-tag">FSDP</span>
                         <span class="workflow-tech-tag">Megatron-LM</span>
+                        <span class="workflow-tech-tag">PyTorch</span>
+                        <span class="workflow-tech-tag">PEFT</span>
+                        <span class="workflow-tech-tag">LoRA</span>
+                        <span class="workflow-tech-tag">QLoRA</span>
                         <span class="workflow-tech-tag">verl</span>
                         <span class="workflow-tech-tag">TRL</span>
                         <span class="workflow-tech-tag">NCCL</span>
@@ -466,6 +473,9 @@
                         <span class="workflow-tech-tag">FlashInfer</span>
                         <span class="workflow-tech-tag">CUDA</span>
                         <span class="workflow-tech-tag">Triton</span>
+                        <span class="workflow-tech-tag">NCCL</span>
+                        <span class="workflow-tech-tag">NVLink</span>
+                        <span class="workflow-tech-tag">C++</span>
                         <span class="workflow-tech-tag">Kubernetes</span>
                       </div>
                     </div>
@@ -541,7 +551,12 @@
                         <span class="workflow-tech-tag">Claude Agent SDK</span>
                         <span class="workflow-tech-tag">DeepSeek Harness</span>
                         <span class="workflow-tech-tag">Pi</span>
+                        <span class="workflow-tech-tag">LangChain</span>
                         <span class="workflow-tech-tag">LangGraph</span>
+                        <span class="workflow-tech-tag">FastAPI</span>
+                        <span class="workflow-tech-tag">Celery</span>
+                        <span class="workflow-tech-tag">Redis</span>
+                        <span class="workflow-tech-tag">Playwright</span>
                         <span class="workflow-tech-tag">OpenHands</span>
                         <span class="workflow-tech-tag">OpenCode</span>
                         <span class="workflow-tech-tag">E2B</span>
@@ -626,6 +641,93 @@
                         <span class="workflow-tech-tag">Promptfoo</span>
                         <span class="workflow-tech-tag">DeepEval</span>
                         <span class="workflow-tech-tag">EvalScope</span>
+                        <span class="workflow-tech-tag">pytest</span>
+                        <span class="workflow-tech-tag">Vitest</span>
+                        <span class="workflow-tech-tag">UVM</span>
+                        <span class="workflow-tech-tag">Cocotb</span>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+
+                <div class="workflow-connector" aria-hidden="true"><span></span><b>→</b></div>
+
+                <article class="workflow-stage workflow-stage-ops">
+                  <div class="workflow-stage-head">
+                    <span>07</span>
+                    <p>OPS</p>
+                  </div>
+                  <h3 class="workflow-mrq">
+                    <span data-en="How do we keep agents reliable, observable, safe, and economically viable after release?" data-zh="Agent 上线后，如何持续保证可靠性、可观测性、安全性与单位经济性？">How do we keep agents reliable, observable, safe, and economically viable after release?</span>
+                  </h3>
+                  <div class="workflow-anatomy">
+                    <div>
+                      <span class="workflow-category-label" data-en="INPUT" data-zh="输入">INPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="SLOs" data-zh="服务目标">SLOs</span>
+                        <span data-en="Metrics" data-zh="指标">Metrics</span>
+                        <span data-en="Logs" data-zh="日志">Logs</span>
+                        <span data-en="Traces" data-zh="链路轨迹">Traces</span>
+                        <span data-en="Alerts" data-zh="告警">Alerts</span>
+                        <span data-en="User feedback" data-zh="用户反馈">User feedback</span>
+                        <span data-en="Release metadata" data-zh="发布元数据">Release metadata</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="OUTPUT" data-zh="输出">OUTPUT</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Health status" data-zh="健康状态">Health status</span>
+                        <span data-en="Incident records" data-zh="事故记录">Incident records</span>
+                        <span data-en="Rollback decisions" data-zh="回滚决策">Rollback decisions</span>
+                        <span data-en="Capacity plans" data-zh="容量规划">Capacity plans</span>
+                        <span data-en="Cost reports" data-zh="成本报告">Cost reports</span>
+                        <span data-en="Improvement backlog" data-zh="改进清单">Improvement backlog</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="METRICS" data-zh="指标">METRICS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Availability" data-zh="可用性">Availability</span>
+                        <span data-en="P95 latency" data-zh="P95 延迟">P95 latency</span>
+                        <span data-en="Error rate" data-zh="错误率">Error rate</span>
+                        <span data-en="Error-budget burn" data-zh="错误预算消耗">Error-budget burn</span>
+                        <span data-en="MTTR" data-zh="平均恢复时间">MTTR</span>
+                        <span data-en="Cost per task" data-zh="单任务成本">Cost per task</span>
+                        <span data-en="Adoption" data-zh="采纳率">Adoption</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="COMPONENTS" data-zh="组件">COMPONENTS</span>
+                      <div class="workflow-label-set">
+                        <span data-en="Observability" data-zh="可观测性">Observability</span>
+                        <span data-en="Canary release" data-zh="金丝雀发布">Canary release</span>
+                        <span data-en="Autoscaling" data-zh="自动扩缩容">Autoscaling</span>
+                        <span data-en="Circuit breaker" data-zh="熔断">Circuit breaker</span>
+                        <span data-en="Feature flags" data-zh="功能开关">Feature flags</span>
+                        <span data-en="Rollback" data-zh="回滚">Rollback</span>
+                        <span data-en="Replay" data-zh="流量回放">Replay</span>
+                        <span data-en="Incident response" data-zh="事故响应">Incident response</span>
+                        <span data-en="Drift monitoring" data-zh="漂移监控">Drift monitoring</span>
+                        <span data-en="Cost governance" data-zh="成本治理">Cost governance</span>
+                        <span data-en="Human escalation" data-zh="人工升级">Human escalation</span>
+                      </div>
+                    </div>
+                    <div>
+                      <span class="workflow-category-label" data-en="TECH" data-zh="技术">TECH</span>
+                      <div class="workflow-label-set workflow-tech-tags">
+                        <span class="workflow-tech-tag">OpenTelemetry</span>
+                        <span class="workflow-tech-tag">Prometheus</span>
+                        <span class="workflow-tech-tag">Grafana</span>
+                        <span class="workflow-tech-tag">Loki</span>
+                        <span class="workflow-tech-tag">Tempo</span>
+                        <span class="workflow-tech-tag">Sentry</span>
+                        <span class="workflow-tech-tag">Docker</span>
+                        <span class="workflow-tech-tag">Terraform</span>
+                        <span class="workflow-tech-tag">Argo CD</span>
+                        <span class="workflow-tech-tag">GitHub Actions</span>
+                        <span class="workflow-tech-tag">MLflow</span>
+                        <span class="workflow-tech-tag">Git</span>
+                        <span class="workflow-tech-tag">Python</span>
                       </div>
                     </div>
                   </div>
@@ -661,6 +763,7 @@
             <li><span class="usecase-stage">INFER</span><p data-en="Candidate recall + low-latency reranking" data-zh="候选召回 + 低延迟重排">Candidate recall + low-latency reranking</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Inventory, content policy, and trend tools" data-zh="库存、内容政策与趋势工具">Inventory, content policy, and trend tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Relevance, zero-result rate, policy risk" data-zh="相关性、无结果率与合规风险">Relevance, zero-result rate, policy risk</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="SLOs, zero-result alerts, index refresh, cost monitoring" data-zh="服务目标、无结果告警、索引刷新与成本监控">SLOs, zero-result alerts, index refresh, cost monitoring</p></li>
           </ol>
         </article>
 
@@ -679,6 +782,7 @@
             <li><span class="usecase-stage">INFER</span><p data-en="Candidate generation + constrained reranking" data-zh="候选生成 + 约束重排">Candidate generation + constrained reranking</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Inventory, creator supply, freshness tools" data-zh="库存、创作者供给、新鲜度工具">Inventory, creator supply, freshness tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Relevance, diversity, retention, long-term value" data-zh="相关性、多样性、留存、长期价值">Relevance, diversity, retention, long-term value</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Online A/B, feedback loops, drift alerts, safety rollback" data-zh="在线 A/B、反馈闭环、漂移告警与安全回滚">Online A/B, feedback loops, drift alerts, safety rollback</p></li>
           </ol>
         </article>
 
@@ -697,6 +801,7 @@
             <li><span class="usecase-stage">INFER</span><p data-en="Streaming copy + variant scoring" data-zh="流式文案 + 素材变体评分">Streaming copy + variant scoring</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Ad platform and asset delivery tools" data-zh="广告平台与素材投放工具">Ad platform and asset delivery tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Brand safety, campaign lift, acquisition cost" data-zh="品牌安全、投放提升、获客成本">Brand safety, campaign lift, acquisition cost</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Budget pacing, attribution, policy alerts, spend rollback" data-zh="预算节奏、归因、策略告警与花费回滚">Budget pacing, attribution, policy alerts, spend rollback</p></li>
           </ol>
         </article>
 
@@ -715,6 +820,7 @@
             <li><span class="usecase-stage">INFER</span><p data-en="Streaming replies + retrieval" data-zh="流式回复 + 检索">Streaming replies + retrieval</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Order, refund, and CRM tools" data-zh="订单、退款与 CRM 工具">Order, refund, and CRM tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Resolution quality + escalation safety" data-zh="解决质量 + 转人工安全">Resolution quality + escalation safety</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Queue health, containment audits, human review, incident response" data-zh="队列健康、自助解决审计、人工复核与事故响应">Queue health, containment audits, human review, incident response</p></li>
           </ol>
         </article>
 
@@ -732,6 +838,7 @@
             <li><span class="usecase-stage">INFER</span><p data-en="Completion + patch generation" data-zh="代码补全 + Patch 生成">Completion + patch generation</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Codex, sandbox, test runner" data-zh="Codex、沙箱、测试运行器">Codex, sandbox, test runner</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Tests, acceptance, regressions" data-zh="测试、采纳率、回归">Tests, acceptance, regressions</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="CI latency, sandbox cost, regression alerts, rollback" data-zh="CI 延迟、沙箱成本、回归告警与回滚">CI latency, sandbox cost, regression alerts, rollback</p></li>
           </ol>
         </article>
 
@@ -750,6 +857,7 @@
             <li><span class="usecase-stage">INFER</span><p data-en="Query planning + code execution" data-zh="查询规划 + 代码执行">Query planning + code execution</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Warehouse, BI, notebook, permission tools" data-zh="数仓、BI、Notebook、权限工具">Warehouse, BI, notebook, permission tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Execution accuracy + insight validity" data-zh="执行准确率 + 结论有效性">Execution accuracy + insight validity</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Query SLOs, permission audits, anomaly alerts, lineage health" data-zh="查询服务目标、权限审计、异常告警与血缘健康">Query SLOs, permission audits, anomaly alerts, lineage health</p></li>
           </ol>
         </article>
 
@@ -768,6 +876,7 @@
             <li><span class="usecase-stage">INFER</span><p data-en="Streaming signals + scenario analysis" data-zh="流式信号 + 情景分析">Streaming signals + scenario analysis</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Market data, risk, order simulation tools" data-zh="行情、风控、订单仿真工具">Market data, risk, order simulation tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Backtest, drawdown, slippage, compliance" data-zh="回测、回撤、滑点、合规">Backtest, drawdown, slippage, compliance</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Kill switch, market halt, risk alerts, audit trail" data-zh="熔断开关、市场停牌、风险告警与审计轨迹">Kill switch, market halt, risk alerts, audit trail</p></li>
           </ol>
         </article>
 
@@ -786,6 +895,7 @@
             <li><span class="usecase-stage">INFER</span><p data-en="Streaming intake + evidence retrieval" data-zh="流式问诊 + 证据检索">Streaming intake + evidence retrieval</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="EHR, triage, scheduling tools" data-zh="EHR、分诊、预约工具">EHR, triage, scheduling tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Clinical safety, triage, hallucination" data-zh="临床安全、分诊、幻觉">Clinical safety, triage, hallucination</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Availability, safety alerts, clinician review, audit logs" data-zh="可用性、安全告警、医生复核与审计日志">Availability, safety alerts, clinician review, audit logs</p></li>
           </ol>
         </article>
 
@@ -804,6 +914,7 @@
             <li><span class="usecase-stage">INFER</span><p data-en="Storyboard generation + controllable video sampling" data-zh="分镜生成 + 可控视频采样">Storyboard generation + controllable video sampling</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Render farm, asset rights, watermark, publishing tools" data-zh="渲染集群、素材版权、水印与发布工具">Render farm, asset rights, watermark, publishing tools</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Prompt fidelity, temporal consistency, motion, safety" data-zh="提示遵循、时序一致性、运动质量、安全">Prompt fidelity, temporal consistency, motion, safety</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Provider health, render queue SLOs, credit burn, moderation" data-zh="服务健康、渲染队列目标、额度消耗与内容审核">Provider health, render queue SLOs, credit burn, moderation</p></li>
           </ol>
         </article>
 
@@ -822,6 +933,7 @@
             <li><span class="usecase-stage">INFER</span><p data-en="Low-latency perception + action chunks" data-zh="低延迟感知 + 动作块生成">Low-latency perception + action chunks</p></li>
             <li><span class="usecase-stage">HARNESS</span><p data-en="Robot SDK, safety envelope, simulator, fleet control" data-zh="机器人 SDK、安全边界、仿真器、集群控制">Robot SDK, safety envelope, simulator, fleet control</p></li>
             <li><span class="usecase-stage">EVAL</span><p data-en="Task success, safety, robustness, sim-to-real gap" data-zh="任务成功率、安全、鲁棒性、虚实迁移差距">Task success, safety, robustness, sim-to-real gap</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Fleet health, safety incidents, OTA rollout, rollback" data-zh="集群健康、安全事件、OTA 发布与回滚">Fleet health, safety incidents, OTA rollout, rollback</p></li>
           </ol>
         </article>
       </div>
@@ -2216,7 +2328,7 @@
               <span>LinkedIn</span>
               <span aria-hidden="true">↗</span>
             </a>
-            <a class="contact-action" href="assets/Jialiang-Li-CV-CN.pdf" download>
+            <a class="contact-action" href="assets/Jialiang-Li-CV-EN.pdf" data-en-href="assets/Jialiang-Li-CV-EN.pdf" data-zh-href="assets/Jialiang-Li-CV-CN.pdf" download>
               <span data-en="CV" data-zh="CV">CV</span>
               <span aria-hidden="true">↓</span>
             </a>
@@ -2228,7 +2340,7 @@
   </main>
 
   <button class="chat-launcher is-visible" data-chat-launcher type="button" aria-expanded="false">
-    <span data-en="Ask HomeAgent" data-zh="问问 HomeAgent">Ask HomeAgent</span>
+    <span data-en="Ask MetaAgent" data-zh="问问 MetaAgent">Ask MetaAgent</span>
     <b aria-hidden="true">←</b>
   </button>
 
@@ -2236,7 +2348,7 @@
     <div class="hero-chat-head">
       <div>
         <i class="hero-chat-indicator" aria-hidden="true"></i>
-        <strong id="hero-chat-title" data-en="Ask HomeAgent" data-zh="问问 HomeAgent">Ask HomeAgent</strong>
+        <strong id="hero-chat-title" data-en="Ask MetaAgent" data-zh="问问 MetaAgent">Ask MetaAgent</strong>
       </div>
       <button class="chat-minimize" data-chat-minimize type="button" aria-expanded="false">
         <span class="sr-only" data-en="Minimize chat" data-zh="收起对话">Minimize chat</span>
@@ -2245,8 +2357,8 @@
     </div>
     <div class="hero-chat-log" data-chat-log role="log" aria-live="polite">
       <article class="chat-message chat-message-agent">
-        <p data-en="Hi! I’m Jialiang Li’s HomeAgent. Ask me anything. Intent parsing, slot filling, retrieval, reranking, function calling... the whole stack? Too much work—I’ll just hand off to Jialiang Li. Kidding." data-zh="Hi! 我是李嘉梁的 HomeAgent，有什么问题尽管问我，识意、补槽、召回、重排、工调。。。一套我都——懒得折腾，我直接兜底 handoff 李嘉梁，开玩笑的">
-          Hi! I’m Jialiang Li’s HomeAgent. Ask me anything. Intent parsing, slot filling, retrieval, reranking, function calling... the whole stack? Too much work—I’ll just hand off to Jialiang Li. Kidding.
+        <p data-en="Hi! I’m Jialiang Li’s MetaAgent. Ask me anything. Intent parsing, slot filling, retrieval, reranking, function calling... the whole stack? Too much work—I’ll just hand off to Jialiang Li. Kidding." data-zh="Hi! 我是李嘉梁的 MetaAgent，有什么问题尽管问我，识意、补槽、召回、重排、工调。。。一套我都——懒得折腾，我直接兜底 handoff 李嘉梁，开玩笑的">
+          Hi! I’m Jialiang Li’s MetaAgent. Ask me anything. Intent parsing, slot filling, retrieval, reranking, function calling... the whole stack? Too much work—I’ll just hand off to Jialiang Li. Kidding.
         </p>
       </article>
     </div>

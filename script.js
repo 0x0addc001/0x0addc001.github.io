@@ -181,6 +181,10 @@
         trigger.dataset.lightboxAlt = image.alt;
       }
     });
+    document.querySelectorAll("[data-en-href][data-zh-href]").forEach((link) => {
+      const target = link.dataset[`${currentLanguage}Href`];
+      if (target) link.setAttribute("href", target);
+    });
     languageOptions.forEach((option) => {
       option.classList.toggle("is-current", option.dataset.languageOption === currentLanguage);
     });
