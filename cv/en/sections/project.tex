@@ -1,0 +1,19 @@
+\documentclass[letter, 12pt]{article}
+\begin{document}
+
+\subsection{{VideoAgent: Agent-Native Video Production Workspace}\hfill Oct 2026 - Present}
+\begin{zitemize}
+\item \textbf{Architecture:} Built a bounded LangGraph storyboard planner with durable Agent Hook traces. Kept planning isolated from billable tools while persisting context, memory, planning, validation, and reply state.
+\item \textbf{Design:} Implemented editable Settings/Outlines/Scripts, Characters/Scenes/Shots, versioned assets, view/edit collaboration, adopted setting $\rightarrow$ outline $\rightarrow$ script $\rightarrow$ generation approval gates, credit reservation, and idempotent jobs. The capability router covers 16 Pippit/Kling video models and Auto. Used Celery and Redis for durable polling, FFmpeg for captioned multi-format final cuts, and multimodal Final Cut review for character, style, prompt, and temporal consistency.
+\item \textbf{Verification:}Verified the full flow with a Mock Provider, pytest, Vitest, and Playwright. \href{https://0x0addc001.github.io/VideoAgent/}{Project page}
+\end{zitemize}
+
+\vspace*{8pt}
+\subsection{{LMPool: KV-Aware Routing and NVLink Transfer}\hfill Apr 2026 - Jul 2026}
+\begin{zitemize}
+\item \textbf{Architecture:} Split the runtime into a launcher, one global control plane, and one data plane per GPU. The control plane tracks versioned block tables, capacity, reservations, and placement metadata while each worker retains physical ownership of its KV cache.
+\item \textbf{Strategies:} Routing: The global scheduler combines missing prefill, queue/decode work, reclaim pressure, and free capacity. Transfer: Cross-GPU moves use a prepare-execute-publish-finalize transaction with source hash/generation checks, destination reservations, and publication-before-visibility.
+\item \textbf{Experiments:} Experiment on six RTX 3090 GPUs with five repeated runs, 5x shared-prefix routing improved Qwen3-0.6B/1.7B throughput by 11.8\%/21.3\% and reduced mean TTFT by 18.6\%/25.2\% versus round robin. Load skew completed three placements and copied 87 blocks. \href{https://0x0addc001.github.io/LMPool/}{Project page}
+\end{zitemize}
+
+\end{document}

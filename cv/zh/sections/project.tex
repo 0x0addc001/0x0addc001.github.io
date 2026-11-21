@@ -1,0 +1,19 @@
+\documentclass[a4paper, 12pt]{article}
+\begin{document}
+
+\subsection{{VideoAgent：Agent 原生视频生产工作台}\hfill 2026.10 - 至今}
+\begin{zitemize}
+\item \textbf{架构：}使用 LangGraph 构建受约束的分镜规划器，并通过 Agent Hooks 持久化上下文、记忆、规划、校验与回复轨迹；规划层与付费工具隔离。
+\item \textbf{设计：}实现可编辑的 Settings/Outline/Script、角色/场地/镜头与版本管理，支持 view/edit 协作、 采用 setting $\rightarrow$ outline $\rightarrow$ script $\rightarrow$ generation 审批、额度预留和幂等任务；Provider Resolver 覆盖 Pippit/Kling 共 16 个视频模型与 Auto 路由。通过 Celery + Redis 执行可恢复的异步轮询，使用 FFmpeg 完成字幕、配乐与多画幅成片，并加入 Final Cut 多模态质量评审、分享和发布；
+\item \textbf{验证：}以 Mock Provider、pytest、Vitest 与 Playwright 验证完整流程。\ \href{https://0x0addc001.github.io/VideoAgent/}{项目主页}
+\end{zitemize}
+
+\vspace*{8pt}
+\subsection{{LMPool：面向多 GPU LLM 服务的 KV 感知路由与 NVLink 传输}\hfill 2026.04 - 2026.07}
+\begin{zitemize}
+\item \textbf{架构：}将运行时拆分为主进程、全局控制面与每 GPU 数据面；控制面维护版本化 Block Table、容量、预留和放置元数据，物理 KV Cache 始终由各 GPU 本地持有。
+\item \textbf{策略：}路由：Global Scheduler 综合缺失 Prefill、Queue/Decode 工作、回收压力和有效容量选择目标；传输：跨 GPU 传输采用 prepare $\rightarrow$ execute $\rightarrow$ publish $\rightarrow$ finalize 事务，并通过 source hash/generation 校验、目标预留和发布前不可见保证一致性。
+\item \textbf{实验：}在 6$\times$RTX 3090 上对 Qwen3-0.6B/1.7B 重复 5 次实验；5$\times$共享前缀路由相比 round robin 提升吞吐 11.8\%/21.3\%、降低平均 TTFT 18.6\%/25.2\%。Load skew 完成 3 次后台放置并复制 87 个 block。\ \href{https://0x0addc001.github.io/LMPool/}{项目主页}
+\end{zitemize}
+
+\end{document}

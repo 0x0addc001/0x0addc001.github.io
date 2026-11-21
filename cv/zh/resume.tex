@@ -1,0 +1,68 @@
+\documentclass[letter,10pt]{article}
+\usepackage[UTF8]{ctex}
+\usepackage[utf8]{inputenc}
+\usepackage{CJKutf8}
+\usepackage{tabularx}
+\usepackage{array}
+
+%====================
+% File:         resume.tex
+% Modifying author2:       https://github.com/mengisok 
+% Last Updated: Oct 29, 2022
+% Notes:        I edited again on the version of @gobborg      
+%====================
+
+%====================
+% File:         resume.tex
+% Modifying author1:       https://github.com/gobborg 
+% Last Updated: Dec 26, 2021
+% Notes:        I just made it prettier and better suited to
+%               my needs.
+%====================
+
+%====================
+% File:         resume.tex
+% Original author:       https://github.com/TimmyChan 
+%               https://www.linkedin.com/in/timmy-l-chan/
+% Last Updated: Nov 19, 2021
+% Notes:        All formatting is done in TLCresume.sty
+%               No need to touch that file. 
+%               All actual content is in the sections/ folder.
+%====================
+
+\usepackage{TLCresume}
+
+%====================
+% CONTACT INFORMATION
+%====================
+\author{李嘉梁} 
+\def\phone{(+86)18610822831}
+\def\email{jl.li@connect.ust.hk}
+% blog edited in _header.tex
+\def\LinkedIn{0x0addc001} % linkedin.com/in/______
+\def\github{0x0addc001} % github username
+\def\homepage{0x0addc001.github.io}
+
+\begin{document}
+\import{sections/}{_header}
+\vspace*{10pt}
+
+\section{\textbf{教育经历}}
+\import{sections/}{education}
+\vspace*{10pt}
+
+\section{\textbf{工作经历}}
+\import{sections/}{experience}
+\vspace*{10pt}
+
+\section{\textbf{项目经历}}
+\vspace*{3pt}
+\import{sections/}{project}
+\vspace*{10pt}
+
+\section{\textbf{技术技能}}
+\vspace*{3pt}
+\import{sections/}{skills}
+\vspace*{10pt}
+
+\end{document}

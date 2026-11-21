@@ -1,0 +1,23 @@
+\documentclass[letter,12pt]{article}
+\usepackage{TLCresume}
+\begin{document}
+
+\vspace*{10pt}
+\subsection{{Machine Learning Engineer Intern}\hfill Jul 2026 - Oct 2026}
+\subtext{Shanghai Xiaomi Technology\ | Code-model post-training}
+\begin{zitemize}
+\item \textbf{Data:} Built RTL post-training data with GLM5.3-generated specifications, reasoning traces, and Random/UVM/Cocotb testbenches. Added extraction, length filtering, normalization, deduplication, self-equivalence verification, and port alignment to construct SFT and RLVR datasets.
+\item \textbf{Training:} Ran rejection-sampled SFT (full-parameter and LoRA) on Qwen2.5-Coder, then RLVR with DAPO using executable code verification as the reward. Compared binary and linear rewards to identify gaps between reward growth, downstream correctness, and out-of-domain regression.
+\item \textbf{Evaluation:} Built business Benchmarks and evaluated open-source, post-trained, and commercial models with pass@k on non-agentic and agentic RTL generation. Decoupled GPU training from VCS simulation and delivered the adapted GLM5.3-744B-A40B data, training path, and smoke-test validation.
+\end{zitemize}
+
+\vspace*{6pt}
+\subsection{{Machine Learning Engineer Intern}\hfill Jan 2026 - Apr 2026}
+\subtext{Hong Kong Generative AI R\&D Center\ | Speech-model post-training}
+\begin{zitemize}
+\item \textbf{Data:} Synthesized trilingual Mandarin-Simplified Chinese, Cantonese-Traditional Chinese, and English annotations with Qwen3-ASR, and built an annotation-review platform. Constructed SFT and RL datasets using VAD speech ratio, SNR, speaker-independent splits, normalization, deduplication, and duration filtering.
+\item \textbf{Training:} Adapted Qwen3-ASR-1.7B with full-parameter SFT and GRPO reinforcement learning, tuning the training recipe for multilingual government-meeting transcription.
+\item \textbf{Evaluation:} Built a business Benchmark and compared open-source, post-trained, and commercial ASR models by CER. Traced language confusion, low-SNR failures, and long-audio segmentation errors back into data filtering and training settings.
+\end{zitemize}
+
+\end{document}

@@ -1,0 +1,23 @@
+\documentclass[a4paper,12pt]{article}
+\usepackage{TLCresume}
+\begin{document}
+
+\vspace*{10pt}
+\subsection{{算法工程师（实习）}\hfill 2026.07 - 2026.10}
+\subtext{小米科技\ 代码模型后训练}
+\begin{zitemize}
+\item \textbf{数据：}使用 GLM5.3 合成黄金代码需求规格（功能定义、接口契约、关键行为、约束与输出格式）、推理轨迹及 Random/UVM/Cocotb 测试平台；通过代码抽取、长度过滤、规范化、去重、自等价验证和端口抽取构建 SFT、RLVR 业务数据集。
+\item \textbf{训练：}在 Qwen2.5-Coder 上完成 Rejection-sampled SFT（Full-Parameter 与 LoRA）以及以代码执行为 Verifier 的 RLVR (DAPO)；对比 Binary (All pass)/Linear (Pass rate) reward，定位奖励增长与下游正确率、域外泛化之间的偏差。
+\item \textbf{评测：}构建业务 Benchmark，使用社区 Benchmark 以 pass@k 评估开源、后训练和商业模型的 Non-Agentic/Agentic RTL 生成；将 GPU 训练与 VCS 仿真解耦，完成 GLM5.3 的训练适配、数据交付与 smoke test。
+\end{zitemize}
+
+\vspace*{6pt}
+\subsection{{算法工程师（实习）}\hfill 2026.01 - 2026.04}
+\subtext{香港生成式人工智能研发中心\ 语音模型后训练}
+\begin{zitemize}
+\item \textbf{数据：}使用 Qwen3-ASR 合成普通话-简体、粤语-繁体、英语-英语三语标注，搭建标注审核平台；结合 VAD 语音占比、SNR、说话人独立划分、文本规范化、去重和时长过滤构建 SFT、RL 业务数据集。
+\item \textbf{训练：}在 Qwen3-ASR 上完成 Full-Parameter SFT、GRPO 强化学习与超参数调优，针对多语种会议语音优化语言区分与转写稳定性。
+\item \textbf{评测：}构建业务 Benchmark，以 CER 对比开源、后训练和商业 ASR 模型，分析语种混淆、低信噪比和长音频切分等失败类型，并回流到数据筛选与训练配置。
+\end{zitemize}
+
+\end{document}

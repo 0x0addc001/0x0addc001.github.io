@@ -1,0 +1,20 @@
+# LaTeX build artifacts. The PDFs are tracked on purpose: they are the
+# published CV files that the homepage links to.
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.lof
+*.lot
+*.bbl
+*.blg
+*.xdv
+*.nav
+*.snm
+*.vrb
+latexindent_temp.tex
+.DS_Store
