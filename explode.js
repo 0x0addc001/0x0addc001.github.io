@@ -3,32 +3,47 @@
 
   const STAGE_ORDER = ["DATA", "MODEL", "TRAIN", "INFER", "HARNESS", "EVAL", "OPS"];
 
+  const lang = () => (document.documentElement.dataset.language === "zh" ? "zh" : "en");
+  const L = (value) => {
+    if (value && typeof value === "object" && !Array.isArray(value)) {
+      return value[lang()] || value.en || "";
+    }
+    return value || "";
+  };
+  const bi = (en, zh) => ({ en, zh });
+
+  const biText = (el, fallback = "") => {
+    if (!el) return bi(fallback, fallback);
+    const text = (el.textContent || "").trim() || fallback;
+    return bi(el.dataset?.en || text, el.dataset?.zh || text);
+  };
+
   const AREA_NOTE = {
-    INPUT: "进入这一层的约束与预算：能花多少、必须满足什么。",
-    COMPONENTS: "这一层的机制清单；每一项都有代价，选型就是选代价。",
-    OUTPUT: "交给下一层的产物，也是这一层的验收物。",
-    METRICS: "这一层怎么算好：看哪个数字，不看哪个数字。",
-    TECH: "对应的开源实现与生态位置。"
+    INPUT: bi("Constraints and budget entering this stage: what it may spend and what it must satisfy.", "进入这一层的约束与预算：能花多少、必须满足什么。"),
+    COMPONENTS: bi("The mechanisms of this stage; every one has a cost, so selection is choosing a cost.", "这一层的机制清单；每一项都有代价，选型就是选代价。"),
+    OUTPUT: bi("What this stage hands to the next one — also its acceptance artifact.", "交给下一层的产物，也是这一层的验收物。"),
+    METRICS: bi("How this stage defines good: which number matters, and which does not.", "这一层怎么算好：看哪个数字，不看哪个数字。"),
+    TECH: bi("Concrete open-source implementations and where they sit in the stack.", "对应的开源实现与生态位置。")
   };
 
   const ROW_NOTE = {
-    DATA: "这个 agent 的数据从哪里来、怎么治理。",
-    MODEL: "用什么样的模型与检索/排序结构。",
-    TRAIN: "需要什么样的训练信号与优化方式。",
-    INFER: "线上怎么服务：延迟、批处理、采样策略。",
-    HARNESS: "它能调用哪些工具、动作边界在哪里。",
-    EVAL: "这一层用什么指标判断做得好不好。",
-    OPS: "上线后怎么保稳定、控成本、做兜底。"
+    DATA: bi("Where this agent's data comes from and how it is governed.", "这个 agent 的数据从哪里来、怎么治理。"),
+    MODEL: bi("What kind of model plus retrieval or ranking structure it uses.", "用什么样的模型与检索/排序结构。"),
+    TRAIN: bi("Which training signals and optimization this agent needs.", "需要什么样的训练信号与优化方式。"),
+    INFER: bi("How it serves: latency, batching, sampling policy.", "线上怎么服务：延迟、批处理、采样策略。"),
+    HARNESS: bi("Which tools it may call and where the action boundary is.", "它能调用哪些工具、动作边界在哪里。"),
+    EVAL: bi("Which metrics decide whether it is good.", "这一层用什么指标判断做得好不好。"),
+    OPS: bi("How it stays stable, affordable and backed by humans.", "上线后怎么保稳定、控成本、做兜底。")
   };
 
   const STAGE_LOOP = {
-    DATA: "把原始语料变成可复现、无泄漏的训练集；只动清洗规则、去重阈值与配比。",
-    MODEL: "在质量、显存、延迟约束下选出结构；只跑小规模消融与缩放实验。",
-    TRAIN: "把数据变成可控行为；只调数据混合、奖励与并行配置。",
-    INFER: "把权重变成稳定、可负担的服务；只动路由、批处理、量化与调度。",
-    HARNESS: "把模型输出变成可靠的任务完成；只改工具路由、上下文压缩与恢复策略。",
-    EVAL: "决定我们凭什么相信它变好了；只补失败切片、对抗集与评分口径。",
-    OPS: "决定上线之后它还活着、且花得起；只改告警阈值、灰度与回滚策略。"
+    DATA: bi("Turn raw corpora into a reproducible, leak-free dataset; only cleaning rules, dedup thresholds and mixtures change.", "把原始语料变成可复现、无泄漏的训练集；只动清洗规则、去重阈值与配比。"),
+    MODEL: bi("Pick an architecture under quality, memory and latency limits; only small ablations and scaling probes run.", "在质量、显存、延迟约束下选出结构；只跑小规模消融与缩放实验。"),
+    TRAIN: bi("Turn data into controlled behaviour; only mixture, rewards and parallelism settings change.", "把数据变成可控行为；只调数据混合、奖励与并行配置。"),
+    INFER: bi("Turn weights into stable, affordable serving; only routing, batching, quantization and scheduling change.", "把权重变成稳定、可负担的服务；只动路由、批处理、量化与调度。"),
+    HARNESS: bi("Turn model output into reliable task completion; only tool routing, context compaction and recovery change.", "把模型输出变成可靠的任务完成；只改工具路由、上下文压缩与恢复策略。"),
+    EVAL: bi("Decide why we should believe it got better; only failure slices, adversarial sets and rubrics change.", "决定我们凭什么相信它变好了；只补失败切片、对抗集与评分口径。"),
+    OPS: bi("Keep it alive and affordable after release; only alerts, canary and rollback policy change.", "决定上线之后它还活着、且花得起；只改告警阈值、灰度与回滚策略。")
   };
 
   let dialog = null;
@@ -46,8 +61,7 @@
   function termNote(name) {
     const entry = window.PORTFOLIO_TERMS?.get(name);
     if (!entry) return "";
-    const language = document.documentElement.dataset.language === "zh" ? "zh" : "en";
-    const text = entry[language] || entry.en || "";
+    const text = entry[lang()] || entry.en || "";
     return text.length > 130 ? `${text.slice(0, 128)}…` : text;
   }
 
@@ -59,8 +73,8 @@
     const groups = [...card.querySelectorAll(".workflow-anatomy > div")].map((group) => {
       const key = String(group.querySelector(".workflow-category-label")?.textContent || "").trim().toUpperCase();
       const items = [...group.querySelectorAll(".workflow-label-set span")].map((tag) => [
-        tag.textContent.trim(),
-        termNote(tag.textContent.trim())
+        biText(tag),
+        { term: tag.dataset?.en || tag.textContent.trim() }
       ]);
       return { key, items };
     });
@@ -84,26 +98,35 @@
 
   function agentNode(card) {
     const title = card.querySelector("h3")?.textContent?.trim() || "Agent";
-    const oneLine = card.querySelector("p")?.textContent?.trim() || "";
+    const oneLine = biText(card.querySelector("p"));
     const tags = [...card.querySelectorAll(".usecase-meta span")].map((tag) => tag.textContent.trim());
     const rows = [...card.querySelectorAll(".usecase-flow li")].map((row) => {
       const key = String(row.querySelector(".usecase-stage")?.textContent || "").trim().toUpperCase();
-      const text = row.querySelector("p")?.textContent?.trim() || "";
+      const textNode = row.querySelector("p");
+      const text = biText(textNode);
       const areas = stageAreas(key);
       if (areas) {
         return {
           key,
           name: key,
-          note: `${ROW_NOTE[key] || ""}　这个 agent 在这一层的做法：${text}`,
+          note: bi(
+            `${ROW_NOTE[key].en} In this agent: ${text.en}`,
+            `${ROW_NOTE[key].zh}这个 agent 在这一层的做法：${text.zh}`
+          ),
           children: areas
         };
       }
       return { key, name: key, note: ROW_NOTE[key] || "", items: [[text, ""]] };
     });
+    const nameEn = card.querySelector("h3")?.dataset.en || title;
+    const nameZh = card.querySelector("h3")?.dataset.zh || title;
     return {
       key: title.replace(/\s*Agent$/, ""),
-      name: title,
-      note: [oneLine, tags.length ? `适用场景：${tags.join(" · ")}` : ""].filter(Boolean).join("　"),
+      name: bi(nameEn, nameZh),
+      note: bi(
+        [oneLine.en, tags.length ? `Applies to: ${tags.join(" · ")}` : ""].filter(Boolean).join("　"),
+        [oneLine.zh, tags.length ? `适用场景：${tags.join(" · ")}` : ""].filter(Boolean).join("　")
+      ),
       children: rows.filter((row) => row.key)
     };
   }
@@ -112,7 +135,10 @@
     return {
       key: "RSIAgent",
       name: "RSIAgent",
-      note: "七个 stage 各跑一个小 loop；RSIAgent 只决定预算给谁、要不要接受新权重。性能只增来自晋升门。",
+      note: bi(
+        "Seven stages run small loops; RSIAgent only decides where the budget goes and whether to accept new weights. Monotonicity comes from the promotion gate.",
+        "七个 stage 各跑一个小 loop；RSIAgent 只决定预算给谁、要不要接受新权重。性能只增来自晋升门。"
+      ),
       children: stageCards().map(stageNode)
     };
   }
@@ -121,7 +147,10 @@
     return {
       key: "AGIAgent",
       name: "AGIAgent",
-      note: "垂直 agent 在各自领域采样试错；AGIAgent 在自己的轨迹上被多教师蒸馏（MOPD），把专长收成一个通用学生。",
+      note: bi(
+        "Vertical agents sample and fail in their own domains; AGIAgent is distilled on-policy from many teachers (MOPD) into one generalist student.",
+        "垂直 agent 在各自领域采样试错；AGIAgent 在自己的轨迹上被多教师蒸馏（MOPD），把专长收成一个通用学生。"
+      ),
       children: usecaseCards().map(agentNode)
     };
   }
@@ -201,18 +230,23 @@
     const hasChildren = Array.isArray(node.children) && node.children.length > 0;
 
     detail.innerHTML = `
-      <h3>${node.name}</h3>
-      ${node.note ? `<p class="explode-question">${node.note}</p>` : ""}
+      <h3>${L(node.name)}</h3>
+      ${node.note ? `<p class="explode-question">${L(node.note)}</p>` : ""}
       ${
         hasChildren
           ? `<p class="explode-hint">包含 ${node.children.length} 个子模块 · 按 Enter 或点击展开</p>`
           : `<ul class="explode-items">
-               ${(node.items || []).map(([name, note]) => `<li><b>${name}</b>${note ? `<span>${note}</span>` : ""}</li>`).join("")}
+               ${(node.items || [])
+                 .map(([name, note]) => {
+                   const text = note && typeof note === "object" && note.term ? termNote(note.term) : L(note);
+                   return `<li><b>${L(name)}</b>${text ? `<span>${text}</span>` : ""}</li>`;
+                 })
+                 .join("")}
              </ul>`
       }`;
     dialog.querySelector("#explode-count").textContent = hasChildren
-      ? `${node.name} · ${node.children.length} 个子模块`
-      : `${node.name} · ${(node.items || []).length} 项`;
+      ? `${L(node.name)} · ${node.children.length} ${lang() === "zh" ? "个子模块" : "modules"}`
+      : `${L(node.name)} · ${(node.items || []).length} ${lang() === "zh" ? "项" : "items"}`;
   }
 
   function activate(index) {
@@ -236,11 +270,11 @@
     activeIndex = focusIndex;
 
     const crumb = dialog.querySelector("#explode-crumb");
-    crumb.textContent = stack.map((node) => node.name).join(" / ");
+    crumb.textContent = stack.map((node) => L(node.name)).join(" / ");
     dialog.querySelector("#explode-back").hidden = stack.length === 0;
 
-    dialog.querySelector("#explode-title").textContent = node.name;
-    dialog.querySelector("#explode-sub").textContent = node.note || "";
+    dialog.querySelector("#explode-title").textContent = L(node.name);
+    dialog.querySelector("#explode-sub").textContent = L(node.note);
 
     const canvas = dialog.querySelector("#explode-canvas");
     canvas.replaceChildren();
@@ -252,7 +286,7 @@
 
     const center = document.createElement("div");
     center.className = "explode-center";
-    center.innerHTML = `<b>${node.name}</b>`;
+    center.innerHTML = `<b>${L(node.name)}</b>`;
     ring.append(center);
 
     const total = node.children.length;
@@ -263,7 +297,7 @@
       chip.className = "explode-chip";
       if (child.children && child.children.length) chip.classList.add("has-children");
       chip.style.setProperty("--a", `${angle}deg`);
-      chip.innerHTML = `<b>${child.name}</b>`;
+      chip.innerHTML = `<b>${L(child.name)}</b>`;
       chip.addEventListener("click", () => activate(index));
       ring.append(chip);
       chips.push(chip);
@@ -278,11 +312,10 @@
     const fit = () => {
       const box = canvas.getBoundingClientRect();
       const side = Math.max(240, Math.min(box.width, box.height) - 20);
-      const chipW = Math.round(Math.min(total >= 9 ? 92 : 118, Math.max(70, side * 0.22)));
-      const radius = Math.max(88, Math.round(side / 2 - chipW / 2 - 10));
+      const widest = Math.max(72, ...chips.map((chip) => chip.offsetWidth));
+      const radius = Math.max(86, Math.round(side / 2 - widest / 2 - 10));
       const centerSize = Math.round(Math.min(124, Math.max(86, side * 0.24)));
       ring.style.setProperty("--ring-side", `${side}px`);
-      ring.style.setProperty("--chip-w", `${chipW}px`);
       ring.style.setProperty("--ring-radius", `${radius}px`);
       ring.style.setProperty("--center-size", `${centerSize}px`);
     };
@@ -387,6 +420,15 @@
     });
     if (usecase) open(agentNode(usecase));
   }
+
+  new MutationObserver(() => {
+    if (dialog?.open && currentNode) {
+      render(currentNode, activeIndex);
+    }
+  }).observe(document.documentElement, {
+    attributes: true,
+    attributeFilter: ["data-language", "lang"]
+  });
 
   wireStages();
   wireUsecases();

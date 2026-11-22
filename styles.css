@@ -8028,6 +8028,14 @@ html[lang="zh"] .usecase-meta::before {
 
 .explode-ring .explode-chip {
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  min-width: 72px;
+  max-width: 136px;
+  text-align: center;
+  overflow-wrap: anywhere;
   top: 50%;
   left: 50%;
   width: 108px;
