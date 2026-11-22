@@ -22,51 +22,20 @@
   };
 
   const STAGE_LOOP = {
-    DATA: {
-      goal: "把原始语料变成可复现、无泄漏的训练集。",
-      change: "只动清洗规则、去重阈值与数据配比，不碰模型。",
-      metric: "覆盖率、泄漏率、去重率、标注一致性。"
-    },
-    MODEL: {
-      goal: "在质量、显存、延迟约束下选出结构。",
-      change: "只跑小规模消融与缩放实验，不改训练配方。",
-      metric: "缩放斜率、显存占用、每 token 成本。"
-    },
-    TRAIN: {
-      goal: "把数据变成可控行为，并让集群不空转。",
-      change: "只调数据混合、奖励与并行配置。",
-      metric: "业务集与 OOD 表现、吞吐、恢复时间。"
-    },
-    INFER: {
-      goal: "把权重变成稳定、可负担的服务。",
-      change: "只动路由、批处理、量化与调度。",
-      metric: "TTFT、TPOT、吞吐、KV 命中率。"
-    },
-    HARNESS: {
-      goal: "把模型输出变成可靠的任务完成。",
-      change: "只改工具路由、上下文压缩与恢复策略。",
-      metric: "任务成功率、工具准确率、单任务成本。"
-    },
-    EVAL: {
-      goal: "决定我们凭什么相信它变好了。",
-      change: "只补失败切片、对抗集与评分口径。",
-      metric: "通过率、回归检出率、与人工判断的一致性。"
-    },
-    OPS: {
-      goal: "决定上线之后它还活着、且花得起。",
-      change: "只改告警阈值、灰度与回滚策略。",
-      metric: "可用性、P95 延迟、MTTR、单任务成本。"
-    }
-  };
-
-  const META = {
-    rsi: { title: "RSIAgent", center: "RSIAgent", centerNote: "big loop" },
-    agi: { title: "AGIAgent", center: "AGIAgent", centerNote: "shared student" }
+    DATA: "把原始语料变成可复现、无泄漏的训练集；只动清洗规则、去重阈值与配比。",
+    MODEL: "在质量、显存、延迟约束下选出结构；只跑小规模消融与缩放实验。",
+    TRAIN: "把数据变成可控行为；只调数据混合、奖励与并行配置。",
+    INFER: "把权重变成稳定、可负担的服务；只动路由、批处理、量化与调度。",
+    HARNESS: "把模型输出变成可靠的任务完成；只改工具路由、上下文压缩与恢复策略。",
+    EVAL: "决定我们凭什么相信它变好了；只补失败切片、对抗集与评分口径。",
+    OPS: "决定上线之后它还活着、且花得起；只改告警阈值、灰度与回滚策略。"
   };
 
   let dialog = null;
-  let activeIndex = 0;
   let chips = [];
+  let activeIndex = 0;
+  let stack = [];
+  let currentNode = null;
   let trigger = null;
 
   function normalizeStageName(text) {
@@ -77,9 +46,8 @@
   const stageCards = () => [...document.querySelectorAll(".workflow-stage")];
   const usecaseCards = () => [...document.querySelectorAll(".usecase-card")];
 
-  function readStage(card) {
+  function stageNode(card) {
     const name = normalizeStageName(card.querySelector(".workflow-stage-head p")?.textContent);
-    const question = card.querySelector(".workflow-mrq")?.textContent?.trim() || "";
     const groups = [...card.querySelectorAll(".workflow-anatomy > div")].map((group) => {
       const key = String(group.querySelector(".workflow-category-label")?.textContent || "").trim().toUpperCase();
       const items = [...group.querySelectorAll(".workflow-label-set span")].map((tag) => [tag.textContent.trim(), ""]);
@@ -87,32 +55,47 @@
     });
     const byKey = new Map(groups.map((group) => [group.key, group]));
     return {
-      title: name,
-      center: name,
-      centerNote: "local loop",
-      sub: question,
-      slices: ["INPUT", "COMPONENTS", "OUTPUT", "METRICS", "TECH"]
+      key: name,
+      name,
+      note: STAGE_LOOP[name] || "",
+      children: ["INPUT", "COMPONENTS", "OUTPUT", "METRICS", "TECH"]
         .filter((key) => byKey.has(key))
-        .map((key) => ({ key, name: byKey.get(key).key, note: AREA_NOTE[key], items: byKey.get(key).items }))
+        .map((key) => ({ key, name: key, note: AREA_NOTE[key], items: byKey.get(key).items }))
     };
   }
 
-  function readUsecase(card) {
+  function agentNode(card) {
     const title = card.querySelector("h3")?.textContent?.trim() || "Agent";
-    const sub = card.querySelector("p")?.textContent?.trim() || "";
+    const oneLine = card.querySelector("p")?.textContent?.trim() || "";
+    const tags = [...card.querySelectorAll(".usecase-meta span")].map((tag) => tag.textContent.trim());
     const rows = [...card.querySelectorAll(".usecase-flow li")].map((row) => {
       const key = String(row.querySelector(".usecase-stage")?.textContent || "").trim().toUpperCase();
       const text = row.querySelector("p")?.textContent?.trim() || "";
-      return { key, text };
+      return { key, name: key, note: ROW_NOTE[key] || "", items: [[text, ""]] };
     });
     return {
-      title,
-      center: title.replace(/\s*Agent$/, ""),
-      centerNote: "agent loop",
-      sub,
-      slices: rows
-        .filter((row) => row.key)
-        .map((row) => ({ key: row.key, note: ROW_NOTE[row.key] || "", items: [[row.text, ""]] }))
+      key: title.replace(/\s*Agent$/, ""),
+      name: title,
+      note: [oneLine, tags.length ? `适用场景：${tags.join(" · ")}` : ""].filter(Boolean).join("　"),
+      children: rows.filter((row) => row.key)
+    };
+  }
+
+  function rsiNode() {
+    return {
+      key: "RSIAgent",
+      name: "RSIAgent",
+      note: "七个 stage 各跑一个小 loop；RSIAgent 只决定预算给谁、要不要接受新权重。性能只增来自晋升门。",
+      children: stageCards().map(stageNode)
+    };
+  }
+
+  function agiNode() {
+    return {
+      key: "AGIAgent",
+      name: "AGIAgent",
+      note: "垂直 agent 在各自领域采样试错；AGIAgent 在自己的轨迹上被多教师蒸馏（MOPD），把专长收成一个通用学生。",
+      children: usecaseCards().map(agentNode)
     };
   }
 
@@ -124,35 +107,44 @@
     dialog.setAttribute("aria-labelledby", "explode-title");
     dialog.innerHTML = `
       <div class="explode-head">
-        <div>
+        <div class="explode-heading">
+          <div class="explode-crumb" id="explode-crumb"></div>
           <h2 id="explode-title">—</h2>
           <p class="explode-sub" id="explode-sub">—</p>
         </div>
-        <button class="explode-close" type="button" aria-label="Close">✕</button>
+        <div class="explode-head-actions">
+          <button class="explode-back" id="explode-back" type="button" hidden>← Back</button>
+          <button class="explode-close" type="button" aria-label="Close">✕</button>
+        </div>
       </div>
       <div class="explode-body">
         <div class="explode-canvas" id="explode-canvas"></div>
         <aside class="explode-detail" id="explode-detail" aria-live="polite"></aside>
       </div>
       <div class="explode-foot">
-        <span><kbd>←</kbd> <kbd>→</kbd> switch · <kbd>Esc</kbd> close</span>
+        <span><kbd>←</kbd> <kbd>→</kbd> switch · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</span>
         <span id="explode-count">—</span>
       </div>`;
 
     document.body.append(dialog);
 
     dialog.querySelector(".explode-close").addEventListener("click", () => dialog.close());
+    dialog.querySelector("#explode-back").addEventListener("click", () => goBack());
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) dialog.close();
     });
     dialog.addEventListener("keydown", (event) => {
       if (!chips.length) return;
       if (event.key === "ArrowRight") {
-        select((activeIndex + 1) % chips.length);
+        setActive((activeIndex + 1) % chips.length);
         event.preventDefault();
       }
       if (event.key === "ArrowLeft") {
-        select((activeIndex - 1 + chips.length) % chips.length);
+        setActive((activeIndex - 1 + chips.length) % chips.length);
+        event.preventDefault();
+      }
+      if (event.key === "Enter" || event.key === " ") {
+        activate(activeIndex);
         event.preventDefault();
       }
     });
@@ -167,31 +159,61 @@
     return dialog;
   }
 
-  function select(index) {
+  function setActive(index) {
     activeIndex = index;
     chips.forEach((chip, chipIndex) => {
       chip.setAttribute("aria-selected", String(chipIndex === index));
       chip.tabIndex = chipIndex === index ? 0 : -1;
     });
-
-    const slice = dialog.__data.slices[index];
-    const detail = dialog.querySelector("#explode-detail");
-    detail.innerHTML = `
-      <h3>${slice.key}</h3>
-      ${slice.note ? `<p class="explode-question">${slice.note}</p>` : ""}
-      <ul class="explode-items">
-        ${slice.items.map(([name, note]) => `<li><b>${name}</b>${note ? `<span>${note}</span>` : ""}</li>`).join("")}
-      </ul>`;
-    dialog.querySelector("#explode-count").textContent = `${slice.key} · ${slice.items.length} 项`;
+    showDetail(index);
   }
 
-  function open(data, source) {
-    ensureDialog();
-    dialog.__data = data;
-    trigger = source || document.activeElement;
+  function showDetail(index) {
+    const node = currentNode.children[index];
+    const detail = dialog.querySelector("#explode-detail");
+    const hasChildren = Array.isArray(node.children) && node.children.length > 0;
 
-    dialog.querySelector("#explode-title").textContent = data.title;
-    dialog.querySelector("#explode-sub").textContent = data.sub || "";
+    detail.innerHTML = `
+      <h3>${node.name}</h3>
+      ${node.note ? `<p class="explode-question">${node.note}</p>` : ""}
+      ${
+        hasChildren
+          ? `<p class="explode-hint">包含 ${node.children.length} 个子模块 · 按 Enter 或点击展开</p>`
+          : `<ul class="explode-items">
+               ${(node.items || []).map(([name, note]) => `<li><b>${name}</b>${note ? `<span>${note}</span>` : ""}</li>`).join("")}
+             </ul>`
+      }`;
+    dialog.querySelector("#explode-count").textContent = hasChildren
+      ? `${node.name} · ${node.children.length} 个子模块`
+      : `${node.name} · ${(node.items || []).length} 项`;
+  }
+
+  function activate(index) {
+    const node = currentNode.children[index];
+    if (node.children && node.children.length) {
+      stack.push(currentNode);
+      render(node);
+    } else {
+      setActive(index);
+    }
+  }
+
+  function goBack() {
+    if (!stack.length) return;
+    render(stack.pop());
+  }
+
+  function render(node, focusIndex = 0) {
+    ensureDialog();
+    currentNode = node;
+    activeIndex = focusIndex;
+
+    const crumb = dialog.querySelector("#explode-crumb");
+    crumb.textContent = stack.map((node) => node.name).join(" / ");
+    dialog.querySelector("#explode-back").hidden = stack.length === 0;
+
+    dialog.querySelector("#explode-title").textContent = node.name;
+    dialog.querySelector("#explode-sub").textContent = node.note || "";
 
     const canvas = dialog.querySelector("#explode-canvas");
     canvas.replaceChildren();
@@ -199,68 +221,43 @@
 
     const ring = document.createElement("div");
     ring.className = "explode-ring";
-    ring.dataset.count = String(data.slices.length);
+    ring.dataset.count = String(node.children.length);
 
     const center = document.createElement("div");
     center.className = "explode-center";
-    center.innerHTML = `<b>${data.center}</b><span>${data.centerNote}</span>`;
+    center.innerHTML = `<b>${node.name}</b>`;
     ring.append(center);
 
-    const total = data.slices.length;
-    data.slices.forEach((slice, index) => {
+    const total = node.children.length;
+    node.children.forEach((child, index) => {
       const angle = (360 / total) * index - 90;
-      const node = document.createElement("button");
-      node.type = "button";
-      node.className = "explode-chip";
-      node.style.setProperty("--a", `${angle}deg`);
-      node.innerHTML = `<b>${slice.name || slice.key}</b>`;
-      node.addEventListener("click", () => select(index));
-      ring.append(node);
-      chips.push(node);
+      const chip = document.createElement("button");
+      chip.type = "button";
+      chip.className = "explode-chip";
+      if (child.children && child.children.length) chip.classList.add("has-children");
+      chip.style.setProperty("--a", `${angle}deg`);
+      chip.innerHTML = `<b>${child.name}</b>`;
+      chip.addEventListener("click", () => activate(index));
+      ring.append(chip);
+      chips.push(chip);
     });
 
     canvas.append(ring);
-    dialog.showModal();
-    select(0);
+    if (!dialog.open) dialog.showModal();
+    setActive(Math.min(focusIndex, total - 1));
   }
 
-  function rsiData() {
-    const slices = stageCards().map((card) => {
-      const name = normalizeStageName(card.querySelector(".workflow-stage-head p")?.textContent);
-      const loop = STAGE_LOOP[name] || { goal: "", change: "", metric: "" };
-      return {
-        key: name,
-        name,
-        note: loop.goal,
-        items: [
-          ["这一轮允许改什么", loop.change],
-          ["本地判据", loop.metric]
-        ]
-      };
-    });
-    return { ...META.rsi, sub: "七个 stage agent 各跑一个小 loop；RSIAgent 只决定预算给谁、要不要接受新权重。性能只增来自晋升门。", slices };
+  function open(node, source) {
+    ensureDialog();
+    stack = [];
+    trigger = source || document.activeElement;
+    render(node);
   }
 
-  function agiData() {
-    const slices = usecaseCards().map((card) => {
-      const title = card.querySelector("h3")?.textContent?.trim() || "Agent";
-      const oneLine = card.querySelector("p")?.textContent?.trim() || "";
-      const tags = [...card.querySelectorAll(".usecase-meta span")].map((tag) => tag.textContent.trim());
-      return {
-        key: title.replace(/\s*Agent$/, ""),
-        name: title.replace(/\s*Agent$/, ""),
-        note: oneLine,
-        items: [["适用场景", tags.join(" · ")]]
-      };
-    });
-    return { ...META.agi, sub: "垂直 agent 在各自领域采样试错；AGIAgent 在自己的轨迹上被多教师蒸馏（MOPD），把专长收成一个通用学生。", slices };
-  }
-
-  function wireTitleTrigger(title, getData) {
+  function wireTitleTrigger(title, getNode) {
     if (!title || title.dataset.explodeTrigger) return;
     title.dataset.explodeTrigger = "true";
 
-    // 把标题包一层，💥 放在标题后面（标题本身有 data-en/zh，切语言会被整体替换）
     const row = document.createElement("div");
     row.className = "title-row";
     title.before(row);
@@ -273,7 +270,7 @@
     button.setAttribute("aria-label", `Explode ${title.textContent.trim()}`);
     button.addEventListener("click", (event) => {
       event.stopPropagation();
-      open(getData(), button);
+      open(getNode(), button);
     });
     row.append(button);
   }
@@ -286,12 +283,12 @@
       label.setAttribute("role", "button");
       label.setAttribute("tabindex", "0");
       label.classList.add("is-expandable");
-      const activate = () => open(readStage(card), label);
-      label.addEventListener("click", activate);
+      const activateNode = () => open(stageNode(card), label);
+      label.addEventListener("click", activateNode);
       label.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          activate();
+          activateNode();
         }
       });
     });
@@ -305,12 +302,12 @@
       title.setAttribute("role", "button");
       title.setAttribute("tabindex", "0");
       title.classList.add("is-expandable");
-      const activate = () => open(readUsecase(card), title);
-      title.addEventListener("click", activate);
+      const activateNode = () => open(agentNode(card), title);
+      title.addEventListener("click", activateNode);
       title.addEventListener("keydown", (event) => {
         if (event.key === "Enter" || event.key === " ") {
           event.preventDefault();
-          activate();
+          activateNode();
         }
       });
     });
@@ -318,32 +315,32 @@
 
   function wireSections() {
     const maps = [
-      { selector: "#roadmap", data: rsiData },
-      { selector: "#use-cases", data: agiData }
+      { selector: "#roadmap", node: rsiNode },
+      { selector: "#use-cases", node: agiNode }
     ];
-    maps.forEach(({ selector, data }) => {
+    maps.forEach(({ selector, node }) => {
       const section = document.querySelector(selector);
       const title = section?.querySelector(".system-card-head h2");
-      if (title) wireTitleTrigger(title, data);
+      if (title) wireTitleTrigger(title, node);
     });
   }
 
   function openFromHash() {
     const raw = decodeURIComponent(location.hash.replace("#explode=", "")).trim().toLowerCase();
     if (!raw) return;
-    if (raw === "rsi" || raw === "rs") return open(rsiData());
-    if (raw === "agi") return open(agiData());
+    if (raw === "rsi" || raw === "rs") return open(rsiNode());
+    if (raw === "agi") return open(agiNode());
 
     const stage = stageCards().find(
       (node) => normalizeStageName(node.querySelector(".workflow-stage-head p")?.textContent).toLowerCase() === raw
     );
-    if (stage) return open(readStage(stage));
+    if (stage) return open(stageNode(stage));
 
     const usecase = usecaseCards().find((node) => {
       const title = node.querySelector("h3")?.textContent?.trim().toLowerCase() || "";
       return title.replace(/[^a-z]/g, "").includes(raw.replace(/[^a-z]/g, ""));
     });
-    if (usecase) open(readUsecase(usecase));
+    if (usecase) open(agentNode(usecase));
   }
 
   wireStages();
