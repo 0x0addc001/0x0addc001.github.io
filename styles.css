@@ -8260,21 +8260,3 @@ html[lang="zh"] .usecase-meta::before {
   background: var(--orange);
   outline: none;
 }
-
-.roadmap-crosscut {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px 14px;
-  margin-top: 18px;
-  padding-top: 12px;
-  border-top: 1px solid var(--line);
-  color: var(--muted);
-  font-family: var(--font-mono);
-  font-size: 0.66rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-.roadmap-crosscut span:first-child {
-  color: var(--orange);
-}
