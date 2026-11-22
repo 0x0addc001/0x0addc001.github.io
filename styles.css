@@ -8008,6 +8008,10 @@ html[lang="zh"] .usecase-meta::before {
   letter-spacing: 0.08em;
 }
 
+.explode-ring[data-count="5"] .explode-chip { width: 118px; }
+.explode-ring[data-count="7"] .explode-chip { width: 106px; }
+.explode-ring[data-count="10"] .explode-chip { width: 94px; }
+
 .explode-ring .explode-chip {
   position: absolute;
   top: 50%;
@@ -8044,8 +8048,8 @@ html[lang="zh"] .usecase-meta::before {
 
 .workflow-stage-head p.is-expandable::after {
   content: "💥";
-  font-size: 0.8em;
-  opacity: 0.85;
+  font-size: 1.05em;
+  opacity: 0.95;
 }
 
 .usecase-card h3.is-expandable {
@@ -8054,8 +8058,33 @@ html[lang="zh"] .usecase-meta::before {
 
 .usecase-card h3.is-expandable::after {
   content: " 💥";
-  font-size: 0.55em;
-  opacity: 0.8;
+  font-size: 0.7em;
+  opacity: 0.9;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: 0;
+}
+
+.title-explode {
+  margin-left: 0.1em;
+  padding: 0;
+  border: 0;
+  color: inherit;
+  background: none;
+  font-size: 0.92em;
+  line-height: 1;
+  vertical-align: 0.08em;
+  cursor: pointer;
+}
+
+.title-explode:hover,
+.title-explode:focus-visible {
+  outline: none;
+  transform: scale(1.12);
 }
 
 .section-explode {
@@ -8078,28 +8107,23 @@ html[lang="zh"] .usecase-meta::before {
 
 /* row-break arrow so the stage flow does not read as broken */
 
-@media (min-width: 901px) {
-  .workflow-lane > .workflow-stage:nth-of-type(3n + 1):not(:first-of-type)::before {
-    position: absolute;
-    top: -32px;
-    left: 0;
-    z-index: 2;
-    color: var(--connector);
-    background: var(--paper);
-    font-family: var(--font-mono);
-    font-size: 1.35rem;
-    line-height: 1;
-    content: "↳";
-  }
+.workflow-row-arrow {
+  grid-column: 1 / -1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  margin-block: -10px -16px;
+  color: var(--connector);
+  font-family: var(--font-mono);
+  font-size: 1.05rem;
+  line-height: 1;
+  letter-spacing: 0.4em;
+}
 
-  .workflow-lane > .workflow-stage:nth-of-type(3n + 1):not(:first-of-type)::after {
-    position: absolute;
-    top: -22px;
-    right: 6px;
-    left: 20px;
-    height: 1px;
-    background: repeating-linear-gradient(90deg, var(--connector) 0 7px, transparent 7px 14px);
-    content: "";
+@media (max-width: 900px) {
+  .workflow-row-arrow {
+    display: none;
   }
 }
 
