@@ -12,6 +12,33 @@
   };
   const bi = (en, zh) => ({ en, zh });
 
+  const STAGE_LABEL = {
+    DATA: bi("Data", "数据"),
+    MODEL: bi("Model", "模型"),
+    TRAIN: bi("Train", "训练"),
+    INFER: bi("Infer", "推理"),
+    HARNESS: bi("Harness", "执行"),
+    EVAL: bi("Eval", "评测"),
+    OPS: bi("Ops", "运维")
+  };
+
+  const AREA_LABEL = {
+    INPUT: bi("Input", "输入"),
+    COMPONENTS: bi("Components", "组件"),
+    OUTPUT: bi("Output", "输出"),
+    METRICS: bi("Metrics", "指标"),
+    TECH: bi("Tech", "技术栈")
+  };
+
+  const UI = {
+    back: bi("← Back", "← 返回"),
+    close: bi("Close exploded view", "关闭爆炸图"),
+    foot: bi("← → switch · Enter open · Esc close", "← → 切换 · Enter 展开 · Esc 关闭"),
+    hint: (n) => bi(`Contains ${n} modules · press Enter or click to open`, `包含 ${n} 个子模块 · 按 Enter 或点击展开`),
+    modules: bi("modules", "个子模块"),
+    items: bi("items", "项")
+  };
+
   const biText = (el, fallback = "") => {
     if (!el) return bi(fallback, fallback);
     const text = (el.textContent || "").trim() || fallback;
@@ -71,7 +98,8 @@
   function stageNode(card) {
     const name = normalizeStageName(card.querySelector(".workflow-stage-head p")?.textContent);
     const groups = [...card.querySelectorAll(".workflow-anatomy > div")].map((group) => {
-      const key = String(group.querySelector(".workflow-category-label")?.textContent || "").trim().toUpperCase();
+      const labelEl = group.querySelector(".workflow-category-label");
+      const key = String(labelEl?.dataset?.en || labelEl?.textContent || "").trim().toUpperCase();
       const items = [...group.querySelectorAll(".workflow-label-set span")].map((tag) => [
         biText(tag),
         { term: tag.dataset?.en || tag.textContent.trim() }
@@ -81,11 +109,11 @@
     const byKey = new Map(groups.map((group) => [group.key, group]));
     return {
       key: name,
-      name,
+      name: STAGE_LABEL[name] || bi(name, name),
       note: STAGE_LOOP[name] || "",
       children: ["INPUT", "COMPONENTS", "OUTPUT", "METRICS", "TECH"]
         .filter((key) => byKey.has(key))
-        .map((key) => ({ key, name: key, note: AREA_NOTE[key], items: byKey.get(key).items }))
+        .map((key) => ({ key, name: AREA_LABEL[key] || bi(key, key), note: AREA_NOTE[key], items: byKey.get(key).items }))
     };
   }
 
@@ -108,7 +136,7 @@
       if (areas) {
         return {
           key,
-          name: key,
+          name: STAGE_LABEL[key] || bi(key, key),
           note: bi(
             `${ROW_NOTE[key].en} In this agent: ${text.en}`,
             `${ROW_NOTE[key].zh}这个 agent 在这一层的做法：${text.zh}`
@@ -116,7 +144,7 @@
           children: areas
         };
       }
-      return { key, name: key, note: ROW_NOTE[key] || "", items: [[text, ""]] };
+      return { key, name: STAGE_LABEL[key] || bi(key, key), note: ROW_NOTE[key] || "", items: [[text, ""]] };
     });
     const nameEn = card.querySelector("h3")?.dataset.en || title;
     const nameZh = card.querySelector("h3")?.dataset.zh || title;
@@ -169,8 +197,8 @@
           <p class="explode-sub" id="explode-sub">—</p>
         </div>
         <div class="explode-head-actions">
-          <button class="explode-back" id="explode-back" type="button" hidden>← Back</button>
-          <button class="explode-close" type="button" aria-label="Close">✕</button>
+          <button class="explode-back" id="explode-back" type="button" hidden></button>
+          <button class="explode-close" type="button">✕</button>
         </div>
       </div>
       <div class="explode-body">
@@ -178,7 +206,7 @@
         <aside class="explode-detail" id="explode-detail" aria-live="polite"></aside>
       </div>
       <div class="explode-foot">
-        <span><kbd>←</kbd> <kbd>→</kbd> switch · <kbd>Enter</kbd> open · <kbd>Esc</kbd> close</span>
+        <span id="explode-keys"></span>
         <span id="explode-count">—</span>
       </div>`;
 
@@ -234,7 +262,7 @@
       ${node.note ? `<p class="explode-question">${L(node.note)}</p>` : ""}
       ${
         hasChildren
-          ? `<p class="explode-hint">包含 ${node.children.length} 个子模块 · 按 Enter 或点击展开</p>`
+          ? `<p class="explode-hint">${L(UI.hint(node.children.length))}</p>`
           : `<ul class="explode-items">
                ${(node.items || [])
                  .map(([name, note]) => {
@@ -245,8 +273,8 @@
              </ul>`
       }`;
     dialog.querySelector("#explode-count").textContent = hasChildren
-      ? `${L(node.name)} · ${node.children.length} ${lang() === "zh" ? "个子模块" : "modules"}`
-      : `${L(node.name)} · ${(node.items || []).length} ${lang() === "zh" ? "项" : "items"}`;
+      ? `${L(node.name)} · ${node.children.length} ${L(UI.modules)}`
+      : `${L(node.name)} · ${(node.items || []).length} ${L(UI.items)}`;
   }
 
   function activate(index) {
@@ -273,6 +301,9 @@
     crumb.textContent = stack.map((node) => L(node.name)).join(" / ");
     dialog.querySelector("#explode-back").hidden = stack.length === 0;
 
+    dialog.querySelector("#explode-back").textContent = L(UI.back);
+    dialog.querySelector(".explode-close").setAttribute("aria-label", L(UI.close));
+    dialog.querySelector("#explode-keys").textContent = L(UI.foot);
     dialog.querySelector("#explode-title").textContent = L(node.name);
     dialog.querySelector("#explode-sub").textContent = L(node.note);
 
