@@ -8241,3 +8241,22 @@ html[lang="zh"] .usecase-meta::before {
   font-size: 0.66rem;
   content: "↳";
 }
+
+.explode-enter {
+  margin: 4px 0 8px;
+  padding: 7px 12px;
+  border: 1px solid var(--orange);
+  color: var(--orange);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  cursor: pointer;
+}
+
+.explode-enter:hover,
+.explode-enter:focus-visible {
+  color: var(--paper);
+  background: var(--orange);
+  outline: none;
+}

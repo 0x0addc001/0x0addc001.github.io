@@ -34,7 +34,12 @@
     back: bi("← Back", "← 返回"),
     close: bi("Close exploded view", "关闭爆炸图"),
     foot: bi("← → switch · Enter open · Esc close", "← → 切换 · Enter 展开 · Esc 关闭"),
-    hint: (n) => bi(`Contains ${n} modules · press Enter or click to open`, `包含 ${n} 个子模块 · 按 Enter 或点击展开`),
+    hint: (n) =>
+      bi(
+        `Contains ${n} modules · click to preview, Enter to open`,
+        `包含 ${n} 个子模块 · 点击预览，按 Enter 展开`
+      ),
+    enter: bi("Open →", "展开 →"),
     modules: bi("modules", "个子模块"),
     items: bi("items", "项")
   };
@@ -262,7 +267,8 @@
       ${node.note ? `<p class="explode-question">${L(node.note)}</p>` : ""}
       ${
         hasChildren
-          ? `<p class="explode-hint">${L(UI.hint(node.children.length))}</p>`
+          ? `<button class="explode-enter" type="button" data-enter="${index}">${L(UI.enter)}</button>
+             <p class="explode-hint">${L(UI.hint(node.children.length))}</p>`
           : `<ul class="explode-items">
                ${(node.items || [])
                  .map(([name, note]) => {
@@ -272,6 +278,10 @@
                  .join("")}
              </ul>`
       }`;
+    detail.querySelector("[data-enter]")?.addEventListener("click", (event) => {
+      activate(Number(event.currentTarget.dataset.enter));
+    });
+
     dialog.querySelector("#explode-count").textContent = hasChildren
       ? `${L(node.name)} · ${node.children.length} ${L(UI.modules)}`
       : `${L(node.name)} · ${(node.items || []).length} ${L(UI.items)}`;
@@ -329,7 +339,8 @@
       if (child.children && child.children.length) chip.classList.add("has-children");
       chip.style.setProperty("--a", `${angle}deg`);
       chip.innerHTML = `<b>${L(child.name)}</b>`;
-      chip.addEventListener("click", () => activate(index));
+      chip.addEventListener("click", () => setActive(index));
+      chip.addEventListener("dblclick", () => activate(index));
       ring.append(chip);
       chips.push(chip);
     });
