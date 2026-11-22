@@ -132,7 +132,7 @@
   function agentNode(card) {
     const title = card.querySelector("h3")?.textContent?.trim() || "Agent";
     const oneLine = biText(card.querySelector("p"));
-    const tags = [...card.querySelectorAll(".usecase-meta span")].map((tag) => tag.textContent.trim());
+    const tags = [...card.querySelectorAll(".usecase-meta-tag")].map((tag) => tag.textContent.trim());
     const rows = [...card.querySelectorAll(".usecase-flow li")].map((row) => {
       const key = String(row.querySelector(".usecase-stage")?.textContent || "").trim().toUpperCase();
       const textNode = row.querySelector("p");

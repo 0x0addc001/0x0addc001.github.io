@@ -5405,9 +5405,40 @@ html[lang="en"] .hero-title > span:first-child {
 
 .usecase-meta {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   gap: 6px;
   font-family: var(--font-mono);
+}
+
+.usecase-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
+.usecase-meta-label {
+  color: var(--muted);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
+}
+
+.usecase-cost {
+  display: flex;
+  gap: 10px;
+  align-items: baseline;
+  margin-top: 18px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
+  letter-spacing: 0.04em;
+}
+
+.usecase-cost span:first-child {
+  color: var(--orange);
+  letter-spacing: 0.16em;
 }
 
 .usecase-meta::before {
@@ -5424,7 +5455,7 @@ html[lang="zh"] .usecase-meta::before {
   content: "适用场景";
 }
 
-.usecase-meta span {
+.usecase-meta-tag {
   padding: 3px 7px;
   border: 1px solid color-mix(in srgb, currentColor 38%, transparent);
   color: var(--tag-color, var(--orange));
