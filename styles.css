@@ -8010,7 +8010,13 @@ html[lang="zh"] .usecase-meta::before {
 
 .explode-ring[data-count="5"] .explode-chip { width: 118px; }
 .explode-ring[data-count="7"] .explode-chip { width: 106px; }
-.explode-ring[data-count="10"] .explode-chip { width: 94px; }
+.explode-ring[data-count="10"] { --ring-radius: 200px; }
+
+.explode-ring[data-count="10"] .explode-chip {
+  width: 88px;
+  padding: 7px 8px;
+  font-size: 0.66rem;
+}
 
 .explode-ring .explode-chip {
   position: absolute;
