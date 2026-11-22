@@ -43,6 +43,14 @@
     return STAGE_ORDER.find((name) => value.includes(name)) || value;
   }
 
+  function termNote(name) {
+    const entry = window.PORTFOLIO_TERMS?.get(name);
+    if (!entry) return "";
+    const language = document.documentElement.dataset.language === "zh" ? "zh" : "en";
+    const text = entry[language] || entry.en || "";
+    return text.length > 130 ? `${text.slice(0, 128)}…` : text;
+  }
+
   const stageCards = () => [...document.querySelectorAll(".workflow-stage")];
   const usecaseCards = () => [...document.querySelectorAll(".usecase-card")];
 
@@ -50,7 +58,10 @@
     const name = normalizeStageName(card.querySelector(".workflow-stage-head p")?.textContent);
     const groups = [...card.querySelectorAll(".workflow-anatomy > div")].map((group) => {
       const key = String(group.querySelector(".workflow-category-label")?.textContent || "").trim().toUpperCase();
-      const items = [...group.querySelectorAll(".workflow-label-set span")].map((tag) => [tag.textContent.trim(), ""]);
+      const items = [...group.querySelectorAll(".workflow-label-set span")].map((tag) => [
+        tag.textContent.trim(),
+        termNote(tag.textContent.trim())
+      ]);
       return { key, items };
     });
     const byKey = new Map(groups.map((group) => [group.key, group]));
@@ -243,6 +254,12 @@
     });
 
     canvas.append(ring);
+
+    // 环的半径跟着容器走，避免窗口矮的时候格子被推到画布外面
+    const ringSize = ring.getBoundingClientRect().width || 520;
+    const radius = Math.max(92, Math.round(ringSize / 2 - 66));
+    ring.style.setProperty("--ring-radius", `${radius}px`);
+
     if (!dialog.open) dialog.showModal();
     setActive(Math.min(focusIndex, total - 1));
   }

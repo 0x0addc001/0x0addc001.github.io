@@ -611,6 +611,14 @@
     if (event.key === "Escape") closeTerm();
   });
 
+  // 供爆炸图使用：按词条取中英双语定义
+  window.PORTFOLIO_TERMS = {
+    get(term) {
+      const entry = definitions[normalize(String(term || ""))];
+      return entry || null;
+    }
+  };
+
   modalClose?.addEventListener("click", closeTerm);
   document.querySelector(".language-switch")?.addEventListener("click", closeTerm);
   document.querySelector(".theme-toggle")?.addEventListener("click", closeTerm);
