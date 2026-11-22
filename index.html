@@ -7,7 +7,7 @@
   <meta name="theme-color" content="#f3f1ea">
   <title>李嘉梁</title>
   <link rel="icon" type="image/svg+xml" href="assets/favicon-JL.svg?v=20261028-9">
-  <link rel="stylesheet" href="styles.css?v=20261122-14">
+  <link rel="stylesheet" href="styles.css?v=20261122-15">
   <script>
     document.documentElement.classList.add("js");
     try {
@@ -1121,6 +1121,91 @@
             <span data-en="simulation + fleet" data-zh="仿真 + 车队">simulation + fleet</span>
           </div>
         </article>
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <div class="usecase-meta-row">
+              <span class="usecase-meta-label" data-en="INDUSTRY" data-zh="行业">INDUSTRY</span>
+              <span class="usecase-meta-tag" data-en="EDUCATION" data-zh="教育">EDUCATION</span>
+              <span class="usecase-meta-tag" data-en="TRAINING" data-zh="培训">TRAINING</span>
+            </div>
+            <div class="usecase-meta-row">
+              <span class="usecase-meta-label" data-en="FUNCTION" data-zh="职能">FUNCTION</span>
+              <span class="usecase-meta-tag" data-en="TUTORING &amp; ASSESSMENT" data-zh="辅导与评测">TUTORING &amp; ASSESSMENT</span>
+            </div>
+          </div>
+          <h3 data-project-url="https://0x0addc001.github.io/EduAgent/" data-en="Education Agent" data-zh="教育 Agent">Education Agent</h3>
+          <p data-en="Explain with the course material in hand, grade against the rubric, and hand at-risk learners to a teacher." data-zh="带着课程材料讲解、按量规评分，风险学生交给老师。">Explain with the course material in hand, grade against the rubric, and hand at-risk learners to a teacher.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="Course materials, rubrics, learner submissions" data-zh="课程材料、量规与学生作业">Course materials, rubrics, learner submissions</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Tutor model + retrieval over the curriculum" data-zh="辅导模型 + 课程检索">Tutor model + retrieval over the curriculum</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="SFT on tutoring dialogues + DPO on pedagogy" data-zh="辅导对话 SFT + 教学偏好 DPO">SFT on tutoring dialogues + DPO on pedagogy</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Streaming hints + step-by-step explanations" data-zh="流式提示 + 分步讲解">Streaming hints + step-by-step explanations</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="LMS, grading, scheduling tools" data-zh="学习平台、评分与排课工具">LMS, grading, scheduling tools</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Answer correctness, hint quality, learning gain" data-zh="答案正确性、提示质量、学习增益">Answer correctness, hint quality, learning gain</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Class SLOs, safeguarding alerts, teacher review" data-zh="班级 SLO、安全告警、教师复核">Class SLOs, safeguarding alerts, teacher review</p></li>
+          </ol>
+          <div class="usecase-cost">
+            <span data-en="COST" data-zh="成本">COST</span>
+            <span data-en="tokens + human review" data-zh="token + 人工复核">tokens + human review</span>
+          </div>
+        </article>
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <div class="usecase-meta-row">
+              <span class="usecase-meta-label" data-en="INDUSTRY" data-zh="行业">INDUSTRY</span>
+              <span class="usecase-meta-tag" data-en="GOVERNMENT" data-zh="政务">GOVERNMENT</span>
+              <span class="usecase-meta-tag" data-en="PUBLIC SERVICES" data-zh="公共服务">PUBLIC SERVICES</span>
+            </div>
+            <div class="usecase-meta-row">
+              <span class="usecase-meta-label" data-en="FUNCTION" data-zh="职能">FUNCTION</span>
+              <span class="usecase-meta-tag" data-en="CITIZEN SERVICE" data-zh="政务服务">CITIZEN SERVICE</span>
+            </div>
+          </div>
+          <h3 data-project-url="https://0x0addc001.github.io/GovAgent/" data-en="Government Agent" data-zh="政务 Agent">Government Agent</h3>
+          <p data-en="Explain policy with citations, check eligibility, and route citizens to the right service with an audit trail." data-zh="带引用解释政策、核对资格，把市民引导到正确服务并留痕。">Explain policy with citations, check eligibility, and route citizens to the right service with an audit trail.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="Regulations, forms, service catalogues, cases" data-zh="法规、表单、服务目录与办件">Regulations, forms, service catalogues, cases</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Policy model + clause-level retrieval" data-zh="政策模型 + 条款级检索">Policy model + clause-level retrieval</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="SFT on service dialogues + DPO on compliance" data-zh="服务对话 SFT + 合规偏好 DPO">SFT on service dialogues + DPO on compliance</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Streaming guidance + form prefill" data-zh="流式指引 + 表单预填">Streaming guidance + form prefill</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Identity, form submission, ticketing" data-zh="身份核验、表单提交、工单">Identity, form submission, ticketing</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Clause accuracy, completion rate, accessibility" data-zh="条款准确性、办结率、可达性">Clause accuracy, completion rate, accessibility</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Availability, audit trail, escalation" data-zh="可用性、审计轨迹、升级">Availability, audit trail, escalation</p></li>
+          </ol>
+          <div class="usecase-cost">
+            <span data-en="COST" data-zh="成本">COST</span>
+            <span data-en="tokens + case handling" data-zh="token + 办件处理">tokens + case handling</span>
+          </div>
+        </article>
+        <article class="usecase-card reveal">
+          <div class="usecase-meta">
+            <div class="usecase-meta-row">
+              <span class="usecase-meta-label" data-en="INDUSTRY" data-zh="行业">INDUSTRY</span>
+              <span class="usecase-meta-tag" data-en="LEGAL" data-zh="法律">LEGAL</span>
+              <span class="usecase-meta-tag" data-en="COMPLIANCE" data-zh="合规">COMPLIANCE</span>
+            </div>
+            <div class="usecase-meta-row">
+              <span class="usecase-meta-label" data-en="FUNCTION" data-zh="职能">FUNCTION</span>
+              <span class="usecase-meta-tag" data-en="CONTRACT REVIEW" data-zh="合同审查">CONTRACT REVIEW</span>
+            </div>
+          </div>
+          <h3 data-project-url="https://0x0addc001.github.io/LawAgent/" data-en="Legal Agent" data-zh="法律 Agent">Legal Agent</h3>
+          <p data-en="Review contracts with clause-level evidence and risk flags, prepared for a lawyer's sign-off — not legal advice." data-zh="按条款给出证据与风险提示，整理成律师可签字的审查结果——不是法律意见。">Review contracts with clause-level evidence and risk flags, prepared for a lawyer's sign-off — not legal advice.</p>
+          <ol class="usecase-flow">
+            <li><span class="usecase-stage">DATA</span><p data-en="Contracts, statutes, case law, playbooks" data-zh="合同、法规、判例、审查手册">Contracts, statutes, case law, playbooks</p></li>
+            <li><span class="usecase-stage">MODEL</span><p data-en="Legal model + citation retrieval" data-zh="法律模型 + 引用检索">Legal model + citation retrieval</p></li>
+            <li><span class="usecase-stage">TRAIN</span><p data-en="SFT on clause extraction + DPO on risk" data-zh="条款抽取 SFT + 风险偏好 DPO">SFT on clause extraction + DPO on risk</p></li>
+            <li><span class="usecase-stage">INFER</span><p data-en="Clause diff + risk scoring" data-zh="条款比对 + 风险打分">Clause diff + risk scoring</p></li>
+            <li><span class="usecase-stage">HARNESS</span><p data-en="Contract review, redline, DMS" data-zh="合同审查、批注、文档管理">Contract review, redline, DMS</p></li>
+            <li><span class="usecase-stage">EVAL</span><p data-en="Clause recall, citation validity, precision" data-zh="条款召回、引用有效性、精确度">Clause recall, citation validity, precision</p></li>
+            <li><span class="usecase-stage">OPS</span><p data-en="Confidentiality, retention, lawyer escalation" data-zh="保密、留存、律师升级">Confidentiality, retention, lawyer escalation</p></li>
+          </ol>
+          <div class="usecase-cost">
+            <span data-en="COST" data-zh="成本">COST</span>
+            <span data-en="tokens + lawyer review" data-zh="token + 律师复核">tokens + lawyer review</span>
+          </div>
+        </article>
+
       </div>
           </div>
         </div>
@@ -2583,6 +2668,6 @@
   <script src="motion.js?v=20261105-3"></script>
   <script src="chat-config.js?v=20261105-1"></script>
   <script src="chat.js?v=20261105-3"></script>
-  <script src="explode.js?v=20261122-9"></script>
+  <script src="explode.js?v=20261122-10"></script>
 </body>
 </html>

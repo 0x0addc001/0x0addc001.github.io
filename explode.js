@@ -156,6 +156,7 @@
     return {
       key: title.replace(/\s*Agent$/, ""),
       name: bi(nameEn, nameZh),
+      short: bi(nameEn.replace(/\s*Agent$/i, ""), nameZh.replace(/\s*Agent$/i, "")),
       note: bi(
         [oneLine.en, tags.length ? `Applies to: ${tags.join(" · ")}` : ""].filter(Boolean).join("　"),
         [oneLine.zh, tags.length ? `适用场景：${tags.join(" · ")}` : ""].filter(Boolean).join("　")
@@ -338,7 +339,7 @@
       chip.className = "explode-chip";
       if (child.children && child.children.length) chip.classList.add("has-children");
       chip.style.setProperty("--a", `${angle}deg`);
-      chip.innerHTML = `<b>${L(child.name)}</b>`;
+      chip.innerHTML = `<b>${L(child.short || child.name)}</b>`;
       chip.addEventListener("click", () => setActive(index));
       chip.addEventListener("dblclick", () => activate(index));
       ring.append(chip);
@@ -354,6 +355,9 @@
     const fit = () => {
       const box = canvas.getBoundingClientRect();
       const side = Math.max(240, Math.min(box.width, box.height) - 20);
+      const tight = total >= 12;
+      ring.style.setProperty("--chip-max", tight ? "108px" : "136px");
+      ring.style.setProperty("--chip-font", tight ? "0.5rem" : "0.72rem");
       const widest = Math.max(72, ...chips.map((chip) => chip.offsetWidth));
       const radius = Math.max(86, Math.round(side / 2 - widest / 2 - 10));
       const centerSize = Math.round(Math.min(124, Math.max(86, side * 0.24)));
