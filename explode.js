@@ -75,6 +75,13 @@
     };
   }
 
+  function stageAreas(key) {
+    const card = stageCards().find(
+      (node) => normalizeStageName(node.querySelector(".workflow-stage-head p")?.textContent) === key
+    );
+    return card ? stageNode(card).children : null;
+  }
+
   function agentNode(card) {
     const title = card.querySelector("h3")?.textContent?.trim() || "Agent";
     const oneLine = card.querySelector("p")?.textContent?.trim() || "";
@@ -82,6 +89,15 @@
     const rows = [...card.querySelectorAll(".usecase-flow li")].map((row) => {
       const key = String(row.querySelector(".usecase-stage")?.textContent || "").trim().toUpperCase();
       const text = row.querySelector("p")?.textContent?.trim() || "";
+      const areas = stageAreas(key);
+      if (areas) {
+        return {
+          key,
+          name: key,
+          note: `${ROW_NOTE[key] || ""}　这个 agent 在这一层的做法：${text}`,
+          children: areas
+        };
+      }
       return { key, name: key, note: ROW_NOTE[key] || "", items: [[text, ""]] };
     });
     return {
@@ -255,12 +271,24 @@
 
     canvas.append(ring);
 
-    // 环的半径跟着容器走，避免窗口矮的时候格子被推到画布外面
-    const ringSize = ring.getBoundingClientRect().width || 520;
-    const radius = Math.max(92, Math.round(ringSize / 2 - 66));
-    ring.style.setProperty("--ring-radius", `${radius}px`);
-
     if (!dialog.open) dialog.showModal();
+
+    // 环的实际尺寸按画布算：半径、格子宽度、中心块一起收缩，
+    // 既不会压到中心，也不会超出弹窗被裁掉。
+    const fit = () => {
+      const box = canvas.getBoundingClientRect();
+      const side = Math.max(240, Math.min(box.width, box.height) - 20);
+      const chipW = Math.round(Math.min(total >= 9 ? 92 : 118, Math.max(70, side * 0.22)));
+      const radius = Math.max(88, Math.round(side / 2 - chipW / 2 - 10));
+      const centerSize = Math.round(Math.min(124, Math.max(86, side * 0.24)));
+      ring.style.setProperty("--ring-side", `${side}px`);
+      ring.style.setProperty("--chip-w", `${chipW}px`);
+      ring.style.setProperty("--ring-radius", `${radius}px`);
+      ring.style.setProperty("--center-size", `${centerSize}px`);
+    };
+    fit();
+    requestAnimationFrame(fit);
+
     setActive(Math.min(focusIndex, total - 1));
   }
 

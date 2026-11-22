@@ -7656,6 +7656,8 @@ html[lang="zh"] .usecase-meta::before {
 }
 
 .explode {
+  display: flex;
+  flex-direction: column;
   width: min(1120px, 94vw);
   max-height: 92vh;
   padding: 0;
@@ -7671,6 +7673,7 @@ html[lang="zh"] .usecase-meta::before {
 }
 
 .explode-head {
+  flex: none;
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -7723,8 +7726,9 @@ html[lang="zh"] .usecase-meta::before {
 
 .explode-body {
   display: grid;
+  flex: 1 1 auto;
   grid-template-columns: minmax(0, 1fr) 340px;
-  min-height: 420px;
+  min-height: 0;
 }
 
 .explode-scene {
@@ -7848,6 +7852,7 @@ html[lang="zh"] .usecase-meta::before {
 }
 
 .explode-foot {
+  flex: none;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -7902,7 +7907,8 @@ html[lang="zh"] .usecase-meta::before {
 .explode-canvas {
   display: grid;
   place-items: center;
-  padding: 28px 18px;
+  min-height: 0;
+  padding: 20px 18px;
   overflow: hidden;
   background:
     radial-gradient(560px 320px at 50% 45%, color-mix(in srgb, var(--orange) 9%, transparent), transparent 72%);
@@ -7968,8 +7974,8 @@ html[lang="zh"] .usecase-meta::before {
 
 .explode-ring {
   position: relative;
-  width: min(520px, 58vh);
-  aspect-ratio: 1;
+  width: var(--ring-side, 520px);
+  height: var(--ring-side, 520px);
 }
 
 .explode-ring::before {
@@ -7986,8 +7992,8 @@ html[lang="zh"] .usecase-meta::before {
   left: 50%;
   display: grid;
   place-items: center;
-  width: 124px;
-  height: 124px;
+  width: var(--center-size, 124px);
+  height: var(--center-size, 124px);
   border: 1px solid var(--orange);
   color: var(--ink);
   background: var(--paper-light);
@@ -8008,12 +8014,14 @@ html[lang="zh"] .usecase-meta::before {
   letter-spacing: 0.08em;
 }
 
-.explode-ring[data-count="5"] .explode-chip { width: 118px; }
-.explode-ring[data-count="7"] .explode-chip { width: 106px; }
-.explode-ring[data-count="10"] { --ring-radius: 200px; }
+.explode-ring[data-count="5"] .explode-chip { width: var(--chip-w, 118px); }
+.explode-ring[data-count="7"] .explode-chip { width: var(--chip-w, 106px); }
+.explode-ring[data-count="10"] {
+  --ring-radius: 200px;
+}
 
 .explode-ring[data-count="10"] .explode-chip {
-  width: 88px;
+  width: var(--chip-w, 88px);
   padding: 7px 8px;
   font-size: 0.66rem;
 }
