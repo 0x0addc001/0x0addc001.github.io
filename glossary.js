@@ -41,9 +41,7 @@
 
   define("DATA", "The data layer turns raw sources into governed, versioned inputs for model development and evaluation.", "数据层将原始来源转化为可治理、可版本化的模型开发与评测输入。");
   define("MODEL", "The model layer studies architecture choices such as attention, routing, position encoding, and scaling behavior.", "模型层研究注意力、路由、位置编码与缩放规律等架构选择。");
-  define("MODELS", "The model layer studies architecture choices such as attention, routing, position encoding, and scaling behavior.", "模型层研究注意力、路由、位置编码与缩放规律等架构选择。");
   define("TRAIN", "The training layer turns data and model choices into measurable capability through supervised, preference, and reinforcement optimization.", "训练层通过监督、偏好和强化学习优化，把数据与模型选择转化为可衡量的能力。");
-  define("TRAINING", "The training layer turns data and model choices into measurable capability through supervised, preference, and reinforcement optimization.", "训练层通过监督、偏好和强化学习优化，把数据与模型选择转化为可衡量的能力。");
   define("INFERENCE", "The inference layer turns trained weights into tokens under latency, throughput, memory, and correctness constraints.", "推理层在延迟、吞吐、显存与正确性约束下，将训练后权重转化为生成结果。");
   define("HARNESS", "The harness layer lets an LLM plan, call tools, observe results, recover from failures, and complete real tasks.", "Harness 层让 LLM 能规划、调用工具、观察结果、从失败中恢复并完成真实任务。");
   define("EVAL", "The evaluation layer turns model behavior into comparable scores, failure evidence, and release decisions.", "评测层将模型行为转化为可比较的分数、失败证据与发布决策。");
@@ -186,7 +184,6 @@
   define("Trajectory evaluation", "Trajectory evaluation scores the sequence of decisions, tool calls, and observations that led to an agent outcome, not only the final answer.", "轨迹评测不仅看最终答案，也评估 Agent 在过程中做出的决策、工具调用与观察。");
   define("Regression slicing", "Regression slicing breaks evaluation results into targeted cohorts to reveal failures hidden by aggregate averages.", "回归切片按特定群体或场景拆分评测结果，找出被总体平均分掩盖的失败。");
   define("Contamination checks", "Contamination checks detect benchmark leakage into training data and flag scores that may be inflated.", "污染检查用于发现训练数据中的评测泄漏，并标记可能虚高的分数。");
-  define("Cost / latency eval", "Cost and latency evaluation measures whether quality gains are economically and operationally viable in production.", "成本与延迟评测判断质量收益在生产环境中是否具备经济和运行可行性。");
   define("Inspect", "Inspect is an open-source framework from the UK AI Security Institute for reproducible LLM evaluations and agent traces.", "Inspect 是英国 AI Security Institute 开源的 LLM 评测框架，支持可复现评测与 Agent 轨迹分析。");
   define("lm-evaluation-harness", "lm-evaluation-harness is EleutherAI's open-source framework for standardized language-model benchmarks and few-shot evaluation.", "lm-evaluation-harness 是 EleutherAI 开源的语言模型标准化基准与 few-shot 评测框架。");
   define("HELM", "HELM is Stanford's open evaluation framework for comparing language models across accuracy, robustness, fairness, and efficiency.", "HELM 是斯坦福开源的语言模型评测框架，从准确率、鲁棒性、公平性与效率等维度进行比较。");
@@ -380,7 +377,8 @@
   define("Model card", "A model card documents intended use, limitations, evaluation results, and safety considerations.", "模型卡记录预期用途、局限、评测结果与安全注意事项。");
   define("Robustness", "Robustness measures whether performance remains stable under noise, distribution shift, and adversarial input.", "鲁棒性衡量模型在噪声、分布变化与对抗输入下是否保持稳定表现。");
   define("Calibration", "Calibration measures whether confidence scores match observed correctness.", "校准衡量模型置信度与实际正确率是否匹配。");
-  define("Cost to evaluate", "Cost to evaluate measures the compute, model, human, and tool expense of an evaluation process.", "评测成本衡量一次评测流程所需的算力、模型、人工与工具开销。");
+  define("Training cost", "Training cost measures the compute, data, and human expense required to produce one checkpoint.", "训练成本衡量产出一个 checkpoint 所需的算力、数据与人工开销。");
+  define("Serving cost", "Serving cost measures the GPU, bandwidth, and operations expense per request, token, or task.", "服务成本衡量每次请求、每个 token 或每个任务所需的 GPU、带宽与运维开销。");
   define("Cost Evaluation", "Cost evaluation measures the compute, serving, tool, and human expense of running a system.", "成本评测衡量运行系统所需的算力、服务、工具与人工开销。");
   define("Latency Evaluation", "Latency evaluation measures end-to-end and component-level response delay against service targets.", "延迟评测衡量端到端及各组件响应时间是否满足服务目标。");
   define("2021 — 2027", "This label marks the overall education period shown in the resume.", "该标签表示简历中的整体教育时间范围。");
@@ -487,7 +485,6 @@
   define("Figure 02 / Training", "This label identifies the training-path figure.", "该标签标识训练路径图。");
   define("Figure 03 / Evaluation", "This label identifies the evaluation figure.", "该标签标识评测图。");
   define("Byte correctness", "Byte correctness verifies that transferred or cached tensors preserve exact numerical content.", "字节级正确性验证传输或缓存后的张量数值内容完全一致。");
-  define("Cost/latency eval", "Cost and latency evaluation measures whether a system meets production efficiency constraints at an acceptable quality level.", "成本/延迟评测衡量系统能否在可接受质量下满足生产效率和响应时间约束。");
   define("Data mixture", "A data mixture defines the proportions of domains, tasks, languages, and quality tiers used in training.", "数据配比定义训练中不同领域、任务、语言与质量层级的数据比例。");
   define("Evaluation", "Evaluation converts model or system behavior into comparable evidence about quality, safety, and fitness for use.", "评测将模型或系统行为转化为关于质量、安全性与适用性的可比较证据。");
   define("Inference systems", "Inference systems turn trained models into low-latency, high-throughput, reliable services.", "推理系统把训练后的模型转化为低延迟、高吞吐、可靠的在线服务。");
