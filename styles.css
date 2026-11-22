@@ -1710,6 +1710,13 @@ html[lang="en"] .hero-title > span:first-child {
   transform: translateY(-1px);
 }
 
+.section-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+}
+
 .workflow-stage > h3 {
   margin-top: 20px;
   color: var(--white);

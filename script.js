@@ -168,8 +168,8 @@
 
   const pageMeta = {
     en: {
-      title: "Jialiang Li",
-      description: "Jialiang Li — Machine Learning Engineer building reliable post-training, inference, and agent harness systems."
+      title: "Jialiang (Jerry) Li",
+      description: "Jialiang (Jerry) Li — Machine Learning Engineer building reliable post-training, inference, and agent harness systems."
     },
     zh: {
       title: "李嘉梁",
