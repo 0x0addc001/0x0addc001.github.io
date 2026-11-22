@@ -86,37 +86,56 @@
     window.addEventListener("resize", syncBandHeight);
   }
 
+  const REPO_OWNER = "0x0addc001";
+
+  function buildProjectLink(href, className, label, ariaLabel) {
+    const link = document.createElement("a");
+    const text = document.createElement("span");
+    const arrow = document.createElement("b");
+
+    link.className = className;
+    link.href = href;
+    link.target = "_blank";
+    link.rel = "noreferrer";
+    link.setAttribute("aria-label", ariaLabel);
+
+    text.textContent = label;
+    arrow.setAttribute("aria-hidden", "true");
+    arrow.textContent = "↗";
+
+    link.append(text, arrow);
+    return link;
+  }
+
   function setupUsecaseProjectLinks() {
     document.querySelectorAll(".usecase-card h3[data-project-url]").forEach((title) => {
       const card = title.closest(".usecase-card");
       if (!card || card.querySelector(".usecase-project-link")) return;
 
-      const action = document.createElement("a");
-      const label = document.createElement("span");
-      const icon = document.createElementNS("http://www.w3.org/2000/svg", "svg");
-      const iconPath = document.createElementNS("http://www.w3.org/2000/svg", "path");
+      const projectUrl = title.dataset.projectUrl;
+      const repositoryName = new URL(projectUrl).pathname.replace(/\/+$/, "").split("/").pop();
       const titleRow = document.createElement("div");
-      const projectUrl = new URL(title.dataset.projectUrl);
-      const repositoryName = projectUrl.pathname.replace(/\/+$/, "").split("/").pop();
+      const links = document.createElement("div");
 
-      action.className = "usecase-project-link";
-      action.href = title.dataset.projectUrl;
-      action.target = "_blank";
-      action.rel = "noreferrer";
-      action.setAttribute("aria-label", `Open ${repositoryName} project page`);
-      label.textContent = repositoryName;
-      icon.classList.add("github-icon");
-      icon.setAttribute("viewBox", "0 0 24 24");
-      icon.setAttribute("aria-hidden", "true");
-      iconPath.setAttribute(
-        "d",
-        "M12 .7C5.7.7.7 5.7.7 12c0 5 3.3 9.2 7.8 10.7.6.1.8-.3.8-.6v-2.2c-3.2.7-3.9-1.4-3.9-1.4-.5-1.3-1.3-1.6-1.3-1.6-1.1-.7.1-.7.1-.7 1.2.1 1.8 1.2 1.8 1.2 1.1 1.8 2.8 1.3 3.5 1 .1-.8.4-1.3.8-1.6-2.6-.3-5.3-1.3-5.3-5.8 0-1.3.5-2.3 1.2-3.2-.1-.3-.5-1.5.1-3.2 0 0 1-.3 3.3 1.2a11 11 0 0 1 6 0c2.3-1.5 3.3-1.2 3.3-1.2.6 1.7.2 2.9.1 3.2.8.9 1.2 1.9 1.2 3.2 0 4.5-2.7 5.5-5.3 5.8.4.4.8 1.1.8 2.2v3.3c0 .3.2.7.8.6 4.5-1.5 7.8-5.7 7.8-10.7C23.3 5.7 18.3.7 12 .7z"
+      links.className = "usecase-links";
+      links.append(
+        buildProjectLink(
+          projectUrl,
+          "usecase-project-link",
+          repositoryName,
+          `Open ${repositoryName} project page`
+        ),
+        buildProjectLink(
+          `https://github.com/${REPO_OWNER}/${repositoryName}`,
+          "usecase-project-link usecase-project-link-gh",
+          "GitHub",
+          `Open ${repositoryName} GitHub repository`
+        )
       );
-      icon.append(iconPath);
-      action.append(icon, label);
+
       titleRow.className = "usecase-title-row";
       title.before(titleRow);
-      titleRow.append(title, action);
+      titleRow.append(title, links);
     });
   }
 

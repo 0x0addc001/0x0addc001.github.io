@@ -1685,6 +1685,31 @@ html[lang="en"] .hero-title > span:first-child {
   transform: translateY(-1px);
 }
 
+.workflow-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-left: auto;
+}
+
+.workflow-links .workflow-project-link {
+  margin-left: 0;
+}
+
+.workflow-project-link-gh {
+  border-color: var(--line);
+  color: var(--ink-soft);
+  background: transparent;
+}
+
+.workflow-project-link-gh:hover,
+.workflow-project-link-gh:focus-visible {
+  border-color: var(--ink);
+  color: var(--paper);
+  background: var(--ink);
+  transform: translateY(-1px);
+}
+
 .workflow-stage > h3 {
   margin-top: 20px;
   color: var(--white);
@@ -5391,9 +5416,10 @@ html[lang="zh"] .usecase-meta::before {
 
 .usecase-title-row {
   display: flex;
+  flex-direction: column;
   flex-wrap: wrap;
   gap: 14px;
-  align-items: center;
+  align-items: flex-start;
   margin-top: 24px;
 }
 
@@ -5438,6 +5464,28 @@ html[lang="zh"] .usecase-meta::before {
   color: var(--white);
   background: var(--orange);
   transform: translateY(-2px);
+}
+
+.usecase-links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.usecase-project-link-gh {
+  border-color: var(--line-strong);
+  color: var(--ink-soft);
+  background: transparent;
+  font-family: var(--font-mono);
+  font-size: 0.74rem;
+  letter-spacing: 0.02em;
+}
+
+.usecase-project-link-gh:hover,
+.usecase-project-link-gh:focus-visible {
+  color: var(--paper);
+  background: var(--ink);
 }
 
 .usecase-flow {
