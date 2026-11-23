@@ -200,10 +200,12 @@
   function ensureDialog() {
     if (dialog) return dialog;
 
-    dialog = document.createElement("dialog");
-    dialog.className = "explode";
-    dialog.setAttribute("aria-labelledby", "explode-title");
+    // 用普通 fixed overlay 而不是 <dialog>：Safari 上 dialog 关闭后偶发整页不重绘
+    dialog = document.createElement("div");
+    dialog.className = "explode-overlay";
+    dialog.hidden = true;
     dialog.innerHTML = `
+      <div class="explode" role="dialog" aria-modal="true" aria-labelledby="explode-title">
       <div class="explode-head">
         <div class="explode-heading">
           <div class="explode-crumb" id="explode-crumb"></div>
@@ -222,16 +224,39 @@
       <div class="explode-foot">
         <span id="explode-keys"></span>
         <span id="explode-count">—</span>
+      </div>
       </div>`;
 
     document.body.append(dialog);
+
+    // 模拟 <dialog> 的接口，调用方不用改
+    dialog.showModal = () => {
+      dialog.hidden = false;
+      requestAnimationFrame(() => dialog.classList.add("is-open"));
+      document.documentElement.classList.add("explode-open");
+      dialog.querySelector(".explode-close")?.focus({ preventScroll: true });
+    };
+    dialog.close = () => {
+      if (dialog.hidden) return;
+      dialog.classList.remove("is-open");
+      dialog.hidden = true;
+      document.documentElement.classList.remove("explode-open");
+      dialog.dispatchEvent(new Event("close"));
+    };
+    Object.defineProperty(dialog, "open", { get: () => !dialog.hidden });
 
     dialog.querySelector(".explode-close").addEventListener("click", () => dialog.close());
     dialog.querySelector("#explode-back").addEventListener("click", () => goBack());
     dialog.addEventListener("click", (event) => {
       if (event.target === dialog) dialog.close();
     });
-    dialog.addEventListener("keydown", (event) => {
+    document.addEventListener("keydown", (event) => {
+      if (!dialog || !dialog.open) return;
+      if (event.key === "Escape") {
+        event.preventDefault();
+        dialog.close();
+        return;
+      }
       if (!chips.length) return;
       if (event.key === "ArrowRight") {
         setActive((activeIndex + 1) % chips.length);
