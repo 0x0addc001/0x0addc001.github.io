@@ -321,7 +321,9 @@
           }
         });
       },
-      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+      // 用 0 而不是 0.12：像业务图那张卡有 6000px 高，视口里最多只占 15%，
+      // 百分比阈值在 Safari 下永远达不到，整块就一直停在 opacity:0。
+      { threshold: 0, rootMargin: "0px 0px -40px 0px" }
     );
 
     revealElements.forEach((element) => revealObserver.observe(element));
