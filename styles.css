@@ -8305,3 +8305,12 @@ html.explode-open {
   background: var(--orange);
   outline: none;
 }
+
+.wordmark-name-zh-en {
+  margin-left: 0.12em;
+  color: var(--muted);
+  font-family: var(--font-mono);
+  font-size: 0.56em;
+  font-weight: 400;
+  letter-spacing: 0;
+}

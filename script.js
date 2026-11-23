@@ -172,8 +172,8 @@
       description: "Jialiang (Jerry) Li — Machine Learning Engineer building reliable post-training, inference, and agent harness systems."
     },
     zh: {
-      title: "李嘉梁",
-      description: "李嘉梁 — 算法工程师，专注可信的后训练、推理与 Agent 执行系统。"
+      title: "李嘉梁（Jerry）",
+      description: "李嘉梁（Jerry） — 算法工程师，专注可信的后训练、推理与 Agent 执行系统。"
     }
   };
 
