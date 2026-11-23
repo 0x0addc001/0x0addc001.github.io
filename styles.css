@@ -7698,9 +7698,15 @@ html[lang="zh"] .usecase-meta::before {
   overflow: hidden;
 }
 
+.explode:not([open]) {
+  /* 作者样式里的 display:flex 会盖掉 UA 的 dialog:not([open]){display:none}，
+     结果关闭后的弹窗仍留在文档流里，遮挡/撑开页面 */
+  display: none;
+}
+
 .explode::backdrop {
-  background: rgba(7, 17, 31, 0.72);
-  backdrop-filter: blur(10px);
+  /* 不用 backdrop-filter：Safari 在 dialog 关闭后偶发整页不重绘 */
+  background: rgba(7, 17, 31, 0.78);
 }
 
 .explode-head {

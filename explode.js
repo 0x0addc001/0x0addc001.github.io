@@ -189,6 +189,14 @@
     };
   }
 
+  function revealInView() {
+    const height = window.innerHeight || 0;
+    document.querySelectorAll(".reveal:not(.is-visible)").forEach((element) => {
+      const rect = element.getBoundingClientRect();
+      if (rect.bottom > 0 && rect.top < height) element.classList.add("is-visible");
+    });
+  }
+
   function ensureDialog() {
     if (dialog) return dialog;
 
@@ -239,11 +247,21 @@
       }
     });
     dialog.addEventListener("close", () => {
-      if (trigger && typeof trigger.focus === "function") trigger.focus();
+      if (trigger && typeof trigger.focus === "function") {
+        trigger.focus({ preventScroll: true });
+      }
       trigger = null;
       if (location.hash.startsWith("#explode=")) {
         history.replaceState(null, "", location.pathname + location.search);
       }
+
+      // 兜底：关闭后把视口内的 reveal 元素标成可见，避免整段内容停在 opacity:0
+      revealInView();
+
+      // 关闭后清掉选择状态；弹窗节点保留复用（CSS 里 .explode:not([open]) 负责隐藏）
+      chips = [];
+      currentNode = null;
+      stack = [];
     });
 
     return dialog;
